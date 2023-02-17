@@ -1,0 +1,17 @@
+coverage/
+docs/
+node_modules/
+yarn.lock
+package.json
+tsconfig.json
+dist/
+scripts/
+.turbo
+.esbuild
+packages/jarvis/
+
+eslint-config-spin-aws
+commitlint.config.js
+
+**/tsconfig.json
+.huskyrc

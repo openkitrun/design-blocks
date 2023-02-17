@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+  "rules": {
+    "curly": "error",
+    "no-console": ["error"],
+    "prettier/prettier": [
+      "error",
+      {
+        "bracketSpacing": true,
+        "jsxSingleQuote": true,
+        "printWidth": 120,
+        "proseWrap": "always",
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 2,
+        "trailingComma": "all"
+      }
+    ]
+  }
+}
