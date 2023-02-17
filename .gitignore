@@ -1,3 +1,25 @@
+# Environment files
+.DS_Store
+.history
+
+# Node directories
+node_modules
+
+dist
+*.log
+.turbo
+
+# IDEs
+.idea
+.vscode
+**/*.iml
+
+# secrets
+secrets/
+
+# Jest
+coverage/
+
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
