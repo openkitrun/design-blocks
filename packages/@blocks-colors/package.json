@@ -1,0 +1,61 @@
+{
+  "name": "@design-blocks/colors",
+  "version": "0.0.0",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/module/index.js",
+  "types": "dist/typescript/index.d.ts",
+  "source": "src/index.ts",
+  "typings": "dist/typescript/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wootsbot/design-blocks.git",
+    "directory": "@blocks-colors"
+  },
+  "scripts": {
+    "build:native": "bob build",
+    "clean": "pnpm run clean:build && rimraf -rf .turbo",
+    "clean:build": "rimraf -rf dist",
+    "build": "pnpm run clean:build && pnpm run build:native",
+    "lint:types": "tsc --noEmit",
+    "bundlesize": "bundlesize"
+  },
+  "keywords": [],
+  "bundlesize": [
+    {
+      "path": "./dist/commonjs/index.js",
+      "maxSize": "1KB"
+    },
+    {
+      "path": "./dist/module/index.js",
+      "maxSize": "0.5kB"
+    },
+    {
+      "path": "./dist/typescript/index.d.ts",
+      "maxSize": "0.5kB"
+    }
+  ],
+  "devDependencies": {
+    "bundlesize": "0.18.1",
+    "react-native-builder-bob": "0.20.3",
+    "rimraf": "4.1.2",
+    "tsconfig": "workspace:*",
+    "typescript": "4.9.4"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "dist",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
+}

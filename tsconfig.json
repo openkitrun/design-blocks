@@ -1,8 +1,22 @@
 {
   "extends": "tsconfig/base.json",
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
+      "@design-blocks/primitives": ["./packages/@blocks-primitives/src"],
+      "@design-blocks/primitives/*": ["./packages/@blocks-primitives/src/*"],
+      "@design-blocks/styles": ["./packages/@blocks-styles/src"],
+      "@design-blocks/styles/*": ["./packages/@blocks-styles/src/*"],
+      "@design-blocks/system": ["./packages/@blocks-system/src"],
+      "@design-blocks/system/*": ["./packages/@blocks-system/src/*"],
+      "@design-blocks-colors": ["./packages/@blocks-colors/src"],
+      "@design-blocks-colors/*": ["./packages/@blocks-colors/src/*"],
+      "@design-blocks/theme": ["./packages/@blocks-theme/src"],
+      "@design-blocks/theme/*": ["./packages/@blocks-theme/src/*"],
+      "@design-blocks/types": ["./packages/@blocks-types/src"],
+      "@design-blocks/types/*": ["./packages/@blocks-types/src/*"],
+      "@design-blocks/utils": ["./packages/@blocks-utils/src"],
+      "@design-blocks/utils/*": ["./packages/@blocks-utils/src/*"],
     },
   }
 }

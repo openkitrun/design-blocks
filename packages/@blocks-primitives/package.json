@@ -1,0 +1,80 @@
+{
+  "name": "@design-blocks/primitives",
+  "version": "0.0.1-next.9",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/module/index.js",
+  "types": "dist/typescript/index.d.ts",
+  "source": "src/index.ts",
+  "typings": "dist/typescript/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wootsbot/design-blocks.git",
+    "directory": "@blocks-primitives"
+  },
+  "scripts": {
+    "build:native": "bob build",
+    "clean": "pnpm run clean:build && rimraf -rf .turbo",
+    "clean:build": "rimraf -rf dist",
+    "build": "pnpm run clean:build && pnpm run build:native",
+    "lint:types": "tsc --noEmit",
+    "bundlesize": "bundlesize"
+  },
+  "keywords": [],
+  "bundlesize": [
+    {
+      "path": "./dist/commonjs/index.js",
+      "maxSize": "0.5kB"
+    },
+    {
+      "path": "./dist/module/index.js",
+      "maxSize": "0.5kB"
+    },
+    {
+      "path": "./dist/typescript/index.d.ts",
+      "maxSize": "0.5kB"
+    }
+  ],
+  "dependencies": {
+    "@design-blocks/system": "workspace:*",
+    "@design-blocks/theme": "workspace:*",
+    "@design-blocks/types": "workspace:*",
+    "@design-blocks/utils": "workspace:*",
+    "lodash.camelcase": "4.3.0"
+  },
+  "devDependencies": {
+    "@emotion/native": "11.10.6",
+    "@emotion/react": "11.10.6",
+    "@types/lodash.camelcase": "4.3.7",
+    "@types/react": "18.0.28",
+    "@types/react-native": "0.71.3",
+    "bundlesize": "0.18.1",
+    "react-native": "0.71",
+    "react-native-builder-bob": "0.20.3",
+    "rimraf": "4.1.2",
+    "tsconfig": "workspace:*",
+    "typescript": "4.9.4"
+  },
+  "peerDependencies": {
+    "@emotion/native": "11.10.6",
+    "@emotion/react": "11.10.6",
+    "react": ">=18",
+    "react-native": ">=0.71"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "dist",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
+}

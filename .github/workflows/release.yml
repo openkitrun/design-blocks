@@ -1,0 +1,77 @@
+name: Release Packages Design Blocks
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  TURBO_VERSION: 1.8.1
+  YARN_VERSION: 3.3.1
+
+jobs:
+  stats:
+    name: Publish Packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+          scope: '@design-blocks'
+
+      # We use week in the turbo cache key to keep the cache from infinitely growing
+      - id: get-week
+        run: echo name=WEEK::$(date +%U) >> $GITHUB_OUTPUT
+
+      - name: Turbo Cache
+        id: turbo-cache
+        uses: actions/cache@v3
+        with:
+          path: .turbo
+          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ steps.get-week.outputs.WEEK }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.job }}-${{ github.ref_name }}-${{ steps.get-week.outputs.WEEK }}-
+            turbo-${{ github.job }}-canary-${{ steps.get-week.outputs.WEEK }}-
+
+      - name: 🧶 Setup yarn
+        run: |
+          corepack enable
+          corepack prepare yarn@${YARN_VERSION} --activate
+      - name: Setup TURBO
+        run: yarn add turbo@${TURBO_VERSION} -D
+
+      - name: 📦 Install Dependencies
+        run: |
+          yarn install --immutable
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 💣 build
+        run: turbo run build --cache-dir=".turbo"
+
+      - name: 💅 Prettier
+        run: yarn turbo run lint
+
+      - name: 💎 lint:types
+        run: turbo run lint:types --cache-dir=".turbo"
+
+      - name: 💅 lint
+        run: yarn turbo run lint
+
+      - name: Create Release Pull Request or Publish Design Blocks
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: yarn release
+          commit: 'ci(release): version packages'
+          title: 'ci(release): version packages'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
