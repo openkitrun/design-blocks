@@ -6,11 +6,11 @@ export { ArrayInterpolation, CSSObject, FunctionInterpolation } from '@emotion/s
 
 export { ComponentSelector, Interpolation };
 
-export interface StyledOptions {
-  label?: string;
-  shouldForwardProp?: (propName: string) => boolean;
-  target?: string;
-}
+// export interface StyledOptions {
+//   label?: string;
+//   shouldForwardProp?: (propName: string) => boolean;
+//   target?: string;
+// }
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore

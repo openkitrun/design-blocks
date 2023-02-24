@@ -6711,7 +6711,6 @@ __metadata:
     "@babel/runtime": ^7.20.0
     "@design-blocks/colors": "workspace:*"
     "@design-blocks/native": "workspace:*"
-    "@design-blocks/theme": "workspace:*"
     "@emotion/native": 11.10.6
     "@emotion/react": 11.10.6
     "@react-native-community/eslint-config": ^3.2.0

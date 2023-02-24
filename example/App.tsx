@@ -10,28 +10,21 @@ import {SafeAreaView, ScrollView, StatusBar, Text} from 'react-native';
 
 import {ThemeProvider, Box, Stack} from '@design-blocks/native';
 
-import {theme, styled} from './blocks.config';
+import Title from './src/components/Title';
 
-const Title = styled(Text)(({theme: t}) => {
-  return {
-    color: t.colors.cyan[200],
-  };
-});
+import {theme} from './blocks.config';
 
 function App(): JSX.Element {
-  //const a = theme.colors.
-  // console.log('a', a);
-
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaView>
         <StatusBar barStyle="light-content" />
         <ScrollView contentInsetAdjustmentBehavior="automatic">
+          <Title>Design Blocks</Title>
           <Stack p={2} spacing={3} bgColor="red.800">
             <Box p={3}>
               <Text>Box</Text>
             </Box>
-            <Title>Hola</Title>
             <Box p={3}>
               <Text>Box</Text>
             </Box>

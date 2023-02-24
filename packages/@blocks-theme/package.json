@@ -5,7 +5,6 @@
   "module": "dist/module/index.js",
   "types": "dist/typescript/index.d.ts",
   "source": "src/index.ts",
-  "typings": "dist/typescript/index.d.ts",
   "files": [
     "dist"
   ],
