@@ -44,9 +44,6 @@ jobs:
           corepack enable
           corepack prepare yarn@${YARN_VERSION} --activate
 
-      - name: Setup TURBO
-        run: yarn global add turbo@${TURBO_VERSION}
-
       - name: 📦 Install Dependencies
         run: |
           yarn install --immutable
