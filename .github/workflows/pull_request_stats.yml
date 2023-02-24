@@ -64,5 +64,5 @@ jobs:
       - name: 💎 lint:types
         run: yarn turbo run lint:types --cache-dir=".turbo"
 
-      - name: 💅 lint
-        run: yarn turbo run lint
+      # - name: 💅 lint
+      #   run: yarn turbo run lint

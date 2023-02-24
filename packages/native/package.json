@@ -17,9 +17,9 @@
   },
   "scripts": {
     "build:native": "bob build",
-    "clean": "pnpm run clean:build && rimraf -rf .turbo",
+    "clean": "yarn clean:build && rimraf -rf .turbo",
     "clean:build": "rimraf -rf dist",
-    "build": "pnpm run clean:build && pnpm run build:native",
+    "build": "yarn clean:build && yarn build:native",
     "lint:types": "tsc --noEmit",
     "bundlesize": "bundlesize"
   },
