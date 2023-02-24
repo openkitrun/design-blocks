@@ -35,8 +35,7 @@
   },
   "lint-staged": {
     "*.{ts,js}": [
-      "yarn run prettier",
-      "yarn run lint:eslint"
+      "yarn run prettier"
     ]
   },
   "devDependencies": {
