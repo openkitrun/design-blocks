@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  TURBO_VERSION: 1.8.1
+  TURBO_VERSION: 1.8.2
   YARN_VERSION: 3.3.1
 
 jobs:
@@ -43,8 +43,9 @@ jobs:
         run: |
           corepack enable
           corepack prepare yarn@${YARN_VERSION} --activate
+
       - name: Setup TURBO
-        run: yarn add turbo@${TURBO_VERSION} -D
+        run: yarn global add turbo@${TURBO_VERSION}
 
       - name: 📦 Install Dependencies
         run: |
@@ -55,13 +56,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 💣 build
-        run: turbo run build --cache-dir=".turbo"
+        run: yarn turbo run build --cache-dir=".turbo"
 
       - name: 💅 Prettier
         run: yarn turbo run lint
 
       - name: 💎 lint:types
-        run: turbo run lint:types --cache-dir=".turbo"
+        run: yarn turbo run lint:types --cache-dir=".turbo"
 
       - name: 💅 lint
         run: yarn turbo run lint
