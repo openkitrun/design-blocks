@@ -38,11 +38,13 @@
       "yarn run prettier"
     ]
   },
-  "devDependencies": {
+  "dependencies": {
     "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.0",
     "@changesets/get-release-plan": "3.0.15",
-    "@changesets/types": "5.2.0",
+    "@changesets/types": "5.2.0"
+  },
+  "devDependencies": {
     "@commitlint/cli": "17.4.3",
     "@commitlint/config-conventional": "17.4.3",
     "@types/eslint": "8.4.3",
