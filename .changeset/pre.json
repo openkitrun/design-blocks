@@ -12,5 +12,7 @@
     "@design-blocks/native": "0.0.0",
     "tsconfig": "0.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "perfect-weeks-love"
+  ]
 }
