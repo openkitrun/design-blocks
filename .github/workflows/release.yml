@@ -64,6 +64,10 @@ jobs:
       # - name: 💅 lint
       #   run: yarn turbo run lint
 
+      - name: Delete tags reset
+        run: |
+          git tag | xargs git tag -d
+
       - name: Create Release Pull Request or Publish Design Blocks
         id: changesets
         uses: changesets/action@v1
