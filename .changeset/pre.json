@@ -1,0 +1,16 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "example": "0.0.1",
+    "@design-blocks/colors": "0.0.0",
+    "@design-blocks/primitives": "0.0.0",
+    "@design-blocks/system": "0.0.0",
+    "@design-blocks/theme": "0.0.0",
+    "@design-blocks/types": "0.0.0",
+    "@design-blocks/utils": "0.0.0",
+    "@design-blocks/native": "0.0.0",
+    "tsconfig": "0.0.0"
+  },
+  "changesets": []
+}
