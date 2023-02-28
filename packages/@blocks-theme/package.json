@@ -1,6 +1,6 @@
 {
   "name": "@design-blocks/theme",
-  "version": "0.0.1-next.8",
+  "version": "0.0.0",
   "main": "dist/commonjs/index.js",
   "module": "dist/module/index.js",
   "types": "dist/typescript/index.d.ts",
