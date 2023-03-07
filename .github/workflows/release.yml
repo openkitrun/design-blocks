@@ -70,12 +70,14 @@ jobs:
 
       - name: Create Release Pull Request or Publish Design Blocks
         id: changesets
-        uses: changesets/action@v1
+        #uses: changesets/action@v1
+        uses: dotansimha/changesets-action@v1.3.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
-          publish: yarn release
+          publish: yarn changeset publish
+          #publish: yarn release
           commit: 'ci(release): version packages'
           title: 'ci(release): version packages'
