@@ -7,7 +7,5 @@
   "access": "restricted",
   "baseBranch": "main",
   "ignore": ["example"],
-  "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
-    "onlyUpdatePeerDependentsWhenOutOfRange": true
-  }
+  "bumpVersionsWithWorkspaceProtocolOnly": false
 }
