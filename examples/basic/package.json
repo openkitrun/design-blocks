@@ -1,0 +1,28 @@
+{
+  "name": "@examples/basic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "dev": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@design-blocks/colors": "workspace:*",
+    "@design-blocks/native": "workspace:*",
+    "@emotion/native": "11.10.6",
+    "@emotion/react": "11.10.6",
+    "expo": "~48.0.5",
+    "expo-status-bar": "~1.4.4",
+    "react": "18.2.0",
+    "react-native": "0.71.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@types/react": "~18.0.14",
+    "typescript": "^4.9.4"
+  },
+  "private": true
+}

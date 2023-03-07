@@ -6,14 +6,18 @@ on:
       - main
 
 env:
-  TURBO_VERSION: 1.8.2
-  YARN_VERSION: 3.3.1
+  TURBO_VERSION: 1.8.3
+  PNPM_VERSION: 7.28.0
 
 jobs:
   stats:
     name: Publish Packages
     runs-on: ubuntu-latest
     steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
       - uses: actions/checkout@v3
         with:
           fetch-depth: 2
@@ -39,30 +43,30 @@ jobs:
             turbo-${{ github.job }}-${{ github.ref_name }}-${{ steps.get-week.outputs.WEEK }}-
             turbo-${{ github.job }}-canary-${{ steps.get-week.outputs.WEEK }}-
 
-      - name: 🧶 Setup yarn
+      - name: 🔥 Setup pnpm
         run: |
           corepack enable
-          corepack prepare yarn@${YARN_VERSION} --activate
+          corepack prepare pnpm@${PNPM_VERSION} --activate
 
       - name: 📦 Install Dependencies
         run: |
-          yarn install --immutable
+          pnpm install --no-frozen-lockfile
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 💣 build
-        run: yarn turbo run build --cache-dir=".turbo"
+        run: pnpm turbo run build --cache-dir=".turbo"
 
       - name: 💅 Prettier
-        run: yarn turbo run lint
+        run: pnpm turbo run lint
 
       - name: 💎 lint:types
-        run: yarn turbo run lint:types --cache-dir=".turbo"
+        run: pnpm turbo run lint:types --cache-dir=".turbo"
 
       # - name: 💅 lint
-      #   run: yarn turbo run lint
+      #   run: pnpm turbo run lint
 
       - name: Delete tags reset
         run: |
@@ -70,14 +74,12 @@ jobs:
 
       - name: Create Release Pull Request or Publish Design Blocks
         id: changesets
-        #uses: changesets/action@v1
-        uses: dotansimha/changesets-action@v1.3.3
+        uses: changesets/action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
-          publish: yarn changeset publish
-          #publish: yarn release
+          publish: pnpm release
           commit: 'ci(release): version packages'
           title: 'ci(release): version packages'
