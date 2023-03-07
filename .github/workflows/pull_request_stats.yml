@@ -5,8 +5,8 @@ on:
     types: [opened, synchronize]
 
 env:
-  TURBO_VERSION: 1.8.2
-  YARN_VERSION: 3.3.1
+  TURBO_VERSION: 1.8.3
+  PNPM_VERSION: 7.28.0
 
 jobs:
   format:
@@ -42,27 +42,27 @@ jobs:
             turbo-${{ github.job }}-${{ github.ref_name }}-${{ steps.get-week.outputs.WEEK }}-
             turbo-${{ github.job }}-canary-${{ steps.get-week.outputs.WEEK }}-
 
-      - name: 🧶 Setup yarn
+      - name: 🔥 Setup pnpm
         run: |
           corepack enable
-          corepack prepare yarn@${YARN_VERSION} --activate
+          corepack prepare pnpm@${PNPM_VERSION} --activate
 
       - name: 📦 Install Dependencies
         run: |
-          yarn install --immutable
+          pnpm install --no-frozen-lockfile
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 💣 build
-        run: yarn turbo run build --cache-dir=".turbo"
+        run: pnpm turbo run build --cache-dir=".turbo"
 
       - name: 💅 Prettier
-        run: yarn turbo run lint
+        run: pnpm turbo run lint
 
       - name: 💎 lint:types
-        run: yarn turbo run lint:types --cache-dir=".turbo"
+        run: pnpm turbo run lint:types --cache-dir=".turbo"
 
       # - name: 💅 lint
-      #   run: yarn turbo run lint
+      #   run: pnpm turbo run lint

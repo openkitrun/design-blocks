@@ -7,23 +7,19 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "yarn": ">=3"
-  },
-  "workspaces": {
-    "packages": [
-      "example",
-      "packages/*"
-    ]
+    "pnpm": ">=7"
   },
   "scripts": {
     "prepare": "husky install",
     "postinstall": "husky install",
     "build": "turbo run build",
     "bundlesize": "turbo run bundlesize",
+    "dev": "turbo dev",
+    "dev:example-basic": "turbo dev --filter=\"{./examples/basic}...\"",
     "clean": "turbo run clean",
     "lint:types": "turbo run lint:types",
     "lint:eslint": "eslint '**/*.{js,ts}'",
-    "lint": "yarn lint:eslint",
+    "lint": "pnpm lint:eslint",
     "prettier:format": "prettier --config .prettierrc \"./**/*.+(js|ts|tsx)\" --write",
     "prettier": "prettier --config .prettierrc \"./**/*.+(js|ts|tsx)\" --check",
     "lint-staged": "lint-staged",
@@ -35,7 +31,7 @@
   },
   "lint-staged": {
     "*.{ts,js}": [
-      "yarn run prettier"
+      "pnpm run prettier"
     ]
   },
   "dependencies": {
@@ -59,8 +55,8 @@
     "lint-staged": "13.1.2",
     "prettier": "2.8.4",
     "tsconfig": "workspace:*",
-    "turbo": "1.8.2",
+    "turbo": "1.8.3",
     "typescript": "4.9.4"
   },
-  "packageManager": "yarn@3.3.1"
+  "packageManager": "pnpm@7.28.0"
 }
