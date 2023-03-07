@@ -1,5 +1,20 @@
 # @design-blocks/native
 
+## 1.0.0-beta.2
+
+### Patch Changes
+
+- [`725a261`](https://github.com/wootsbot/design-blocks/commit/725a2610367cae183ea85eca889dc6b73e89d75a) Thanks
+  [@wootsbot](https://github.com/wootsbot)! - Fixed publish
+
+- Updated dependencies
+  [[`725a261`](https://github.com/wootsbot/design-blocks/commit/725a2610367cae183ea85eca889dc6b73e89d75a)]:
+  - @design-blocks/primitives@1.0.0-beta.2
+  - @design-blocks/system@1.0.0-beta.2
+  - @design-blocks/theme@1.0.0-beta.2
+  - @design-blocks/types@1.0.0-beta.2
+  - @design-blocks/utils@1.0.0-beta.2
+
 ## 1.0.0-beta.1
 
 ### Patch Changes
