@@ -10,9 +10,11 @@
     "@design-blocks/types": "0.1.0",
     "@design-blocks/utils": "0.1.0",
     "@design-blocks/native": "0.1.0",
-    "tsconfig": "0.1.0"
+    "tsconfig": "0.1.0",
+    "@examples/basic": "1.0.0"
   },
   "changesets": [
+    "brave-cats-relax",
     "dirty-months-wonder",
     "many-lies-live",
     "two-tigers-applaud"

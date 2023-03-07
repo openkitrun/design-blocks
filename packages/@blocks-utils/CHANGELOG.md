@@ -1,5 +1,12 @@
 # @design-blocks/utils
 
+## 1.0.0-beta.3
+
+### Patch Changes
+
+- [`4bec29e`](https://github.com/wootsbot/design-blocks/commit/4bec29e4bf4d7595cc3d329565156b35828c7bed) Thanks
+  [@wootsbot](https://github.com/wootsbot)! - Fixed deploy
+
 ## 1.0.0-beta.2
 
 ### Patch Changes
