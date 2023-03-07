@@ -6,6 +6,6 @@
   "linked": [],
   "access": "restricted",
   "baseBranch": "main",
-  "ignore": ["example"],
+  "ignore": ["@examples/basic"],
   "bumpVersionsWithWorkspaceProtocolOnly": false
 }
