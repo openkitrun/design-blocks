@@ -12,5 +12,7 @@
     "@design-blocks/native": "0.1.0",
     "tsconfig": "0.1.0"
   },
-  "changesets": []
+  "changesets": [
+    "two-tigers-applaud"
+  ]
 }
