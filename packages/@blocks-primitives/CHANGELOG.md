@@ -1,5 +1,15 @@
 # @design-blocks/primitives
 
+## 1.0.0-beta.4
+
+### Patch Changes
+
+- Updated dependencies
+  [[`7001f39`](https://github.com/wootsbot/design-blocks/commit/7001f39582397e153f38434b8d8b0941a7da47e6)]:
+  - @design-blocks/theme@1.0.0-beta.4
+  - @design-blocks/system@1.0.0-beta.4
+  - @design-blocks/types@1.0.0-beta.4
+
 ## 1.0.0-beta.3
 
 ### Patch Changes
