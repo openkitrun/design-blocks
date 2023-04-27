@@ -9,6 +9,7 @@ export const yellow = {
   700: '#a16207',
   800: '#854d0e',
   900: '#713f12',
+  950: '#422006',
 };
 
 export default yellow;

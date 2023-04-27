@@ -9,6 +9,7 @@ export const purple = {
   700: '#7e22ce',
   800: '#6b21a8',
   900: '#581c87',
+  950: '#3b0764',
 };
 
 export default purple;

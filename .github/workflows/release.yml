@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  TURBO_VERSION: 1.8.3
-  PNPM_VERSION: 7.28.0
+  TURBO_VERSION: 1.9.3
+  PNPM_VERSION: 8.3.1
 
 jobs:
   stats:
@@ -68,9 +68,9 @@ jobs:
       # - name: 💅 lint
       #   run: pnpm turbo run lint
 
-      - name: Delete tags reset
-        run: |
-          git tag | xargs git tag -d
+      # - name: Delete tags reset
+      #   run: |
+      #     git tag | xargs git tag -d
 
       - name: Create Release Pull Request or Publish Design Blocks
         id: changesets

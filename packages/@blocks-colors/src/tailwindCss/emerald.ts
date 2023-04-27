@@ -9,6 +9,7 @@ export const emerald = {
   700: '#047857',
   800: '#065f46',
   900: '#064e3b',
+  950: '#022c22',
 };
 
 export default emerald;

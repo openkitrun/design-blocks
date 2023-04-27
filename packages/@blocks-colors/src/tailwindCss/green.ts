@@ -9,6 +9,7 @@ export const green = {
   700: '#15803d',
   800: '#166534',
   900: '#14532d',
+  950: '#052e16',
 };
 
 export default green;

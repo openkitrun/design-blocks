@@ -9,6 +9,7 @@ export const lime = {
   700: '#4d7c0f',
   800: '#3f6212',
   900: '#365314',
+  950: '#1a2e05',
 };
 
 export default lime;

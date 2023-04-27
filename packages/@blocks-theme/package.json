@@ -5,6 +5,9 @@
   "module": "dist/module/index.js",
   "types": "dist/typescript/index.d.ts",
   "source": "src/index.ts",
+  "exports": {
+    "./theme": "./dist/module/index.js" 
+  },
   "files": [
     "dist"
   ],

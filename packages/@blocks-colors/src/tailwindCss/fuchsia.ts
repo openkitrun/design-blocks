@@ -9,6 +9,7 @@ export const fuchsia = {
   700: '#a21caf',
   800: '#86198f',
   900: '#701a75',
+  950: '#4a044e',
 };
 
 export default fuchsia;
