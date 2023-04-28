@@ -9,6 +9,11 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:design-blocks/design-blocks.git",
+    "directory": "@blocks-system"
+  },
   "scripts": {
     "build:native": "bob build",
     "clean": "pnpm clean:build && rimraf -rf .turbo",

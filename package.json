@@ -1,7 +1,7 @@
 {
   "name": "@design-blocks/root",
   "version": "0.0.0",
-  "repository": "git@github.com:wootsbot/design-blocks.git",
+  "repository": "git@github.com:design-blocks/design-blocks.git",
   "author": "Jorge Luis Calleja A. - wootsbot",
   "license": "MIT",
   "private": true,

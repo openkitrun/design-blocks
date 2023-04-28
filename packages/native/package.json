@@ -12,7 +12,7 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git@github.com:wootsbot/design-blocks.git",
+    "url": "git@github.com:design-blocks/design-blocks.git",
     "directory": "native"
   },
   "scripts": {
