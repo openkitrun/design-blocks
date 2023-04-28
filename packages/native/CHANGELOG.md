@@ -1,5 +1,22 @@
 # @design-blocks/native
 
+## 1.0.0-beta.6
+
+### Minor Changes
+
+- [`1083575`](https://github.com/wootsbot/design-blocks/commit/10835758fd0d21debfbd54bc46a7c4534c49811d) Thanks
+  [@wootsbot](https://github.com/wootsbot)! - Use tool build react-native-builder-bob@0.20.4
+
+### Patch Changes
+
+- Updated dependencies
+  [[`1083575`](https://github.com/wootsbot/design-blocks/commit/10835758fd0d21debfbd54bc46a7c4534c49811d)]:
+  - @design-blocks/primitives@1.0.0-beta.6
+  - @design-blocks/system@1.0.0-beta.6
+  - @design-blocks/theme@1.0.0-beta.5
+  - @design-blocks/utils@1.0.0-beta.4
+  - @design-blocks/types@1.0.0-beta.5
+
 ## 1.0.0-beta.5
 
 ### Patch Changes

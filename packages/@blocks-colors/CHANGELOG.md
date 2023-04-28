@@ -1,5 +1,12 @@
 # @design-blocks/colors
 
+## 1.0.0-beta.5
+
+### Minor Changes
+
+- [`1083575`](https://github.com/wootsbot/design-blocks/commit/10835758fd0d21debfbd54bc46a7c4534c49811d) Thanks
+  [@wootsbot](https://github.com/wootsbot)! - Use tool build react-native-builder-bob@0.20.4
+
 ## 1.0.0-beta.4
 
 ### Patch Changes
