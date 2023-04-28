@@ -1,5 +1,13 @@
 # @design-blocks/native
 
+## 1.0.0-beta.8
+
+### Patch Changes
+
+- Updated dependencies
+  [[`75e3f3b`](https://github.com/wootsbot/design-blocks/commit/75e3f3bc0946ae9e2134521ea8ea85c1331dfbf3)]:
+  - @design-blocks/primitives@1.0.0-beta.8
+
 ## 1.0.0-beta.7
 
 ### Minor Changes
