@@ -5,14 +5,14 @@ import camelCase from 'lodash.camelcase';
 import type { Theme } from '@design-blocks/theme';
 
 import { __DEV__ } from '@design-blocks/utils';
-import { styled, useTheme } from '@design-blocks/system';
+import { block, useTheme } from '@design-blocks/system';
 
 import type { StackProps, IStackStyleValue } from './Stack.types';
 
 import { Box } from '../Box';
 import { directionMargin, variants } from './Stack.utils';
 
-const StackStyled = styled(Box, {
+const StackBlock = block(Box, {
   shouldForwardProp: (prop) => prop !== 'theme' && prop !== 'sx' && prop !== 'as',
 })<StackProps>(
   ({
@@ -73,14 +73,14 @@ function Stack({ direction = 'column', children: childrenProp, spacing = 0, asCh
   }, [asChild, children, direction, spacing, theme]);
 
   return (
-    <StackStyled flexDirection={direction} spacing={spacing} {...props}>
+    <StackBlock flexDirection={direction} spacing={spacing} {...props}>
       {renderChild}
-    </StackStyled>
+    </StackBlock>
   );
 }
 
 if (__DEV__) {
-  Stack.displayName = 'Stack';
+  Stack.displayName = 'Block.Stack';
 }
 
 /**

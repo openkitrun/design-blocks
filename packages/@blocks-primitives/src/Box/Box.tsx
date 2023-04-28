@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as RN from 'react-native';
 
-import { styleFunctionProps, styleFunctionSx, styled } from '@design-blocks/system';
+import { styleFunctionProps, styleFunctionSx, block } from '@design-blocks/system';
 import { __DEV__ } from '@design-blocks/utils';
 
 import type { BoxProps } from './Box.types';
 
-const BoxStyled = styled(RN.View, {
+const BoxBlock = block(RN.View, {
   shouldForwardProp: (prop) => prop !== 'theme' && prop !== 'sx' && prop !== 'as',
 })<BoxProps>(({ theme, sx, ...styleProps }) => {
   return {
@@ -16,11 +16,11 @@ const BoxStyled = styled(RN.View, {
 });
 
 const Box = React.forwardRef<RN.View, BoxProps>((props, forwardedRef) => {
-  return <BoxStyled ref={forwardedRef} {...props} />;
+  return <BoxBlock ref={forwardedRef} {...props} />;
 });
 
 if (__DEV__) {
-  Box.displayName = 'Box';
+  Box.displayName = 'Block.Box';
 }
 
 export default React.memo(Box);

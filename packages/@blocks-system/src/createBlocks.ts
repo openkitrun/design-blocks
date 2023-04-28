@@ -3,12 +3,12 @@
 import type { ConfigBlocks, CreateBlocks } from './types';
 import { makeTheme } from './makeTheme';
 
-import { styled } from './styled';
+import { block } from './block';
 
 export function createBlocks({ theme, devTools }: ConfigBlocks): CreateBlocks {
   return {
     theme: makeTheme(theme),
-    styled,
+    block,
     makeTheme,
     devTools,
   };

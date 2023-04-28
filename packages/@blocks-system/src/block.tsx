@@ -1,4 +1,4 @@
-import emStyled from '@emotion/native';
+import styled from '@emotion/native';
 
 import type { ComponentSelector, Interpolation } from '@emotion/serialize';
 
@@ -19,6 +19,5 @@ export { ComponentSelector, Interpolation };
 //   return stylesFactory;
 // };
 
-export const styled = emStyled;
-
-export type StyledBlock = typeof styled;
+export const block = styled;
+export type Block = typeof block;

@@ -1,7 +1,7 @@
 //import type { CreateStyled } from '@emotion/native';
 import type { Theme, ThemeOptions } from '@design-blocks/theme';
 
-import type { StyledBlock } from './styled';
+import type { Block } from './block';
 
 export type ConfigBlocks = {
   theme?: ThemeOptions;
@@ -10,7 +10,7 @@ export type ConfigBlocks = {
 
 export type CreateBlocks = {
   theme: Theme;
-  styled: StyledBlock;
+  block: Block;
   makeTheme: () => Theme;
   devTools: unknown;
 };
