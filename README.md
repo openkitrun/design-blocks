@@ -91,12 +91,12 @@ export default App;
 
 #### Import and use it
 
-From this point onwards, you'll be importing styled and other functions from blocks.config.
+From this point onwards, you'll be importing `block` and other functions from blocks.config.
 
 ```tsx
-import { styled } from '[path-to]/blocks.config';
+import { block } from '[path-to]/blocks.config';
 
-const Description = styled.Text(({ theme }) => ({
+const Description = block.Text(({ theme }) => ({
   color: theme.colors.violet[400],
   fontSize: 30,
 }));
@@ -119,9 +119,9 @@ const Description = styled.Text(({ theme }) => ({
 And as a result has improved the development experience
 
 ```tsx
-import { styled } from '@/blocks';
+import { block } from '@/blocks';
 
-const Description = styled.Text(({ theme }) => ({
+const Description = block.Text(({ theme }) => ({
   color: theme.colors.violet[400],
   fontSize: 30,
 }));
