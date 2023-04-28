@@ -1,7 +1,7 @@
 ![design-blocks](./docs/preview.png)
 
 <h1 align="center">
-  Design your mobile applications with blocks
+  Design your mobile applications React Native with blocks
 </h1>
 
 An open source UI component library that focuses on customization, developer experience, and building mobile apps with
