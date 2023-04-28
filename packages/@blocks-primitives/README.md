@@ -1,3 +1,5 @@
+![design-blocks/primitives](../../docs/stacks.jpeg)
+
 # Primitives
 
 Unstyled components for building high‑quality design systems and mobile apps in React-Native.
