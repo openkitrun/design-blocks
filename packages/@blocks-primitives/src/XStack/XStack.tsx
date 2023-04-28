@@ -5,8 +5,8 @@ import { __DEV__ } from '@design-blocks/utils';
 import type { StackProps } from '../Stack';
 import { Stack } from '../Stack';
 
-function XStack({ direction = 'row', ...props }: StackProps) {
-  return <Stack flexDirection={direction} {...props} />;
+function XStack({ ...props }: StackProps) {
+  return <Stack direction='row' {...props} />;
 }
 
 if (__DEV__) {

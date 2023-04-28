@@ -5,8 +5,8 @@ import { __DEV__ } from '@design-blocks/utils';
 import type { StackProps } from '../Stack';
 import { Stack } from '../Stack';
 
-function YStack({ direction = 'column', ...props }: StackProps) {
-  return <Stack flexDirection={direction} {...props} />;
+function YStack({ ...props }: StackProps) {
+  return <Stack direction='column' {...props} />;
 }
 
 if (__DEV__) {

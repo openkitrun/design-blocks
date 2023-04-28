@@ -1,62 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, ScrollView, Text } from 'react-native';
+import { SafeAreaView } from 'react-native';
 
-import { ThemeProvider, Box, Stack, YStack, XStack } from '@design-blocks/native';
+import { ThemeProvider } from '@design-blocks/native';
 
-import Title from './src/components/Title';
+import { theme, block } from './blocks.config';
 
-import { theme } from './blocks.config';
+import DemoScreen from './src/screens/demo/screen';
+
+const SafeAreaViewBlock = block(SafeAreaView)(({ theme }) => {
+  return {
+    backgroundColor: theme.colors.blue[950],
+    height: '100%',
+  };
+});
 
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <SafeAreaView>
+      <SafeAreaViewBlock>
         <StatusBar />
-        <ScrollView contentInsetAdjustmentBehavior='automatic'>
-          <Title>Design Blocks</Title>
-          <Stack p={2} spacing={3} bgColor='red.300'>
-            <Box bgColor='rose.500' p='3'>
-              <Text>Box</Text>
-            </Box>
-
-            <Box bgColor='purple.500' p={3}>
-              <Text>Box</Text>
-            </Box>
-
-            <Box bgColor='zinc.300' p={3}>
-              <Text>Box</Text>
-            </Box>
-          </Stack>
-
-          <YStack mt={2}>
-            <Box bgColor='blue.400' p={3}>
-              <Text>Box</Text>
-            </Box>
-
-            <Box bgColor='yellow.400' p={3}>
-              <Text>Box</Text>
-            </Box>
-          </YStack>
-
-          <XStack mt={2}>
-            <Box bgColor='blue.400' p={3}>
-              <Text>Box</Text>
-            </Box>
-
-            <Box bgColor='yellow.400' p={3}>
-              <Text>Box</Text>
-            </Box>
-
-            <Box bgColor='rose.400' p={3}>
-              <Text>Box</Text>
-            </Box>
-
-            <Box bgColor='green.400' p={3}>
-              <Text>Box</Text>
-            </Box>
-          </XStack>
-        </ScrollView>
-      </SafeAreaView>
+        <DemoScreen />
+      </SafeAreaViewBlock>
     </ThemeProvider>
   );
 }

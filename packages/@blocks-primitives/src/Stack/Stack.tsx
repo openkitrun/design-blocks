@@ -24,12 +24,15 @@ const StackBlock = block(Box, {
     const flexDirection = variants.flexDirection[
       camelCase(flexDirectionProps) as keyof typeof variants.flexDirection
     ] as IStackStyleValue['flexDirection'];
+
     const alignItems = variants.alignItems[
       camelCase(alignItemsProps) as keyof typeof variants.alignItems
     ] as IStackStyleValue['alignItems'];
+
     const flexWrap = variants.flexWrap[
       camelCase(flexWrapProps) as keyof typeof variants.flexWrap
     ] as IStackStyleValue['flexWrap'];
+
     const justifyContent = variants.justifyContent[
       camelCase(justifyContentProps) as keyof typeof variants.justifyContent
     ] as IStackStyleValue['justifyContent'];
