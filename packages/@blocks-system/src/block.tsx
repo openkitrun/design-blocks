@@ -1,10 +1,7 @@
 import styled from '@emotion/native';
 
-import type { ComponentSelector, Interpolation } from '@emotion/serialize';
-
-export { ArrayInterpolation, CSSObject, FunctionInterpolation } from '@emotion/serialize';
-
-export { ComponentSelector, Interpolation };
+export type { ComponentSelector, Interpolation } from '@emotion/serialize';
+export type { ArrayInterpolation, CSSObject, FunctionInterpolation } from '@emotion/serialize';
 
 // export interface StyledOptions {
 //   label?: string;

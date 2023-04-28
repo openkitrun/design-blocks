@@ -1,6 +1,7 @@
-import { Theme, componentsKeys, IFontWeights, IComponentsKeysProps } from '@design-blocks/theme';
-
+import type { Theme, IFontWeights, IComponentsKeysProps } from '@design-blocks/theme';
 import type { SxObject } from '@design-blocks/types';
+
+import { componentsKeys } from '@design-blocks/theme';
 import { removeEmptyObjects } from '@design-blocks/utils';
 
 import validateProperties from './validateProperties';

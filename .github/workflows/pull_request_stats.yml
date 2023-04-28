@@ -64,5 +64,8 @@ jobs:
       - name: 💎 lint:types
         run: pnpm turbo run lint:types --cache-dir=".turbo"
 
+      - name: bundlesize
+        run: pnpm turbo run bundlesize --cache-dir=".turbo"
+
       # - name: 💅 lint
       #   run: pnpm turbo run lint

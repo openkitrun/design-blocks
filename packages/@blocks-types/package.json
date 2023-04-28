@@ -47,7 +47,7 @@
     "react-native-builder-bob": "0.20.1",
     "rimraf": "^3.0.2",
     "tsconfig": "workspace:*",
-    "typescript": "4.9.4"
+    "typescript": "5.0.4"
   },
   "peerDependencies": {
     "react-native": ">=0.71"

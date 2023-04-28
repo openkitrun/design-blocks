@@ -18,6 +18,11 @@ export default function App() {
             <Box p={3}>
               <Text>Box</Text>
             </Box>
+
+            <Box p={3}>
+              <Text>Box</Text>
+            </Box>
+
             <Box p={3}>
               <Text>Box</Text>
             </Box>

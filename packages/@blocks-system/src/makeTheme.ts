@@ -1,5 +1,7 @@
+import type { Theme, ThemeOptions } from '@design-blocks/theme';
+import { baseTheme } from '@design-blocks/theme';
+
 import { systemMerge } from './systemMerge';
-import { Theme, ThemeOptions, baseTheme } from '@design-blocks/theme';
 
 /**
  * Generate a theme base on the options received.
