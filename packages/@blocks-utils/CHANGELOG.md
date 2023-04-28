@@ -1,5 +1,12 @@
 # @design-blocks/utils
 
+## 1.0.0-beta.5
+
+### Minor Changes
+
+- [`9ae1e2a`](https://github.com/wootsbot/design-blocks/commit/9ae1e2afd4f5cdfaad916594559b6eb5e9af83d5) Thanks
+  [@wootsbot](https://github.com/wootsbot)! - Use typescript@5
+
 ## 1.0.0-beta.4
 
 ### Minor Changes

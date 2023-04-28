@@ -1,5 +1,21 @@
 # @design-blocks/primitives
 
+## 1.0.0-beta.7
+
+### Minor Changes
+
+- [`9ae1e2a`](https://github.com/wootsbot/design-blocks/commit/9ae1e2afd4f5cdfaad916594559b6eb5e9af83d5) Thanks
+  [@wootsbot](https://github.com/wootsbot)! - Use typescript@5
+
+### Patch Changes
+
+- Updated dependencies
+  [[`9ae1e2a`](https://github.com/wootsbot/design-blocks/commit/9ae1e2afd4f5cdfaad916594559b6eb5e9af83d5)]:
+  - @design-blocks/system@1.0.0-beta.7
+  - @design-blocks/theme@1.0.0-beta.6
+  - @design-blocks/types@1.0.0-beta.6
+  - @design-blocks/utils@1.0.0-beta.5
+
 ## 1.0.0-beta.6
 
 ### Minor Changes
