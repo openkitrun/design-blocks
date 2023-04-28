@@ -1,5 +1,14 @@
 # @design-blocks/native
 
+## 1.0.0-beta.5
+
+### Patch Changes
+
+- Updated dependencies
+  [[`887021f`](https://github.com/wootsbot/design-blocks/commit/887021fed619fd10dcb93541084a87b04ffa4106)]:
+  - @design-blocks/primitives@1.0.0-beta.5
+  - @design-blocks/system@1.0.0-beta.5
+
 ## 1.0.0-beta.4
 
 ### Patch Changes
