@@ -9,8 +9,6 @@ react-native.
 
 You can use these components as the base layer of your design system or adopt them incrementally.
 
-## Packages
-
 - [🏄‍♀️ `@design-blocks/primitives`](https://github.com/wootsbot/design-blocks/tree/main/packages/%40blocks-primitives) -
   Unstyled components for building high‑quality design systems and mobile apps in React-Native.
 - [💥 `@design-blocks/native`](https://github.com/wootsbot/design-blocks/tree/main/packages/native) - Use all the
