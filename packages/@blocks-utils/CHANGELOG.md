@@ -1,5 +1,12 @@
 # @design-blocks/utils
 
+## 1.0.0-beta.6
+
+### Minor Changes
+
+- [`0af652b`](https://github.com/design-blocks/design-blocks/commit/0af652bf61555da1bd582625f0ddeafe260c1fe3) Thanks
+  [@wootsbot](https://github.com/wootsbot)! - Performance in 📦
+
 ## 1.0.0-beta.5
 
 ### Minor Changes
