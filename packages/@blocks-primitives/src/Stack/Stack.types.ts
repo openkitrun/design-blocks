@@ -87,8 +87,8 @@ export interface StackProps extends RN.ViewProps, Omit<SxStyledProps, 'direction
 }
 
 export interface Options extends StackProps {
-  index?: number;
-  theme?: Theme;
+  index: number;
+  theme: Theme;
 }
 
 export type DirectionValue = {

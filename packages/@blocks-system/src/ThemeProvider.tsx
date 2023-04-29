@@ -1,6 +1,3 @@
-// import { ThemeProvider } from '@emotion/react';
-// export { ThemeProvider };
-
 import * as React from 'react';
 import type { Theme } from '@design-blocks/theme';
 

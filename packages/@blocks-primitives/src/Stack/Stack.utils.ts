@@ -1,6 +1,4 @@
-import camelCase from 'lodash.camelcase';
-
-import { isNumber } from '@design-blocks/utils';
+import { isNumber, camelCase } from '@design-blocks/utils';
 
 import type { ISpacings } from '@design-blocks/theme';
 import type { Options, StackDirectionMargin, DirectionValue } from './Stack.types';
@@ -9,43 +7,42 @@ export const directionMargin = (options: Options): DirectionValue => {
   const { direction, spacing: spacingProp, index, theme } = options;
   const isFirstChildren = index !== 0;
   const isSpacingString = !isNumber(spacingProp);
-  let spacing = theme?.devTools.spacing(spacingProp as number, theme.spacings.baseSpacing) as number;
+  let spacingValue = theme.devTools.spacing(spacingProp as number, theme.spacings.baseSpacing) as number;
 
   if (isSpacingString) {
-    spacing = theme?.spacings[spacingProp as ISpacings] as number;
+    spacingValue = theme.spacings[spacingProp as ISpacings] as number;
   }
+
+  const baseMargin = {
+    marginTop: 0,
+    marginRight: 0,
+    marginBottom: 0,
+    marginLeft: 0,
+  };
 
   const directionStyles: StackDirectionMargin = {
     column: {
-      marginTop: isFirstChildren ? spacing : 0,
-      marginRight: 0,
-      marginBottom: 0,
-      marginLeft: 0,
+      ...baseMargin,
+      marginTop: isFirstChildren ? spacingValue : 0,
     },
 
     row: {
-      marginTop: 0,
-      marginRight: 0,
-      marginBottom: 0,
-      marginLeft: isFirstChildren ? spacing : 0,
+      ...baseMargin,
+      marginLeft: isFirstChildren ? spacingValue : 0,
     },
 
     rowReverse: {
-      marginTop: 0,
-      marginRight: isFirstChildren ? spacing : 0,
-      marginBottom: 0,
-      marginLeft: 0,
+      ...baseMargin,
+      marginRight: isFirstChildren ? spacingValue : 0,
     },
 
     columnReverse: {
-      marginTop: 0,
-      marginRight: 0,
-      marginBottom: isFirstChildren ? spacing : 0,
-      marginLeft: 0,
+      ...baseMargin,
+      marginBottom: isFirstChildren ? spacingValue : 0,
     },
   };
 
-  return directionStyles[camelCase(direction) as keyof typeof direction];
+  return directionStyles[camelCase(direction as string) as keyof typeof direction];
 };
 
 export const variants = {

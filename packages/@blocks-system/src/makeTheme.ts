@@ -1,7 +1,6 @@
 import type { Theme, ThemeOptions } from '@design-blocks/theme';
 import { baseTheme } from '@design-blocks/theme';
-
-import { systemMerge } from './systemMerge';
+import { deepMerge } from '@design-blocks/utils';
 
 /**
  * Generate a theme base on the options received.
@@ -11,7 +10,7 @@ import { systemMerge } from './systemMerge';
  */
 export function makeTheme(themeOptions: ThemeOptions = {}): Theme {
   const {
-    colors: colorsOverrides = {},
+    colors: colorsBase = {},
     spacings: spacingsOverrides = {},
     fontSizes: fontSizesOverrides = {},
     fontWeights: fontWeightsOverrides = {},
@@ -29,12 +28,12 @@ export function makeTheme(themeOptions: ThemeOptions = {}): Theme {
     ...other
   } = themeOptions;
 
-  const colors = systemMerge(baseTheme.colors, { ...colorsOverrides, ...extend.colors });
-  const spacings = systemMerge(baseTheme.spacings, { ...spacingsOverrides, ...extend.spacings });
-  const fontSizes = systemMerge(baseTheme.fontSizes, { ...fontSizesOverrides, ...extend.fontSizes });
-  const fontWeights = systemMerge(baseTheme.fontWeights, { ...fontWeightsOverrides, ...extend.fontWeights });
-  const radii = systemMerge(baseTheme.radii, { ...radiiOverrides, ...extend.radii });
-  const devTools = systemMerge(baseTheme.devTools, { ...devToolsOverrides });
+  const colors = deepMerge(colorsBase, { ...extend.colors });
+  const spacings = deepMerge(baseTheme.spacings, { ...spacingsOverrides, ...extend.spacings });
+  const fontSizes = deepMerge(baseTheme.fontSizes, { ...fontSizesOverrides, ...extend.fontSizes });
+  const fontWeights = deepMerge(baseTheme.fontWeights, { ...fontWeightsOverrides, ...extend.fontWeights });
+  const radii = deepMerge(baseTheme.radii, { ...radiiOverrides, ...extend.radii });
+  const devTools = deepMerge(baseTheme.devTools, { ...devToolsOverrides });
 
   const blocksTheme = {
     colors,

@@ -1,10 +1,8 @@
 import * as React from 'react';
 
-import camelCase from 'lodash.camelcase';
-
 import type { Theme } from '@design-blocks/theme';
 
-import { __DEV__ } from '@design-blocks/utils';
+import { __DEV__, camelCase } from '@design-blocks/utils';
 import { block, useTheme } from '@design-blocks/system';
 
 import type { StackProps, IStackStyleValue } from './Stack.types';
@@ -54,13 +52,13 @@ function Stack({ direction = 'column', children: childrenProp, spacing = 0, asCh
   const renderChild = React.useMemo(() => {
     if (asChild) {
       return children
-        ?.filter((child) => {
-          return React.isValidElement(child);
+        ?.filter((childF) => {
+          return React.isValidElement(childF);
         })
-        ?.map((child, index) => {
+        ?.map((childM, index) => {
           return (
             <Box key={`${index}-asChild`} style={{ ...directionMargin({ direction, spacing, index, theme }) }}>
-              {child}
+              {childM}
             </Box>
           );
         });

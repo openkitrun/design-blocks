@@ -1,31 +1,30 @@
-// https://github.com/mui/material-ui/blob/master/packages/mui-utils/src/deepmerge.ts
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { isObject } from './isObject';
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export function isPlainObject(item: unknown): item is Record<keyof any, unknown> {
-  return item !== null && typeof item === 'object' && item.constructor === Object;
-}
+export function deepMerge<T extends Record<string, unknown>>(target: T, source: Partial<T>): T {
+  const output: T = { ...target };
 
-export interface DeepmergeOptions {
-  clone?: boolean;
-}
+  if (isObject(target) && isObject(source)) {
+    for (const key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        const sourceValue = source[key];
+        const targetValue = target[key];
 
-export function deepmerge<T>(target: T, source: unknown, options: DeepmergeOptions = { clone: true }): T {
-  const output = options.clone ? { ...target } : target;
-
-  if (isPlainObject(target) && isPlainObject(source)) {
-    Object.keys(source).forEach((key) => {
-      // Avoid prototype pollution
-      if (key === '__proto__') {
-        return;
+        if (isObject(sourceValue)) {
+          if (!(key in target)) {
+            Object.assign(output, { [key]: sourceValue });
+          } else {
+            //@ts-ignore
+            output[key] = deepMerge(
+              targetValue as Record<string, unknown>,
+              sourceValue as Record<string, unknown>,
+            ) as T[keyof T];
+          }
+        } else {
+          Object.assign(output, { [key]: sourceValue });
+        }
       }
-
-      if (isPlainObject(source[key]) && key in target && isPlainObject(target[key])) {
-        // Since `output` is a clone of `target` and we have narrowed `target` in this block we can cast to the same type.
-        (output as Record<keyof any, unknown>)[key] = deepmerge(target[key], source[key], options);
-      } else {
-        (output as Record<keyof any, unknown>)[key] = source[key];
-      }
-    });
+    }
   }
 
   return output;

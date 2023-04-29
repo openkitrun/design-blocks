@@ -40,8 +40,7 @@
   "dependencies": {
     "@design-blocks/theme": "workspace:*",
     "@design-blocks/types": "workspace:*",
-    "@design-blocks/utils": "workspace:*",
-    "deepmerge": "4.3.0"
+    "@design-blocks/utils": "workspace:*"
   },
   "devDependencies": {
     "@emotion/native": "11.10.6",
