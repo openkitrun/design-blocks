@@ -1,6 +1,6 @@
 {
   "name": "@design-blocks/primitives",
-  "version": "1.0.0-beta.9",
+  "version": "1.0.0-beta.10",
   "main": "dist/commonjs/index.js",
   "module": "dist/module/index.js",
   "types": "dist/typescript/index.d.ts",
