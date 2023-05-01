@@ -1,5 +1,15 @@
 # @design-blocks/primitives
 
+## 1.0.0-beta.11
+
+### Patch Changes
+
+- Updated dependencies
+  [[`5f4593b`](https://github.com/design-blocks/design-blocks/commit/5f4593bfbf8d57e5623857525bbb88fcd7c8e7eb)]:
+  - @design-blocks/theme@1.0.0-beta.8
+  - @design-blocks/system@1.0.0-beta.9
+  - @design-blocks/types@1.0.0-beta.8
+
 ## 1.0.0-beta.10
 
 ### Minor Changes
