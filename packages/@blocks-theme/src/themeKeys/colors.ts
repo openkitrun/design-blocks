@@ -13,6 +13,7 @@ export const colorsKeys = {
   borderStartColor: 'borderStartColor',
   fill: 'fill',
   stroke: 'stroke',
+  shadowColor: 'shadowColor',
 } as const;
 
 export type IColorsKeys = keyof typeof colorsKeys;
