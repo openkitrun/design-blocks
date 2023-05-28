@@ -1,14 +1,12 @@
 import * as React from 'react';
 
-import type { Theme } from '@design-blocks/theme';
-
 import { __DEV__, camelCase } from '@design-blocks/utils';
-import { block, useTheme } from '@design-blocks/system';
+import { block } from '@design-blocks/system';
 
 import type { StackProps, IStackStyleValue } from './Stack.types';
 
 import { Box } from '../Box';
-import { directionMargin, variants } from './Stack.utils';
+import { variants } from './Stack.utils';
 
 const StackBlock = block(Box, {
   shouldForwardProp: (prop) => prop !== 'theme' && prop !== 'sx' && prop !== 'as',
@@ -45,39 +43,8 @@ const StackBlock = block(Box, {
   },
 );
 
-function Stack({ direction = 'column', children: childrenProp, spacing = 0, asChild, ...props }: StackProps) {
-  const theme = useTheme() as Theme;
-  const children = React.Children.toArray(childrenProp);
-
-  const renderChild = React.useMemo(() => {
-    if (asChild) {
-      return children
-        ?.filter((childF) => {
-          return React.isValidElement(childF);
-        })
-        ?.map((childM, index) => {
-          return (
-            <Box key={`${index}-asChild`} style={{ ...directionMargin({ direction, spacing, index, theme }) }}>
-              {childM}
-            </Box>
-          );
-        });
-    }
-
-    return children?.map((component, index) => {
-      return React.cloneElement(component as React.ReactElement, {
-        style: {
-          ...directionMargin({ direction, spacing, index, theme }),
-        },
-      });
-    });
-  }, [asChild, children, direction, spacing, theme]);
-
-  return (
-    <StackBlock flexDirection={direction} spacing={spacing} {...props}>
-      {renderChild}
-    </StackBlock>
-  );
+function Stack({ direction = 'column', ...props }: StackProps) {
+  return <StackBlock flexDirection={direction} {...props} />;
 }
 
 if (__DEV__) {

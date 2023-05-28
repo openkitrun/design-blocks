@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { isObject } from './isObject';
 
 export function deepMerge<T extends Record<string, unknown>>(target: T, source: Partial<T>): T {
@@ -14,8 +13,7 @@ export function deepMerge<T extends Record<string, unknown>>(target: T, source: 
           if (!(key in target)) {
             Object.assign(output, { [key]: sourceValue });
           } else {
-            //@ts-ignore
-            output[key] = deepMerge(
+            output[key as keyof T] = deepMerge(
               targetValue as Record<string, unknown>,
               sourceValue as Record<string, unknown>,
             ) as T[keyof T];

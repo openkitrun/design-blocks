@@ -3,7 +3,15 @@ import type * as RN from 'react-native';
 import type { SxStyledFlex, SxTextProps } from '@design-blocks/types';
 import type { Theme } from '@design-blocks/theme';
 
-type Omitted = 'flexDirection' | 'alignContent' | 'alignItems' | 'justifyContent' | 'flexWrap' | 'color' | 'opacity';
+type Omitted =
+  | 'flexDirection'
+  | 'alignContent'
+  | 'alignItems'
+  | 'justifyContent'
+  | 'flexWrap'
+  | 'color'
+  | 'opacity'
+  | 'gap';
 
 interface StyledProps extends SxStyledFlex, Omit<SxTextProps, Omitted> {}
 

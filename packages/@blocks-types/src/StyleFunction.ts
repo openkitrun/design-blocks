@@ -74,7 +74,8 @@ export interface SizesProps {
   maxHeight?: ValueBase;
   maxH?: ValueBase;
 }
-export type FlexStyledProps = Omit<FlexStyle, 'direction'>;
+
+export type FlexStyledProps = Omit<FlexStyle, 'direction' | 'gap'>;
 
 export interface TextStyledProps extends Omit<TextStyle, 'fontWeight' | 'textDecorationLine' | 'fontSize'> {
   textDecorationLine?: TextStyle['textDecorationLine'] | 'lineThrough' | 'underlineLineThrough';

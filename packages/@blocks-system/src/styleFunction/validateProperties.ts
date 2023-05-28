@@ -9,41 +9,35 @@ export default function validateProperties(
   theme: Theme,
 ): string | number {
   let _valueStyle = valueStyle;
-  //console.log('_valueStyle', _valueStyle);
 
   /**
    *  validate spacings to rule 8pt
    */
-  if (themeKeys.spacings[propertyStyle as ISpacesKeys]) {
-    if (Number(_valueStyle)) {
-      _valueStyle = theme.devTools.spacing(_valueStyle as number, theme.spacings.baseSpacing);
-    }
+  const isPropertyStyleSpacing = themeKeys.spacings[propertyStyle as ISpacesKeys];
+  /**
+   * validate colors properties
+   */
+  const isPropertyStyleColor = themeKeys.colors[propertyStyle as IColorsKeys];
+  /**
+   * validate radii properties
+   */
+  const isPropertyStyleRadii = themeKeys.radii[propertyStyle as IRadiiKeys];
 
-    if (!Number(_valueStyle)) {
+  if (isPropertyStyleSpacing) {
+    const valueStyleNumber = Number(_valueStyle);
+    if (!isNaN(valueStyleNumber)) {
+      _valueStyle = theme.devTools.spacing(valueStyleNumber, theme.spacings.baseSpacing);
+    } else {
       _valueStyle = getValuesTokens(theme, `spacings.${_valueStyle}`);
     }
   }
 
-  /**
-   * validate colors properties
-   */
-  if (themeKeys.colors[propertyStyle as IColorsKeys]) {
-    const valueStyleMerge = getValuesTokens(theme, `colors.${_valueStyle}`);
-
-    if (typeof valueStyleMerge === 'string') {
-      _valueStyle = valueStyleMerge;
-    }
+  if (isPropertyStyleColor) {
+    _valueStyle = getValuesTokens(theme, `colors.${_valueStyle}`) || _valueStyle;
   }
 
-  /**
-   * validate radii properties
-   */
-  if (themeKeys.radii[propertyStyle as IRadiiKeys]) {
-    const valueStyleMerge = getValuesTokens(theme, `radii.${_valueStyle}`);
-
-    if (typeof valueStyleMerge === 'string') {
-      _valueStyle = valueStyleMerge;
-    }
+  if (isPropertyStyleRadii) {
+    _valueStyle = getValuesTokens(theme, `radii.${_valueStyle}`) || _valueStyle;
   }
 
   return _valueStyle;

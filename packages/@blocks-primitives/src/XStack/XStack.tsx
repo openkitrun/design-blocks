@@ -14,22 +14,22 @@ if (__DEV__) {
 }
 
 /**
- * The Stack component manages layout of immediate children along
+ * The XStack component manages layout of immediate children along
  * the vertical or horizontal axis with optional spacing and/or dividers between each child.
  *
  * @remarks
- * Stack is concerned with one-dimensional layouts
+ * XStack is concerned with one-dimensional layouts
  *
  * @example
  * Wrap two components that do not accept styles outside the component
  *
  * ```tsx
- * <Stack>
+ * <XStack>
  *   <Box />
  *   <Box />
  *   ...
- * </Stack>
+ * </XStack>
  * ```
- * @see { @asChild https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Stack }
+ * @see { @asChild https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/XStack }
  */
 export default React.memo(XStack);

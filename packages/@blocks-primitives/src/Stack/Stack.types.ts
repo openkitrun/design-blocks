@@ -1,14 +1,14 @@
 import type * as RN from 'react-native';
 
-import type { Theme, ISpacings } from '@design-blocks/theme';
-import type { SxProps, SxTextProps, FlexStyledProps } from '@design-blocks/types';
+import type { ISpacings, Theme } from '@design-blocks/theme';
+import type { FlexStyledProps, SxProps, SxTextProps } from '@design-blocks/types';
 
 type Omitted = 'flexDirection' | 'alignContent' | 'alignItems' | 'justifyContent' | 'flexWrap' | 'color' | 'opacity';
 type Excluded = 'full' | 'spacing' | 'baseSpacing';
 
 interface SxStyledProps extends SxProps, Omit<SxTextProps, Omitted> {}
 
-export interface StackProps extends RN.ViewProps, Omit<SxStyledProps, 'direction'> {
+export interface StackProps extends RN.ViewProps, Omit<SxStyledProps, 'direction' | 'gap'> {
   /**
    * Defines the `flex-direction` style property. It is applied for all screen sizes.
    *
@@ -35,14 +35,14 @@ export interface StackProps extends RN.ViewProps, Omit<SxStyledProps, 'direction
    *
    * @example
    * ```tsx
-   * <Stack spacing={3}>
+   * <Stack gap={3}>
    *   <ComponentOne />
    *   <ComponentTwo />
    * </Stack>
    * ```
    * @see { @sx https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Stack }
    */
-  spacing?: Exclude<ISpacings | number, Excluded>;
+  gap?: Exclude<ISpacings | number | undefined, Excluded>;
   /**
    * The system prop that allows defining system overrides as well as additional CSS StyleSheets
    *
@@ -60,50 +60,12 @@ export interface StackProps extends RN.ViewProps, Omit<SxStyledProps, 'direction
    * @see { @sx https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Stack }
    */
   sx?: SxStyledProps;
-  /**
-   * Wrap two components that do not accept styles outside the component
-   *
-   * @Type boolean
-   *
-   * @Default false
-   *
-   * @remarks Render the children by wrapping them with a Box Component
-   * to insert style spaces if `asChild={true}`
-   *
-   * @example
-   * ```tsx
-   * <Stack asChild>
-   *   <ComponentOne />
-   *   <ComponentTow />
-   * </Stack>
-   * ```
-   * @see { @asChild https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Stack }
-   */
-  asChild?: boolean; // Render the Box component as a container to insert style spaces
+
   /**
    * @optional
    */
   theme?: Theme;
 }
-
-export interface Options extends StackProps {
-  index: number;
-  theme: Theme;
-}
-
-export type DirectionValue = {
-  marginTop: number;
-  marginRight: number;
-  marginBottom: number;
-  marginLeft: number;
-};
-
-export type StackDirectionMargin = {
-  column: DirectionValue;
-  row: DirectionValue;
-  rowReverse: DirectionValue;
-  columnReverse: DirectionValue;
-};
 
 export type IStackStyleValue = {
   display?: 'flex';

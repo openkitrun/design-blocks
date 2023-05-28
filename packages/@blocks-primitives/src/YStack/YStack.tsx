@@ -14,22 +14,22 @@ if (__DEV__) {
 }
 
 /**
- * The Stack component manages layout of immediate children along
+ * The YStack component manages layout of immediate children along
  * the vertical or horizontal axis with optional spacing and/or dividers between each child.
  *
  * @remarks
- * Stack is concerned with one-dimensional layouts
+ * YStack is concerned with one-dimensional layouts
  *
  * @example
  * Wrap two components that do not accept styles outside the component
  *
  * ```tsx
- * <Stack>
+ * <YStack>
  *   <Box />
  *   <Box />
  *   ...
- * </Stack>
+ * </YStack>
  * ```
- * @see { @asChild https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Stack }
+ * @see { @asChild https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/YStack }
  */
 export default React.memo(YStack);
