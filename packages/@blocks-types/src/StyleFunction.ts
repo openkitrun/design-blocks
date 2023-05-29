@@ -1,4 +1,5 @@
-import type { FlexStyle, TextStyle } from 'react-native';
+import type { ISpacings } from '@design-blocks/theme';
+import type { FlexStyle, ViewStyle, TextStyle } from 'react-native';
 
 type ValueBase = number | string | undefined;
 
@@ -12,52 +13,67 @@ export interface RadiiProps {
   borderWidth?: number | undefined;
 }
 
-export interface SpacingProps {
-  margin?: ValueBase;
-  marginBottom?: ValueBase;
-  marginEnd?: ValueBase;
-  marginHorizontal?: ValueBase;
-  marginLeft?: ValueBase;
-  marginRight?: ValueBase;
-  marginStart?: ValueBase;
-  marginTop?: ValueBase;
-  marginVertical?: ValueBase;
-  m?: ValueBase;
-  mb?: ValueBase;
-  me?: ValueBase;
-  mh?: ValueBase;
-  ml?: ValueBase;
-  mr?: ValueBase;
-  ms?: ValueBase;
-  mt?: ValueBase;
-  mv?: ValueBase;
-  padding?: ValueBase;
-  paddingBottom?: ValueBase;
-  paddingEnd?: ValueBase;
-  paddingHorizontal?: ValueBase;
-  paddingLeft?: ValueBase;
-  paddingRight?: ValueBase;
-  paddingStart?: ValueBase;
-  paddingTop?: ValueBase;
-  paddingVertical?: ValueBase;
-  p?: ValueBase;
-  pr?: ValueBase;
-  pl?: ValueBase;
-  pt?: ValueBase;
-  pb?: ValueBase;
-  pv?: ValueBase;
-  ph?: ValueBase;
-}
+type Excluded = 'full' | 'spacing' | 'baseSpacing';
+type SpacingValue = Exclude<ISpacings | number | undefined, Excluded>;
+export type OmitedSpacing =
+  | 'margin'
+  | 'marginBottom'
+  | 'marginEnd'
+  | 'marginHorizontal'
+  | 'marginLeft'
+  | 'marginRight'
+  | 'marginStart'
+  | 'marginTop'
+  | 'marginVertical'
+  | 'padding'
+  | 'paddingBottom'
+  | 'paddingEnd'
+  | 'paddingHorizontal'
+  | 'paddingLeft'
+  | 'paddingRight'
+  | 'paddingStart'
+  | 'paddingTop'
+  | 'paddingVertical';
 
-export interface ColorStyledProps {
-  color?: string | undefined;
-  opacity?: string | undefined;
+export interface SpacingProps {
+  margin?: SpacingValue;
+  marginBottom?: SpacingValue;
+  marginEnd?: SpacingValue;
+  marginHorizontal?: SpacingValue;
+  marginLeft?: SpacingValue;
+  marginRight?: SpacingValue;
+  marginStart?: SpacingValue;
+  marginTop?: SpacingValue;
+  marginVertical?: SpacingValue;
+  m?: SpacingValue;
+  mb?: SpacingValue;
+  me?: SpacingValue;
+  mh?: SpacingValue;
+  ml?: SpacingValue;
+  mr?: SpacingValue;
+  mt?: SpacingValue;
+  mv?: SpacingValue;
+  padding?: SpacingValue;
+  paddingBottom?: SpacingValue;
+  paddingEnd?: SpacingValue;
+  paddingHorizontal?: SpacingValue;
+  paddingLeft?: SpacingValue;
+  paddingRight?: SpacingValue;
+  paddingStart?: SpacingValue;
+  paddingTop?: SpacingValue;
+  paddingVertical?: SpacingValue;
+  p?: SpacingValue;
+  pr?: SpacingValue;
+  pl?: SpacingValue;
+  pt?: SpacingValue;
+  pb?: SpacingValue;
+  pv?: SpacingValue;
+  ph?: SpacingValue;
 }
 
 export interface BackgroundStyledProps {
   bgColor?: string | undefined;
   bg?: string | undefined;
-  opacity?: ValueBase;
 }
 
 export interface SizesProps {
@@ -75,47 +91,19 @@ export interface SizesProps {
   maxH?: ValueBase;
 }
 
-export type FlexStyledProps = Omit<FlexStyle, 'direction' | 'gap'>;
-
-export interface TextStyledProps extends Omit<TextStyle, 'fontWeight' | 'textDecorationLine' | 'fontSize'> {
+type OmitedTextStyles = 'textDecorationLine';
+export interface TextStyledProps extends Omit<TextStyle, OmitedTextStyles> {
   textDecorationLine?: TextStyle['textDecorationLine'] | 'lineThrough' | 'underlineLineThrough';
 }
 
 export type SxTextProps = TextStyledProps;
 
 export interface SxStyledFlex
-  extends FlexStyledProps,
+  extends Omit<FlexStyle, OmitedSpacing>,
+    Omit<ViewStyle, OmitedSpacing>,
     RadiiProps,
     SpacingProps,
     BackgroundStyledProps,
-    Omit<ColorStyledProps, 'opacity'>,
-    Omit<SizesProps, 'width' | 'height' | 'minWidth' | 'maxWidth' | 'minHeight' | 'maxHeight'> {}
-
-type OmittedSxStyledText =
-  | 'flexDirection'
-  | 'alignContent'
-  | 'alignItems'
-  | 'justifyContent'
-  | 'flexWrap'
-  | 'color'
-  | 'opacity';
-
-export interface SxObject extends SxStyledFlex, Omit<SxTextProps, OmittedSxStyledText> {}
-
-/**
- * The `SxProps` can be either object or function
- */
-export type SxProps = SxStyledFlex;
-
-/**
- * The `StandardBoxStyledProps` base properties props component Box
- */
-export interface StandardBoxStyledProps
-  extends FlexStyledProps,
-    RadiiProps,
-    SpacingProps,
-    BackgroundStyledProps,
-    Omit<ColorStyledProps, 'opacity'>,
     Omit<SizesProps, 'width' | 'height' | 'minWidth' | 'maxWidth' | 'minHeight' | 'maxHeight'> {}
 
 /**

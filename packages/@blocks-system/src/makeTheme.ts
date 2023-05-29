@@ -1,4 +1,5 @@
 import type { Theme, ThemeOptions } from '@design-blocks/theme';
+
 import { baseTheme } from '@design-blocks/theme';
 import { deepMerge } from '@design-blocks/utils';
 

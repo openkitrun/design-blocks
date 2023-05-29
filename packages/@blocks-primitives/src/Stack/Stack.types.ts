@@ -1,14 +1,11 @@
 import type * as RN from 'react-native';
 
-import type { ISpacings, Theme } from '@design-blocks/theme';
-import type { FlexStyledProps, SxProps, SxTextProps } from '@design-blocks/types';
+import type { Theme } from '@design-blocks/theme';
+import type { SxStyledFlex, StylesObjectProps } from '@design-blocks/types';
 
-type Omitted = 'flexDirection' | 'alignContent' | 'alignItems' | 'justifyContent' | 'flexWrap' | 'color' | 'opacity';
-type Excluded = 'full' | 'spacing' | 'baseSpacing';
+type SxStyledProps = Omit<StylesObjectProps, 'direction'>;
 
-interface SxStyledProps extends SxProps, Omit<SxTextProps, Omitted> {}
-
-export interface StackProps extends RN.ViewProps, Omit<SxStyledProps, 'direction' | 'gap'> {
+export interface StackProps extends RN.ViewProps, SxStyledProps {
   /**
    * Defines the `flex-direction` style property. It is applied for all screen sizes.
    *
@@ -25,24 +22,7 @@ export interface StackProps extends RN.ViewProps, Omit<SxStyledProps, 'direction
    * ```
    * @see { @sx https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Stack }
    */
-  direction?: FlexStyledProps['flexDirection'];
-  /**
-   * Defines the space between immediate children.
-   *
-   * @Type "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | number
-   *
-   * @Default 0
-   *
-   * @example
-   * ```tsx
-   * <Stack gap={3}>
-   *   <ComponentOne />
-   *   <ComponentTwo />
-   * </Stack>
-   * ```
-   * @see { @sx https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Stack }
-   */
-  gap?: Exclude<ISpacings | number | undefined, Excluded>;
+  direction?: RN.FlexStyle['flexDirection'];
   /**
    * The system prop that allows defining system overrides as well as additional CSS StyleSheets
    *
@@ -69,8 +49,8 @@ export interface StackProps extends RN.ViewProps, Omit<SxStyledProps, 'direction
 
 export type IStackStyleValue = {
   display?: 'flex';
-  flexDirection?: SxProps['flexDirection'];
-  alignItems?: SxProps['alignItems'];
-  justifyContent?: SxProps['justifyContent'];
-  flexWrap?: SxProps['flexWrap'];
+  flexDirection?: SxStyledFlex['flexDirection'];
+  alignItems?: SxStyledFlex['alignItems'];
+  justifyContent?: SxStyledFlex['justifyContent'];
+  flexWrap?: SxStyledFlex['flexWrap'];
 };

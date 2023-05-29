@@ -1,21 +1,9 @@
 import type * as RN from 'react-native';
 
-import type { SxStyledFlex, SxTextProps } from '@design-blocks/types';
+import type { StylesObjectProps } from '@design-blocks/types';
 import type { Theme } from '@design-blocks/theme';
 
-type Omitted =
-  | 'flexDirection'
-  | 'alignContent'
-  | 'alignItems'
-  | 'justifyContent'
-  | 'flexWrap'
-  | 'color'
-  | 'opacity'
-  | 'gap';
-
-interface StyledProps extends SxStyledFlex, Omit<SxTextProps, Omitted> {}
-
-export interface BoxProps extends RN.ViewProps, StyledProps {
+export interface BoxProps extends RN.ViewProps, StylesObjectProps {
   /**
    * The system prop that allows defining system overrides as well as additional CSS StyleSheets
    *
@@ -32,7 +20,7 @@ export interface BoxProps extends RN.ViewProps, StyledProps {
    * ```
    * @see { @sx https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Box }
    */
-  sx?: StyledProps;
+  sx?: StylesObjectProps;
 
   /**
    * @optional

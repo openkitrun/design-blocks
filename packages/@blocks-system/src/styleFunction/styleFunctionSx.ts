@@ -1,14 +1,18 @@
 import type { Theme, IFontSizes, IFontWeights, IComponentsKeysProps } from '@design-blocks/theme';
-import { componentsKeys } from '@design-blocks/theme';
+import type { StylesObjectProps } from '@design-blocks/types';
 
-import type { SxObject } from '@design-blocks/types';
+import { componentsKeys } from '@design-blocks/theme';
 
 import validateProperties from './validateProperties';
 import { getValuesTokens } from './getValuesTokens';
 
 type PropertyStyle<TokensProperty> = TokensProperty;
 
-export const styleFunctionSx = (nameTokenComponent: IComponentsKeysProps, theme: Theme, sxStyles: SxObject = {}) => {
+export const styleFunctionSx = (
+  nameTokenComponent: IComponentsKeysProps,
+  theme: Theme,
+  sxStyles: StylesObjectProps = {},
+) => {
   const tokensBase = componentsKeys[nameTokenComponent];
 
   const styles = Object.entries(sxStyles).reduce((objStyles: Record<string, unknown>, [propertyStyle, valueStyle]) => {

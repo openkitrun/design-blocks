@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  TURBO_VERSION: 1.9.8
-  PNPM_VERSION: 8.5.1
+  TURBO_VERSION: 1.9.9
+  PNPM_VERSION: 8.6.0
 
 jobs:
   stats:

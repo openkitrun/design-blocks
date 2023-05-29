@@ -1,6 +1,6 @@
 import { ScrollView } from 'react-native';
 
-import { Box, Stack, YStack, XStack } from '@design-blocks/native';
+import { Box, Stack, YStack, XStack, Text } from '@design-blocks/native';
 
 import { block } from '../../../blocks.config';
 
@@ -29,7 +29,11 @@ const ScrollViewBlock = block(ScrollView)(({ theme }) => {
 function DemoScreen() {
   return (
     <ScrollViewBlock contentInsetAdjustmentBehavior='automatic'>
-      <YStack gap={3}>
+      <Text mb='2xl' fontSize='9xl' color='zinc.100' textAlign='center'>
+        Example
+      </Text>
+
+      <YStack gap='xl'>
         <XStack alignItems='center' justifyContent='space-around'>
           <SquareBlock bgColor='rose.500' />
           <CircleBlock bgColor='green.400' />
@@ -47,7 +51,7 @@ function DemoScreen() {
           <SquareBlock bgColor='lime.400' />
         </XStack>
 
-        <Stack gap={2} alignItems='center'>
+        <Stack gap={3} alignItems='center' direction='column'>
           <Box height={80} width={80} bgColor='rose.600' borderRadius={80} />
           <Box height={80} width={80} bgColor='sky.600' />
         </Stack>

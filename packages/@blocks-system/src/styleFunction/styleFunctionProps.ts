@@ -1,5 +1,5 @@
-import type { Theme, IFontWeights, IComponentsKeysProps } from '@design-blocks/theme';
-import type { SxObject } from '@design-blocks/types';
+import type { Theme, IFontWeights, IFontSizes, IComponentsKeysProps } from '@design-blocks/theme';
+import type { StylesObjectProps } from '@design-blocks/types';
 
 import { componentsKeys } from '@design-blocks/theme';
 
@@ -11,7 +11,7 @@ type PropertyStyle<TokensProperty> = TokensProperty;
 export const styleFunctionProps = (
   nameTokenComponent: IComponentsKeysProps,
   theme: Theme,
-  stylesObjectProps: SxObject,
+  stylesObjectProps: StylesObjectProps,
 ) => {
   const tokensBase = componentsKeys[nameTokenComponent];
 
@@ -29,6 +29,11 @@ export const styleFunctionProps = (
       if (propertyStyle === 'fontWeight') {
         propertyStyleValue = propertyStyle as PropertyStyle<keyof typeof tokensBase>;
         finalValueStyle = theme.fontWeights[valueStyle as IFontWeights] ?? valueStyle;
+      }
+
+      if (propertyStyle === 'fontSize') {
+        propertyStyleValue = propertyStyle as PropertyStyle<keyof typeof tokensBase>;
+        finalValueStyle = theme.fontSizes[valueStyle as IFontSizes] ?? valueStyle;
       }
 
       if (propertyStyleValue) {
