@@ -11,14 +11,18 @@
     "@design-blocks/utils": "0.1.0",
     "@design-blocks/native": "0.1.0",
     "tsconfig": "0.1.0",
-    "@examples/basic": "1.0.0"
+    "@examples/basic": "1.0.0",
+    "@design-blocks/core": "1.0.0"
   },
   "changesets": [
     "brave-cats-relax",
     "brave-poems-press",
     "chilly-gorillas-study",
+    "curly-lizards-fetch",
     "dirty-months-wonder",
     "empty-buckets-drop",
+    "friendly-lemons-stare",
+    "funny-weeks-flow",
     "many-lies-live",
     "new-baboons-carry",
     "polite-horses-applaud",
