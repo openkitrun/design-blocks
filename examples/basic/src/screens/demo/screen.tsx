@@ -29,8 +29,8 @@ const ScrollViewBlock = block(ScrollView)(({ theme }) => {
 function DemoScreen() {
   return (
     <ScrollViewBlock contentInsetAdjustmentBehavior='automatic'>
-      <Text mb='2xl' fontSize='9xl' color='zinc.100' textAlign='center'>
-        Example
+      <Text mb='2xl' fontSize='7xl' color='zinc.100' textAlign='center'>
+        Blocks
       </Text>
 
       <YStack gap='xl'>

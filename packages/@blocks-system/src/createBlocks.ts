@@ -1,9 +1,7 @@
-//import styled from '@emotion/native';
-
 import type { ConfigBlocks, CreateBlocks } from './types';
 import { makeTheme } from './makeTheme';
 
-import { block } from './block';
+import block from '@design-blocks/core';
 
 export function createBlocks({ theme, devTools }: ConfigBlocks): CreateBlocks {
   return {

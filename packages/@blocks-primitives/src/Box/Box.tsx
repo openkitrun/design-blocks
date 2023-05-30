@@ -1,7 +1,9 @@
 import * as React from 'react';
 import * as RN from 'react-native';
 
-import { styleFunctionProps, styleFunctionSx, block } from '@design-blocks/system';
+import block from '@design-blocks/core';
+
+import { styleFunctionProps, styleFunctionSx } from '@design-blocks/system';
 import { __DEV__ } from '@design-blocks/utils';
 
 import type { BoxProps } from './Box.types';

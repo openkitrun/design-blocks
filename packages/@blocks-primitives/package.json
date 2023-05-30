@@ -4,6 +4,7 @@
   "main": "dist/commonjs/index.js",
   "module": "dist/module/index.js",
   "types": "dist/typescript/index.d.ts",
+  "react-native": "src/index.ts",
   "source": "src/index.ts",
   "typings": "dist/typescript/index.d.ts",
   "files": [
@@ -38,14 +39,13 @@
     }
   ],
   "dependencies": {
+    "@design-blocks/core": "workspace:*",
     "@design-blocks/system": "workspace:*",
     "@design-blocks/theme": "workspace:*",
     "@design-blocks/types": "workspace:*",
     "@design-blocks/utils": "workspace:*"
   },
   "devDependencies": {
-    "@emotion/native": "11.10.6",
-    "@emotion/react": "11.10.6",
     "@types/react": "18.0.28",
     "@types/react-native": "0.71.3",
     "bundlesize": "0.18.1",
@@ -56,8 +56,6 @@
     "typescript": "5.0.4"
   },
   "peerDependencies": {
-    "@emotion/native": "11.10.6",
-    "@emotion/react": "11.10.6",
     "react": ">=18",
     "react-native": ">=0.71"
   },

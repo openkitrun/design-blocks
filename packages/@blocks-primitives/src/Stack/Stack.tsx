@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { __DEV__, camelCase } from '@design-blocks/utils';
-import { block } from '@design-blocks/system';
+import block from '@design-blocks/core';
 
 import type { StackProps, IStackStyleValue } from './Stack.types';
 

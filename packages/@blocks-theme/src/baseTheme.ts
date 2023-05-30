@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Spacings, FontSizes, FontWeights, Radii, DevTools } from './themeTokens';
+//import type { Spacings, FontSizes, FontWeights, Radii, DevTools } from './themeTokens';
 import { fonts, spacings, devTools, radii } from './themeTokens';
 
 export const baseTheme = {
@@ -25,36 +25,36 @@ export const baseTheme = {
   devTools,
 };
 
-export type ITheme = keyof typeof baseTheme;
+//export type ITheme = keyof typeof baseTheme;
 //export type Theme = typeof baseTheme;
-export interface Theme {
-  colors: Record<string, any>;
-  spacings: Spacings;
-  fontSizes: FontSizes;
-  fontWeights: FontWeights;
-  radii: Radii;
-  extend: {
-    colors: Record<string, any>;
-    spacings: Spacings;
-    fontSizes: FontSizes;
-    fontWeights: FontWeights;
-    radii: Radii;
-  };
-  devTools: DevTools;
-}
+// export interface Theme {
+//   colors: Record<string, any>;
+//   spacings: Spacings;
+//   fontSizes: FontSizes;
+//   fontWeights: FontWeights;
+//   radii: Radii;
+//   extend: {
+//     colors: Record<string, any>;
+//     spacings: Spacings;
+//     fontSizes: FontSizes;
+//     fontWeights: FontWeights;
+//     radii: Radii;
+//   };
+//   devTools: DevTools;
+// }
 
-export interface ThemeOptions {
-  colors?: Record<string, any>;
-  spacings?: Spacings;
-  fontSizes?: FontSizes;
-  fontWeights?: FontWeights;
-  radii?: Radii;
-  extend?: {
-    colors?: Record<string, any>;
-    spacings?: Spacings;
-    fontSizes?: FontSizes;
-    fontWeights?: FontWeights;
-    radii?: Radii;
-  };
-  devTools?: DevTools;
-}
+// export interface ThemeOptions {
+//   colors?: Record<string, any>;
+//   spacings?: Spacings;
+//   fontSizes?: FontSizes;
+//   fontWeights?: FontWeights;
+//   radii?: Radii;
+//   extend?: {
+//     colors?: Record<string, any>;
+//     spacings?: Spacings;
+//     fontSizes?: FontSizes;
+//     fontWeights?: FontWeights;
+//     radii?: Radii;
+//   };
+//   devTools?: DevTools;
+// }

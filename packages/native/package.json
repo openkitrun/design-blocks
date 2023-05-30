@@ -4,11 +4,23 @@
   "main": "dist/commonjs/index.js",
   "module": "dist/module/index.js",
   "types": "dist/typescript/index.d.ts",
+  "react-native": "src/index.ts",
   "source": "src/index.ts",
   "typings": "dist/typescript/index.d.ts",
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "module": {
+        "worker": "./dist/module/index.js",
+        "browser": "./dist/module/index.js",
+        "default": "./dist/module/index.js"
+      },
+      "import": "./dist/module/index.js",
+      "default": "./dist/module/index.js"
+    }
+  },
   "sideEffects": false,
   "repository": {
     "type": "git",
@@ -39,6 +51,7 @@
     }
   ],
   "dependencies": {
+    "@design-blocks/core": "workspace:*",
     "@design-blocks/primitives": "workspace:*",
     "@design-blocks/system": "workspace:*",
     "@design-blocks/theme": "workspace:*",
@@ -53,20 +66,12 @@
     "typescript": "5.0.4"
   },
   "peerDependencies": {
-    "@emotion/native": "11.10.6",
-    "@emotion/react": "11.10.6",
     "@types/react": "*",
     "@types/react-native": "*",
     "react": "*",
     "react-native": "*"
   },
   "peerDependenciesMeta": {
-    "@emotion/native": {
-      "optional": true
-    },
-    "@emotion/react": {
-      "optional": true
-    },
     "@types/react": {
       "optional": true
     }

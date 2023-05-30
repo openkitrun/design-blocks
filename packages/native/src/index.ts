@@ -1,3 +1,4 @@
+export * from '@design-blocks/core';
 export * from '@design-blocks/primitives';
 export * from '@design-blocks/system';
 export * from '@design-blocks/theme';

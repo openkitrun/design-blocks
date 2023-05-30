@@ -21,13 +21,13 @@ You can use these components as the base layer of your design system or adopt th
 
 ```sh
 // with pnpm
-pnpm add  @design-blocks/native @emotion/native@11.10.0 @emotion/react@11.10.5
+pnpm add  @design-blocks/native
 
 // with yarn
-yarn add @design-blocks/native @emotion/native@11.10.0 @emotion/react@11.10.5
+yarn add @design-blocks/native
 
 // with npm
-npm add  @design-blocks/native @emotion/native@11.10.0 @emotion/react@11.10.5
+npm add  @design-blocks/native
 ```
 
 ### Configure Design Blocks

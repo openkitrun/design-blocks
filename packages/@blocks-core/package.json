@@ -1,36 +1,39 @@
 {
-  "name": "@design-blocks/types",
-  "version": "1.0.0-beta.8",
+  "name": "@design-blocks/core",
+  "version": "1.0.0",
   "main": "dist/commonjs/index.js",
   "module": "dist/module/index.js",
-  "types": "dist/typescript/index.d.ts",
+  "types": "./types/index.d.ts",
+  "typings": "./types/index.d.ts",
   "react-native": "src/index.ts",
   "source": "src/index.ts",
-  "typings": "dist/typescript/index.d.ts",
   "files": [
-    "dist"
+    "native",
+    "dist",
+    "src",
+    "types/*.d.ts"
   ],
   "repository": {
     "type": "git",
     "url": "git@github.com:design-blocks/design-blocks.git",
-    "directory": "@blocks-types"
+    "directory": "@blocks-core"
   },
   "scripts": {
     "build:native": "bob build",
     "clean": "pnpm clean:build && rimraf -rf .turbo",
     "clean:build": "rimraf -rf dist",
-    "build": "pnpm clean:build && pnpm build:native",
     "lint:types": "tsc --noEmit",
-    "bundlesize": "bundlesize"
+    "bundlesize": "bundlesize",
+    "build": "pnpm clean:build && pnpm build:native"
   },
   "keywords": [],
   "bundlesize": [
     {
-      "path": "./dist/commonjs/index.js",
+      "path": "./src/index.ts",
       "maxSize": "0.5kB"
     },
     {
-      "path": "./dist/module/index.js",
+      "path": "./src/index.ts",
       "maxSize": "0.5kB"
     },
     {
@@ -39,18 +42,21 @@
     }
   ],
   "dependencies": {
-    "@design-blocks/theme": "workspace:*"
+    "@design-blocks/theme": "workspace:*",
+    "css-to-react-native": "3.2.0"
   },
   "devDependencies": {
-    "@types/react-native": "0.71.3",
-    "bundlesize": "^0.18.1",
+    "@types/react": "18.0.28",
+    "bundlesize": "0.18.1",
+    "react": "^18",
     "react-native": "0.71",
-    "react-native-builder-bob": "0.20.1",
-    "rimraf": "^3.0.2",
+    "react-native-builder-bob": "0.20.4",
+    "rimraf": "4.1.2",
     "tsconfig": "workspace:*",
     "typescript": "5.0.4"
   },
   "peerDependencies": {
+    "react": ">=18",
     "react-native": ">=0.71"
   },
   "react-native-builder-bob": {

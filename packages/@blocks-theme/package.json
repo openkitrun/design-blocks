@@ -4,6 +4,7 @@
   "main": "dist/commonjs/index.js",
   "module": "dist/module/index.js",
   "types": "dist/typescript/index.d.ts",
+  "react-native": "src/index.ts",
   "source": "src/index.ts",
   "exports": {
     "./theme": "./dist/module/index.js"
@@ -40,9 +41,11 @@
     }
   ],
   "dependencies": {
-    "@design-blocks/utils": "workspace:*"
+    "@design-blocks/utils": "workspace:*",
+    "hoist-non-react-statics": "^3.3.2"
   },
   "devDependencies": {
+    "@types/hoist-non-react-statics": "^3.3.1",
     "bundlesize": "0.18.1",
     "react-native-builder-bob": "0.20.4",
     "rimraf": "4.1.2",

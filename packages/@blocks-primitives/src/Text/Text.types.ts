@@ -1,14 +1,14 @@
 import * as RN from 'react-native';
 
 import type { SpacingProps, SxTextProps, OmitedSpacing } from '@design-blocks/types';
-import type { Theme, IFontSizes, IFontWeights } from '@design-blocks/theme';
+import type { Theme, ITheme, IFontWeights } from '@design-blocks/theme';
 
 type Omited = 'color' | 'fontWeight' | 'fontSize' | OmitedSpacing;
 
 interface TextBaseProps extends Omit<SxTextProps, Omited>, SpacingProps {
   color?: RN.TextStyle['color'] | string;
   fontWeight?: IFontWeights | RN.TextStyle['fontWeight'];
-  fontSize?: IFontSizes | RN.TextStyle['fontSize'];
+  fontSize?: keyof ITheme['fontSizes'] | RN.TextStyle['fontSize'];
 }
 
 export interface TextProps extends RN.TextProps, TextBaseProps {
