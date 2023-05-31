@@ -1,5 +1,12 @@
 # tsconfig
 
+## 1.0.0-beta.4
+
+### Patch Changes
+
+- [`f085a65`](https://github.com/design-blocks/design-blocks/commit/f085a65069346a3d2f8785f160c750410b1e6908) Thanks
+  [@wootsbot](https://github.com/wootsbot)! - Fixed source module react-native
+
 ## 1.0.0-beta.3
 
 ### Patch Changes
