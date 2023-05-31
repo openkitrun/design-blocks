@@ -4,7 +4,7 @@
   "main": "dist/commonjs/index.js",
   "module": "dist/module/index.js",
   "types": "dist/typescript/index.d.ts",
-  "react-native": "src/index.ts",
+  "react-native": "dist/commonjs/index.js",
   "source": "src/index.ts",
   "typings": "dist/typescript/index.d.ts",
   "files": [
