@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Spacings, FontSizes, FontWeights, Radii, DevTools } from './themeTokens';
 
 export * from './themeTokens';

@@ -9,7 +9,6 @@ export default function validateProperties(
   theme: Theme,
 ): string | number {
   let _valueStyle = valueStyle;
-  //console.log('_valueStyle', _valueStyle);
 
   /**
    *  validate spacings to rule 8pt

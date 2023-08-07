@@ -47,10 +47,10 @@
   },
   "devDependencies": {
     "@types/react": "18.0.28",
-    "@types/react-native": "0.71.3",
+    "@types/react-native": "0.72.2",
     "bundlesize": "0.18.1",
-    "react-native": "0.71",
-    "react-native-builder-bob": "0.20.4",
+    "react-native": "0.72",
+    "react-native-builder-bob": "0.21.3",
     "rimraf": "4.1.2",
     "tsconfig": "workspace:*",
     "typescript": "5.0.4"

@@ -15,6 +15,8 @@ export interface RadiiProps {
 
 type Excluded = 'full' | 'spacing' | 'baseSpacing';
 type SpacingValue = Exclude<ISpacings | number | undefined, Excluded>;
+
+type OmitedBorder = 'borderEndWidth' | 'borderStartWidth';
 export type OmitedSpacing =
   | 'margin'
   | 'marginBottom'
@@ -99,8 +101,8 @@ export interface TextStyledProps extends Omit<TextStyle, OmitedTextStyles> {
 export type SxTextProps = TextStyledProps;
 
 export interface SxStyledFlex
-  extends Omit<FlexStyle, OmitedSpacing>,
-    Omit<ViewStyle, OmitedSpacing>,
+  extends Omit<FlexStyle, OmitedSpacing | OmitedBorder>,
+    Omit<ViewStyle, OmitedSpacing | OmitedBorder>,
     RadiiProps,
     SpacingProps,
     BackgroundStyledProps,
