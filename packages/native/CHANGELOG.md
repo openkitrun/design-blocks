@@ -1,5 +1,21 @@
 # @design-blocks/native
 
+## 1.0.0-beta.14
+
+### Patch Changes
+
+- [`fb99202`](https://github.com/design-blocks/design-blocks/commit/fb9920293ea79c9ce374fa839871b34bae478f3f) Thanks
+  [@wootsbot](https://github.com/wootsbot)! - Bump react-native@0.72 and react-native-builder-bob@0.21.3
+
+- Updated dependencies
+  [[`fb99202`](https://github.com/design-blocks/design-blocks/commit/fb9920293ea79c9ce374fa839871b34bae478f3f)]:
+  - @design-blocks/primitives@1.0.0-beta.14
+  - @design-blocks/system@1.0.0-beta.12
+  - @design-blocks/theme@1.0.0-beta.11
+  - @design-blocks/types@1.0.0-beta.11
+  - @design-blocks/utils@1.0.0-beta.9
+  - @design-blocks/core@1.1.0-beta.2
+
 ## 1.0.0-beta.13
 
 ### Patch Changes
