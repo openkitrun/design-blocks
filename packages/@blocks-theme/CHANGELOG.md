@@ -1,5 +1,19 @@
 # @design-blocks/theme
 
+## 1.0.0-beta.12
+
+### Minor Changes
+
+- [`b20d3e3`](https://github.com/design-blocks/design-blocks/commit/b20d3e314192b9a7712b1d7b8fc9635ef3d580d9) Thanks
+  [@wootsbot](https://github.com/wootsbot)! - Bump pakages, fixed types, added Theme in colors and remove Theme props in
+  primitives
+
+### Patch Changes
+
+- Updated dependencies
+  [[`b20d3e3`](https://github.com/design-blocks/design-blocks/commit/b20d3e314192b9a7712b1d7b8fc9635ef3d580d9)]:
+  - @design-blocks/utils@1.0.0-beta.10
+
 ## 1.0.0-beta.11
 
 ### Patch Changes
