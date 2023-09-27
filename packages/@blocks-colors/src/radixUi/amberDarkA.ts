@@ -11,6 +11,6 @@ export const amberDarkA = {
   amberA10: '#ffce48',
   amberA11: '#ffab0e',
   amberA12: '#fff8e1',
-};
+} as const;
 
 export default amberDarkA;

@@ -11,6 +11,6 @@ export const blackA = {
   blackA10: '#000000',
   blackA11: '#000000',
   blackA12: '#000000',
-};
+} as const;
 
 export default blackA;

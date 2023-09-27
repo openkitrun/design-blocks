@@ -11,6 +11,6 @@ export const bronzeDark = {
   bronze10: '#b08c7d',
   bronze11: '#cba393',
   bronze12: '#f9ede7',
-};
+} as const;
 
 export default bronzeDark;

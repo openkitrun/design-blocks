@@ -10,6 +10,6 @@ export const pink = {
   800: '#9d174d',
   900: '#831843',
   950: '#500724',
-};
+} as const;
 
 export default pink;

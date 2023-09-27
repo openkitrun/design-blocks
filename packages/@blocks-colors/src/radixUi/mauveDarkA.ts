@@ -11,6 +11,6 @@ export const mauveDarkA = {
   mauveA10: '#f0eeff',
   mauveA11: '#f7f5ff',
   mauveA12: '#fdfdff',
-};
+} as const;
 
 export default mauveDarkA;

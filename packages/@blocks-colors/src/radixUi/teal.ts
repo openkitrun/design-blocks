@@ -11,6 +11,6 @@ export const teal = {
   teal10: '#0e9888',
   teal11: '#067a6f',
   teal12: '#10302b',
-};
+} as const;
 
 export default teal;

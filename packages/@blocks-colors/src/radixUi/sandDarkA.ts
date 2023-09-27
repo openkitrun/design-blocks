@@ -11,6 +11,6 @@ export const sandDarkA = {
   sandA10: '#fffdee',
   sandA11: '#fffdf4',
   sandA12: '#fffffe',
-};
+} as const;
 
 export default sandDarkA;

@@ -10,6 +10,6 @@ export const violet = {
   800: '#5b21b6',
   900: '#4c1d95',
   950: '#2e1065',
-};
+} as const;
 
 export default violet;

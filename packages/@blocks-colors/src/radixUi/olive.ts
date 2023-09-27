@@ -11,6 +11,6 @@ export const olive = {
   olive10: '#818780',
   olive11: '#6b716a',
   olive12: '#141e12',
-};
+} as const;
 
 export default olive;

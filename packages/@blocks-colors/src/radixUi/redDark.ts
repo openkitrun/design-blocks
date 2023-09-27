@@ -11,6 +11,6 @@ export const redDark = {
   red10: '#f2555a',
   red11: '#ff6369',
   red12: '#feecee',
-};
+} as const;
 
 export default redDark;

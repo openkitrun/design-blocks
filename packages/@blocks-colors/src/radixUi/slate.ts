@@ -11,6 +11,6 @@ export const slate = {
   slate10: '#7e868c',
   slate11: '#687076',
   slate12: '#11181c',
-};
+} as const;
 
 export default slate;

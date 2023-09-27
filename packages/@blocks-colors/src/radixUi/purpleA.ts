@@ -11,6 +11,6 @@ const purpleA = {
   purpleA10: '#5700a3',
   purpleA11: '#510097',
   purpleA12: '#1f0039',
-};
+} as const;
 
 export default purpleA;

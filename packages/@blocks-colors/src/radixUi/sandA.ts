@@ -11,5 +11,5 @@ export const sandA = {
   sandA10: '#090900',
   sandA11: '#070600',
   sandA12: '#040400',
-};
+} as const;
 export default sandA;

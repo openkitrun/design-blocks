@@ -1,7 +1,7 @@
 import * as RN from 'react-native';
 
 import type { SpacingProps, SxTextProps, OmitedSpacing } from '@design-blocks/types';
-import type { Theme, ITheme, IFontWeights } from '@design-blocks/theme';
+import type { ITheme, IFontWeights } from '@design-blocks/theme';
 
 type Omited = 'color' | 'fontWeight' | 'fontSize' | OmitedSpacing;
 
@@ -29,9 +29,4 @@ export interface TextProps extends RN.TextProps, TextBaseProps {
    * @see { @sx https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Box }
    */
   sx?: TextBaseProps;
-
-  /**
-   * @optional
-   */
-  theme?: Theme;
 }

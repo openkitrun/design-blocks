@@ -10,6 +10,6 @@ export const amber = {
   800: '#92400e',
   900: '#78350f',
   950: '#451a03',
-};
+} as const;
 
 export default amber;

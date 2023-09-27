@@ -11,6 +11,6 @@ export const cyanA = {
   cyanA10: '#0090b0',
   cyanA11: '#00718d',
   cyanA12: '#002d38',
-};
+} as const;
 
 export default cyanA;

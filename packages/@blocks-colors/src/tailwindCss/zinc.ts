@@ -10,6 +10,6 @@ export const zinc = {
   800: '#27272a',
   900: '#18181b',
   950: '#09090b',
-};
+} as const;
 
 export default zinc;

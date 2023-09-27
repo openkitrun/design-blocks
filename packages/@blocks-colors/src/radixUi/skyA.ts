@@ -11,6 +11,6 @@ export const skyA = {
   skyA10: '#00baed',
   skyA11: '#00759f',
   skyA12: '#002e3e',
-};
+} as const;
 
 export default skyA;

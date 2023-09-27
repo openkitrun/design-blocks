@@ -11,6 +11,6 @@ export const blue = {
   blue10: '#0081f1',
   blue11: '#006adc',
   blue12: '#00254d',
-};
+} as const;
 
 export default blue;

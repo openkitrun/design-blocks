@@ -11,6 +11,6 @@ export const sand = {
   sand10: '#868682',
   sand11: '#706f6c',
   sand12: '#1b1b18',
-};
+} as const;
 
 export default sand;

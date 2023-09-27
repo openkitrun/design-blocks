@@ -11,6 +11,6 @@ export const violetA = {
   violetA10: '#1f00a5',
   violetA11: '#180091',
   violetA12: '#0e003d',
-};
+} as const;
 
 export default violetA;

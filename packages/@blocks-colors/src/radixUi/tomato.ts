@@ -11,6 +11,6 @@ export const tomato = {
   tomato10: '#db4324',
   tomato11: '#ca3214',
   tomato12: '#341711',
-};
+} as const;
 
 export default tomato;

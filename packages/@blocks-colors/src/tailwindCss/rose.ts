@@ -10,6 +10,6 @@ export const rose = {
   800: '#9f1239',
   900: '#881337',
   950: '#4c0519',
-};
+} as const;
 
 export default rose;

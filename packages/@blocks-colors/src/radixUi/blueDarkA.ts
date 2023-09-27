@@ -11,6 +11,6 @@ export const blueDarkA = {
   blueA10: '#37a1ff',
   blueA11: '#53acff',
   blueA12: '#effbff',
-};
+} as const;
 
 export default blueDarkA;

@@ -10,6 +10,6 @@ export const teal = {
   800: '#115e59',
   900: '#134e4a',
   950: '#042f2e',
-};
+} as const;
 
 export default teal;

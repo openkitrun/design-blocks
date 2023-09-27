@@ -11,6 +11,6 @@ export const goldDarkA = {
   goldA10: '#ffdcac',
   goldA11: '#ffe0b4',
   goldA12: '#fffcee',
-};
+} as const;
 
 export default goldDarkA;

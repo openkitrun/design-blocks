@@ -10,6 +10,6 @@ export const indigo = {
   800: '#3730a3',
   900: '#312e81',
   950: '#1e1b4b',
-};
+} as const;
 
 export default indigo;

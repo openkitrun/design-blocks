@@ -10,6 +10,6 @@ export const purple = {
   800: '#6b21a8',
   900: '#581c87',
   950: '#3b0764',
-};
+} as const;
 
 export default purple;

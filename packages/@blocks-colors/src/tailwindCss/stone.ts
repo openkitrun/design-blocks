@@ -10,6 +10,6 @@ export const stone = {
   800: '#292524',
   900: '#1c1917',
   950: '#0c0a09',
-};
+} as const;
 
 export default stone;

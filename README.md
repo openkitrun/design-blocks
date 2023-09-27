@@ -28,6 +28,9 @@ yarn add @design-blocks/native
 
 // with npm
 npm add  @design-blocks/native
+
+// with bun
+bun bun add @design-blocks/native
 ```
 
 ### Configure Design Blocks
@@ -122,7 +125,7 @@ And as a result has improved the development experience
 ```tsx
 import { block } from '@/blocks';
 
-const Description = block.Text(({ theme }) => ({
+const DescriptionBlock = block.Text(({ theme }) => ({
   color: theme.colors.violet[400],
   fontSize: 30,
 }));

@@ -11,6 +11,6 @@ export const red = {
   red10: '#dc3d43',
   red11: '#cd2b31',
   red12: '#381316',
-};
+} as const;
 
 export default red;

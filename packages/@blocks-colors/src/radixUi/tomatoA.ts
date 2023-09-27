@@ -11,6 +11,6 @@ export const tomatoA = {
   tomatoA10: '#d52400',
   tomatoA11: '#c62100',
   tomatoA12: '#260600',
-};
+} as const;
 
 export default tomatoA;

@@ -11,6 +11,6 @@ export const whiteA = {
   whiteA10: '#ffffff',
   whiteA11: '#ffffff',
   whiteA12: '#ffffff',
-};
+} as const;
 
 export default whiteA;

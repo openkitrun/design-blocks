@@ -10,6 +10,6 @@ export const gray = {
   800: '#1f2937',
   900: '#111827',
   950: '#030712',
-};
+} as const;
 
 export default gray;

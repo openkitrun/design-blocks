@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { __DEV__, camelCase } from '@design-blocks/utils';
 import block from '@design-blocks/core';
+import { styleFunctionProps, styleFunctionSx } from '@design-blocks/system';
 
 import type { StackProps, IStackStyleValue } from './Stack.types';
 
@@ -16,6 +17,9 @@ const StackBlock = block(Box, {
     alignItems: alignItemsProps = 'stretch',
     justifyContent: justifyContentProps = 'flexStart',
     flexWrap: flexWrapProps = 'nowrap',
+    theme,
+    sx,
+    ...styleProps
   }): IStackStyleValue => {
     const flexDirection = variants.flexDirection[
       camelCase(flexDirectionProps) as keyof typeof variants.flexDirection
@@ -39,11 +43,13 @@ const StackBlock = block(Box, {
       alignItems,
       justifyContent,
       flexWrap,
+      ...styleFunctionProps('Box', theme, { ...styleProps }),
+      ...styleFunctionSx('Box', theme, sx),
     };
   },
 );
 
-function Stack({ direction = 'column', ...props }: StackProps) {
+function Stack({ direction = 'column', ...props }: Omit<StackProps, 'theme'>) {
   return <StackBlock flexDirection={direction} {...props} />;
 }
 

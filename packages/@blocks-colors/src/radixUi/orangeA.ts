@@ -11,6 +11,6 @@ export const orangeA = {
   orangeA10: '#ed5b00',
   orangeA11: '#bc4800',
   orangeA12: '#380e00',
-};
+} as const;
 
 export default orangeA;

@@ -1,3 +1,5 @@
+import type { Leaves } from '@design-blocks/types';
+
 import { colors as tailwindCssColors } from './tailwindCss';
 import { colors as radixUiColors } from './radixUi';
 
@@ -14,10 +16,10 @@ export interface ColorSchemes {
   radixUi: RadixUiColors;
 }
 
-export type ITailwindCssColors = keyof typeof tailwindCss;
+export type ITailwindCssColors = Leaves<typeof tailwindCss>;
 export type TailwindCssColors = typeof tailwindCss;
 
-export type IRadixUiColors = keyof typeof radixUi;
+export type IRadixUiColors = Leaves<typeof radixUi>;
 export type RadixUiColors = typeof radixUi;
 
 export default colorSchemes;

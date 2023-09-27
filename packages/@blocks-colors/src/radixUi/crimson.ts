@@ -11,6 +11,6 @@ export const crimson = {
   crimson10: '#e03177',
   crimson11: '#d31e66',
   crimson12: '#3d0d1d',
-};
+} as const;
 
 export default crimson;

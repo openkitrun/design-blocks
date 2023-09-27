@@ -11,6 +11,6 @@ export const indigo = {
   indigo10: '#3a5ccc',
   indigo11: '#3451b2',
   indigo12: '#101d46',
-};
+} as const;
 
 export default indigo;

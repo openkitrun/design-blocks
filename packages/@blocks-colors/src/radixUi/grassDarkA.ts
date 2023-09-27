@@ -11,6 +11,6 @@ export const grassDarkA = {
   grassA10: '#78ff91',
   grassA11: '#83ff97',
   grassA12: '#eafff0',
-};
+} as const;
 
 export default grassDarkA;

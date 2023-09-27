@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "bundlesize": "0.18.1",
-    "react-native-builder-bob": "0.21.3",
+    "react-native-builder-bob": "0.22.0",
     "rimraf": "4.1.2",
     "tsconfig": "workspace:*",
     "typescript": "5.0.4"

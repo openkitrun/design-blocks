@@ -11,6 +11,6 @@ export const pink = {
   pink10: '#d23197',
   pink11: '#cd1d8d',
   pink12: '#3b0a2a',
-};
+} as const;
 
 export default pink;

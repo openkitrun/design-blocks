@@ -11,6 +11,6 @@ export const mintDarkA = {
   mintA10: '#9dffe3',
   mintA11: '#2cffd1',
   mintA12: '#ecfffb',
-};
+} as const;
 
 export default mintDarkA;

@@ -11,6 +11,6 @@ export const limeDarkA = {
   limeA10: '#d1ff46',
   limeA11: '#b5ff2c',
   limeA12: '#f4ffe1',
-};
+} as const;
 
 export default limeDarkA;

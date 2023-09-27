@@ -1,6 +1,7 @@
 import { ScrollView } from 'react-native';
 
 import { Box, Stack, YStack, XStack, Text } from '@design-blocks/native';
+import { tailwindCss } from '@design-blocks/colors';
 
 import { block } from '../../../blocks.config';
 
@@ -40,15 +41,15 @@ function DemoScreen() {
           <SquareBlock bgColor='amber.400' />
         </XStack>
 
-        <XStack alignItems='center' justifyContent='space-around'>
+        <XStack alignItems='center' justifyContent='center' sx={{ justifyContent: 'space-between' }}>
           <CircleBlock bgColor='yellow.600' />
           <SquareBlock bgColor='indigo.600' />
           <CircleBlock bgColor='fuchsia.600' />
         </XStack>
 
         <XStack alignItems='center' justifyContent='space-around'>
-          <CircleBlock bgColor='emerald.600' />
-          <SquareBlock bgColor='lime.400' />
+          <CircleBlock bgColor={tailwindCss.emerald[600]} />
+          <SquareBlock bgColor={tailwindCss.lime[400]} />
         </XStack>
 
         <Stack gap={3} alignItems='center' direction='column'>

@@ -11,6 +11,6 @@ export const slateA = {
   slateA10: '#00101b',
   slateA11: '#000e18',
   slateA12: '#00080c',
-};
+} as const;
 
 export default slateA;

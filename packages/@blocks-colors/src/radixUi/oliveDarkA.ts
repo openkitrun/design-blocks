@@ -11,6 +11,6 @@ export const oliveDarkA = {
   oliveA10: '#ebffe7',
   oliveA11: '#f3fff1',
   oliveA12: '#fdfffd',
-};
+} as const;
 
 export default oliveDarkA;

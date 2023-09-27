@@ -10,6 +10,6 @@ export const sky = {
   800: '#075985',
   900: '#0c4a6e',
   950: '#082f49',
-};
+} as const;
 
 export default sky;

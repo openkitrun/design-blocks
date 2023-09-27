@@ -11,6 +11,6 @@ export const plumA = {
   plumA10: '#88009d',
   plumA11: '#88009c',
   plumA12: '#2a0031',
-};
+} as const;
 
 export default plumA;

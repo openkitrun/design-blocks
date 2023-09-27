@@ -11,6 +11,6 @@ export const greenDark = {
   green10: '#3cb179',
   green11: '#4cc38a',
   green12: '#e5fbeb',
-};
+} as const;
 
 export default greenDark;

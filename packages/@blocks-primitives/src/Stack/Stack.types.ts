@@ -1,6 +1,5 @@
 import type * as RN from 'react-native';
 
-import type { Theme } from '@design-blocks/theme';
 import type { SxStyledFlex, StylesObjectProps } from '@design-blocks/types';
 
 type SxStyledProps = Omit<StylesObjectProps, 'direction'>;
@@ -40,11 +39,6 @@ export interface StackProps extends RN.ViewProps, SxStyledProps {
    * @see { @sx https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Stack }
    */
   sx?: SxStyledProps;
-
-  /**
-   * @optional
-   */
-  theme?: Theme;
 }
 
 export type IStackStyleValue = {

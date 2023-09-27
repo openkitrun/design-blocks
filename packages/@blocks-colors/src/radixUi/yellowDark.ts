@@ -11,6 +11,6 @@ export const yellowDark = {
   yellow10: '#ffef5c',
   yellow11: '#f0c000',
   yellow12: '#fffad1',
-};
+} as const;
 
 export default yellowDark;

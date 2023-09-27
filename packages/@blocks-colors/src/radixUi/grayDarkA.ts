@@ -11,6 +11,6 @@ export const grayDarkA = {
   grayA10: '#ffffff',
   grayA11: '#ffffff',
   grayA12: '#ffffff',
-};
+} as const;
 
 export default grayDarkA;

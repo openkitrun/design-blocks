@@ -1,12 +1,11 @@
-//import { TailwindCssColors } from '@design-blocks/colors';
-//import type { Theme as BlockTheme } from '@design-blocks/theme';
+// import '@design-blocks/native';
 
-// declare module '@design-blocks/theme' {
+// import { TailwindCssColors } from '@design-blocks/colors';
+// import type { Theme as BlockTheme } from '@design-blocks/native';
+
+// declare module '@design-blocks/native' {
 //   export interface Theme extends BlockTheme {
 //     colors: TailwindCssColors;
-//     fontSizes: {
-//       '10xl': number;
-//     };
 //   }
 // }
 

@@ -10,6 +10,6 @@ export const cyan = {
   800: '#155e75',
   900: '#164e63',
   950: '#083344',
-};
+} as const;
 
 export default cyan;

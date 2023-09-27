@@ -11,6 +11,6 @@ export const brown = {
   brown10: '#a07653',
   brown11: '#886349',
   brown12: '#3f2c22',
-};
+} as const;
 
 export default brown;

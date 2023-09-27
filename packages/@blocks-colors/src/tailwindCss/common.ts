@@ -4,6 +4,6 @@ export const common = {
   transparent: 'transparent',
   black: '#000',
   white: '#fff',
-};
+} as const;
 
 export default common;

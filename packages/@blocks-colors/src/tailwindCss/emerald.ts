@@ -10,6 +10,6 @@ export const emerald = {
   800: '#065f46',
   900: '#064e3b',
   950: '#022c22',
-};
+} as const;
 
 export default emerald;

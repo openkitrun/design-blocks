@@ -10,6 +10,6 @@ export const orange = {
   800: '#9a3412',
   900: '#7c2d12',
   950: '#431407',
-};
+} as const;
 
 export default orange;

@@ -11,6 +11,6 @@ export const sageDark = {
   sage10: '#75817b',
   sage11: '#99a29e',
   sage12: '#eceeed',
-};
+} as const;
 
 export default sageDark;

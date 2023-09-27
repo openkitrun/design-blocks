@@ -11,6 +11,6 @@ export const plum = {
   plum10: '#a43cb4',
   plum11: '#9c2bad',
   plum12: '#340c3b',
-};
+} as const;
 
 export default plum;
