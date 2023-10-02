@@ -1,4 +1,4 @@
-![design-blocks](./docs/preview.png)
+![design-blocks](./docs/preview_beta.png)
 
 <h1 align="center">
   Build your mobile applications React Native with blocks
@@ -108,7 +108,7 @@ const Description = block.Text(({ theme }) => ({
 
 > Use an alias for `blocks.config` this will help the developer experience
 
-```
+```js
 // tsconfig.json or jsconfig.json
 {
   "compilerOptions": {
@@ -118,6 +118,28 @@ const Description = block.Text(({ theme }) => ({
     }
   }
 }
+```
+
+```js
+// babel.config.js
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    [
+      'module-resolver',
+      {
+        root: ['./src'],
+        extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
+        alias: {
+          '@blocks': './blocks.config.ts',
+          ...
+        },
+      },
+    ],
+    'react-native-reanimated/plugin',
+  ],
+};
+
 ```
 
 And as a result has improved the development experience
