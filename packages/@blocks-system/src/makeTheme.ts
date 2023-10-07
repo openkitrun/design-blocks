@@ -32,7 +32,10 @@ export function makeTheme(themeOptions: ThemeOptions = {}): Theme {
   const colors = deepMerge(colorsBase, { ...extend.colors });
   const spacings = deepMerge(baseTheme.spacings, { ...spacingsOverrides, ...extend.spacings });
   const fontSizes = deepMerge(baseTheme.fontSizes, { ...fontSizesOverrides, ...extend.fontSizes });
-  const fontWeights = deepMerge(baseTheme.fontWeights, { ...fontWeightsOverrides, ...extend.fontWeights });
+  const fontWeights = deepMerge(baseTheme.fontWeights, {
+    ...fontWeightsOverrides,
+    ...extend.fontWeights,
+  });
   const radii = deepMerge(baseTheme.radii, { ...radiiOverrides, ...extend.radii });
   const devTools = deepMerge(baseTheme.devTools, { ...devToolsOverrides });
 

@@ -1,8 +1,8 @@
 import { colorsKeys } from './colors';
+import { fontsKeys } from './fonts';
+import { radiiKeys } from './radii';
 import { sizesKeys } from './sizes';
 import { spacingsKeys } from './spacings';
-import { radiiKeys } from './radii';
-import { fontsKeys } from './fonts';
 
 export const componentsKeys = {
   Box: {

@@ -19,12 +19,13 @@
     "directory": "@blocks-core"
   },
   "scripts": {
+    "build": "pnpm clean:build && pnpm build:native",
     "build:native": "bob build",
     "clean": "pnpm clean:build && rimraf -rf .turbo",
     "clean:build": "rimraf -rf dist",
-    "lint:types": "tsc --noEmit",
-    "bundlesize": "bundlesize",
-    "build": "pnpm clean:build && pnpm build:native"
+    "lint": "../../node_modules/.bin/biome check src",
+    "lint:fix": "../../node_modules/.bin/biome check --apply-unsafe src",
+    "bundlesize": "bundlesize"
   },
   "keywords": [],
   "bundlesize": [

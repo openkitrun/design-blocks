@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import * as React from 'react';
 
-import { weakMemoize } from './weakMemoize';
 import type { Theme } from '.';
+import { weakMemoize } from './weakMemoize';
 
 export const ThemeContext = React.createContext<Theme>({} as Theme);
 export const useTheme = (): Theme => React.useContext(ThemeContext);
@@ -17,7 +17,9 @@ export interface ThemeProvider {
 }
 
 const getTheme = (
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   outerTheme: Record<string, any>,
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   theme: Record<string, any> | ((arg0: Record<string, any>) => Record<string, any>),
 ) => {
   if (typeof theme === 'function') {

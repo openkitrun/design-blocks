@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import { __DEV__, camelCase } from '@design-blocks/utils';
 import block from '@design-blocks/core';
 import { styleFunctionProps, styleFunctionSx } from '@design-blocks/system';
-
-import type { StackProps, IStackStyleValue } from './Stack.types';
+import { __DEV__, camelCase } from '@design-blocks/utils';
 
 import { Box } from '../Box';
 import { variants } from './Stack.utils';
+
+import type { IStackStyleValue, StackProps } from './Stack.types';
 
 const StackBlock = block(Box, {
   shouldForwardProp: (prop) => prop !== 'theme' && prop !== 'sx' && prop !== 'as',

@@ -1,5 +1,5 @@
-import type { ConfigBlocks, CreateBlocks } from './types';
 import { makeTheme } from './makeTheme';
+import type { ConfigBlocks, CreateBlocks } from './types';
 
 import block from '@design-blocks/core';
 

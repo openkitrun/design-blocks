@@ -1,7 +1,7 @@
 import * as RN from 'react-native';
 
-import type { SpacingProps, SxTextProps, OmitedSpacing } from '@design-blocks/types';
-import type { ITheme, IFontWeights } from '@design-blocks/theme';
+import type { IFontWeights, ITheme } from '@design-blocks/theme';
+import type { OmitedSpacing, SpacingProps, SxTextProps } from '@design-blocks/types';
 
 type Omited = 'color' | 'fontWeight' | 'fontSize' | OmitedSpacing;
 

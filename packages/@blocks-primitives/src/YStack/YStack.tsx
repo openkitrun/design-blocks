@@ -2,8 +2,9 @@ import * as React from 'react';
 
 import { __DEV__ } from '@design-blocks/utils';
 
-import type { StackProps } from '../Stack';
 import { Stack } from '../Stack';
+
+import type { StackProps } from '../Stack';
 
 function YStack({ ...props }: StackProps) {
   return <Stack direction='column' {...props} />;

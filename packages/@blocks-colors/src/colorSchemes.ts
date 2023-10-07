@@ -1,7 +1,7 @@
-import type { Leaves } from '@design-blocks/types';
-
-import { colors as tailwindCssColors } from './tailwindCss';
 import { colors as radixUiColors } from './radixUi';
+import { colors as tailwindCssColors } from './tailwindCss';
+
+import type { Leaves } from '@design-blocks/types';
 
 export const tailwindCss = tailwindCssColors;
 export const radixUi = radixUiColors;

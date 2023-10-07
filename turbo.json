@@ -11,11 +11,11 @@
     },
     "lint": {
       "outputs": [],
-      "inputs": ["**/*.{js,ts}"]
+      "inputs": ["**/*.{js,ts,tsx}"]
     },
-    "lint:types": {
-      "dependsOn": ["lint"],
-      "inputs": ["**/*.{js,ts}"]
+    "lint:fix": {
+      "outputs": [],
+      "inputs": ["**/*.{js,ts,tsx}"]
     },
     "prettier": {
       "outputs": [],

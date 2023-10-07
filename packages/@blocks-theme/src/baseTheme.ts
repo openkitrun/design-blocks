@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 //import type { Spacings, FontSizes, FontWeights, Radii, DevTools } from './themeTokens';
-import { fonts, spacings, devTools, radii } from './themeTokens';
+import { devTools, fonts, radii, spacings } from './themeTokens';
 
 export const baseTheme = {
   colors: {},

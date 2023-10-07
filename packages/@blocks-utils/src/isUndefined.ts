@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export function isUndefined(val: any) {
   return val === undefined;
 }

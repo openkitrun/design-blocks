@@ -59,17 +59,11 @@ jobs:
       - name: 💣 build
         run: pnpm turbo run build --cache-dir=".turbo"
 
-      - name: 💅 Prettier
-        run: pnpm turbo run lint
-
-      - name: 💎 lint:types
-        run: pnpm turbo run lint:types --cache-dir=".turbo"
-
       - name: bundlesize
         run: pnpm turbo run bundlesize --cache-dir=".turbo"
 
-      # - name: 💅 lint
-      #   run: pnpm turbo run lint
+      - name: 💅 lint
+        run: pnpm turbo run lint --cache-dir=".turbo"
 
       # - name: Delete tags reset
       #   run: |

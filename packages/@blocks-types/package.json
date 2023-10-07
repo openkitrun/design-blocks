@@ -16,11 +16,12 @@
     "directory": "@blocks-types"
   },
   "scripts": {
+    "build": "pnpm clean:build && pnpm build:native",
     "build:native": "bob build",
     "clean": "pnpm clean:build && rimraf -rf .turbo",
     "clean:build": "rimraf -rf dist",
-    "build": "pnpm clean:build && pnpm build:native",
-    "lint:types": "tsc --noEmit",
+    "lint": "../../node_modules/.bin/biome check src",
+    "lint:fix": "../../node_modules/.bin/biome check --apply-unsafe src",
     "bundlesize": "bundlesize"
   },
   "keywords": [],

@@ -1,6 +1,6 @@
 import type * as RN from 'react-native';
 
-import type { SxStyledFlex, StylesObjectProps } from '@design-blocks/types';
+import type { StylesObjectProps, SxStyledFlex } from '@design-blocks/types';
 
 type SxStyledProps = Omit<StylesObjectProps, 'direction'>;
 

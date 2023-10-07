@@ -1,5 +1,5 @@
 import type { ISpacings } from '@design-blocks/theme';
-import type { FlexStyle, ViewStyle, TextStyle } from 'react-native';
+import type { FlexStyle, TextStyle, ViewStyle } from 'react-native';
 
 type ValueBase = number | string | undefined;
 

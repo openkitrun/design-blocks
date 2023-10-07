@@ -1,4 +1,4 @@
-import type { Theme, ISpacesKeys, IColorsKeys, IRadiiKeys } from '@design-blocks/theme';
+import type { IColorsKeys, IRadiiKeys, ISpacesKeys, Theme } from '@design-blocks/theme';
 import { themeKeys } from '@design-blocks/theme';
 
 import { getValuesTokens } from './getValuesTokens';
