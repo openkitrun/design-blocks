@@ -6,24 +6,13 @@ export * from './baseTheme';
 export * from './themeKeys';
 export * from './theming';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface OuterTheme {}
 
 export interface Theme {
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  colors: Record<string, any>;
   spacings: Spacings;
   fontSizes: FontSizes;
   fontWeights: FontWeights;
   radii: Radii;
-  extend: {
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-    colors: Record<string, any>;
-    spacings: Spacings;
-    fontSizes: FontSizes;
-    fontWeights: FontWeights;
-    radii: Radii;
-  };
   devTools: DevTools;
 }
 
@@ -36,7 +25,8 @@ export interface ThemeOptions {
   fontWeights?: Theme['fontWeights'];
   radii?: Theme['radii'];
   extend?: {
-    colors?: Theme['colors'];
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+    colors?: Record<string, any>;
     spacings?: Theme['spacings'];
     fontSizes?: Theme['fontSizes'];
     fontWeights?: Theme['fontWeights'];
