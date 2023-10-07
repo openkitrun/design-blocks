@@ -17,7 +17,6 @@
     "dev": "turbo dev",
     "dev:example-basic": "turbo dev --filter=\"{./examples/basic}...\"",
     "clean": "turbo run clean",
-    "lint-staged": "lint-staged",
     "changeset": "changeset",
     "version": "changeset version",
     "release": "changeset publish",
@@ -27,11 +26,6 @@
     "biome:format": "biome format ./src/**/*.ts --write",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix"
-  },
-  "lint-staged": {
-    "*.{ts,js,jsx}": [
-      "pnpm run lint"
-    ]
   },
   "devDependencies": {
     "@biomejs/biome": "1.2.2",
@@ -44,7 +38,6 @@
     "@types/node": "20.7.0",
     "cross-env": "7.0.3",
     "husky": "8.0.3",
-    "lint-staged": "13.2.2",
     "prettier": "2.8.8",
     "tsconfig": "workspace:*",
     "turbo": "1.10.15",
