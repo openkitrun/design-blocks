@@ -1,5 +1,16 @@
 # @design-blocks/core
 
+## 1.1.0-beta.5
+
+### Minor Changes
+
+- [`7013d02`](https://github.com/design-blocks/design-blocks/commit/7013d026bc62fb77fa151dedda39cefa08056b1a) Thanks [@wootsbot](https://github.com/wootsbot)! - Use `declare module '@design-blocks/native'`
+
+### Patch Changes
+
+- Updated dependencies [[`7013d02`](https://github.com/design-blocks/design-blocks/commit/7013d026bc62fb77fa151dedda39cefa08056b1a)]:
+  - @design-blocks/theme@1.0.0-beta.14
+
 ## 1.1.0-beta.4
 
 ### Patch Changes
