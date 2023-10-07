@@ -1,5 +1,11 @@
 # @design-blocks/utils
 
+## 1.0.0-beta.12
+
+### Minor Changes
+
+- [`7013d02`](https://github.com/design-blocks/design-blocks/commit/7013d026bc62fb77fa151dedda39cefa08056b1a) Thanks [@wootsbot](https://github.com/wootsbot)! - Use `declare module '@design-blocks/native'`
+
 ## 1.0.0-beta.11
 
 ### Patch Changes
