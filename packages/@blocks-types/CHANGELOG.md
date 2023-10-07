@@ -1,5 +1,16 @@
 # @design-blocks/types
 
+## 1.0.0-beta.17
+
+### Minor Changes
+
+- [`be4321a`](https://github.com/design-blocks/design-blocks/commit/be4321a7a15074fb7f172b56f1b4497b9158b463) Thanks [@wootsbot](https://github.com/wootsbot)! - Added `css` util
+
+### Patch Changes
+
+- Updated dependencies [[`be4321a`](https://github.com/design-blocks/design-blocks/commit/be4321a7a15074fb7f172b56f1b4497b9158b463)]:
+  - @design-blocks/theme@1.0.0-beta.17
+
 ## 1.0.0-beta.16
 
 ### Minor Changes
