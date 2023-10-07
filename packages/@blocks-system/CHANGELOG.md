@@ -1,5 +1,14 @@
 # @design-blocks/system
 
+## 1.0.0-beta.16
+
+### Patch Changes
+
+- Updated dependencies [[`3060dcb`](https://github.com/design-blocks/design-blocks/commit/3060dcbf1bb562da1aff3c60f85ea87668356420)]:
+  - @design-blocks/theme@1.0.0-beta.15
+  - @design-blocks/core@1.1.0-beta.6
+  - @design-blocks/types@1.0.0-beta.15
+
 ## 1.0.0-beta.15
 
 ### Minor Changes
