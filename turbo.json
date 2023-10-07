@@ -3,6 +3,11 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
+      "inputs": [
+        "tsconfig.json",
+        "package.json",
+        "src/**"
+      ],
       "outputs": ["dist/**"]
     },
     "dev": {
@@ -16,10 +21,6 @@
     "lint:fix": {
       "outputs": [],
       "inputs": ["**/*.{js,ts,tsx}"]
-    },
-    "prettier": {
-      "outputs": [],
-      "inputs": ["**/*.{js,ts}"]
     },
     "bundlesize": {
       "dependsOn": ["^build", "lint"]
