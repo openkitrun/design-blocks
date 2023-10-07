@@ -1,6 +1,6 @@
 {
   "name": "@design-blocks/utils",
-  "version": "1.0.0-beta.10",
+  "version": "1.0.0-beta.11",
   "main": "dist/commonjs/index.js",
   "module": "dist/module/index.js",
   "types": "dist/typescript/index.d.ts",
