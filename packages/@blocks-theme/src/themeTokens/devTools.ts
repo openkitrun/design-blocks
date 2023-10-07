@@ -2,7 +2,7 @@ import { spacing } from '@design-blocks/utils';
 
 export const devTools = {
   spacing,
-};
+} as const;
 
 /** Utility interface. */
 // eslint-disable-next-line @typescript-eslint/ban-types

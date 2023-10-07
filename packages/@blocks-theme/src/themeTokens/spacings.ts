@@ -11,7 +11,7 @@ export const spacings = {
   '5xl': 64,
   full: '100%',
   baseSpacing: 8,
-};
+} as const;
 
 export type ISpacings = keyof typeof spacings;
 export type Spacings = Partial<typeof spacings>;

@@ -26,7 +26,7 @@ export const fonts = {
     extrabold: '800',
     black: '900',
   },
-};
+} as const;
 
 export type IFonts = keyof typeof fonts;
 export type Fonts = Partial<typeof fonts>;
