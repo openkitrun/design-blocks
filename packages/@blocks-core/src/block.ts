@@ -1,12 +1,13 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import * as reactNative from 'react-native';
 
 import { createBlock } from './createBlock';
+import { createCss } from './css';
 
 /**
  * a function that returns a styled component which render styles in React Native
  */
 export const block = createBlock(reactNative.StyleSheet);
+export const css = createCss(reactNative.StyleSheet);
 
 const components = [
   'ActivityIndicator',

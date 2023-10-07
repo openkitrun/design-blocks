@@ -1,4 +1,3 @@
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export const removeEmptyObjects = (stylesList: { [key: string]: any }[]) => {
   return stylesList.filter((element) => {
     if (Object.keys(element).length !== 0) {
