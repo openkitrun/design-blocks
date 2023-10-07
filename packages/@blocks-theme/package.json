@@ -4,14 +4,19 @@
   "main": "dist/commonjs/index.js",
   "module": "dist/module/index.js",
   "types": "dist/typescript/index.d.ts",
-  "react-native": "dist/commonjs/index.js",
   "source": "src/index.ts",
-  "exports": {
-    "./theme": "./dist/module/index.js"
-  },
   "files": [
+    "src",
     "dist"
   ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/typescript/index.d.ts",
+      "import": "./dist/module/index.js",
+      "require": "./dist/commonjs/index.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:design-blocks/design-blocks.git",

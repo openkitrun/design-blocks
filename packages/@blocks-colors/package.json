@@ -5,10 +5,18 @@
   "module": "dist/module/index.js",
   "types": "dist/typescript/index.d.ts",
   "source": "src/index.ts",
-  "typings": "dist/typescript/index.d.ts",
   "files": [
+    "src",
     "dist"
   ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/typescript/index.d.ts",
+      "import": "./dist/module/index.js",
+      "require": "./dist/commonjs/index.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:design-blocks/design-blocks.git",
