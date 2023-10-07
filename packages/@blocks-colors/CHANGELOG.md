@@ -1,5 +1,12 @@
 # @design-blocks/colors
 
+## 1.0.0-beta.13
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @design-blocks/types@1.0.0-beta.15
+
 ## 1.0.0-beta.12
 
 ### Minor Changes

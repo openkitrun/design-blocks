@@ -1,5 +1,11 @@
 # @design-blocks/theme
 
+## 1.0.0-beta.15
+
+### Patch Changes
+
+- [`3060dcb`](https://github.com/design-blocks/design-blocks/commit/3060dcbf1bb562da1aff3c60f85ea87668356420) Thanks [@wootsbot](https://github.com/wootsbot)! - Fixed types
+
 ## 1.0.0-beta.14
 
 ### Minor Changes
