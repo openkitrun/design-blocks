@@ -15,22 +15,28 @@ if (__DEV__) {
 }
 
 /**
- * The XStack component manages layout of immediate children along
- * the vertical or horizontal axis with optional spacing and/or dividers between each child.
+ * The XStack component manages the layout of its immediate children along
+ * the horizontal axis. It provides optional spacing and/or dividers between each child.
+ *
+ * Unlike generic Stack components, XStack ensures its children are stacked
+ * horizontally, making it especially useful for row layouts.
  *
  * @remarks
- * XStack is concerned with one-dimensional layouts
+ * XStack is specifically designed for horizontal one-dimensional layouts.
  *
  * @example
- * Wrap two components that do not accept styles outside the component
+ * Use XStack to horizontally align components that do not accept external styles.
  *
  * ```tsx
  * <XStack>
  *   <Box />
- *   <Box />
+ *   <Text />
+ *   <Stack />
+ *   <View />
  *   ...
  * </XStack>
  * ```
- * @see { @asChild https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/XStack }
+ *
+ * @see {@link https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/XStack | XStack Component Documentation}
  */
 export default React.memo(XStack);

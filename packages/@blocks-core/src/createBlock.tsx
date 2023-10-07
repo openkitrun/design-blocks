@@ -26,9 +26,7 @@ export function createBlock(
     const defaultShouldForwardProp = shouldForwardProp || getShouldForwardProp(component);
     const shouldUseAs = !defaultShouldForwardProp('as');
 
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     return function createBlockComponent(...rawStyles: Array<any>) {
-      // biome-ignore lint/suspicious/noExplicitAny: <explanation>
       let styles: Array<any>;
 
       if (rawStyles[0] == null || rawStyles[0].raw === undefined) {
@@ -37,7 +35,6 @@ export function createBlock(
         styles = interleave(rawStyles);
       }
 
-      // biome-ignore lint/suspicious/noExplicitAny: <explanation>
       const Block = React.forwardRef((props: any, ref: React.Ref<any>) => {
         const finalTag = (shouldUseAs && props.as) || component;
 
@@ -53,7 +50,6 @@ export function createBlock(
         const finalShouldForwardProp =
           shouldUseAs && shouldForwardProp === undefined ? getShouldForwardProp(finalTag) : defaultShouldForwardProp;
 
-        // biome-ignore lint/suspicious/noExplicitAny: <explanation>
         const newProps: { [key: string]: any } = {};
 
         for (const key in props) {
@@ -73,10 +69,8 @@ export function createBlock(
       });
 
       // Need to assign type here because 'Styled' is of type ForwardRefExoticComponent
-      // biome-ignore lint/suspicious/noExplicitAny: <explanation>
       (Block as any).withComponent = (newComponent: React.ElementType) => createStylesBlocks(newComponent)(...styles);
 
-      // biome-ignore lint/suspicious/noExplicitAny: <explanation>
       (Block as any).displayName = `emotion(${getDisplayName(component)})`;
 
       return Block;
@@ -84,6 +78,5 @@ export function createBlock(
   };
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 const getDisplayName = (primitive: any) =>
   typeof primitive === 'string' ? primitive : primitive.displayName || primitive.name || 'Block';

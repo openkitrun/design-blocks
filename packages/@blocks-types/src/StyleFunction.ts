@@ -1,112 +1,98 @@
-import type { ISpacings } from '@design-blocks/theme';
+import type {
+  IColorsKeys,
+  IFontSizes,
+  IFontWeights,
+  IRadii,
+  IRadiiKeys,
+  ISizesKeys,
+  ISpacesKeys,
+  ISpacings,
+} from '@design-blocks/theme';
 import type { FlexStyle, TextStyle, ViewStyle } from 'react-native';
 
 type ValueBase = number | string | undefined;
 
-export interface RadiiProps {
-  borderBottomWidth?: number | undefined;
-  borderEndWidth?: ValueBase;
-  borderLeftWidth?: number | undefined;
-  borderRightWidth?: number | undefined;
-  borderStartWidth?: ValueBase;
-  borderTopWidth?: number | undefined;
-  borderWidth?: number | undefined;
-}
+export type OmittedRadii =
+  | IRadiiKeys
+  | 'borderBottomWidth'
+  | 'borderEndWidth'
+  | 'borderLeftWidth'
+  | 'borderRightWidth'
+  | 'borderStartWidth'
+  | 'borderTopWidth'
+  | 'borderWidth';
+type RadiiProps = {
+  [Key in IRadiiKeys]?: number | IRadii;
+} & {
+  borderBottomWidth?: number | IRadii;
+  borderEndWidth?: number | IRadii;
+  borderLeftWidth?: number | IRadii;
+  borderRightWidth?: number | IRadii;
+  borderStartWidth?: number | IRadii;
+  borderTopWidth?: number | IRadii;
+  borderWidth?: number | IRadii;
+};
 
-type Excluded = 'full' | 'spacing' | 'baseSpacing';
-type SpacingValue = Exclude<ISpacings | number | undefined, Excluded>;
+export type SpacingBaseExcluded = 'full' | 'spacing' | 'baseSpacing';
+type SpacingValue = Exclude<ISpacings | number | undefined, SpacingBaseExcluded>;
 
-type OmitedBorder = 'borderEndWidth' | 'borderStartWidth';
-export type OmitedSpacing =
-  | 'margin'
-  | 'marginBottom'
-  | 'marginEnd'
-  | 'marginHorizontal'
-  | 'marginLeft'
-  | 'marginRight'
-  | 'marginStart'
-  | 'marginTop'
-  | 'marginVertical'
-  | 'padding'
-  | 'paddingBottom'
-  | 'paddingEnd'
-  | 'paddingHorizontal'
-  | 'paddingLeft'
-  | 'paddingRight'
-  | 'paddingStart'
-  | 'paddingTop'
-  | 'paddingVertical';
+type OmittedBorder = 'borderEndWidth' | 'borderStartWidth';
 
-export interface SpacingProps {
-  margin?: SpacingValue;
-  marginBottom?: SpacingValue;
-  marginEnd?: SpacingValue;
-  marginHorizontal?: SpacingValue;
-  marginLeft?: SpacingValue;
-  marginRight?: SpacingValue;
-  marginStart?: SpacingValue;
-  marginTop?: SpacingValue;
-  marginVertical?: SpacingValue;
-  m?: SpacingValue;
-  mb?: SpacingValue;
-  me?: SpacingValue;
-  mh?: SpacingValue;
-  ml?: SpacingValue;
-  mr?: SpacingValue;
-  mt?: SpacingValue;
-  mv?: SpacingValue;
-  padding?: SpacingValue;
-  paddingBottom?: SpacingValue;
-  paddingEnd?: SpacingValue;
-  paddingHorizontal?: SpacingValue;
-  paddingLeft?: SpacingValue;
-  paddingRight?: SpacingValue;
-  paddingStart?: SpacingValue;
-  paddingTop?: SpacingValue;
-  paddingVertical?: SpacingValue;
-  p?: SpacingValue;
-  pr?: SpacingValue;
-  pl?: SpacingValue;
-  pt?: SpacingValue;
-  pb?: SpacingValue;
-  pv?: SpacingValue;
-  ph?: SpacingValue;
-}
+export type OmittedSpacing = ISpacesKeys;
+// export type OmittedSpacing =
+//   | 'margin'
+//   | 'marginBottom'
+//   | 'marginEnd'
+//   | 'marginHorizontal'
+//   | 'marginLeft'
+//   | 'marginRight'
+//   | 'marginStart'
+//   | 'marginTop'
+//   | 'marginVertical'
+//   | 'padding'
+//   | 'paddingBottom'
+//   | 'paddingEnd'
+//   | 'paddingHorizontal'
+//   | 'paddingLeft'
+//   | 'paddingRight'
+//   | 'paddingStart'
+//   | 'paddingTop'
+//   | 'paddingVertical'
+//   | 'gap'
+//   | 'rowGap'
+//   | 'columnGap';
 
-export interface BackgroundStyledProps {
-  bgColor?: string | undefined;
-  bg?: string | undefined;
-}
+export type SpacingProps = {
+  [Key in ISpacesKeys]?: SpacingValue;
+};
 
-export interface SizesProps {
-  width?: ValueBase;
-  w?: ValueBase;
-  height?: ValueBase;
-  h?: ValueBase;
-  minWidth?: ValueBase;
-  minW?: ValueBase;
-  maxWidth?: ValueBase;
-  maxW?: ValueBase;
-  minHeight?: ValueBase;
-  minH?: ValueBase;
-  maxHeight?: ValueBase;
-  maxH?: ValueBase;
-}
+export type OmittedColors = IColorsKeys;
+export type ColorsProps = {
+  [Key in IColorsKeys]?: TextStyle['color'];
+};
 
-type OmitedTextStyles = 'textDecorationLine';
-export interface TextStyledProps extends Omit<TextStyle, OmitedTextStyles> {
+export type OmittedSizes = 'width' | 'height' | 'minWidth' | 'maxWidth' | 'minHeight' | 'maxHeight';
+type SizesProps = {
+  [Key in ISizesKeys]?: ValueBase;
+};
+
+type OmittedTextStyles = 'textDecorationLine' | 'color' | 'fontWeight' | 'fontSize' | OmittedSpacing | OmittedRadii;
+export interface TextStyledProps extends Omit<TextStyle, OmittedTextStyles>, SpacingProps {
   textDecorationLine?: TextStyle['textDecorationLine'] | 'lineThrough' | 'underlineLineThrough';
+  color?: TextStyle['color'];
+  fontWeight?: LooseAutocomplete<IFontWeights> | TextStyle['fontWeight'];
+  fontSize?: IFontSizes | TextStyle['fontSize'];
 }
 
-export type SxTextProps = TextStyledProps;
+export interface SxStyledText extends TextStyledProps {}
 
 export interface SxStyledFlex
-  extends Omit<FlexStyle, OmitedSpacing | OmitedBorder>,
-    Omit<ViewStyle, OmitedSpacing | OmitedBorder>,
+  extends Omit<FlexStyle, OmittedSpacing | OmittedBorder | OmittedRadii | OmittedColors>,
+    Omit<ViewStyle, OmittedSpacing | OmittedBorder | OmittedRadii | OmittedColors>,
     RadiiProps,
     SpacingProps,
-    BackgroundStyledProps,
-    Omit<SizesProps, 'width' | 'height' | 'minWidth' | 'maxWidth' | 'minHeight' | 'maxHeight'> {}
+    ColorsProps,
+    Omit<SizesProps, OmittedSizes> {}
 
 /**
  * Type LooseAutocomplete to help Property Prop

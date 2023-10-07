@@ -1,4 +1,4 @@
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import { Box, Stack, YStack, XStack, Text } from '@design-blocks/native';
 import { tailwindCss } from '@design-blocks/colors';

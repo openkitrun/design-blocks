@@ -41,6 +41,7 @@ type HostClassComponent<C extends React.ComponentClass<any>> = CreateBlockCompon
   { ref?: React.Ref<InstanceType<C>> },
   ReactNativeStyleType<React.ComponentProps<C>>
 >;
+
 type HostFunctionComponent<C extends React.FunctionComponent<any>> = CreateBlockComponent<
   React.ComponentProps<C> & { theme?: Theme; as?: React.ElementType },
   {},

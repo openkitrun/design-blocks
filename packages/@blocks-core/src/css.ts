@@ -11,7 +11,6 @@ let buffer = '';
 //@ts-ignore
 let lastType;
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 function handleInterpolation(interpolation: any, i: number, arr: Array<any>) {
   const type = typeof interpolation;
 
@@ -95,9 +94,7 @@ function handleInterpolation(interpolation: any, i: number, arr: Array<any>) {
 
 // Use platform specific StyleSheet method for creating the styles.
 // This enables us to use the css``/css({}) in any environment (Native | Sketch | Web)
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export function createCss(StyleSheet: Record<string, any>) {
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   return function css(...args: any) {
     const prevBuffer = buffer;
     let vals;

@@ -1,11 +1,16 @@
-/* eslint-disable @typescript-eslint/ban-types */
-import { Theme } from '@design-blocks/theme';
 import * as RN from 'react-native';
+
+import { Theme } from '@design-blocks/theme';
 
 type ReactNative = typeof RN;
 
+/**
+ * UPDATE
+ */
 export type ReactNativeStyle = RN.ViewStyle | RN.TextStyle | RN.ImageStyle;
-
+/**
+ * UPDATE
+ */
 export type ReactNativeStyleType<Props> = Props extends {
   style?: RN.StyleProp<infer StyleType>;
 }
@@ -13,7 +18,9 @@ export type ReactNativeStyleType<Props> = Props extends {
     ? StyleType
     : ReactNativeStyle
   : ReactNativeStyle;
-
+/**
+ * UPDATE
+ */
 export type InterpolationPrimitive<StyleType extends ReactNativeStyle = ReactNativeStyle> =
   | null
   | undefined
@@ -22,6 +29,9 @@ export type InterpolationPrimitive<StyleType extends ReactNativeStyle = ReactNat
   | string
   | ObjectInterpolation<StyleType>;
 
+/**
+ * UPDATE
+ */
 export type ObjectInterpolation<StyleType extends ReactNativeStyle = ReactNativeStyle> = StyleType;
 
 export type ArrayCSSInterpolation<StyleType extends ReactNativeStyle = ReactNativeStyle> = Array<

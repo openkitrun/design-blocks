@@ -1,4 +1,3 @@
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export function interleave(vals: Array<any>) {
   const strings = vals[0];
   const finalArray = [strings[0]];

@@ -9,10 +9,14 @@
       "recommended": true,
       "suspicious": {
         "noConsoleLog": "error",
-        "noEmptyInterface": "off"
+        "noEmptyInterface": "off",
+        "noExplicitAny": "off"
       },
       "performance": {
         "noDelete": "error"
+      },
+      "complexity": {
+        "noBannedTypes": "off"
       },
       "nursery": {
         "useGroupedTypeImport": "error",

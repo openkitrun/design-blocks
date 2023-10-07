@@ -146,9 +146,6 @@ importers:
       '@design-blocks/system':
         specifier: workspace:*
         version: link:../@blocks-system
-      '@design-blocks/theme':
-        specifier: workspace:*
-        version: link:../@blocks-theme
       '@design-blocks/types':
         specifier: workspace:*
         version: link:../@blocks-types

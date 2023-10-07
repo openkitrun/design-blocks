@@ -58,22 +58,26 @@ if (__DEV__) {
 }
 
 /**
- * The Stack component manages layout of immediate children along
- * the vertical or horizontal axis with optional spacing and/or dividers between each child.
+ * The Stack component manages the layout of its immediate children along
+ * the vertical or horizontal axis. It provides optional spacing and/or dividers
+ * between each child, offering a convenient way to handle one-dimensional layouts.
  *
- * @remarks
- * Stack is concerned with one-dimensional layouts
+ * It's especially useful for wrapping components that don't accept external styles.
  *
  * @example
- * Wrap two components that do not accept styles outside the component
- *
  * ```tsx
  * <Stack>
  *   <Box />
- *   <Box />
+ *   <Text />
+ *   <Stack />
+ *   <View />
  *   ...
  * </Stack>
  * ```
- * @see { @asChild https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Stack }
+ *
+ * @remarks
+ * Stack is strictly concerned with one-dimensional layouts.
+ *
+ * @see {@link https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Stack | Stack Component Documentation}
  */
 export default React.memo(Stack);

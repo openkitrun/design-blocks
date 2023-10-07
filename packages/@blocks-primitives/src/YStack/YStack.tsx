@@ -15,22 +15,28 @@ if (__DEV__) {
 }
 
 /**
- * The YStack component manages layout of immediate children along
- * the vertical or horizontal axis with optional spacing and/or dividers between each child.
+ * The YStack component manages the layout of its immediate children along
+ * the vertical axis. It offers optional spacing and/or dividers between each child.
+ *
+ * Unlike generic Stack components, YStack ensures its children are stacked
+ * vertically, making it particularly suitable for column layouts.
  *
  * @remarks
- * YStack is concerned with one-dimensional layouts
+ * YStack is dedicated to vertical one-dimensional layouts.
  *
  * @example
- * Wrap two components that do not accept styles outside the component
+ * Use YStack to vertically align components that do not accept external styles.
  *
  * ```tsx
  * <YStack>
  *   <Box />
- *   <Box />
+ *   <Text />
+ *   <Stack />
+ *   <View />
  *   ...
  * </YStack>
  * ```
- * @see { @asChild https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/YStack }
+ *
+ * @see {@link https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/YStack | YStack Component Documentation}
  */
 export default React.memo(YStack);

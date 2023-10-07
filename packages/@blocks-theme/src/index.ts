@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { DevTools, FontSizes, FontWeights, Radii, Spacings } from './themeTokens';
 
 export * from './themeTokens';
@@ -18,14 +17,12 @@ export interface Theme {
 
 export interface ITheme extends OuterTheme, Omit<Theme, keyof OuterTheme> {}
 export interface ThemeOptions {
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   colors?: Record<string, any>;
   spacings?: Theme['spacings'];
   fontSizes?: Theme['fontSizes'];
   fontWeights?: Theme['fontWeights'];
   radii?: Theme['radii'];
   extend?: {
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     colors?: Record<string, any>;
     spacings?: Theme['spacings'];
     fontSizes?: Theme['fontSizes'];

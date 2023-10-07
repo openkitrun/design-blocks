@@ -1,32 +1,22 @@
 import * as RN from 'react-native';
 
-import type { IFontWeights, ITheme } from '@design-blocks/theme';
-import type { OmitedSpacing, SpacingProps, SxTextProps } from '@design-blocks/types';
+import type { SxStyledText, TextStyledProps } from '@design-blocks/types';
 
-type Omited = 'color' | 'fontWeight' | 'fontSize' | OmitedSpacing;
-
-interface TextBaseProps extends Omit<SxTextProps, Omited>, SpacingProps {
-  color?: RN.TextStyle['color'] | string;
-  fontWeight?: IFontWeights | RN.TextStyle['fontWeight'];
-  fontSize?: keyof ITheme['fontSizes'] | RN.TextStyle['fontSize'];
-}
-
-export interface TextProps extends RN.TextProps, TextBaseProps {
+export interface TextProps extends RN.TextProps, TextStyledProps {
   /**
-   * The system prop that allows defining system overrides as well as additional CSS StyleSheets
-   *
-   * @Type object
-   *
-   * @Default {}
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   * It can be used to both override the default styles provided by the component and add additional styles.
    *
    * @example
    * ```tsx
-   * <Stack margin={3} sx={{ margin: 0 }} >
-   *   <ComponentOne />
-   *   <ComponentTwo />
-   * </Stack>
+   * <Text fontSize="2xl" sx={{ fontSize: 12 }} >
+   *  Hello World
+   * </Text>
    * ```
-   * @see { @sx https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Box }
+   *
+   * @type {TextStyledProps}
+   *
+   * @default {}
    */
-  sx?: TextBaseProps;
+  sx?: SxStyledText;
 }

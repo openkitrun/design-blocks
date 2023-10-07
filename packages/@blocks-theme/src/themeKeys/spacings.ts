@@ -14,8 +14,8 @@ export const spacingsKeys = {
   mh: 'marginHorizontal',
   marginHorizontal: 'marginHorizontal',
 
-  padding: 'padding',
   p: 'padding',
+  padding: 'padding',
   pr: 'paddingRight',
   paddingRight: 'paddingRight',
   pl: 'paddingLeft',
@@ -32,9 +32,6 @@ export const spacingsKeys = {
   gap: 'gap',
   rowGap: 'rowGap',
   columnGap: 'columnGap',
-  gridGap: 'gridGap',
-  gridRowGap: 'gridRowGap',
-  gridColumnGap: 'gridColumnGap',
 } as const;
 
 export type ISpacesKeys = keyof typeof spacingsKeys;

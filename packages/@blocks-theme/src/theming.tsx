@@ -17,9 +17,7 @@ export interface ThemeProvider {
 }
 
 const getTheme = (
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   outerTheme: Record<string, any>,
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   theme: Record<string, any> | ((arg0: Record<string, any>) => Record<string, any>),
 ) => {
   if (typeof theme === 'function') {

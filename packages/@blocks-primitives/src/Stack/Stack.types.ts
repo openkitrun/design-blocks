@@ -1,10 +1,10 @@
 import type * as RN from 'react-native';
 
-import type { StylesObjectProps, SxStyledFlex } from '@design-blocks/types';
+import type { FlexGapBlock, StylesObjectProps, SxStyledFlex } from '@design-blocks/types';
 
 type SxStyledProps = Omit<StylesObjectProps, 'direction'>;
 
-export interface StackProps extends RN.ViewProps, SxStyledProps {
+export interface StackProps extends RN.ViewProps, Omit<SxStyledProps, 'gap' | 'rowGap' | 'columnGap'>, FlexGapBlock {
   /**
    * Defines the `flex-direction` style property. It is applied for all screen sizes.
    *
