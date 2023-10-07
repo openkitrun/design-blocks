@@ -1,5 +1,11 @@
 # @design-blocks/utils
 
+## 1.0.0-beta.14
+
+### Minor Changes
+
+- [`be4321a`](https://github.com/design-blocks/design-blocks/commit/be4321a7a15074fb7f172b56f1b4497b9158b463) Thanks [@wootsbot](https://github.com/wootsbot)! - Added `css` util
+
 ## 1.0.0-beta.13
 
 ### Minor Changes
