@@ -1,5 +1,11 @@
 # tsconfig
 
+## 1.0.0-beta.9
+
+### Major Changes
+
+- [`6d9956e`](https://github.com/design-blocks/design-blocks/commit/6d9956e4d77dfee96737e0a6dd1d516787c57b7d) Thanks [@wootsbot](https://github.com/wootsbot)! - RFC: remove `@design-blocks/core` to `@design-blocks/block`, remove `@design-blocks/primitives` of export in `@design-blocks/native`
+
 ## 1.0.0-beta.8
 
 ### Minor Changes

@@ -1,5 +1,19 @@
 # @design-blocks/native
 
+## 1.0.0-beta.21
+
+### Major Changes
+
+- [`6d9956e`](https://github.com/design-blocks/design-blocks/commit/6d9956e4d77dfee96737e0a6dd1d516787c57b7d) Thanks [@wootsbot](https://github.com/wootsbot)! - RFC: remove `@design-blocks/core` to `@design-blocks/block`, remove `@design-blocks/primitives` of export in `@design-blocks/native`
+
+### Patch Changes
+
+- Updated dependencies [[`6d9956e`](https://github.com/design-blocks/design-blocks/commit/6d9956e4d77dfee96737e0a6dd1d516787c57b7d)]:
+  - @design-blocks/system@1.0.0-beta.19
+  - @design-blocks/theme@1.0.0-beta.18
+  - @design-blocks/types@1.0.0-beta.18
+  - @design-blocks/utils@1.0.0-beta.15
+
 ## 1.0.0-beta.20
 
 ### Minor Changes

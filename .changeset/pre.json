@@ -12,7 +12,8 @@
     "@design-blocks/native": "0.1.0",
     "tsconfig": "0.1.0",
     "@examples/basic": "1.0.0",
-    "@design-blocks/core": "1.0.0"
+    "@design-blocks/core": "1.0.0",
+    "@design-blocks/block": "0.0.0"
   },
   "changesets": [
     "brave-cats-relax",
@@ -33,6 +34,7 @@
     "polite-horses-applaud",
     "polite-queens-whisper",
     "poor-feet-shake",
+    "purple-icons-help",
     "rude-snakes-clean",
     "silent-singers-cheat",
     "six-bottles-remain",
