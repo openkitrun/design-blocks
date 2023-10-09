@@ -47,7 +47,7 @@
     }
   ],
   "dependencies": {
-    "@design-blocks/core": "workspace:*",
+    "@design-blocks/block": "workspace:*",
     "@design-blocks/theme": "workspace:*",
     "@design-blocks/types": "workspace:*",
     "@design-blocks/utils": "workspace:*"

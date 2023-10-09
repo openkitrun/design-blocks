@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-//import type { Spacings, FontSizes, FontWeights, Radii, DevTools } from './themeTokens';
 import { devTools, fonts, radii, spacings } from './themeTokens';
 
 export const baseTheme = {
@@ -24,37 +22,3 @@ export const baseTheme = {
   },
   devTools,
 };
-
-//export type ITheme = keyof typeof baseTheme;
-//export type Theme = typeof baseTheme;
-// export interface Theme {
-//   colors: Record<string, any>;
-//   spacings: Spacings;
-//   fontSizes: FontSizes;
-//   fontWeights: FontWeights;
-//   radii: Radii;
-//   extend: {
-//     colors: Record<string, any>;
-//     spacings: Spacings;
-//     fontSizes: FontSizes;
-//     fontWeights: FontWeights;
-//     radii: Radii;
-//   };
-//   devTools: DevTools;
-// }
-
-// export interface ThemeOptions {
-//   colors?: Record<string, any>;
-//   spacings?: Spacings;
-//   fontSizes?: FontSizes;
-//   fontWeights?: FontWeights;
-//   radii?: Radii;
-//   extend?: {
-//     colors?: Record<string, any>;
-//     spacings?: Spacings;
-//     fontSizes?: FontSizes;
-//     fontWeights?: FontWeights;
-//     radii?: Radii;
-//   };
-//   devTools?: DevTools;
-// }

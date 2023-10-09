@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 export const weakMemoize = function <Arg, Return>(func: (arg0: Arg) => Return): (arg0: Arg) => Return {
   // $FlowFixMe flow doesn't include all non-primitive types as allowed for weakmaps
   //@ts-ignore

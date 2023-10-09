@@ -2,10 +2,12 @@
   "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
   "changelog": ["@changesets/changelog-github", { "repo": "design-blocks/design-blocks" }],
   "commit": false,
-  "fixed": [],
-  "linked": [],
+  "linked": [["@design-blocks/block", "@design-blocks/primitives", "@design-blocks/native"]],
   "access": "restricted",
   "baseBranch": "main",
   "ignore": ["@examples/basic"],
-  "bumpVersionsWithWorkspaceProtocolOnly": false
+  "bumpVersionsWithWorkspaceProtocolOnly": false,
+  "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
+    "updateInternalDependents": "always"
+  }
 }

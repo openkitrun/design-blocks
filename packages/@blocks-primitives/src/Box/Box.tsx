@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as RN from 'react-native';
 
-import block from '@design-blocks/core';
+import block from '@design-blocks/block';
 
 import { styleFunctionProps, styleFunctionSx } from '@design-blocks/system';
 import { __DEV__ } from '@design-blocks/utils';

@@ -1,8 +1,15 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { compact } from './compact';
 import { isNullOrUndefined } from './isNullOrUndefined';
 import { isUndefined } from './isUndefined';
 
+/**
+ * function to get value from object
+ *
+ * @param obj
+ * @param path
+ * @param defaultValue
+ * @returns
+ */
 // biome-ignore lint/style/useDefaultParameterLast: <explanation>
 export function get(obj: any = {}, path: any, defaultValue?: any) {
   const resultFinal = compact(path?.split(/[,[\].]+?/))?.reduce(

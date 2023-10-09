@@ -1,6 +1,6 @@
-import { css } from '@design-blocks/core';
+import { css } from '@design-blocks/block';
 
-import type { CreateBlock } from '@design-blocks/core';
+import type { CreateBlock } from '@design-blocks/block';
 import type { Theme, ThemeOptions } from '@design-blocks/theme';
 
 export type ConfigBlocks = {

@@ -48,8 +48,6 @@
     }
   ],
   "dependencies": {
-    "@design-blocks/core": "workspace:*",
-    "@design-blocks/primitives": "workspace:*",
     "@design-blocks/system": "workspace:*",
     "@design-blocks/theme": "workspace:*",
     "@design-blocks/types": "workspace:*",

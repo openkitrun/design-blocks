@@ -1,13 +1,32 @@
-import type { Theme, ThemeOptions } from '@design-blocks/theme';
-
 import { baseTheme } from '@design-blocks/theme';
 import { deepMerge } from '@design-blocks/utils';
 
+import type { Theme, ThemeOptions } from '@design-blocks/theme';
+
 /**
- * Generate a theme base on the options received.
- * @param options Takes an incomplete theme object and adds the missing parts.
- * @param args Deep merge the arguments with the about to be returned theme.
- * @returns A complete, ready-to-use theme object.
+ * Constructs a complete Blocks theme by merging the provided options with the base theme.
+ *
+ * This function takes an optional `ThemeOptions` object and returns a complete `Theme` object.
+ * The generated theme is built on top of the base theme, but any specified theme options
+ * will override or extend the base values.
+ *
+ * @param themeOptions The optional customization for the theme.
+ * - colorsBase: Base color definitions. These values will be deeply merged with extended colors.
+ * - spacingsOverrides, fontSizesOverrides, fontWeightsOverrides, radiiOverrides: Override base theme values.
+ * - extend: Contains extended or additional theme values.
+ * - devToolsOverrides: Override base devTools settings.
+ * - ...other: Any other theme configurations not specifically mentioned.
+ *
+ * @returns A complete, ready-to-use theme object where provided customizations
+ *          have been applied on top of the base theme.
+ *
+ * @example
+ * const customTheme = makeTheme({
+ *   colorsBase: { primary: '#ff0000' },
+ *   extend: {
+ *     spacings: { 10xl: '32px' }
+ *   }
+ * });
  */
 export function makeTheme(themeOptions: ThemeOptions = {}): Theme {
   const {

@@ -59,6 +59,9 @@ importers:
       '@design-blocks/native':
         specifier: workspace:*
         version: link:../../packages/native
+      '@design-blocks/primitives':
+        specifier: workspace:*
+        version: link:../../packages/@blocks-primitives
       expo:
         specifier: ~48.0.5
         version: 48.0.20(@babel/core@7.23.0)
@@ -104,45 +107,11 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
 
-  packages/@blocks-core:
-    dependencies:
-      '@design-blocks/theme':
-        specifier: workspace:*
-        version: link:../@blocks-theme
-      css-to-react-native:
-        specifier: 3.2.0
-        version: 3.2.0
-    devDependencies:
-      '@types/react':
-        specifier: 18.0.28
-        version: 18.0.28
-      bundlesize:
-        specifier: 0.18.1
-        version: 0.18.1
-      react:
-        specifier: ^18
-        version: 18.2.0
-      react-native:
-        specifier: '0.72'
-        version: 0.72.5(@babel/core@7.23.0)(@babel/preset-env@7.22.20)(react@18.2.0)
-      react-native-builder-bob:
-        specifier: 0.23.1
-        version: 0.23.1
-      rimraf:
-        specifier: 4.1.2
-        version: 4.1.2
-      tsconfig:
-        specifier: workspace:*
-        version: link:../tsconfig
-      typescript:
-        specifier: 5.0.4
-        version: 5.0.4
-
   packages/@blocks-primitives:
     dependencies:
-      '@design-blocks/core':
+      '@design-blocks/block':
         specifier: workspace:*
-        version: link:../@blocks-core
+        version: link:../block
       '@design-blocks/system':
         specifier: workspace:*
         version: link:../@blocks-system
@@ -183,9 +152,9 @@ importers:
 
   packages/@blocks-system:
     dependencies:
-      '@design-blocks/core':
+      '@design-blocks/block':
         specifier: workspace:*
-        version: link:../@blocks-core
+        version: link:../block
       '@design-blocks/theme':
         specifier: workspace:*
         version: link:../@blocks-theme
@@ -305,14 +274,42 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
 
+  packages/block:
+    dependencies:
+      '@design-blocks/theme':
+        specifier: workspace:*
+        version: link:../@blocks-theme
+      css-to-react-native:
+        specifier: 3.2.0
+        version: 3.2.0
+    devDependencies:
+      '@types/react':
+        specifier: 18.0.28
+        version: 18.0.28
+      bundlesize:
+        specifier: 0.18.1
+        version: 0.18.1
+      react:
+        specifier: ^18
+        version: 18.2.0
+      react-native:
+        specifier: '0.72'
+        version: 0.72.5(@babel/core@7.23.0)(@babel/preset-env@7.22.20)(react@18.2.0)
+      react-native-builder-bob:
+        specifier: 0.23.1
+        version: 0.23.1
+      rimraf:
+        specifier: 4.1.2
+        version: 4.1.2
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+      typescript:
+        specifier: 5.0.4
+        version: 5.0.4
+
   packages/native:
     dependencies:
-      '@design-blocks/core':
-        specifier: workspace:*
-        version: link:../@blocks-core
-      '@design-blocks/primitives':
-        specifier: workspace:*
-        version: link:../@blocks-primitives
       '@design-blocks/system':
         specifier: workspace:*
         version: link:../@blocks-system
@@ -2083,13 +2080,13 @@ packages:
       '@types/node': 20.5.1
       chalk: 4.1.2
       cosmiconfig: 8.3.6(typescript@5.0.4)
-      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6)(ts-node@10.9.1)(typescript@5.0.4)
+      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6)(ts-node@10.9.1)(typescript@4.9.5)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
       ts-node: 10.9.1(@types/node@20.7.0)(typescript@5.0.4)
-      typescript: 5.0.4
+      typescript: 4.9.5
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -4132,7 +4129,7 @@ packages:
   /core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
 
-  /cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6)(ts-node@10.9.1)(typescript@5.0.4):
+  /cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6)(ts-node@10.9.1)(typescript@4.9.5):
     resolution: {integrity: sha512-BabizFdC3wBHhbI4kJh0VkQP9GkBfoHPydD0COMce1nJ1kJAB3F2TmJ/I7diULBKtmEWSwEbuN/KDtgnmUUVmw==}
     engines: {node: '>=v14.21.3'}
     peerDependencies:
@@ -4144,7 +4141,7 @@ packages:
       '@types/node': 20.5.1
       cosmiconfig: 8.3.6(typescript@5.0.4)
       ts-node: 10.9.1(@types/node@20.7.0)(typescript@5.0.4)
-      typescript: 5.0.4
+      typescript: 4.9.5
     dev: true
 
   /cosmiconfig@5.2.1:

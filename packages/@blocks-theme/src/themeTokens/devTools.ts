@@ -1,7 +1,8 @@
-import { spacing } from '@design-blocks/utils';
+import { spacing, toPixels } from '@design-blocks/utils';
 
 export const devTools = {
   spacing,
+  toPixels,
 } as const;
 
 /** Utility interface. */
@@ -13,4 +14,5 @@ export type IDevTools = keyof typeof devTools & Utils;
 //export type DevTools = typeof devTools & Utils;
 export type DevTools = {
   spacing: typeof spacing;
+  toPixels: typeof toPixels;
 } & Utils;

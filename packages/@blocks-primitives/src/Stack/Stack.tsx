@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import block from '@design-blocks/core';
+import block from '@design-blocks/block';
 import { styleFunctionProps, styleFunctionSx } from '@design-blocks/system';
 import { __DEV__, camelCase } from '@design-blocks/utils';
 

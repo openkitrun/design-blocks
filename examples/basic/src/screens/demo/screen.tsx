@@ -1,16 +1,16 @@
 import { ScrollView, View } from "react-native";
 
-import { Box, Stack, YStack, XStack, Text } from "@design-blocks/native";
+import { Box, Stack, YStack, XStack, Text } from "@design-blocks/primitives";
 import { tailwindCss } from "@design-blocks/colors";
 
 import { block, css } from "../../../blocks.config";
 
 const CircleStringBlock = block.View`
   padding: ${(props) => props.theme.devTools.spacing(4)}px;
-  width: ${(props) => props.theme.devTools.spacing(10).toString()}px;
-  height: ${(props) => props.theme.devTools.spacing(10).toString()}px;
-  border-radius: ${(props) => props.theme.spacings.full?.toString()};
-  background-color: ${(props) => props.theme.colors.emerald[500]};
+  width: ${({theme: {devTools}}) => devTools.toPixels(devTools.spacing(10))};
+  height: ${({theme: {devTools}}) => devTools.toPixels(devTools.spacing(10))};
+  border-radius: ${({theme: {spacings}}) => spacings.full?.toString()};
+  background-color: ${({theme}) => theme.colors.emerald[500]};
 `;
 
 const LabelText = block.Text`

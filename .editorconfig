@@ -11,7 +11,7 @@ trim_trailing_whitespace = true
 [*.md]
 trim_trailing_whitespace = false
 
-[*.{js,json,yml}]
+[*.{js,jsx,ts,tsx,json,yml}]
 charset = utf-8
 indent_style = space
 indent_size = 2

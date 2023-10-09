@@ -1,4 +1,7 @@
 {
   "extends": "../../tsconfig",
+   "compilerOptions": {
+    "noImplicitReturns": false
+  },
   "include": ["src/**/*", "test/**/*"]
 }
