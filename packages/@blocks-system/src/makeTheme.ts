@@ -67,7 +67,7 @@ export function makeTheme(themeOptions: ThemeOptions = {}): Theme {
     extend,
     devTools,
     ...other,
-  } as Theme;
+  };
 
   return blocksTheme;
 }

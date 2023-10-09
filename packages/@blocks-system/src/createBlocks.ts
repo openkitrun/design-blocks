@@ -1,7 +1,8 @@
-import { makeTheme } from './makeTheme';
-import type { ConfigBlocks, CreateBlocks } from './types';
-
 import block, { css } from '@design-blocks/block';
+
+import { makeTheme } from './makeTheme';
+
+import type { ConfigBlocks, CreateBlocks } from './types';
 
 /**
  * Creates a new instance of the Blocks toolset with a custom theme configuration.

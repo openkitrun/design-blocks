@@ -1,7 +1,8 @@
-import type { IColorsKeys, IRadiiKeys, ISpacesKeys, Theme } from '@design-blocks/theme';
 import { themeKeys } from '@design-blocks/theme';
 
 import { getValuesTokens } from './getValuesTokens';
+
+import type { IColorsKeys, IRadiiKeys, ISpacesKeys, Theme } from '@design-blocks/theme';
 
 export default function validateProperties(
   valueStyle: string | number,

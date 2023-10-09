@@ -23,3 +23,5 @@ export const removeEmptyObjects = (stylesList: { [key: string]: any }[]) => {
     return false;
   });
 };
+
+export default removeEmptyObjects;

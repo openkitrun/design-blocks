@@ -17,3 +17,5 @@
 export function isNullOrUndefined(value: any) {
   return value == null;
 }
+
+export default isNullOrUndefined;

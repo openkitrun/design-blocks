@@ -113,6 +113,8 @@ import yellowA from './yellowA';
 import yellowDark from './yellowDark';
 import yellowDarkA from './yellowDarkA';
 
+import type { Leaves } from '@design-blocks/types';
+
 export const colors = {
   amber,
   amberA,
@@ -229,3 +231,8 @@ export const colors = {
   yellowDark,
   yellowDarkA,
 };
+
+export type IColors = Leaves<typeof colors>;
+export type Colors = typeof colors;
+
+export default colors;

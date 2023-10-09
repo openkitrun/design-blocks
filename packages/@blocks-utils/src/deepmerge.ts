@@ -61,3 +61,5 @@ export function deepMerge<T extends Record<string, unknown>>(target: T, source: 
 
   return output;
 }
+
+export default deepMerge;

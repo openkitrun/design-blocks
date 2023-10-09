@@ -13,3 +13,5 @@
 export function toPixels(value: number): string {
   return `${value}px`;
 }
+
+export default toPixels;

@@ -23,3 +23,5 @@ export function get(obj: any = {}, path: any, defaultValue?: any) {
       : obj[path]
     : resultFinal;
 }
+
+export default get;

@@ -1,10 +1,10 @@
-import type { IComponentsKeysProps, IFontSizes, IFontWeights, Theme } from '@design-blocks/theme';
-import type { StylesObjectProps } from '@design-blocks/types';
-
 import { componentsKeys } from '@design-blocks/theme';
 
 import { getValuesTokens } from './getValuesTokens';
 import validateProperties from './validateProperties';
+
+import type { IComponentsKeysProps, IFontSizes, IFontWeights, Theme } from '@design-blocks/theme';
+import type { StylesObjectProps } from '@design-blocks/types';
 
 type PropertyStyle<TokensProperty> = TokensProperty;
 

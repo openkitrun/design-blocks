@@ -10,7 +10,7 @@ import type {
 } from '@design-blocks/theme';
 import type { FlexStyle, TextStyle, ViewStyle } from 'react-native';
 
-type ValueBase = number | string | undefined;
+type BaseValue = number | string | undefined;
 
 export type OmittedRadii =
   | IRadiiKeys
@@ -39,28 +39,6 @@ type SpacingValue = Exclude<ISpacings | number | undefined, SpacingBaseExcluded>
 type OmittedBorder = 'borderEndWidth' | 'borderStartWidth';
 
 export type OmittedSpacing = ISpacesKeys;
-// export type OmittedSpacing =
-//   | 'margin'
-//   | 'marginBottom'
-//   | 'marginEnd'
-//   | 'marginHorizontal'
-//   | 'marginLeft'
-//   | 'marginRight'
-//   | 'marginStart'
-//   | 'marginTop'
-//   | 'marginVertical'
-//   | 'padding'
-//   | 'paddingBottom'
-//   | 'paddingEnd'
-//   | 'paddingHorizontal'
-//   | 'paddingLeft'
-//   | 'paddingRight'
-//   | 'paddingStart'
-//   | 'paddingTop'
-//   | 'paddingVertical'
-//   | 'gap'
-//   | 'rowGap'
-//   | 'columnGap';
 
 export type SpacingProps = {
   [Key in ISpacesKeys]?: SpacingValue;
@@ -73,7 +51,7 @@ export type ColorsProps = {
 
 export type OmittedSizes = 'width' | 'height' | 'minWidth' | 'maxWidth' | 'minHeight' | 'maxHeight';
 type SizesProps = {
-  [Key in ISizesKeys]?: ValueBase;
+  [Key in ISizesKeys]?: BaseValue;
 };
 
 type OmittedTextStyles = 'textDecorationLine' | 'color' | 'fontWeight' | 'fontSize' | OmittedSpacing | OmittedRadii;

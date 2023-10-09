@@ -22,6 +22,8 @@ import violet from './violet';
 import yellow from './yellow';
 import zinc from './zinc';
 
+import type { Leaves } from '@design-blocks/types';
+
 export const colors = {
   amber,
   blue,
@@ -47,3 +49,8 @@ export const colors = {
   yellow,
   zinc,
 };
+
+export type IColors = Leaves<typeof colors>;
+export type Colors = typeof colors;
+
+export default colors;

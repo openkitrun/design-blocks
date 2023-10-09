@@ -1,4 +1,5 @@
 export const fontsKeys = {
+  color: 'color',
   fontFamily: 'fontFamily',
   fontSize: 'fontSize',
   fontStyle: 'fontStyle',
@@ -6,8 +7,8 @@ export const fontsKeys = {
   letterSpacing: 'letterSpacing',
   lineHeight: 'lineHeight',
   textAlign: 'textAlign',
-  textDecoration: 'textDecoration',
   textDecorationLine: 'textDecorationLine',
+  textDecoration: 'textDecoration',
   textDecorationStyle: 'textDecorationStyle',
   textDecorationColor: 'textDecorationColor',
   textShadowColor: 'textShadowColor',

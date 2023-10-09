@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as React from 'react';
 
 import type { Theme } from '.';
@@ -39,11 +40,8 @@ const getTheme = (
   return { ...outerTheme, ...theme };
 };
 
-//@ts-ignore
 const createCacheWithTheme = weakMemoize((outerTheme) => {
-  //@ts-ignore
   return weakMemoize((theme) => {
-    //@ts-ignore
     return getTheme(outerTheme, theme);
   });
 });

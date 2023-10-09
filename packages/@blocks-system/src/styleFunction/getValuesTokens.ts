@@ -1,5 +1,6 @@
-import type { Theme } from '@design-blocks/theme';
 import { get, isString, isUndefined } from '@design-blocks/utils';
+
+import type { Theme } from '@design-blocks/theme';
 
 export const getValuesTokens = (values: Theme, fieldNames: string | string[]) => {
   const fieldNamesMap = fieldNames as string[];

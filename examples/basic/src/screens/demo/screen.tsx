@@ -1,7 +1,7 @@
-import { ScrollView, View } from "react-native";
+import { ScrollView } from "react-native";
 
 import { Box, Stack, YStack, XStack, Text } from "@design-blocks/primitives";
-import { tailwindCss } from "@design-blocks/colors";
+import {tailwindCssColors as colors} from "@design-blocks/colors";
 
 import { block, css } from "../../../blocks.config";
 
@@ -52,7 +52,7 @@ function DemoScreen() {
 
       <CircleStringBlock
         style={css`
-          border: 5px solid ${tailwindCss.emerald[700]};
+          border: 5px solid ${colors.emerald[700]};
         `}
       />
 
@@ -76,8 +76,8 @@ function DemoScreen() {
         </XStack>
 
         <XStack alignItems="center" justifyContent="space-around">
-          <CircleBlock bgColor={tailwindCss.emerald[600]} />
-          <SquareBlock bgColor={tailwindCss.lime[400]} />
+          <CircleBlock bgColor={colors.emerald[600]} />
+          <SquareBlock bgColor={colors.lime[400]} />
         </XStack>
 
         <Stack gap={3} alignItems="center" direction="column">
