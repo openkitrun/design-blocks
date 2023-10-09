@@ -1,5 +1,16 @@
 # @design-blocks/theme
 
+## 1.0.0-beta.19
+
+### Major Changes
+
+- [`cbea3f0`](https://github.com/design-blocks/design-blocks/commit/cbea3f0c4b1f0aea2cf7a9b42f6af9b36024082a) Thanks [@wootsbot](https://github.com/wootsbot)! - RFC: remplace build tool to Typescript
+
+### Patch Changes
+
+- Updated dependencies [[`cbea3f0`](https://github.com/design-blocks/design-blocks/commit/cbea3f0c4b1f0aea2cf7a9b42f6af9b36024082a)]:
+  - @design-blocks/utils@1.0.0-beta.16
+
 ## 1.0.0-beta.18
 
 ### Major Changes
