@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 0.1.0-beta.1
+
+### Minor Changes
+
+- [`4979e83`](https://github.com/design-blocks/design-blocks/commit/4979e8370a0fa33854800d341b457d0960a8b4a5) Thanks [@wootsbot](https://github.com/wootsbot)! - Added accessibility
+
 ## 0.1.0-beta.0
 
 ### Minor Changes
