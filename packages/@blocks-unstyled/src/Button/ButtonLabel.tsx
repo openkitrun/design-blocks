@@ -27,3 +27,5 @@ const styles = StyleSheet.create({
     }),
   },
 });
+
+ButtonLabel.displayName = 'Button.Label';

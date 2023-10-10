@@ -23,3 +23,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+ButtonRoot.displayName = 'Button.Root';

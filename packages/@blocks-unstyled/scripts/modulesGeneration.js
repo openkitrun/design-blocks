@@ -16,6 +16,7 @@ const componentNames = matches
 function generatePackageJson(componentName) {
   return JSON.stringify(
     {
+      private: true,
       sideEffects: false,
       module: `../module/${componentName}/index.js`,
       main: `../commonjs/${componentName}/index.js`,

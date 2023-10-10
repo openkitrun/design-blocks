@@ -2,6 +2,10 @@ import React from 'react';
 
 import type { ActivityIndicatorProps, PressableProps, TextProps } from 'react-native';
 
+export type ButtonBaseProps = {
+  children: React.ReactNode;
+};
+
 export interface ButtonProps extends PressableProps {
   children: React.ReactNode;
   disabled?: boolean | undefined;

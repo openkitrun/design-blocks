@@ -19,3 +19,5 @@ export function ButtonLoading({ style, ...others }: ButtonLoadingProps) {
 const styles = StyleSheet.create({
   root: {},
 });
+
+ButtonLoading.displayName = 'Button.Loading';

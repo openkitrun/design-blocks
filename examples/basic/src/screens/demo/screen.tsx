@@ -10,11 +10,7 @@ import {
 } from "@design-blocks/primitives";
 import { tailwindCssColors as colors } from "@design-blocks/colors";
 
-import {
-  ButtonRoot,
-  ButtonLabel,
-  ButtonLoading,
-} from "@design-blocks/unstyled/Button";
+import * as Button from "@design-blocks/unstyled/Button";
 
 import { block, css } from "../../../blocks.config";
 
@@ -36,7 +32,7 @@ const LabelText = block.Text`
   }}
 `;
 
-const ButtonLabelBlock = block(ButtonLabel)(({ theme }) => {
+const ButtonLabelBlock = block(Button.Label)(({ theme }) => {
   return {
     color: theme.colors.neutral[50],
   };
@@ -72,23 +68,23 @@ function DemoScreen() {
       </Text>
 
       <VStack gap="lg">
-        <ButtonRoot
+        <Button.Root
           loading
           style={css`
             gap: 12px;
           `}
         >
-          <ButtonLoading />
+          <Button.Loading />
           <ButtonLabelBlock>Button</ButtonLabelBlock>
-        </ButtonRoot>
+        </Button.Root>
 
-        <ButtonRoot
+        <Button.Root
           style={css`
             border: 5px solid ${colors.emerald[700]};
           `}
         >
-          <ButtonLabel>ButtonRoot</ButtonLabel>
-        </ButtonRoot>
+          <Button.Loading>ButtonRoot</Button.Loading>
+        </Button.Root>
       </VStack>
 
       <CircleStringBlock
