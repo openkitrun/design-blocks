@@ -13,7 +13,8 @@
     "tsconfig": "0.1.0",
     "@examples/basic": "1.0.0",
     "@design-blocks/core": "1.0.0",
-    "@design-blocks/block": "0.0.0"
+    "@design-blocks/block": "0.0.0",
+    "@design-blocks/unstyled": "0.0.0"
   },
   "changesets": [
     "brave-cats-relax",
@@ -27,6 +28,7 @@
     "funny-weeks-flow",
     "fuzzy-terms-cross",
     "gold-bobcats-call",
+    "healthy-parents-grin",
     "khaki-nails-crash",
     "lazy-shoes-warn",
     "many-lies-live",
