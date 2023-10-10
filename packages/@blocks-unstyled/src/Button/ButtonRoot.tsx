@@ -14,10 +14,19 @@ export function ButtonRoot({
   accessibilityRole = 'button',
   ...others
 }: ButtonProps) {
+  const accessibilityState = React.useMemo(
+    () => ({
+      disabled,
+      busy: loading,
+    }),
+    [disabled, loading],
+  );
+
   return (
     <ButtonContext.Provider value={{ loading, disabled, hideLabelOnLoading }}>
       <Pressable
         accessibilityRole={accessibilityRole}
+        accessibilityState={accessibilityState}
         style={StyleSheet.flatten([styles.root, style])}
         disabled={disabled || loading}
         {...others}

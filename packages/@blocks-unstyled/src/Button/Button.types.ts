@@ -9,7 +9,7 @@ export type ButtonBaseProps = {
 export interface ButtonProps extends PressableProps {
   children: React.ReactNode;
   disabled?: boolean | undefined;
-  loading?: null | boolean | undefined;
+  loading?: boolean | undefined;
   hideLabelOnLoading?: null | boolean | undefined;
 }
 

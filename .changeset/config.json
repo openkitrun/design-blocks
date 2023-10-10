@@ -5,9 +5,5 @@
   "linked": [["@design-blocks/block", "@design-blocks/primitives", "@design-blocks/native"]],
   "access": "restricted",
   "baseBranch": "main",
-  "ignore": ["@examples/basic"],
-  "bumpVersionsWithWorkspaceProtocolOnly": false,
-  "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
-    "updateInternalDependents": "always"
-  }
+  "ignore": ["@examples/basic"]
 }
