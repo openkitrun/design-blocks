@@ -31,11 +31,12 @@
     "a11y"
   ],
   "scripts": {
-    "build": "pnpm run clean:build && pnpm run build:native && pnpm run build:modules",
+    "prebuild": "pnpm run clean:build",
+    "build": "pnpm run build:native && pnpm run build:modules",
     "build:native": "bob build",
     "build:modules": "node ./scripts/modulesGeneration.js",
     "clean": "pnpm clean:build && rimraf -rf .turbo",
-    "clean:build": "rimraf -rf typescript dist",
+    "clean:build": "rimraf -rf dist",
     "lint": "../../node_modules/.bin/biome check src",
     "lint:fix": "../../node_modules/.bin/biome check --apply-unsafe src",
     "bundlesize": "bundlesize"

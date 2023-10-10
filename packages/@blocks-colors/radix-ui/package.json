@@ -1,5 +1,5 @@
 {
-  "name": "@design-blocks/colors-radix-ui",
+  "name": "colors-radix-ui",
   "version": "1.0.0",
   "private": true,
   "sideEffects": false,

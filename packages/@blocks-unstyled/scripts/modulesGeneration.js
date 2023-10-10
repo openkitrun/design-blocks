@@ -16,7 +16,7 @@ const componentNames = matches
 function generatePackageJson(componentName) {
   return JSON.stringify(
     {
-      name: `@design-blocks/unstyled-${componentName}`.toLowerCase(),
+      name: `unstyled-${componentName}`.toLowerCase(),
       version: "1.0.0",
       private: true,
       sideEffects: false,
