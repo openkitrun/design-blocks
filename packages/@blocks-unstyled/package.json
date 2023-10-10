@@ -6,6 +6,9 @@
   "module": "dist/module/index.js",
   "types": "dist/typescript/index.d.ts",
   "source": "src/index.ts",
+  "files": [
+    "**/*"
+  ],
   "exports": {
     "./package.json": "./package.json",
     ".": {

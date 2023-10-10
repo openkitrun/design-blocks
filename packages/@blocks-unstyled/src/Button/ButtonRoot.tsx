@@ -5,10 +5,23 @@ import { ButtonContext } from './ButtonContext';
 
 import type { ButtonProps } from './Button.types';
 
-export function ButtonRoot({ children, style, loading, disabled, hideLabelOnLoading, ...others }: ButtonProps) {
+export function ButtonRoot({
+  children,
+  style,
+  loading,
+  disabled,
+  hideLabelOnLoading,
+  accessibilityRole = 'button',
+  ...others
+}: ButtonProps) {
   return (
     <ButtonContext.Provider value={{ loading, disabled, hideLabelOnLoading }}>
-      <Pressable style={StyleSheet.flatten([styles.root, style])} disabled={disabled || loading} {...others}>
+      <Pressable
+        accessibilityRole={accessibilityRole}
+        style={StyleSheet.flatten([styles.root, style])}
+        disabled={disabled || loading}
+        {...others}
+      >
         {children}
       </Pressable>
     </ButtonContext.Provider>

@@ -1,0 +1,7 @@
+scripts/
+test/
+*.log
+tsconfig.build.json
+tsconfig.json
+.turbo
+CHANGELOG.md

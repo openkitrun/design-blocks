@@ -1,0 +1,5 @@
+{
+  "files.exclude": {
+    "packages/@blocks-unstyled/{Button,*.js,*.d.ts}": true
+  }
+}
