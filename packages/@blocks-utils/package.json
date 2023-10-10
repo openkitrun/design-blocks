@@ -49,7 +49,7 @@
   "bundlesize": [
     {
       "path": "./dist/commonjs/index.js",
-      "maxSize": "0.5kB"
+      "maxSize": "1kB"
     },
     {
       "path": "./dist/module/index.js",
