@@ -110,6 +110,10 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
 
+  packages/@blocks-colors/radix-ui: {}
+
+  packages/@blocks-colors/tailwind-css: {}
+
   packages/@blocks-primitives:
     dependencies:
       '@design-blocks/block':

@@ -1,8 +1,8 @@
 import '@design-blocks/native';
-import type { TailwindCssColors } from '@design-blocks/colors';
+import type { Colors } from '@design-blocks/colors/tailwind-css';
 
 declare module '@design-blocks/native' {
   export interface Theme {
-    colors: TailwindCssColors;
+    colors: Colors;
   }
 }

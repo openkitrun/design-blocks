@@ -8,7 +8,7 @@ import {
   Text,
   VStack,
 } from "@design-blocks/primitives";
-import { tailwindCssColors as colors } from "@design-blocks/colors";
+import colors from "@design-blocks/colors/tailwind-css";
 
 import * as Button from "@design-blocks/unstyled/Button";
 

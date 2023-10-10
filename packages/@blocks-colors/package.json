@@ -1,21 +1,23 @@
 {
   "name": "@design-blocks/colors",
   "version": "1.0.0-beta.17",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/module/index.js",
+  "types": "dist/typescript/index.d.ts",
   "source": "src/index.ts",
   "files": [
     "src",
     "dist",
-    "tailwind-css.d.ts",
-    "radix-ui.d.ts"
+    "tailwind-css",
+    "radix-ui"
   ],
   "exports": {
     "./package.json": "./package.json",
-    ".": "./dist/index.js",
-    "./tailwind-css": "./dist/tailwindCss/index.js",
-    "./radix-ui": "./dist/radixUi/index.js"
+    ".": {
+      "types": "./dist/typescript/index.d.ts",
+      "import": "./dist/module/index.js",
+      "require": "./dist/commonjs/index.js"
+    }
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,7 @@
     "directory": "@blocks-colors"
   },
   "scripts": {
-    "build": "pnpm clean:build && tsc -p tsconfig.build.json",
+    "build": "pnpm clean:build && pnpm build:native",
     "build:native": "bob build",
     "clean": "pnpm clean:build && rimraf -rf .turbo",
     "clean:build": "rimraf -rf dist",
@@ -34,11 +36,15 @@
   "keywords": [],
   "bundlesize": [
     {
-      "path": "./dist/index.js",
+      "path": "./dist/commonjs/index.js",
       "maxSize": "100B"
     },
     {
-      "path": "./dist/index.d.ts",
+      "path": "./dist/module/index.js",
+      "maxSize": "100B"
+    },
+    {
+      "path": "./dist/typescript/index.d.ts",
       "maxSize": "100B"
     }
   ],

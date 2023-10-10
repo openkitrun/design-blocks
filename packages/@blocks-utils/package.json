@@ -1,47 +1,34 @@
 {
   "name": "@design-blocks/utils",
   "version": "1.0.0-beta.16",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/module/index.js",
+  "types": "dist/typescript/index.d.ts",
   "source": "src/index.ts",
   "files": [
     "src",
     "dist",
-    "camel-case.d.ts",
-    "compact.d.ts",
-    "deepmerge.d.ts",
-    "get.d.ts",
-    "is-dev.d.ts",
-    "is-null-or-undefined.d.ts",
-    "is-number.d.ts",
-    "is-object.d.ts",
-    "is-string.d.ts",
-    "is-undefined.d.ts",
-    "remove-empty-objects.d.ts",
-    "spacing.d.ts",
-    "to-pixels.d.ts"
+    "camel-case",
+    "compact",
+    "deepmerge",
+    "get",
+    "is-dev",
+    "is-null-or-undefined",
+    "is-number",
+    "is-object",
+    "is-string",
+    "is-undefined",
+    "remove-empty-objects",
+    "spacing",
+    "to-pixels"
   ],
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./dist/index.js",
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
-    },
-    "./camel-case": "./dist/camelCase.js",
-    "./compact": "./dist/compact.js",
-    "./deepmerge": "./dist/deepmerge.js",
-    "./get": "./dist/get.js",
-    "./is-dev": "./dist/isDev.js",
-    "./is-null-or-undefined": "./dist/isNullOrUndefined.js",
-    "./is-number": "./dist/isNumber.js",
-    "./is-object.": "./dist/isObject.js",
-    "./is-string": "./dist/isString.js",
-    "./is-undefined": "./dist/isUndefined.js",
-    "./remove-empty-objects": "./dist/removeEmptyObjects.js",
-    "./spacing": "./dist/spacing.js",
-    "./to-pixels": "./dist/toPixels.js"
+      "types": "./dist/typescript/index.d.ts",
+      "import": "./dist/module/index.js",
+      "require": "./dist/commonjs/index.js"
+    }
   },
   "repository": {
     "type": "git",
@@ -49,8 +36,9 @@
     "directory": "@blocks-utils"
   },
   "scripts": {
-    "build": "pnpm clean:build && tsc -p tsconfig.build.json",
+    "build": "pnpm clean:build && pnpm build:native && pnpm build:modules",
     "build:native": "bob build",
+    "build:modules": "node ./scripts/modulesGeneration.js",
     "clean": "pnpm clean:build && rimraf -rf .turbo",
     "clean:build": "rimraf -rf dist",
     "lint": "../../node_modules/.bin/biome check src",
@@ -60,11 +48,15 @@
   "keywords": [],
   "bundlesize": [
     {
-      "path": "./dist/index.js",
-      "maxSize": "0.5KB"
+      "path": "./dist/commonjs/index.js",
+      "maxSize": "0.5kB"
     },
     {
-      "path": "./dist/index.d.ts",
+      "path": "./dist/module/index.js",
+      "maxSize": "0.5kB"
+    },
+    {
+      "path": "./dist/typescript/index.d.ts",
       "maxSize": "0.5kB"
     }
   ],

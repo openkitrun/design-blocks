@@ -13,15 +13,20 @@ const componentNames = matches
   ? matches.map((match) => match.match(/'\.\/(\w+)'/)[1])
   : [];
 
-function generatePackageJson(componentName) {
+function camelToKebab(string) {
+  return string.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, "$1-$2").toLowerCase();
+}
+
+function generatePackageJson(name) {
+  const namePGK = camelToKebab(name);
   return JSON.stringify(
     {
-      name: `@design-blocks/unstyled-${componentName}`.toLowerCase(),
+      name: `@design-blocks/utils-${namePGK}`,
       private: true,
       sideEffects: false,
-      module: `../dist/module/${componentName}/index.js`,
-      main: `../dist/commonjs/${componentName}/index.js`,
-      types: `../dist/typescript/${componentName}/index.d.ts`,
+      module: `../dist/module/${name}/index.js`,
+      main: `../dist/commonjs/${name}/index.js`,
+      types: `../dist/typescript/${name}/index.d.ts`,
     },
     null,
     2
@@ -29,7 +34,7 @@ function generatePackageJson(componentName) {
 }
 
 componentNames.forEach((name) => {
-  const outputPath = path.join(rootDirOutput, name);
+  const outputPath = path.join(rootDirOutput, camelToKebab(name));
 
   if (!fs.existsSync(outputPath)) {
     fs.mkdirSync(outputPath);
@@ -41,7 +46,9 @@ componentNames.forEach((name) => {
   );
 });
 
-const gitignoreContent = componentNames.map((name) => `/${name}`).join("\n");
+const gitignoreContent = componentNames
+  .map((name) => `/${camelToKebab(name)}`)
+  .join("\n");
 fs.writeFileSync(path.join(rootDirOutput, ".gitignore"), gitignoreContent);
 
 // biome-ignore lint/suspicious/noConsoleLog: <explanation>
