@@ -1,7 +1,10 @@
 import * as React from 'react';
+import { Text, View } from 'react-native';
 
-function AvatarFallback() {
-  return <></>;
+export function AvatarFallback() {
+  return (
+    <View>
+      <Text>Cargando...</Text>
+    </View>
+  );
 }
-
-export default AvatarFallback;
