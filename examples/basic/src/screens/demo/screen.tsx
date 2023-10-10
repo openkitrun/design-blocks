@@ -1,16 +1,31 @@
 import { ScrollView } from "react-native";
 
-import { Box, Stack, YStack, XStack, Text } from "@design-blocks/primitives";
-import {tailwindCssColors as colors} from "@design-blocks/colors";
+import {
+  Box,
+  Stack,
+  YStack,
+  XStack,
+  Text,
+  VStack,
+} from "@design-blocks/primitives";
+import { tailwindCssColors as colors } from "@design-blocks/colors";
+
+import {
+  ButtonRoot,
+  ButtonLabel,
+  ButtonLoading,
+} from "@design-blocks/unstyled/Button";
 
 import { block, css } from "../../../blocks.config";
 
 const CircleStringBlock = block.View`
   padding: ${(props) => props.theme.devTools.spacing(4)}px;
-  width: ${({theme: {devTools}}) => devTools.toPixels(devTools.spacing(10))};
-  height: ${({theme: {devTools}}) => devTools.toPixels(devTools.spacing(10))};
-  border-radius: ${({theme: {spacings}}) => spacings.full?.toString()};
-  background-color: ${({theme}) => theme.colors.emerald[500]};
+  width: ${({ theme: { devTools } }) =>
+    devTools.toPixels(devTools.spacing(10))};
+  height: ${({ theme: { devTools } }) =>
+    devTools.toPixels(devTools.spacing(10))};
+  border-radius: ${({ theme: { spacings } }) => spacings.full?.toString()};
+  background-color: ${({ theme }) => theme.colors.emerald[500]};
 `;
 
 const LabelText = block.Text`
@@ -20,6 +35,12 @@ const LabelText = block.Text`
     `;
   }}
 `;
+
+const ButtonLabelBlock = block(ButtonLabel)(({ theme }) => {
+  return {
+    color: theme.colors.neutral[50],
+  };
+});
 
 const CircleBlock = block(Box)(({ theme }) => {
   return {
@@ -49,6 +70,26 @@ function DemoScreen() {
       <Text mb="2xl" fontSize="7xl" color="zinc.100" textAlign="center">
         Blocks
       </Text>
+
+      <VStack gap="lg">
+        <ButtonRoot
+          loading
+          style={css`
+            gap: 12px;
+          `}
+        >
+          <ButtonLoading />
+          <ButtonLabelBlock>Button</ButtonLabelBlock>
+        </ButtonRoot>
+
+        <ButtonRoot
+          style={css`
+            border: 5px solid ${colors.emerald[700]};
+          `}
+        >
+          <ButtonLabel>ButtonRoot</ButtonLabel>
+        </ButtonRoot>
+      </VStack>
 
       <CircleStringBlock
         style={css`

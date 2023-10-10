@@ -1,0 +1,78 @@
+{
+  "name": "@design-blocks/unstyled",
+  "description": "A library 'unstyled' UI components and low-level hooks.",
+  "version": "0.0.0",
+  "main": "commonjs/index.js",
+  "module": "module/index.js",
+  "types": "typescript/index.d.ts",
+  "source": "src/index.ts",
+  "ignore": [
+
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./typescript/index.d.ts",
+      "import": "./module/index.js",
+      "require": "./commonjs/index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:design-blocks/design-blocks.git",
+    "directory": "@blocks-unstyled"
+  },
+  "scripts": {
+    "build": "pnpm clean:build && pnpm build:native && pnpm build:modules",
+    "build:native": "bob build",
+    "build:modules": "node ./scripts/modulesGeneration.js",
+    "clean": "pnpm clean:build && rimraf -rf .turbo",
+    "clean:build": "rimraf -rf typescript module commonjs",
+    "lint": "../../node_modules/.bin/biome check src",
+    "lint:fix": "../../node_modules/.bin/biome check --apply-unsafe src",
+    "bundlesize": "bundlesize"
+  },
+  "keywords": [],
+  "bundlesize": [
+    {
+      "path": "./dist/commonjs/index.js",
+      "maxSize": "0.5kB"
+    },
+    {
+      "path": "./dist/module/index.js",
+      "maxSize": "0.5kB"
+    },
+    {
+      "path": "./dist/typescript/index.d.ts",
+      "maxSize": "0.5kB"
+    }
+  ],
+  "devDependencies": {
+    "@types/react": "18.0.28",
+    "@types/react-native": "0.72.2",
+    "bundlesize": "0.18.1",
+    "react-native": "0.72",
+    "react-native-builder-bob": "0.23.1",
+    "rimraf": "4.1.2",
+    "tsconfig": "workspace:*",
+    "typescript": "5.0.4"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.71"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": ".",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
+}

@@ -2,6 +2,6 @@
   "extends": ["@commitlint/config-conventional"],
   "rules": {
     'scope-case': [2, 'always', ['lower-case', 'camel-case', 'upper-case', 'pascal-case']],
-    "type-enum": [2, 'always', ['chore', 'docs', 'feat', 'fix', 'hotfix', 'RFC', 'ci', 'revert', 'test']],
+    "type-enum": [2, 'always', ['chore', 'docs', 'feat', 'fix', 'hotfix', 'rfc', 'ci', 'revert', 'test']],
   }
 }

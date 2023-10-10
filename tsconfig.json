@@ -3,6 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@design-blocks/unstyled": ["./packages/@blocks-unstyled/src"],
+      "@design-blocks/unstyled/*": ["./packages/@blocks-unstyled/src/*"],
       "@design-blocks/primitives": ["./packages/@blocks-primitives/src"],
       "@design-blocks/primitives/*": ["./packages/@blocks-primitives/src/*"],
       "@design-blocks/styles": ["./packages/@blocks-styles/src"],

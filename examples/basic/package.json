@@ -13,6 +13,7 @@
     "@design-blocks/colors": "workspace:*",
     "@design-blocks/native": "workspace:*",
     "@design-blocks/primitives": "workspace:*",
+    "@design-blocks/unstyled": "workspace:*",
     "expo": "~48.0.5",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",

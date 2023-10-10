@@ -62,6 +62,9 @@ importers:
       '@design-blocks/primitives':
         specifier: workspace:*
         version: link:../../packages/@blocks-primitives
+      '@design-blocks/unstyled':
+        specifier: workspace:*
+        version: link:../../packages/@blocks-unstyled
       expo:
         specifier: ~48.0.5
         version: 48.0.20(@babel/core@7.23.0)
@@ -245,6 +248,39 @@ importers:
       typescript:
         specifier: 5.0.4
         version: 5.0.4
+
+  packages/@blocks-unstyled:
+    dependencies:
+      react:
+        specifier: '>=18'
+        version: 18.2.0
+    devDependencies:
+      '@types/react':
+        specifier: 18.0.28
+        version: 18.0.28
+      '@types/react-native':
+        specifier: 0.72.2
+        version: 0.72.2(react-native@0.72.5)
+      bundlesize:
+        specifier: 0.18.1
+        version: 0.18.1
+      react-native:
+        specifier: '0.72'
+        version: 0.72.5(@babel/core@7.23.0)(@babel/preset-env@7.22.20)(react@18.2.0)
+      react-native-builder-bob:
+        specifier: 0.23.1
+        version: 0.23.1
+      rimraf:
+        specifier: 4.1.2
+        version: 4.1.2
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+      typescript:
+        specifier: 5.0.4
+        version: 5.0.4
+
+  packages/@blocks-unstyled/Button: {}
 
   packages/@blocks-utils:
     dependencies:
