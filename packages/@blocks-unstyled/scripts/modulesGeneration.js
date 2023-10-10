@@ -17,6 +17,7 @@ function generatePackageJson(componentName) {
   return JSON.stringify(
     {
       name: `@design-blocks/unstyled-${componentName}`.toLowerCase(),
+      version: "1.0.0",
       private: true,
       sideEffects: false,
       module: `../dist/module/${componentName}/index.js`,

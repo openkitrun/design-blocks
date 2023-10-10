@@ -22,6 +22,7 @@ function generatePackageJson(name) {
   return JSON.stringify(
     {
       name: `@design-blocks/utils-${namePGK}`,
+      version: "1.0.0",
       private: true,
       sideEffects: false,
       module: `../dist/module/${name}/index.js`,

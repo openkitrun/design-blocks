@@ -1,5 +1,6 @@
 {
   "name": "@design-blocks/colors-radix-ui",
+  "version": "1.0.0",
   "private": true,
   "sideEffects": false,
   "module": "../dist/module/radixUi/index.js",
