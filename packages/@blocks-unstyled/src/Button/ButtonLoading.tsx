@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { ActivityIndicator, StyleSheet } from 'react-native';
 
 import { ButtonContext } from './ButtonContext';

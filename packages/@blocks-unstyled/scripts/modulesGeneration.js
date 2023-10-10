@@ -16,11 +16,12 @@ const componentNames = matches
 function generatePackageJson(componentName) {
   return JSON.stringify(
     {
+      name: `${componentName}`.toLowerCase(),
       private: true,
       sideEffects: false,
-      module: `../module/${componentName}/index.js`,
-      main: `../commonjs/${componentName}/index.js`,
-      types: `../typescript/${componentName}/index.d.ts`,
+      module: `../dist/module/${componentName}/index.js`,
+      main: `../dist/commonjs/${componentName}/index.js`,
+      types: `../dist/typescript/${componentName}/index.d.ts`,
     },
     null,
     2
@@ -39,6 +40,9 @@ componentNames.forEach((name) => {
     generatePackageJson(name)
   );
 });
+
+const gitignoreContent = componentNames.map((name) => `/${name}`).join("\n");
+fs.writeFileSync(path.join(rootDirOutput, ".gitignore"), gitignoreContent);
 
 // biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log("Modules generation completed");
