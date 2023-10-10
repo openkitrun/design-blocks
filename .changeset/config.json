@@ -5,5 +5,5 @@
   "linked": [["@design-blocks/block", "@design-blocks/primitives", "@design-blocks/native"]],
   "access": "restricted",
   "baseBranch": "main",
-  "ignore": ["@examples/basic", "@design-blocks/colors-radix-ui", "@design-blocks/colors-tailwind-css"]
+  "ignore": ["@examples/basic", "@design-blocks/colors-radix-ui", "@design-blocks/colors-tailwind-css", "@design-blocks/unstyled-button"]
 }

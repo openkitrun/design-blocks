@@ -36,7 +36,7 @@
     "directory": "@blocks-utils"
   },
   "scripts": {
-    "build": "pnpm clean:build && pnpm build:native && pnpm build:modules",
+    "build": "pnpm clean:build && pnpm build:native",
     "build:native": "bob build",
     "build:modules": "node ./scripts/modulesGeneration.js",
     "clean": "pnpm clean:build && rimraf -rf .turbo",

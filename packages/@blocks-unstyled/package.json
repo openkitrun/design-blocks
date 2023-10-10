@@ -22,8 +22,16 @@
     "url": "git@github.com:design-blocks/design-blocks.git",
     "directory": "@blocks-unstyled"
   },
+  "keywords": [
+    "react-native",
+    "react",
+    "react-native-components",
+    "design-blocks",
+    "unstyled",
+    "a11y"
+  ],
   "scripts": {
-    "build": "pnpm clean:build && pnpm build:native && pnpm build:modules",
+    "build": "pnpm run clean:build && pnpm run build:native && pnpm run build:modules",
     "build:native": "bob build",
     "build:modules": "node ./scripts/modulesGeneration.js",
     "clean": "pnpm clean:build && rimraf -rf .turbo",
@@ -32,7 +40,6 @@
     "lint:fix": "../../node_modules/.bin/biome check --apply-unsafe src",
     "bundlesize": "bundlesize"
   },
-  "keywords": [],
   "bundlesize": [
     {
       "path": "./dist/commonjs/index.js",
