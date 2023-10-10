@@ -1,5 +1,16 @@
 # @design-blocks/types
 
+## 1.0.0-beta.20
+
+### Minor Changes
+
+- [`784f7b6`](https://github.com/design-blocks/design-blocks/commit/784f7b64311ba112ee50af463844167a28b3a7e4) Thanks [@wootsbot](https://github.com/wootsbot)! - Export modules
+
+### Patch Changes
+
+- Updated dependencies [[`784f7b6`](https://github.com/design-blocks/design-blocks/commit/784f7b64311ba112ee50af463844167a28b3a7e4)]:
+  - @design-blocks/theme@1.0.0-beta.20
+
 ## 1.0.0-beta.19
 
 ### Major Changes

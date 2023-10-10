@@ -12,7 +12,10 @@
     "@design-blocks/utils": "1.0.0-beta.16",
     "@design-blocks/block": "1.0.0-beta.22",
     "@design-blocks/native": "1.0.0-beta.22",
-    "tsconfig": "1.0.0-beta.9"
+    "tsconfig": "1.0.0-beta.9",
+    "colors-radix-ui": "1.0.0",
+    "colors-tailwind-css": "1.0.0",
+    "unstyled-button": "1.0.0"
   },
   "changesets": [
     "brave-cats-relax",
@@ -32,6 +35,7 @@
     "lazy-shoes-warn",
     "many-lies-live",
     "mean-berries-hunt",
+    "nasty-rats-hide",
     "new-baboons-carry",
     "polite-horses-applaud",
     "polite-queens-whisper",

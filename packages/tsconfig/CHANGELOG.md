@@ -1,5 +1,11 @@
 # tsconfig
 
+## 1.0.0-beta.10
+
+### Minor Changes
+
+- [`784f7b6`](https://github.com/design-blocks/design-blocks/commit/784f7b64311ba112ee50af463844167a28b3a7e4) Thanks [@wootsbot](https://github.com/wootsbot)! - Export modules
+
 ## 1.0.0-beta.9
 
 ### Major Changes
