@@ -35,15 +35,15 @@
   "keywords": [],
   "bundlesize": [
     {
-      "path": "./dist/commonjs/index.js",
+      "path": "./commonjs/index.js",
       "maxSize": "0.5kB"
     },
     {
-      "path": "./dist/module/index.js",
+      "path": "./module/index.js",
       "maxSize": "0.5kB"
     },
     {
-      "path": "./dist/typescript/index.d.ts",
+      "path": "./typescript/index.d.ts",
       "maxSize": "0.5kB"
     }
   ],
