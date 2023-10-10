@@ -1,5 +1,19 @@
 # @design-blocks/primitives
 
+## 1.0.0-beta.23
+
+### Minor Changes
+
+- [`784f7b6`](https://github.com/design-blocks/design-blocks/commit/784f7b64311ba112ee50af463844167a28b3a7e4) Thanks [@wootsbot](https://github.com/wootsbot)! - Export modules
+
+### Patch Changes
+
+- Updated dependencies [[`784f7b6`](https://github.com/design-blocks/design-blocks/commit/784f7b64311ba112ee50af463844167a28b3a7e4)]:
+  - @design-blocks/system@1.0.0-beta.21
+  - @design-blocks/types@1.0.0-beta.20
+  - @design-blocks/utils@1.0.0-beta.17
+  - @design-blocks/block@1.0.0-beta.23
+
 ## 1.0.0-beta.22
 
 ### Major Changes
