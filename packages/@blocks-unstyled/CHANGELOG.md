@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.3
+
+### Major Changes
+
+- [`b160fae`](https://github.com/design-blocks/design-blocks/commit/b160fae477d6234c755ee907b46dee14cc3a0370) Thanks [@wootsbot](https://github.com/wootsbot)! - RFC export components
+
 ## 0.1.0-beta.2
 
 ### Minor Changes
