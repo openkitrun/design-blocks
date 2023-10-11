@@ -26,10 +26,6 @@ function generatePackageJson(componentName) {
   );
 }
 
-if (!fs.existsSync(rootDirOutput)) {
-  fs.ensureDirSync(path.join(rootDirOutput));
-}
-
 componentNames.forEach((name) => {
   const outputPath = path.join(rootDirOutput, name);
 
