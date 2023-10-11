@@ -1,9 +1,18 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "design-blocks/design-blocks" }],
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "design-blocks/design-blocks" }
+  ],
   "commit": false,
-  "linked": [["@design-blocks/block", "@design-blocks/primitives", "@design-blocks/native"]],
+  "linked": [
+    [
+      "@design-blocks/block",
+      "@design-blocks/primitives",
+      "@design-blocks/native"
+    ]
+  ],
   "access": "restricted",
   "baseBranch": "main",
-  "ignore": ["@examples/basic", "colors-radix-ui", "colors-tailwind-css", "unstyled-button"]
+  "ignore": ["@examples/basic", "colors-radix-ui", "colors-tailwind-css"]
 }

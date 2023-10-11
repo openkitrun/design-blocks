@@ -284,8 +284,6 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
 
-  packages/@blocks-unstyled/Button: {}
-
   packages/@blocks-utils:
     dependencies:
       ramda:

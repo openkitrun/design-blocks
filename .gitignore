@@ -5,6 +5,7 @@
 # Node directories
 node_modules
 
+build
 dist
 *.log
 .turbo

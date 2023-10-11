@@ -1,8 +1,8 @@
-const fs = require("fs");
+const fs = require("fs-extra");
 const path = require("path");
 
 const rootSourceDir = path.join(__dirname, "..");
-const rootDirOutput = path.join(__dirname, "..");
+const rootDirOutput = path.join(__dirname, "..", "build-temp");
 const indexFilePath = path.join(rootSourceDir, "src", "index.ts");
 
 const content = fs.readFileSync(indexFilePath, "utf8");
@@ -16,17 +16,18 @@ const componentNames = matches
 function generatePackageJson(componentName) {
   return JSON.stringify(
     {
-      name: `unstyled-${componentName}`.toLowerCase(),
-      version: "1.0.0",
-      private: true,
       sideEffects: false,
-      module: `../dist/module/${componentName}/index.js`,
-      main: `../dist/commonjs/${componentName}/index.js`,
-      types: `../dist/typescript/${componentName}/index.d.ts`,
+      module: `../module/${componentName}/index.js`,
+      main: `../commonjs/${componentName}/index.js`,
+      types: `../typescript/${componentName}/index.d.ts`,
     },
     null,
     2
   );
+}
+
+if (!fs.existsSync(rootDirOutput)) {
+  fs.ensureDirSync(path.join(rootDirOutput));
 }
 
 componentNames.forEach((name) => {
@@ -41,9 +42,6 @@ componentNames.forEach((name) => {
     generatePackageJson(name)
   );
 });
-
-const gitignoreContent = componentNames.map((name) => `/${name}`).join("\n");
-fs.writeFileSync(path.join(rootDirOutput, ".gitignore"), gitignoreContent);
 
 // biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log("Modules generation completed");

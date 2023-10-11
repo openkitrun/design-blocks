@@ -2,19 +2,20 @@
   "name": "@design-blocks/unstyled",
   "description": "A library 'unstyled' UI components and low-level hooks.",
   "version": "0.1.0-beta.2",
-  "main": "dist/commonjs/index.js",
-  "module": "dist/module/index.js",
-  "types": "dist/typescript/index.d.ts",
+  "main": "build/commonjs/index.js",
+  "module": "build/module/index.js",
+  "types": "build/typescript/index.d.ts",
   "source": "src/index.ts",
   "files": [
-    "**/*"
+    "src",
+    "build"
   ],
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./dist/typescript/index.d.ts",
-      "import": "./dist/module/index.js",
-      "require": "./dist/commonjs/index.js"
+      "types": "./build/typescript/index.d.ts",
+      "import": "./build/module/index.js",
+      "require": "./build/commonjs/index.js"
     }
   },
   "repository": {
@@ -32,26 +33,27 @@
   ],
   "scripts": {
     "prebuild": "pnpm run clean:build",
-    "build": "pnpm run build:native && pnpm run build:modules",
+    "build": "pnpm run build:native",
     "build:native": "bob build",
     "build:modules": "node ./scripts/modulesGeneration.js",
     "clean": "pnpm clean:build && rimraf -rf .turbo",
     "clean:build": "rimraf -rf dist",
     "lint": "../../node_modules/.bin/biome check src",
     "lint:fix": "../../node_modules/.bin/biome check --apply-unsafe src",
-    "bundlesize": "bundlesize"
+    "bundlesize": "bundlesize",
+    "prepublish": "node ./scripts/preparePublish.js && pnpm run build:modules"
   },
   "bundlesize": [
     {
-      "path": "./dist/commonjs/index.js",
+      "path": "./build/commonjs/index.js",
       "maxSize": "0.5kB"
     },
     {
-      "path": "./dist/module/index.js",
+      "path": "./build/module/index.js",
       "maxSize": "0.5kB"
     },
     {
-      "path": "./dist/typescript/index.d.ts",
+      "path": "./build/typescript/index.d.ts",
       "maxSize": "0.5kB"
     }
   ],
@@ -71,7 +73,7 @@
   },
   "react-native-builder-bob": {
     "source": "src",
-    "output": "dist",
+    "output": "build",
     "targets": [
       "commonjs",
       "module",
