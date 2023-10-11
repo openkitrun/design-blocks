@@ -46,5 +46,7 @@ fs.copySync(path.join(__dirname, "../src"), path.join(rootDirOutput, "src"));
 
 fs.copySync(path.join(__dirname, "../build"), path.join(rootDirOutput));
 
-fs.moveSync(path.join(rootDirOutput), path.join(__dirname, ".."));
+fs.moveSync(path.join(rootDirOutput), path.join(__dirname, ".."), {
+  overwrite: true,
+});
 fs.removeSync(path.join(__dirname, "../build"));
