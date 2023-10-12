@@ -31,7 +31,7 @@
     "lint": "../../node_modules/.bin/biome check src",
     "lint:fix": "../../node_modules/.bin/biome check --apply-unsafe src",
     "bundlesize": "bundlesize",
-    "prepublishOnly": "node ../../scripts/configPostinstall.js"
+    "prepublishOnly": "node ./scripts/configPostinstall.js"
   },
   "keywords": [],
   "bundlesize": [
