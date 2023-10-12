@@ -1,5 +1,15 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.4
+
+### Major Changes
+
+- [`5c6721c`](https://github.com/design-blocks/design-blocks/commit/5c6721c3b7f825682d1d36dba9031bd028b985d4) Thanks [@wootsbot](https://github.com/wootsbot)! - Export modules
+
+### Minor Changes
+
+- [`5c6721c`](https://github.com/design-blocks/design-blocks/commit/5c6721c3b7f825682d1d36dba9031bd028b985d4) Thanks [@wootsbot](https://github.com/wootsbot)! - Export modules
+
 ## 1.0.0-beta.3
 
 ### Major Changes
