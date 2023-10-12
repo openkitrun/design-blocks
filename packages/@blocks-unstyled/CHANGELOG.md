@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.9
+
+### Minor Changes
+
+- [`8a8f6bc`](https://github.com/design-blocks/design-blocks/commit/8a8f6bc4f82172c4d5a29a7ddebad96049724017) Thanks [@wootsbot](https://github.com/wootsbot)! - Fixed build
+
 ## 1.0.0-beta.8
 
 ### Minor Changes
