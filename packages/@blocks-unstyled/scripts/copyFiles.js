@@ -91,13 +91,4 @@ componentNames.forEach((name) => {
   );
 });
 
-const finalPkgFormat = JSON.parse(sharedPkg);
-// biome-ignore lint/performance/noDelete: <explanation>
-delete finalPkgFormat.scripts;
-
-fs.writeFileSync(
-  path.join(rootPath, "package.json"),
-  JSON.stringify(finalPkgFormat, null, 2)
-);
-
 fs.removeSync(path.join(__dirname, "../scripts"));
