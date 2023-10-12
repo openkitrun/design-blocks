@@ -32,7 +32,7 @@
     "a11y"
   ],
   "scripts": {
-    "build": "pnpm run build:native && pnpm run preparePackages",
+    "build": "pnpm run build:native && pnpm run formatPKJson",
     "build:native": "bob build",
     "build:modules": "node ./scripts/modulesGeneration.js",
     "clean": "pnpm clean:build && rimraf -rf .turbo",
@@ -40,8 +40,8 @@
     "lint": "../../node_modules/.bin/biome check src",
     "lint:fix": "../../node_modules/.bin/biome check --apply-unsafe src",
     "bundlesize": "bundlesize",
-    "preparePackages": "node ./scripts/preparePackages.js",
-    "postinstall": "node ./scripts/copyFiles.js && node ./scripts/modulesGeneration.js"
+    "formatPKJson": "node ./scripts/formatPKJson.js",
+    "postinstall": "node ./scripts/preparePackages.js && node ./scripts/copyFiles.js && node ./scripts/modulesGeneration.js"
   },
   "bundlesize": [
     {
