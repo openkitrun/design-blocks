@@ -8,19 +8,7 @@
   "files": [
     "src",
     "dist",
-    "camel-case",
-    "compact",
-    "deepmerge",
-    "get",
-    "is-dev",
-    "is-null-or-undefined",
-    "is-number",
-    "is-object",
-    "is-string",
-    "is-undefined",
-    "remove-empty-objects",
-    "spacing",
-    "to-pixels"
+    "scripts"
   ],
   "exports": {
     "./package.json": "./package.json",
@@ -38,12 +26,12 @@
   "scripts": {
     "build": "pnpm clean:build && pnpm build:native",
     "build:native": "bob build",
-    "build:modules": "node ./scripts/modulesGeneration.js",
     "clean": "pnpm clean:build && rimraf -rf .turbo",
     "clean:build": "rimraf -rf dist",
     "lint": "../../node_modules/.bin/biome check src",
     "lint:fix": "../../node_modules/.bin/biome check --apply-unsafe src",
-    "bundlesize": "bundlesize"
+    "bundlesize": "bundlesize",
+    "prepublishOnly": "node ../../scripts/configPostinstall.js"
   },
   "keywords": [],
   "bundlesize": [
