@@ -1,5 +1,15 @@
 # @design-blocks/native
 
+## 1.0.0-beta.26
+
+### Patch Changes
+
+- Updated dependencies [[`afc73ec`](https://github.com/design-blocks/design-blocks/commit/afc73ec3444705ea491e805955cd8314f1836c62)]:
+  - @design-blocks/utils@1.0.0-beta.20
+  - @design-blocks/system@1.0.0-beta.24
+  - @design-blocks/theme@1.0.0-beta.23
+  - @design-blocks/types@1.0.0-beta.23
+
 ## 1.0.0-beta.25
 
 ### Patch Changes

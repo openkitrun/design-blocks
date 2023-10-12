@@ -1,5 +1,12 @@
 # @design-blocks/theme
 
+## 1.0.0-beta.23
+
+### Patch Changes
+
+- Updated dependencies [[`afc73ec`](https://github.com/design-blocks/design-blocks/commit/afc73ec3444705ea491e805955cd8314f1836c62)]:
+  - @design-blocks/utils@1.0.0-beta.20
+
 ## 1.0.0-beta.22
 
 ### Patch Changes
