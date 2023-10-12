@@ -20,6 +20,7 @@ const componentNames = matches
 function generatePackageJson(componentName) {
   return JSON.stringify(
     {
+      name: "@packages/unstyled",
       sideEffects: false,
       module: `../module/${componentName}/index.js`,
       main: `../commonjs/${componentName}/index.js`,
