@@ -1,4 +1,1 @@
-/**
- * Root
- */
 export * from './Button';
