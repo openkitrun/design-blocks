@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-          scope: '@design-blocks'
+          scope: "@design-blocks"
 
       # We use week in the turbo cache key to keep the cache from infinitely growing
       - id: get-week
@@ -79,8 +79,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          USE_HARD_LINKS: false
         with:
           publish: pnpm release
-          commit: 'ci(release): version packages'
-          title: 'ci(release): version packages'
+          commit: "ci(release): version packages"
+          title: "ci(release): version packages"
