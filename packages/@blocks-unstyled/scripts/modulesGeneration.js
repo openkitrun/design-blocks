@@ -2,12 +2,8 @@ const fs = require("fs-extra");
 const path = require("path");
 
 const rootSourceDir = path.join(__dirname, "..");
-const rootDirOutputPath = path.join(__dirname, "..", "build-temp");
+const rootDirOutputPath = path.join(__dirname, "..");
 const indexFilePath = path.join(rootSourceDir, "src", "index.ts");
-
-if (!fs.existsSync(rootDirOutputPath)) {
-  fs.ensureDirSync(path.join(rootDirOutputPath));
-}
 
 const content = fs.readFileSync(indexFilePath, "utf8");
 
@@ -20,7 +16,6 @@ const componentNames = matches
 function generatePackageJson(componentName) {
   return JSON.stringify(
     {
-      name: "@packages/unstyled",
       sideEffects: false,
       module: `../module/${componentName}/index.js`,
       main: `../commonjs/${componentName}/index.js`,
@@ -43,6 +38,3 @@ componentNames.forEach((name) => {
     generatePackageJson(name)
   );
 });
-
-// biome-ignore lint/suspicious/noConsoleLog: <explanation>
-console.log("Modules generation completed");

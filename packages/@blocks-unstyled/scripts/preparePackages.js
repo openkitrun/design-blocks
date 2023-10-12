@@ -4,11 +4,11 @@ const path = require("path");
 // biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log("Preparing publish... codea");
 
-const rootDirOutputPath = path.join(__dirname, "..", "build-temp");
+const rootDirOutputPath = path.join(__dirname, "..", "build");
 
-if (!fs.existsSync(rootDirOutputPath)) {
-  fs.ensureDirSync(path.join(rootDirOutputPath));
-}
+// if (!fs.existsSync(rootDirOutputPath)) {
+//   fs.ensureDirSync(path.join(rootDirOutputPath));
+// }
 
 const sharedPkg = fs.readFileSync("./package.json", "utf-8");
 const sharedPkgFormat = JSON.parse(sharedPkg);
@@ -19,6 +19,11 @@ sharedPkgFormat.exports = {
     import: "./module/index.js",
     require: "./commonjs/index.js",
   },
+};
+
+sharedPkgFormat.scripts = {
+  preinstall:
+    "node ./scripts/copyFiles.js && node ./scripts/modulesGeneration.js",
 };
 sharedPkgFormat.main = "commonjs/index.js";
 sharedPkgFormat.module = "module/index.js";
@@ -47,17 +52,14 @@ fs.copySync(
   path.join(rootDirOutputPath, "src")
 );
 
-fs.copySync(path.join(__dirname, "../build"), path.join(rootDirOutputPath));
+//fs.copySync(path.join(__dirname, "../build"), path.join(rootDirOutputPath));
 
-if (!fs.existsSync(rootDirOutputPath)) {
-  fs.ensureDirSync(path.join(rootDirOutputPath));
-}
+// fs.removeSync(path.join(__dirname, "../src"));
+// fs.removeSync(path.join(__dirname, "../CHANGELOG.md"));
+// fs.removeSync(path.join(__dirname, "../package.json"));
+// fs.removeSync(path.join(__dirname, "../README.md"));
 
-fs.removeSync(path.join(__dirname, "../src"));
-fs.removeSync(path.join(__dirname, "../CHANGELOG.md"));
-fs.removeSync(path.join(__dirname, "../package.json"));
-fs.removeSync(path.join(__dirname, "../README.md"));
-fs.copySync(rootDirOutputPath, path.join(__dirname, ".."));
-fs.removeSync(rootDirOutputPath);
+//fs.copySync(rootDirOutputPath, path.join(__dirname, ".."));
+//fs.removeSync(rootDirOutputPath);
 //fs.moveSync(path.join(rootDirOutputPath), path.join(__dirname, ".."));
-fs.removeSync(path.join(__dirname, "../build"));
+//fs.removeSync(path.join(__dirname, "../build"));

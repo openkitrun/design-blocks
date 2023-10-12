@@ -32,8 +32,7 @@
     "a11y"
   ],
   "scripts": {
-    "prebuild": "pnpm run clean:build",
-    "build": "pnpm run build:native",
+    "build": "pnpm run build:native && pnpm run preparePackages",
     "build:native": "bob build",
     "build:modules": "node ./scripts/modulesGeneration.js",
     "clean": "pnpm clean:build && rimraf -rf .turbo",
@@ -41,7 +40,7 @@
     "lint": "../../node_modules/.bin/biome check src",
     "lint:fix": "../../node_modules/.bin/biome check --apply-unsafe src",
     "bundlesize": "bundlesize",
-    "prepublishOnly": "node ./scripts/preparePublish.js && pnpm run build:modules"
+    "preparePackages": "node ./scripts/preparePackages.js"
   },
   "bundlesize": [
     {
