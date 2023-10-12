@@ -69,8 +69,8 @@ jobs:
       #   run: |
       #     git tag | xargs git tag -d
 
-      - name: blocks-unstyled
-        run: node packages/@blocks-unstyled/scripts/formatPKJson.js
+      # - name: blocks-unstyled
+      #   run: node packages/@blocks-unstyled/scripts/formatPKJson.js
 
       - name: Create Release Pull Request or Publish Design Blocks
         id: changesets
