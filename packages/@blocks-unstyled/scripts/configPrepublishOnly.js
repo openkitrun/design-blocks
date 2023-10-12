@@ -9,8 +9,7 @@ const sharedPkgFormat = JSON.parse(sharedPkg);
 const currentScripts = sharedPkgFormat.scripts;
 sharedPkgFormat.scripts = {
   ...currentScripts,
-  postinstall:
-    "node ./scripts/preparePackages.js && node ./scripts/copyFiles.js && node ./scripts/modulesGeneration.js",
+  prepublishOnly: "node ./scripts/configPostinstall.js",
 };
 
 fs.writeFileSync(

@@ -10,7 +10,7 @@ import {
 } from "@design-blocks/primitives";
 import colors from "@design-blocks/colors/tailwind-css";
 
-import * as Button from "@design-blocks/unstyled/Button";
+import { Button } from "@design-blocks/unstyled";
 
 import { block, css } from "../../../blocks.config";
 

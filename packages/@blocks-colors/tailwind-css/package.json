@@ -1,5 +1,5 @@
 {
-  "name": "colors-tailwind-css",
+  "name": "@design-blocks/colors/tailwind-css",
   "version": "1.0.0",
   "private": true,
   "sideEffects": false,

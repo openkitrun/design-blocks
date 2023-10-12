@@ -14,5 +14,5 @@
   ],
   "access": "restricted",
   "baseBranch": "main",
-  "ignore": ["@examples/basic", "colors-radix-ui", "colors-tailwind-css"]
+  "ignore": ["@examples/basic", "@design-blocks/colors/radix-ui", "@design-blocks/colors/tailwind-css"]
 }
