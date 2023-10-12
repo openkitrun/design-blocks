@@ -21,10 +21,10 @@ sharedPkgFormat.exports = {
   },
 };
 
-sharedPkgFormat.scripts = {
-  postinstall:
-    "node ./scripts/copyFiles.js && node ./scripts/modulesGeneration.js",
-};
+// sharedPkgFormat.scripts = {
+//   postinstall:
+//     "node ./scripts/copyFiles.js && node ./scripts/modulesGeneration.js",
+// };
 sharedPkgFormat.main = "commonjs/index.js";
 sharedPkgFormat.module = "module/index.js";
 sharedPkgFormat.types = "typescript/index.d.ts";
