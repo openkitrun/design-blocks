@@ -53,6 +53,9 @@ if (!fs.existsSync(rootDirOutputPath)) {
   fs.ensureDirSync(path.join(rootDirOutputPath));
 }
 
+fs.removeSync(path.join(__dirname, "../src"));
+fs.removeSync(path.join(__dirname, "../CHANGELOG.md"));
+fs.removeSync(path.join(__dirname, "../package.json"));
+fs.removeSync(path.join(__dirname, "../README.md"));
 fs.moveSync(path.join(rootDirOutputPath), path.join(__dirname, ".."));
-
 fs.removeSync(path.join(__dirname, "../build"));
