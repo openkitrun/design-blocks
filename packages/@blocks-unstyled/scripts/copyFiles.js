@@ -96,7 +96,7 @@ const finalPkgFormat = JSON.parse(sharedPkg);
 delete finalPkgFormat.scripts;
 
 fs.writeFileSync(
-  path.join(rootDirOutputPath, "package.json"),
+  path.join(rootPath, "package.json"),
   JSON.stringify(finalPkgFormat, null, 2)
 );
 
