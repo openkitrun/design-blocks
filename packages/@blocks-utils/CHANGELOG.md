@@ -1,5 +1,11 @@
 # @design-blocks/utils
 
+## 1.0.0-beta.20
+
+### Patch Changes
+
+- [`afc73ec`](https://github.com/design-blocks/design-blocks/commit/afc73ec3444705ea491e805955cd8314f1836c62) Thanks [@wootsbot](https://github.com/wootsbot)! - Fixed export Button and name pakages utils
+
 ## 1.0.0-beta.19
 
 ### Minor Changes
