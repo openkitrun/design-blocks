@@ -41,7 +41,7 @@
     "lint": "../../node_modules/.bin/biome check src",
     "lint:fix": "../../node_modules/.bin/biome check --apply-unsafe src",
     "bundlesize": "bundlesize",
-    "prepublish": "node ./scripts/preparePublish.js && pnpm run build:modules"
+    "prepublishOnly": "node ./scripts/preparePublish.js && pnpm run build:modules"
   },
   "bundlesize": [
     {
