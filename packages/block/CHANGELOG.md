@@ -1,5 +1,12 @@
 # @design-blocks/block
 
+## 1.0.0-beta.24
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @design-blocks/theme@1.0.0-beta.21
+
 ## 1.0.0-beta.23
 
 ### Minor Changes
