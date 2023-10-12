@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.12
+
+### Patch Changes
+
+- [`0bcf4a6`](https://github.com/design-blocks/design-blocks/commit/0bcf4a635859cb592a6742a44db70e92b3b459f7) Thanks [@wootsbot](https://github.com/wootsbot)! - Fixed script build
+
 ## 1.0.0-beta.11
 
 ### Patch Changes
