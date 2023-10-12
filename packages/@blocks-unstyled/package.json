@@ -40,8 +40,7 @@
     "clean:build": "rimraf -rf dist",
     "lint": "../../node_modules/.bin/biome check src",
     "lint:fix": "../../node_modules/.bin/biome check --apply-unsafe src",
-    "bundlesize": "bundlesize",
-    "prepublishOnly": "node ./scripts/preparePublish.js && pnpm run build:modules"
+    "bundlesize": "bundlesize"
   },
   "bundlesize": [
     {
