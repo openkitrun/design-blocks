@@ -56,7 +56,7 @@ This function receives a configuration object:
 And returns all the available functions above.
 
 - block: The `block` function facilitates creating styled React-Native components, allowing clear and organized CSS styling within your projects.
-The object from `theme` is passed to the `ThemeProvider`, enabling the use of accessible tokens in your project, facilitating style management and accessibility in your components.
+- theme: The object from `theme` is passed to the `ThemeProvider`, enabling the use of accessible tokens in your project, facilitating style management and accessibility in your components.
 - devTools: Create custom utils to improve your developer experience.
 - css: Facilitates string interpolation for writing CSS in a readable and organized manner.
 - makeTheme: The `makeTheme` function creates a theme object for your `@design-blocks`, organizing styling values for use in your components, promoting consistency across your project.
