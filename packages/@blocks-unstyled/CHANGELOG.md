@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.8
+
+### Minor Changes
+
+- [`3b2a5b6`](https://github.com/design-blocks/design-blocks/commit/3b2a5b6f858b62652d3336c9b6a52722b7bf6e3c) Thanks [@wootsbot](https://github.com/wootsbot)! - Build and formatPKJson.js
+
 ## 1.0.0-beta.7
 
 ### Patch Changes
