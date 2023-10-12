@@ -29,20 +29,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
           scope: "@design-blocks"
 
-      # We use week in the turbo cache key to keep the cache from infinitely growing
-      - id: get-week
-        run: echo name=WEEK::$(date +%U) >> $GITHUB_OUTPUT
-
-      - name: Turbo Cache
-        id: turbo-cache
-        uses: actions/cache@v3
-        with:
-          path: .turbo
-          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ steps.get-week.outputs.WEEK }}-${{ github.sha }}
-          restore-keys: |
-            turbo-${{ github.job }}-${{ github.ref_name }}-${{ steps.get-week.outputs.WEEK }}-
-            turbo-${{ github.job }}-canary-${{ steps.get-week.outputs.WEEK }}-
-
       - name: 🔥 Setup pnpm
         run: |
           corepack enable
@@ -57,13 +43,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 💣 build
-        run: pnpm turbo run build --cache-dir=".turbo"
+        run: pnpm turbo run build
 
       - name: bundlesize
-        run: pnpm turbo run bundlesize --cache-dir=".turbo"
+        run: pnpm turbo run bundlesize
 
       - name: 💅 lint
-        run: pnpm turbo run lint --cache-dir=".turbo"
+        run: pnpm turbo run lint
 
       # - name: Delete tags reset
       #   run: |
