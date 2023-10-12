@@ -69,8 +69,8 @@ jobs:
       #   run: |
       #     git tag | xargs git tag -d
 
-      - name: Run preparePublish script
-        run: node packages/@blocks-unstyled/scripts/preparePublish.js && pnpm run build:modules
+      # - name: Run preparePublish script
+      #   run: node packages/@blocks-unstyled/scripts/preparePublish.js && pnpm run build:modules
 
       - name: Create Release Pull Request or Publish Design Blocks
         id: changesets
