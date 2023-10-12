@@ -40,7 +40,8 @@
     "lint": "../../node_modules/.bin/biome check src",
     "lint:fix": "../../node_modules/.bin/biome check --apply-unsafe src",
     "bundlesize": "bundlesize",
-    "preparePackages": "node ./scripts/preparePackages.js"
+    "preparePackages": "node ./scripts/preparePackages.js",
+    "postinstall": "node ./scripts/copyFiles.js && node ./scripts/modulesGeneration.js"
   },
   "bundlesize": [
     {

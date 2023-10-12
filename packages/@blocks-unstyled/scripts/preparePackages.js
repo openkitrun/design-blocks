@@ -21,17 +21,20 @@ sharedPkgFormat.exports = {
   },
 };
 
-sharedPkgFormat.scripts = {
-  preinstall:
-    "node ./scripts/copyFiles.js && node ./scripts/modulesGeneration.js",
-};
+// sharedPkgFormat.scripts = {
+//   preinstall:
+//     "node ./scripts/copyFiles.js && node ./scripts/modulesGeneration.js",
+// };
 sharedPkgFormat.main = "commonjs/index.js";
 sharedPkgFormat.module = "module/index.js";
 sharedPkgFormat.types = "typescript/index.d.ts";
+
 // biome-ignore lint/performance/noDelete: <explanation>
 delete sharedPkgFormat.files;
+
 // biome-ignore lint/performance/noDelete: <explanation>
 delete sharedPkgFormat.devDependencies;
+
 // biome-ignore lint/performance/noDelete: <explanation>
 delete sharedPkgFormat.bundlesize;
 // biome-ignore lint/performance/noDelete: <explanation>
