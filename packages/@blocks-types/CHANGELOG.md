@@ -1,5 +1,12 @@
 # @design-blocks/types
 
+## 1.0.0-beta.22
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @design-blocks/theme@1.0.0-beta.22
+
 ## 1.0.0-beta.21
 
 ### Patch Changes
