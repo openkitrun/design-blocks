@@ -15,7 +15,9 @@
     "tsconfig": "1.0.0-beta.9",
     "colors-radix-ui": "1.0.0",
     "colors-tailwind-css": "1.0.0",
-    "unstyled-button": "1.0.0"
+    "unstyled-button": "1.0.0",
+    "@design-blocks/colors/radix-ui": "1.0.0",
+    "@design-blocks/colors/tailwind-css": "1.0.0"
   },
   "changesets": [
     "brave-cats-relax",
@@ -46,6 +48,7 @@
     "polite-queens-whisper",
     "poor-feet-shake",
     "purple-icons-help",
+    "real-planes-wonder",
     "rude-snakes-clean",
     "serious-carrots-tan",
     "silent-singers-cheat",
