@@ -4,10 +4,10 @@ const path = require("path");
 // biome-ignore lint/suspicious/noConsoleLog: <explanation>
 console.log("Preparing publish... codea");
 
-const rootDirOutput = path.join(__dirname, "..", "build-temp");
+const rootDirOutputPath = path.join(__dirname, "..", "build-temp");
 
-if (!fs.existsSync(rootDirOutput)) {
-  fs.ensureDirSync(path.join(rootDirOutput));
+if (!fs.existsSync(rootDirOutputPath)) {
+  fs.ensureDirSync(path.join(rootDirOutputPath));
 }
 
 const sharedPkg = fs.readFileSync("./package.json", "utf-8");
@@ -33,20 +33,26 @@ delete sharedPkgFormat.bundlesize;
 delete sharedPkgFormat["react-native-builder-bob"];
 
 fs.writeFileSync(
-  path.join("./build-temp", "package.json"),
+  path.join(rootDirOutputPath, "package.json"),
   JSON.stringify(sharedPkgFormat, null, 2)
 );
 
 fs.copySync(
   path.join(__dirname, "../README.md"),
-  path.join(rootDirOutput, "README.md")
+  path.join(rootDirOutputPath, "README.md")
 );
 
-fs.copySync(path.join(__dirname, "../src"), path.join(rootDirOutput, "src"));
+fs.copySync(
+  path.join(__dirname, "../src"),
+  path.join(rootDirOutputPath, "src")
+);
 
-fs.copySync(path.join(__dirname, "../build"), path.join(rootDirOutput));
+fs.copySync(path.join(__dirname, "../build"), path.join(rootDirOutputPath));
 
-fs.moveSync(path.join(rootDirOutput), path.join(__dirname, ".."), {
-  overwrite: true,
-});
+if (!fs.existsSync(rootDirOutputPath)) {
+  fs.ensureDirSync(path.join(rootDirOutputPath));
+}
+
+fs.moveSync(path.join(rootDirOutputPath), path.join(__dirname, ".."));
+
 fs.removeSync(path.join(__dirname, "../build"));

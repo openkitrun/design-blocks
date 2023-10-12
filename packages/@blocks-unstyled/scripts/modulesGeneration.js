@@ -1,9 +1,13 @@
-const fs = require("fs");
+const fs = require("fs-extra");
 const path = require("path");
 
 const rootSourceDir = path.join(__dirname, "..");
-const rootDirOutput = path.join(__dirname, "..", "build-temp");
+const rootDirOutputPath = path.join(__dirname, "..", "build-temp");
 const indexFilePath = path.join(rootSourceDir, "src", "index.ts");
+
+if (!fs.existsSync(rootDirOutputPath)) {
+  fs.ensureDirSync(path.join(rootDirOutputPath));
+}
 
 const content = fs.readFileSync(indexFilePath, "utf8");
 
@@ -27,7 +31,7 @@ function generatePackageJson(componentName) {
 }
 
 componentNames.forEach((name) => {
-  const outputPath = path.join(rootDirOutput, name);
+  const outputPath = path.join(rootDirOutputPath, name);
 
   if (!fs.existsSync(outputPath)) {
     fs.mkdirSync(outputPath);
