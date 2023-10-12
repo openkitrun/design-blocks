@@ -1,5 +1,11 @@
 # @design-blocks/utils
 
+## 1.0.0-beta.18
+
+### Patch Changes
+
+- [`e3a8c4e`](https://github.com/design-blocks/design-blocks/commit/e3a8c4eee371cdee7993a94583bba8a664331c26) Thanks [@wootsbot](https://github.com/wootsbot)! - Fixed export modules
+
 ## 1.0.0-beta.17
 
 ### Minor Changes
