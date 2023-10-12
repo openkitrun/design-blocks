@@ -8,7 +8,8 @@
   "source": "src/index.ts",
   "files": [
     "src",
-    "build"
+    "build",
+    "scripts"
   ],
   "exports": {
     "./package.json": "./package.json",
