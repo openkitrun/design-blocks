@@ -17,7 +17,11 @@ You can use these components as the base layer of your design system or adopt th
   open-source color systems to design your apps beautiful and accessible.
   [Tailwindcss Colors](https://tailwindcss.com/docs/customizing-colors), [Radix Colors](https://www.radix-ui.com/colors)
 
-## Super quick start
+## Documentation
+
+For full documentation, visit [designblocks.dev](https://designblocks.dev).(WIP)
+
+## Install
 
 ```sh
 // with pnpm
@@ -33,9 +37,9 @@ npm add  @design-blocks/native
 bun bun add @design-blocks/native
 ```
 
-### Configure Design Blocks
+## Configure Design Blocks
 
-#### Create your config file
+### Create your config file
 
 To configure Design Blocks, create a blocks.config.ts file (.js works too) and import the `createBlocks` function.
 
@@ -51,12 +55,18 @@ This function receives a configuration object:
 
 And returns all the available functions above.
 
+- block: The `block` function facilitates creating styled React-Native components, allowing clear and organized CSS styling within your projects.
+The object from `theme` is passed to the `ThemeProvider`, enabling the use of accessible tokens in your project, facilitating style management and accessibility in your components.
+- devTools: Create custom utils to improve your developer experience.
+- css: Facilitates string interpolation for writing CSS in a readable and organized manner.
+- makeTheme: The `makeTheme` function creates a theme object for your `@design-blocks`, organizing styling values for use in your components, promoting consistency across your project.
+
 ```tsx
 // blocks.config.ts
 
 import { createBlocks } from '@design-blocks/native';
 
-export const { theme, block, makeTheme, devTools } = createBlocks({
+export const { theme, block, css, makeTheme, devTools } = createBlocks({
   theme: {
     colors: {
       pink: {
@@ -152,3 +162,11 @@ const DescriptionBlock = block.Text(({ theme }) => ({
   fontSize: 30,
 }));
 ```
+
+## Contributing
+
+Please follow our [contributing guidelines](./.github/CONTRIBUTING.md).
+
+## Authors
+
+- Jorge Luis Calleja A. ([@wootsbot](https://twitter.com/wootsbot)) 
