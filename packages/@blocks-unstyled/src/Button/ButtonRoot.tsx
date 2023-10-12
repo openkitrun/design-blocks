@@ -6,7 +6,6 @@ import { ButtonContext } from './ButtonContext';
 import type { ButtonProps } from './Button.types';
 
 export function ButtonRoot({
-  children,
   style,
   loading,
   disabled,
@@ -30,9 +29,7 @@ export function ButtonRoot({
         style={StyleSheet.flatten([styles.root, style])}
         disabled={disabled || loading}
         {...others}
-      >
-        {children}
-      </Pressable>
+      />
     </ButtonContext.Provider>
   );
 }

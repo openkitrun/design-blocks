@@ -4,7 +4,7 @@ import { ButtonLabel } from './ButtonLabel';
 import { ButtonLoading } from './ButtonLoading';
 import { ButtonRoot } from './ButtonRoot';
 
-function Button({ children }: { children: React.ReactNode }) {
+export function Button({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
@@ -14,8 +14,4 @@ Button.Root = ButtonRoot;
 Button.Label = ButtonLabel;
 Button.Loading = ButtonLoading;
 
-const Root = ButtonRoot;
-const Label = ButtonLabel;
-const Loading = ButtonLoading;
-
-export { Root, Label, Loading, Button };
+export default Button;

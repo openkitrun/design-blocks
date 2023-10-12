@@ -77,9 +77,6 @@ function generatePackageJson(name) {
   const namePGK = camelToKebab(name);
   return JSON.stringify(
     {
-      name: `@design-blocks/utils-${namePGK}`,
-      version: "1.0.0",
-      private: true,
       sideEffects: false,
       module: `../dist/module/${name}/index.js`,
       main: `../dist/commonjs/${name}/index.js`,
