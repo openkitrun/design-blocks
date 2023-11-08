@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-function AvatarImage() {
+export function AvatarImage() {
   return <></>;
 }
-
-export default AvatarImage;

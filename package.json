@@ -39,10 +39,10 @@
     "cross-env": "7.0.3",
     "husky": "8.0.3",
     "tsconfig": "workspace:*",
-    "turbo": "1.10.15",
+    "turbo": "1.10.16",
     "typescript": "5.0.4"
   },
-  "packageManager": "pnpm@8.9.0",
+  "packageManager": "pnpm@8.10.2",
   "pnpm": {
     "overrides": {
       "react-native-builder-bob": "0.23.1"

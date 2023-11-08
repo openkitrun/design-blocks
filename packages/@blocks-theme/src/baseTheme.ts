@@ -1,4 +1,4 @@
-import { devTools, fonts, radii, spacings } from './themeTokens';
+import { fonts, radii, spacings, utils } from './themeTokens';
 
 export const baseTheme = {
   colors: {},
@@ -6,6 +6,7 @@ export const baseTheme = {
   fontSizes: fonts.fontSizes,
   fontWeights: fonts.fontWeights,
   radii,
+  utils,
   /**
    * Extending the default theme
    *
@@ -14,11 +15,10 @@ export const baseTheme = {
    * add your extensions under the extend key in the theme section of your configuration file
    */
   extend: {
-    colors: {},
     spacings: {},
     fontSizes: {},
     fontWeights: {},
     radii: {},
+    utils: {},
   },
-  devTools,
 };

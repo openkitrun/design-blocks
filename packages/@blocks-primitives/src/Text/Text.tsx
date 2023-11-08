@@ -1,24 +1,10 @@
 import * as React from 'react';
-import * as RN from 'react-native';
 
-import block from '@design-blocks/block';
-import { styleFunctionProps, styleFunctionSx } from '@design-blocks/system';
 import { __DEV__ } from '@design-blocks/utils';
 
-import type { TextProps } from './Text.types';
+import { createText } from './createText';
 
-const TextBlock = block(RN.Text, {
-  shouldForwardProp: (prop) => prop !== 'theme' && prop !== 'sx' && prop !== 'as',
-})<TextProps>(({ theme, sx, ...styleProps }) => {
-  return {
-    ...styleFunctionProps('Text', theme, { ...styleProps }),
-    ...styleFunctionSx('Text', theme, sx),
-  };
-});
-
-const Text = React.forwardRef<RN.Text, TextProps>((props, forwardedRef) => {
-  return <TextBlock ref={forwardedRef} {...props} />;
-});
+const Text = createText();
 
 if (__DEV__) {
   Text.displayName = 'Block.Text';

@@ -28,11 +28,11 @@ export const fonts = {
   },
 } as const;
 
-export type IFonts = keyof typeof fonts;
-export type Fonts = Partial<typeof fonts>;
+export interface Fonts extends Readonly<typeof fonts> {}
+export type IFonts = keyof Fonts;
 
-export type IFontSizes = keyof typeof fonts.fontSizes;
-export type FontSizes = Partial<typeof fonts.fontSizes>;
+export interface FontSizes extends Readonly<typeof fonts.fontSizes> {}
+export type IFontSizes = keyof FontSizes;
 
-export type IFontWeights = keyof typeof fonts.fontWeights;
-export type FontWeights = Partial<typeof fonts.fontWeights>;
+export interface FontWeights extends Readonly<typeof fonts.fontWeights> {}
+export type IFontWeights = keyof FontWeights;

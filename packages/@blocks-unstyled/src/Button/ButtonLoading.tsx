@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
   root: {},
 });
 
-ButtonLoading.displayName = 'Button.Loading';
+ButtonLoading.displayName = 'Block.Button.Loading';

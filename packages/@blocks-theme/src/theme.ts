@@ -1,28 +1,42 @@
-import type { DevTools, FontSizes, FontWeights, Radii, Spacings } from './themeTokens';
+import type { FontSizes, FontWeights, Radii, Spacings, Utils } from './themeTokens';
 
-export interface OuterTheme {}
+export interface Colors {
+  [key: string]: string | Colors;
+}
 
 export interface Theme {
+  colors: Colors;
   spacings: Spacings;
   fontSizes: FontSizes;
   fontWeights: FontWeights;
   radii: Radii;
-  devTools: DevTools;
+  utils: Utils;
 }
 
-export interface ITheme extends OuterTheme, Omit<Theme, keyof OuterTheme> {}
 export interface ThemeOptions {
-  colors?: Record<string, any>;
-  spacings?: Theme['spacings'];
-  fontSizes?: Theme['fontSizes'];
-  fontWeights?: Theme['fontWeights'];
-  radii?: Theme['radii'];
-  extend?: {
-    colors?: Record<string, any>;
-    spacings?: Theme['spacings'];
-    fontSizes?: Theme['fontSizes'];
-    fontWeights?: Theme['fontWeights'];
-    radii?: Theme['radii'];
+  colors?: {
+    [key: string]: string | ThemeOptions['colors'];
   };
-  devTools?: Theme['devTools'];
+  spacings?: Partial<Spacings>;
+  fontSizes?: Partial<FontSizes>;
+  fontWeights?: Partial<FontWeights>;
+  radii?: Partial<Radii>;
+  utils?: Partial<Utils>;
+  extend?: {
+    spacings?: {
+      [key: string]: string | number | ThemeOptions['spacings'];
+    };
+    fontSizes?: {
+      [key: string]: string | number | ThemeOptions['fontSizes'];
+    };
+    fontWeights?: {
+      [key: string]: string | number | ThemeOptions['fontWeights'];
+    };
+    radii?: {
+      [key: string]: string | number | ThemeOptions['radii'];
+    };
+    utils?: {
+      [key: string]: any | ThemeOptions['utils'];
+    };
+  };
 }
