@@ -1,5 +1,12 @@
 # @design-blocks/system
 
+## 1.0.0-beta.26
+
+### Patch Changes
+
+- Updated dependencies [[`e3e8b19`](https://github.com/design-blocks/design-blocks/commit/e3e8b194c9af03db0b7328d572d8bbb1e0f54c7b)]:
+  - @design-blocks/types@1.0.0-beta.25
+
 ## 1.0.0-beta.25
 
 ### Minor Changes
