@@ -1,7 +1,9 @@
-import * as React from 'react';
+import { AvatarFallback } from './AvatarFallback';
+import { AvatarImage } from './AvatarImage';
+import { AvatarRoot } from './AvatarRoot';
 
-function Avatar() {
-  return <></>;
-}
+const Root = AvatarRoot;
+const Fallback = AvatarFallback;
+const Image = AvatarImage;
 
-export default Avatar;
+export { Root, Fallback, Image };

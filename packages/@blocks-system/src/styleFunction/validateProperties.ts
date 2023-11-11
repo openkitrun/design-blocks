@@ -16,7 +16,7 @@ export default function validateProperties(
    */
   if (themeKeys.spacings[propertyStyle as ISpacesKeys]) {
     if (Number(_valueStyle)) {
-      _valueStyle = theme.devTools.spacing(_valueStyle as number, theme.spacings.baseSpacing);
+      _valueStyle = theme.utils.spacing(_valueStyle as number, theme.spacings.baseSpacing) ?? _valueStyle;
     }
 
     if (!Number(_valueStyle)) {

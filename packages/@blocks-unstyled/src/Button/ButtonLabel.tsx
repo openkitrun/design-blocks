@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-ButtonLabel.displayName = 'Button.Label';
+ButtonLabel.displayName = 'Block.Button.Label';

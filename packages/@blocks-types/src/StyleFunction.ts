@@ -8,10 +8,12 @@ import type {
   ISpacesKeys,
   ISpacings,
 } from '@design-blocks/theme';
+
 import type { FlexStyle, TextStyle, ViewStyle } from 'react-native';
 
-type BaseValue = number | string | undefined;
-
+/**
+ * OmittedTypes
+ */
 export type OmittedRadii =
   | IRadiiKeys
   | 'borderBottomWidth'
@@ -21,6 +23,15 @@ export type OmittedRadii =
   | 'borderStartWidth'
   | 'borderTopWidth'
   | 'borderWidth';
+export type OmittedSizes = 'width' | 'height' | 'minWidth' | 'maxWidth' | 'minHeight' | 'maxHeight';
+export type SpacingBaseExcluded = 'full' | 'spacing' | 'baseSpacing';
+type OmittedBorder = 'borderEndWidth' | 'borderStartWidth';
+export type OmittedSpacing = ISpacesKeys;
+type OmittedTextStyles = 'textDecorationLine' | 'color' | 'fontWeight' | 'fontSize' | OmittedSpacing | OmittedRadii;
+export type OmittedColors = IColorsKeys;
+
+type BaseValue = number | string | undefined;
+
 type RadiiProps = {
   [Key in IRadiiKeys]?: number | IRadii;
 } & {
@@ -33,43 +44,41 @@ type RadiiProps = {
   borderWidth?: number | IRadii;
 };
 
-export type SpacingBaseExcluded = 'full' | 'spacing' | 'baseSpacing';
 type SpacingValue = Exclude<ISpacings | number | undefined, SpacingBaseExcluded>;
-
-type OmittedBorder = 'borderEndWidth' | 'borderStartWidth';
-
-export type OmittedSpacing = ISpacesKeys;
-
 export type SpacingProps = {
   [Key in ISpacesKeys]?: SpacingValue;
 };
 
-export type OmittedColors = IColorsKeys;
-export type ColorsProps = {
+type ColorsProps = {
   [Key in IColorsKeys]?: TextStyle['color'];
 };
 
-export type OmittedSizes = 'width' | 'height' | 'minWidth' | 'maxWidth' | 'minHeight' | 'maxHeight';
+export interface BoxColorsProps extends ColorsProps {}
+
 type SizesProps = {
   [Key in ISizesKeys]?: BaseValue;
 };
 
-type OmittedTextStyles = 'textDecorationLine' | 'color' | 'fontWeight' | 'fontSize' | OmittedSpacing | OmittedRadii;
+/**
+ * Style Props Text
+ */
 export interface TextStyledProps extends Omit<TextStyle, OmittedTextStyles>, SpacingProps {
   textDecorationLine?: TextStyle['textDecorationLine'] | 'lineThrough' | 'underlineLineThrough';
   color?: TextStyle['color'];
   fontWeight?: LooseAutocomplete<IFontWeights> | TextStyle['fontWeight'];
   fontSize?: IFontSizes | TextStyle['fontSize'];
 }
-
 export interface SxStyledText extends TextStyledProps {}
 
+/**
+ * Style Props View
+ */
 export interface SxStyledFlex
   extends Omit<FlexStyle, OmittedSpacing | OmittedBorder | OmittedRadii | OmittedColors>,
     Omit<ViewStyle, OmittedSpacing | OmittedBorder | OmittedRadii | OmittedColors>,
     RadiiProps,
     SpacingProps,
-    ColorsProps,
+    BoxColorsProps,
     Omit<SizesProps, OmittedSizes> {}
 
 /**

@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
   },
 });
 
-ButtonRoot.displayName = 'Button.Root';
+ButtonRoot.displayName = 'Block.Button.Root';

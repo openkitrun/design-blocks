@@ -15,6 +15,7 @@ export const colorsKeys = {
   borderBlockEndColor: 'borderBlockEndColor',
   borderBlockStartColor: 'borderBlockStartColor',
   textDecorationColor: 'textDecorationColor',
+  textShadowColor: 'textShadowColor',
   fill: 'fill',
   stroke: 'stroke',
   shadowColor: 'shadowColor',

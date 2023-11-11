@@ -1,5 +1,5 @@
 import * as RN from 'react-native';
-import { Theme } from '@design-blocks/theme';
+import type { Theme } from '@design-blocks/theme';
 
 import {
   CreateBlock as BaseCreateBlock,

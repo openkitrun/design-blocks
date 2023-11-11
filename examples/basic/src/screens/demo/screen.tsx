@@ -1,25 +1,14 @@
-import { ScrollView } from "react-native";
+import { ScrollView } from 'react-native';
 
-import {
-  Box,
-  Stack,
-  YStack,
-  XStack,
-  Text,
-  VStack,
-} from "@design-blocks/primitives";
-import colors from "@design-blocks/colors/tailwind-css";
+import { Box, Stack, YStack, XStack, Text } from '@design-blocks/primitives';
+import colors from '@design-blocks/colors/tailwind-css';
 
-import { Button } from "@design-blocks/unstyled";
-
-import { block, css } from "../../../blocks.config";
+import { block, css } from '../../../blocks.config';
 
 const CircleStringBlock = block.View`
-  padding: ${(props) => props.theme.devTools.spacing(4)}px;
-  width: ${({ theme: { devTools } }) =>
-    devTools.toPixels(devTools.spacing(10))};
-  height: ${({ theme: { devTools } }) =>
-    devTools.toPixels(devTools.spacing(10))};
+  padding: ${(props) => props.theme.utils.spacing(4)}px;
+  width: ${({ theme: { utils } }) => utils.toPixels(utils.spacing(10))};
+  height: ${({ theme: { utils } }) => utils.toPixels(utils.spacing(10))};
   border-radius: ${({ theme: { spacings } }) => spacings.full?.toString()};
   background-color: ${({ theme }) => theme.colors.emerald[500]};
 `;
@@ -32,94 +21,60 @@ const LabelText = block.Text`
   }}
 `;
 
-const ButtonLabelBlock = block(Button.Label)(({ theme }) => {
-  return {
-    color: theme.colors.neutral[50],
-  };
-});
-
 const CircleBlock = block(Box)(({ theme }) => {
   return {
-    width: theme.devTools.spacing(10),
-    height: theme.devTools.spacing(10),
-    borderRadius: theme.devTools.spacing(10),
+    width: theme.utils?.spacing(10),
+    height: theme.utils?.spacing(10),
+    borderRadius: theme.utils?.spacing(10),
   };
 });
 
 const SquareBlock = block(Box)(({ theme }) => {
   return {
-    width: theme.devTools.spacing(10),
-    height: theme.devTools.spacing(10),
+    width: theme.utils?.spacing(10),
+    height: theme.utils?.spacing(10),
   };
 });
 
 const ScrollViewBlock = block(ScrollView)(({ theme }) => {
   return {
     backgroundColor: theme.colors.blue[950],
-    height: "100%",
+    height: '100%',
   };
 });
 
 function DemoScreen() {
   return (
-    <ScrollViewBlock contentInsetAdjustmentBehavior="automatic">
-      <Text mb="2xl" fontSize="7xl" color="zinc.100" textAlign="center">
+    <ScrollViewBlock contentInsetAdjustmentBehavior='automatic'>
+      <Text mb='2xl' fontSize='7xl' color='zinc.100' textAlign='center'>
         Blocks
       </Text>
 
-      <VStack gap="lg">
-        <Button.Root
-          loading
-          style={css`
-            gap: 12px;
-          `}
-        >
-          <Button.Loading />
-          <ButtonLabelBlock>Button</ButtonLabelBlock>
-        </Button.Root>
-
-        <Button.Root
-          style={css`
-            border: 5px solid ${colors.emerald[700]};
-          `}
-        >
-          <Button.Loading>ButtonRoot</Button.Loading>
-        </Button.Root>
-      </VStack>
-
-      <CircleStringBlock
-        style={css`
-          border: 5px solid ${colors.emerald[700]};
-        `}
-      />
+      <CircleStringBlock style={css({ backgroundColor: 'red', borderColor: 'yellow', borderWidth: 2 })} />
 
       <LabelText>LabelText</LabelText>
 
-      <YStack gap="xl">
-        <XStack alignItems="center" justifyContent="space-around">
-          <SquareBlock bgColor="rose.500" />
-          <CircleBlock bgColor="green.400" />
-          <SquareBlock bgColor="amber.400" />
+      <YStack gap='xl'>
+        <XStack alignItems='center' justifyContent='space-around'>
+          <SquareBlock bgColor='rose.500' />
+          <CircleBlock bgColor='green.400' />
+          <SquareBlock bgColor='amber.400' />
         </XStack>
 
-        <XStack
-          alignItems="center"
-          justifyContent="center"
-          sx={{ justifyContent: "space-between" }}
-        >
-          <CircleBlock bgColor="yellow.600" />
-          <SquareBlock bgColor="indigo.600" />
-          <CircleBlock bgColor="fuchsia.600" />
+        <XStack alignItems='center' justifyContent='center' sx={{ justifyContent: 'space-between' }}>
+          <CircleBlock bgColor='yellow.600' />
+          <SquareBlock bgColor='indigo.600' />
+          <CircleBlock bgColor='fuchsia.600' />
         </XStack>
 
-        <XStack alignItems="center" justifyContent="space-around">
+        <XStack alignItems='center' justifyContent='space-around'>
           <CircleBlock bgColor={colors.emerald[600]} />
           <SquareBlock bgColor={colors.lime[400]} />
         </XStack>
 
-        <Stack gap={3} alignItems="center" direction="column">
-          <Box height={80} width={80} bgColor="rose.600" borderRadius={80} />
-          <Box height={80} width={80} bgColor="sky.600" />
+        <Stack gap={3} alignItems='center' direction='column'>
+          <Box height={80} width={80} bgColor='rose.600' borderRadius={80} />
+          <Box height={80} width={80} bgColor='amber.500' />
         </Stack>
       </YStack>
     </ScrollViewBlock>

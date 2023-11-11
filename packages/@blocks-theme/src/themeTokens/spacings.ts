@@ -1,4 +1,5 @@
 export const spacings = {
+  none: 0,
   xxs: 4,
   xs: 8,
   sm: 12,
@@ -9,9 +10,10 @@ export const spacings = {
   '3xl': 48,
   '4xl': 56,
   '5xl': 64,
+  '6xl': 72,
   full: '100%',
   baseSpacing: 8,
 } as const;
 
-export type ISpacings = keyof typeof spacings;
-export type Spacings = Partial<typeof spacings>;
+export interface Spacings extends Readonly<typeof spacings> {}
+export type ISpacings = keyof Spacings;

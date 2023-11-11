@@ -3,7 +3,7 @@ import { componentsKeys } from '@design-blocks/theme';
 import { getValuesTokens } from './getValuesTokens';
 import validateProperties from './validateProperties';
 
-import type { IComponentsKeysProps, IFontSizes, IFontWeights, Theme } from '@design-blocks/theme';
+import type { IComponentsKeysProps, Theme } from '@design-blocks/theme';
 import type { StylesObjectProps } from '@design-blocks/types';
 
 type PropertyStyle<TokensProperty> = TokensProperty;
@@ -26,11 +26,11 @@ export const styleFunctionSx = (
     }
 
     if (propertyStyle === 'fontWeight') {
-      finalValueStyle = theme.fontWeights[valueStyle as IFontWeights] ?? valueStyle;
+      finalValueStyle = theme.fontWeights[valueStyle as keyof Theme['fontWeights']] ?? valueStyle;
     }
 
     if (propertyStyle === 'fontSize') {
-      finalValueStyle = theme.fontSizes[valueStyle as IFontSizes] ?? valueStyle;
+      finalValueStyle = theme.fontSizes[valueStyle as keyof Theme['fontSizes']] ?? valueStyle;
     }
 
     objStyles[propertyStyleValue || propertyStyle] = valueToken ?? finalValueStyle;
