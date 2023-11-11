@@ -1,5 +1,11 @@
 # @design-blocks/types
 
+## 1.0.0-beta.25
+
+### Patch Changes
+
+- [`e3e8b19`](https://github.com/design-blocks/design-blocks/commit/e3e8b194c9af03db0b7328d572d8bbb1e0f54c7b) Thanks [@wootsbot](https://github.com/wootsbot)! - Fixed color `TextColorsProps` to `declare module '@design-blocks/native'`
+
 ## 1.0.0-beta.24
 
 ### Minor Changes
