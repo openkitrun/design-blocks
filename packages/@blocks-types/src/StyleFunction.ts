@@ -62,9 +62,12 @@ type SizesProps = {
 /**
  * Style Props Text
  */
-export interface TextStyledProps extends Omit<TextStyle, OmittedTextStyles>, SpacingProps {
-  textDecorationLine?: TextStyle['textDecorationLine'] | 'lineThrough' | 'underlineLineThrough';
+type TextColors = {
   color?: TextStyle['color'];
+};
+export interface TextColorsProps extends TextColors {}
+export interface TextStyledProps extends Omit<TextStyle, OmittedTextStyles>, SpacingProps, TextColorsProps {
+  textDecorationLine?: TextStyle['textDecorationLine'] | 'lineThrough' | 'underlineLineThrough';
   fontWeight?: LooseAutocomplete<IFontWeights> | TextStyle['fontWeight'];
   fontSize?: IFontSizes | TextStyle['fontSize'];
 }

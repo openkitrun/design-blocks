@@ -18,6 +18,9 @@ declare module '@design-blocks/native' {
   export interface Spacings extends SpacingsCustom {}
   export interface Radii extends RadiiCustom {}
   export interface FontSizes extends FontSizesCustom {}
+  export interface TextColorsProps {
+    color?: ColorsValueMap;
+  }
   export interface BoxColorsProps {
     background?: ColorsValueMap;
     bg?: ColorsValueMap;
