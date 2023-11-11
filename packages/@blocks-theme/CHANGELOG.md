@@ -1,5 +1,16 @@
 # @design-blocks/theme
 
+## 1.0.0-beta.24
+
+### Minor Changes
+
+- [#46](https://github.com/design-blocks/design-blocks/pull/46) [`9d29a8d`](https://github.com/design-blocks/design-blocks/commit/9d29a8d90db1697f4f81419625972c17eb6649ba) Thanks [@wootsbot](https://github.com/wootsbot)! - RFC structure and export utilis
+
+### Patch Changes
+
+- Updated dependencies [[`9d29a8d`](https://github.com/design-blocks/design-blocks/commit/9d29a8d90db1697f4f81419625972c17eb6649ba)]:
+  - @design-blocks/utils@1.0.0-beta.21
+
 ## 1.0.0-beta.23
 
 ### Patch Changes
