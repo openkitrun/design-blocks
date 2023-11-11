@@ -1,5 +1,16 @@
 # @design-blocks/colors
 
+## 1.0.0-beta.23
+
+### Minor Changes
+
+- [#46](https://github.com/design-blocks/design-blocks/pull/46) [`9d29a8d`](https://github.com/design-blocks/design-blocks/commit/9d29a8d90db1697f4f81419625972c17eb6649ba) Thanks [@wootsbot](https://github.com/wootsbot)! - RFC structure and export utilis
+
+### Patch Changes
+
+- Updated dependencies [[`9d29a8d`](https://github.com/design-blocks/design-blocks/commit/9d29a8d90db1697f4f81419625972c17eb6649ba)]:
+  - @design-blocks/types@1.0.0-beta.24
+
 ## 1.0.0-beta.22
 
 ### Patch Changes
