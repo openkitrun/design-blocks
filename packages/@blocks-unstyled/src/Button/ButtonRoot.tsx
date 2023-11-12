@@ -10,7 +10,11 @@ export function ButtonRoot({
   loading,
   disabled,
   hideLabelOnLoading,
+  accessible = true,
   accessibilityRole = 'button',
+  accessibilityLanguage,
+  testID,
+  nativeID,
   ...others
 }: ButtonProps) {
   const accessibilityState = React.useMemo(
@@ -22,8 +26,13 @@ export function ButtonRoot({
   );
 
   return (
-    <ButtonContext.Provider value={{ loading, disabled, hideLabelOnLoading }}>
+    <ButtonContext.Provider
+      value={{ nativeID, testID, accessible, loading, disabled, hideLabelOnLoading, accessibilityLanguage }}
+    >
       <Pressable
+        nativeID={nativeID}
+        testID={testID}
+        accessible={accessible}
         accessibilityRole={accessibilityRole}
         accessibilityState={accessibilityState}
         style={StyleSheet.flatten([styles.root, style])}
@@ -42,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-ButtonRoot.displayName = 'Block.Button.Root';
+ButtonRoot.displayName = 'BlockButton.Root';

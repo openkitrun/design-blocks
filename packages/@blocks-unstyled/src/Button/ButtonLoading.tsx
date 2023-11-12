@@ -5,11 +5,21 @@ import { ButtonContext } from './ButtonContext';
 
 import type { ButtonLoadingProps } from './Button.types';
 
-export function ButtonLoading({ style, ...others }: ButtonLoadingProps) {
-  const { loading } = React.useContext(ButtonContext);
+export function ButtonLoading({ nativeID: nativeIDProp, testID: testIDProp, style, ...others }: ButtonLoadingProps) {
+  const { nativeID, testID, loading } = React.useContext(ButtonContext);
+
+  const finalNativeID = nativeIDProp || (nativeID ? `${nativeID}Indicator` : undefined);
+  const finalTestID = testIDProp || (testID ? `${testID}Indicator` : undefined);
 
   if (loading) {
-    return <ActivityIndicator style={StyleSheet.flatten([styles.root, style])} {...others} />;
+    return (
+      <ActivityIndicator
+        nativeID={finalNativeID}
+        testID={finalTestID}
+        style={StyleSheet.flatten([styles.root, style])}
+        {...others}
+      />
+    );
   }
 
   return null;
@@ -19,4 +29,4 @@ const styles = StyleSheet.create({
   root: {},
 });
 
-ButtonLoading.displayName = 'Block.Button.Loading';
+ButtonLoading.displayName = 'BlockButton.Loading';

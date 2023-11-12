@@ -10,9 +10,14 @@ export interface ButtonProps extends PressableProps {
   disabled?: boolean | undefined;
   loading?: boolean | undefined;
   hideLabelOnLoading?: null | boolean | undefined;
+  accessible?: boolean;
+  accessibilityLanguage?: PressableProps['accessibilityLanguage'];
 }
 
-export type ButtonContextProps = Pick<ButtonProps, 'disabled' | 'loading' | 'hideLabelOnLoading'>;
+export type ButtonContextProps = Pick<
+  ButtonProps,
+  'nativeID' | 'testID' | 'accessible' | 'disabled' | 'loading' | 'hideLabelOnLoading' | 'accessibilityLanguage'
+>;
 
 export interface ButtonLabelProps extends TextProps {}
 

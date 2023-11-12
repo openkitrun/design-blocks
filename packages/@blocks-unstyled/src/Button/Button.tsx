@@ -8,7 +8,7 @@ export function Button({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
-Button.displayName = 'Block.Button';
+Button.displayName = 'BlockButton';
 
 Button.Root = ButtonRoot;
 Button.Label = ButtonLabel;
