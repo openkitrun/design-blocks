@@ -64,21 +64,30 @@ And returns all the available functions above.
 ```tsx
 // blocks.config.ts
 
-import { createBlocks } from '@design-blocks/native';
+import { createBlocks, createTheme } from '@design-blocks/native';
+import colors from '@design-blocks/colors/tailwind-css';
 
-export const { theme, block, css, makeTheme, devTools } = createBlocks({
-  theme: {
-    colors: {
-      pink: {
-        300: '#000',
-      },
+export const themeDefault = {
+  colors: {
+    ...colors,
+  },
+  extend: {
+    spacings: {
+      '7xl': 76,
+      '8xl': 80,
+    },
+    radii: {
+      '6xl': 32,
+      '7xl': 36,
+    },
+    fontSizes: {
+      '10xl': 32,
     },
   },
+} as const;
 
-  devTools: {
-    marginX: (value) => ({ marginLeft: value, marginRight: value }),
-  },
-});
+const [themeTokens] = createTheme(themeDefault);
+export const { block, css, theme, utils } = createBlocks(themeTokens);
 ```
 
 ```tsx
@@ -169,4 +178,4 @@ Please follow our [contributing guidelines](./.github/CONTRIBUTING.md).
 
 ## Authors
 
-- Jorge Luis Calleja A. ([@wootsbot](https://twitter.com/wootsbot)) 
+- Jorge Luis Calleja A. ([@wootsbot](https://twitter.com/wootsbot))
