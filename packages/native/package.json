@@ -20,7 +20,7 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git@github.com:design-blocks/design-blocks.git",
+    "repository": "git@github.com:openkitrun/design-blocks.git",
     "directory": "native"
   },
   "scripts": {
