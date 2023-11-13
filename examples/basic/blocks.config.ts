@@ -1,11 +1,13 @@
-import { createBlocks, createTheme } from '@design-blocks/native';
+import { createBlocks, createTokens } from '@design-blocks/native';
 import colors from '@design-blocks/colors/tailwind-css';
 
-export const themeDefault = {
-  colors: {
-    ...colors,
+export const lightTheme = {
+  tokens: {
+    colors: {
+      ...colors,
+    },
   },
-  extend: {
+  extendTokens: {
     spacings: {
       '7xl': 76,
       '8xl': 80,
@@ -20,7 +22,32 @@ export const themeDefault = {
   },
 } as const;
 
-export type AppTheme = typeof themeDefault;
+export const darkTheme = {
+  tokens: {
+    colors: {
+      ...colors,
+      blue: {
+        ...colors.blue,
+        950: 'red',
+      },
+    },
+  },
+  extendTokens: {
+    spacings: {
+      '7xl': 76,
+      '8xl': 80,
+    },
+    radii: {
+      '6xl': 32,
+      '7xl': 36,
+    },
+    fontSizes: {
+      '10xl': 80,
+    },
+  },
+} as const;
 
-const [themeTokens] = createTheme(themeDefault);
-export const { block, css, theme, utils } = createBlocks(themeTokens);
+const [themeTokens] = createTokens({ theme: lightTheme });
+const [darkThemeTokens] = createTokens({ theme: darkTheme });
+
+export const { block, css, theme, themes } = createBlocks({ theme: themeTokens, themes: { darkThemeTokens } });

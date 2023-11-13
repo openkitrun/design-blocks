@@ -1,7 +1,7 @@
 import { createStack, StackProps } from '@design-blocks/primitives';
-import { ColorMapProps } from '@design-blocks/native';
 
-import type { AppTheme } from '../../blocks.config';
+import type { ColorMapProps } from '@design-blocks/native';
+import type { ColorsAppTheme } from '../../block';
 
-interface StackPropsCustom extends ColorMapProps<AppTheme['colors']> {}
+interface StackPropsCustom extends ColorMapProps<ColorsAppTheme> {}
 export default createStack<StackPropsCustom & StackProps>();

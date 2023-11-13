@@ -1,44 +1,49 @@
-import type { Theme, ThemeOptions } from '@design-blocks/theme';
 import { baseTheme } from '@design-blocks/theme';
 import { deepMerge } from '@design-blocks/utils';
 
-export function createTheme<ThemeTokens extends Theme>(tokens: ThemeOptions): [ThemeTokens];
-export function createTheme(tokensArg: ThemeOptions) {
+import type { Theme, TokensOptions } from '@design-blocks/theme';
+
+export function createTokens<ThemeTokens extends Theme = Theme>({ theme, utils }: TokensOptions): [ThemeTokens];
+export function createTokens({ theme, utils: utilsTokens = {} }: TokensOptions) {
   const {
     colors: colorsOverrides = {},
     spacings: spacingsOverrides = {},
     fontSizes: fontSizesOverrides = {},
     fontWeights: fontWeightsOverrides = {},
     radii: radiiOverrides = {},
-    utils: utilsOverrides = {},
-
-    extend = {
-      spacings: {},
-      fontSizes: {},
-      fontWeights: {},
-      radii: {},
-      utils: {},
-    },
     ...other
-  } = tokensArg;
+  } = theme.tokens;
+
+  const utilsOverrides = utilsTokens;
+
+  const {
+    spacings: spacingsExtend = {},
+    fontSizes: fontSizesExtend = {},
+    fontWeights: fontWeightsExtend = {},
+    radii: radiiExtend = {},
+  } = theme.extendTokens || {};
 
   const colors = deepMerge(baseTheme.colors, { ...colorsOverrides });
   const spacings = deepMerge(baseTheme.spacings, {
     ...spacingsOverrides,
-    ...extend.spacings,
+    ...spacingsExtend,
   });
+
   const fontSizes = deepMerge(baseTheme.fontSizes, {
     ...fontSizesOverrides,
-    ...extend.fontSizes,
+    ...fontSizesExtend,
   });
+
   const fontWeights = deepMerge(baseTheme.fontWeights, {
     ...fontWeightsOverrides,
-    ...extend.fontWeights,
+    ...fontWeightsExtend,
   });
+
   const radii = deepMerge(baseTheme.radii, {
     ...radiiOverrides,
-    ...extend.radii,
+    ...radiiExtend,
   });
+
   const utils = deepMerge(baseTheme.utils, { ...utilsOverrides });
 
   const blocksTheme = {
@@ -47,7 +52,6 @@ export function createTheme(tokensArg: ThemeOptions) {
     fontSizes,
     fontWeights,
     radii,
-    extend,
     utils,
     ...other,
   };

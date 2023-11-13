@@ -56,7 +56,7 @@ function DemoScreen() {
 
       <YStack gap='xl'>
         <XStack alignItems='center' justifyContent='space-around'>
-          <SquareBlock bgColor='rose.500' />
+          <SquareBlock bgColor='amber.100' />
           <CircleBlock bgColor='green.400' />
           <SquareBlock bgColor='amber.400' />
         </XStack>

@@ -13,30 +13,32 @@ export interface Theme {
   utils: Utils;
 }
 
-export interface ThemeOptions {
-  colors?: {
-    [key: string]: string | ThemeOptions['colors'];
+export interface TokensOptions {
+  theme: {
+    tokens: {
+      colors?: {
+        [key: string]: string | TokensOptions['theme']['tokens']['colors'];
+      };
+      spacings?: Partial<Spacings>;
+      fontSizes?: Partial<FontSizes>;
+      fontWeights?: Partial<FontWeights>;
+      radii?: Partial<Radii>;
+    };
+
+    extendTokens?: {
+      spacings?: {
+        [key: string]: string | number | TokensOptions['theme']['tokens']['spacings'];
+      };
+      fontSizes?: {
+        [key: string]: string | number | TokensOptions['theme']['tokens']['fontSizes'];
+      };
+      fontWeights?: {
+        [key: string]: string | number | TokensOptions['theme']['tokens']['fontWeights'];
+      };
+      radii?: {
+        [key: string]: string | number | TokensOptions['theme']['tokens']['radii'];
+      };
+    };
   };
-  spacings?: Partial<Spacings>;
-  fontSizes?: Partial<FontSizes>;
-  fontWeights?: Partial<FontWeights>;
-  radii?: Partial<Radii>;
   utils?: Partial<Utils>;
-  extend?: {
-    spacings?: {
-      [key: string]: string | number | ThemeOptions['spacings'];
-    };
-    fontSizes?: {
-      [key: string]: string | number | ThemeOptions['fontSizes'];
-    };
-    fontWeights?: {
-      [key: string]: string | number | ThemeOptions['fontWeights'];
-    };
-    radii?: {
-      [key: string]: string | number | ThemeOptions['radii'];
-    };
-    utils?: {
-      [key: string]: any | ThemeOptions['utils'];
-    };
-  };
 }
