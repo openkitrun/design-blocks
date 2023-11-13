@@ -1,5 +1,11 @@
 # tsconfig
 
+## 1.0.0-beta.12
+
+### Minor Changes
+
+- [`f5d2ee5`](https://github.com/openkitrun/design-blocks/commit/f5d2ee515775914edc236712fd6eb61f4524535f) Thanks [@wootsbot](https://github.com/wootsbot)! - Use multiple Themes
+
 ## 1.0.0-beta.11
 
 ### Minor Changes

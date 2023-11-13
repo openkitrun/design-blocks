@@ -1,5 +1,16 @@
 # @design-blocks/theme
 
+## 1.0.0-beta.25
+
+### Minor Changes
+
+- [`f5d2ee5`](https://github.com/openkitrun/design-blocks/commit/f5d2ee515775914edc236712fd6eb61f4524535f) Thanks [@wootsbot](https://github.com/wootsbot)! - Use multiple Themes
+
+### Patch Changes
+
+- Updated dependencies [[`f5d2ee5`](https://github.com/openkitrun/design-blocks/commit/f5d2ee515775914edc236712fd6eb61f4524535f)]:
+  - @design-blocks/utils@1.0.0-beta.22
+
 ## 1.0.0-beta.24
 
 ### Minor Changes
