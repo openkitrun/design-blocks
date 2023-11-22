@@ -32,16 +32,17 @@ export type OmittedColors = IColorsKeys;
 
 type BaseValue = number | string | undefined;
 
+type RadiiValue = LooseAutocomplete<IRadii> | number;
 type RadiiProps = {
-  [Key in IRadiiKeys]?: number | IRadii;
+  [Key in IRadiiKeys]?: RadiiValue;
 } & {
-  borderBottomWidth?: number | IRadii;
-  borderEndWidth?: number | IRadii;
-  borderLeftWidth?: number | IRadii;
-  borderRightWidth?: number | IRadii;
-  borderStartWidth?: number | IRadii;
-  borderTopWidth?: number | IRadii;
-  borderWidth?: number | IRadii;
+  borderBottomWidth?: RadiiValue;
+  borderEndWidth?: RadiiValue;
+  borderLeftWidth?: RadiiValue;
+  borderRightWidth?: RadiiValue;
+  borderStartWidth?: RadiiValue;
+  borderTopWidth?: RadiiValue;
+  borderWidth?: RadiiValue;
 };
 
 type SpacingValue = Exclude<ISpacings | number | undefined, SpacingBaseExcluded>;

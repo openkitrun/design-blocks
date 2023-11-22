@@ -41,7 +41,7 @@ export default function validateProperties(
   if (themeKeys.radii[propertyStyle as IRadiiKeys]) {
     const valueStyleMerge = getValuesTokens(theme, `radii.${_valueStyle}`);
 
-    if (typeof valueStyleMerge === 'string') {
+    if (valueStyleMerge) {
       _valueStyle = valueStyleMerge;
     }
   }

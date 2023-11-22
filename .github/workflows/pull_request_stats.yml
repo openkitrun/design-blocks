@@ -6,7 +6,7 @@ on:
 
 env:
   TURBO_VERSION: 1.10.15
-  PNPM_VERSION: 8.9.0
+  PNPM_VERSION: 8.10.5
 
 jobs:
   format:
@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-          scope: '@design-blocks'
+          scope: "@design-blocks"
 
       # We use week in the turbo cache key to keep the cache from infinitely growing
       - id: get-week
