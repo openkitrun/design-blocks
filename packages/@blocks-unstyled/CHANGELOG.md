@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.17
+
+### Minor Changes
+
+- [`e5870cd`](https://github.com/openkitrun/design-blocks/commit/e5870cd1197dc41a7fee73e4b60a6a482a5510af) Thanks [@wootsbot](https://github.com/wootsbot)! - Added radi support in types and porps value styles
+
 ## 1.0.0-beta.16
 
 ### Minor Changes

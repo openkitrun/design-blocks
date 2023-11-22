@@ -1,5 +1,19 @@
 # @design-blocks/primitives
 
+## 1.0.0-beta.31
+
+### Minor Changes
+
+- [`e5870cd`](https://github.com/openkitrun/design-blocks/commit/e5870cd1197dc41a7fee73e4b60a6a482a5510af) Thanks [@wootsbot](https://github.com/wootsbot)! - Added radi support in types and porps value styles
+
+### Patch Changes
+
+- Updated dependencies [[`e5870cd`](https://github.com/openkitrun/design-blocks/commit/e5870cd1197dc41a7fee73e4b60a6a482a5510af)]:
+  - @design-blocks/system@1.0.0-beta.29
+  - @design-blocks/types@1.0.0-beta.28
+  - @design-blocks/utils@1.0.0-beta.23
+  - @design-blocks/block@1.0.0-beta.31
+
 ## 1.0.0-beta.30
 
 ### Minor Changes
