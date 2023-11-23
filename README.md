@@ -4,21 +4,11 @@
   Build your mobile applications React Native with blocks
 </h1>
 
-An open source UI component library that focuses on customization, developer experience, and building mobile apps with
-react-native.
+An open source library with tools for creating dynamic user interfaces for applications written in React Native, focused on the developer experience.
 
-<!-- You can use these components as the base layer of your design system or adopt ##them incrementally. -->
+You can use these components as the base layer of your design system or adopt ##them incrementally.
 
 ### Packages
-
-<!--
-- [🏄‍♀️ `@design-blocks/primitives`](https://github.com/wootsbot/design-blocks/tree/main/packages/%40blocks-primitives) -
-  Unstyled components for building high‑quality design systems and mobile apps in React-Native.
-- [💥 `@design-blocks/native`](https://github.com/wootsbot/design-blocks/tree/main/packages/native) - Use all the
-  packages to create your design system or create your developments faster.
-- [💅 `@design-blocks/colors`](https://github.com/wootsbot/design-blocks/tree/main/packages/%40blocks-colors) - A set of
-  open-source color systems to design your apps beautiful and accessible.
-  [Tailwindcss Colors](https://tailwindcss.com/docs/customizing-colors), [Radix Colors](https://www.radix-ui.com/colors) -->
 
 - [💥 `@design-blocks/native`](https://github.com/openkitrun/design-blocks/tree/main/packages/native) - Core of Design Blocks. Features ThemeProvider, block, and createBlocks for token configuration, essential for UI customization and consistency.
 - [🏄‍♀️ `@design-blocks/primitives`](https://github.com/openkitrun/design-blocks/tree/main/packages/%40blocks-primitives) -
