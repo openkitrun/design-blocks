@@ -6,7 +6,7 @@
 
 An open source library with tools for creating dynamic user interfaces for applications written in React Native, focused on the developer experience.
 
-You can use these components as the base layer of your design system or adopt ##them incrementally.
+You can use these components as the base layer of your design system or adopt them incrementally.
 
 ### Packages
 
