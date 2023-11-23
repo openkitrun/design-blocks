@@ -64,25 +64,12 @@ To configure Design Blocks, create a blocks.config.ts file (.js works too) and i
 import { createTokens, createBlocks } from "@design-blocks/native";
 ```
 
-<!-- This function receives a configuration object:
+The createTokens function receives a configuration object:
 
-- theme: Define your design theme, which map to CSS properties.
-- devTools: Create custom utils to improve your developer experience.
+- theme: defines the tokens for your theme, which map to CSS properties and style props.
+- utils: creates custom utilities to enhance your development experience.
 
-And returns all the available functions above.
-
-- block: The `block` function facilitates creating styled React-Native components, allowing clear and organized CSS styling within your projects.
-- theme: The object from `theme` is passed to the `ThemeProvider`, enabling the use of accessible tokens in your project, facilitating style management and accessibility in your components.
-- devTools: Create custom utils to improve your developer experience.
-- css: Facilitates string interpolation for writing CSS in a readable and organized manner.
-- makeTheme: The `makeTheme` function creates a theme object for your `@design-blocks`, organizing styling values for use in your components, promoting consistency across your project. -->
-
-La función `createTokens` recibe un objeto de configuración:
-
-- theme: defines los tokens de tu tema, que se mapean a las propiedades CSS y style props.
-- utils: crea utilidades personalizadas para mejorar tu experiencia de desarrollo.
-
-Y devuelve un array con los tokens disponibles y utils.
+And returns an array with the available tokens and utils.
 
 ```tsx
 // blocks.config.ts
