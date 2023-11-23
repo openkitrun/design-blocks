@@ -7,48 +7,64 @@
 An open source UI component library that focuses on customization, developer experience, and building mobile apps with
 react-native.
 
-You can use these components as the base layer of your design system or adopt them incrementally.
+<!-- You can use these components as the base layer of your design system or adopt ##them incrementally. -->
 
+### Packages
+
+<!--
 - [🏄‍♀️ `@design-blocks/primitives`](https://github.com/wootsbot/design-blocks/tree/main/packages/%40blocks-primitives) -
   Unstyled components for building high‑quality design systems and mobile apps in React-Native.
 - [💥 `@design-blocks/native`](https://github.com/wootsbot/design-blocks/tree/main/packages/native) - Use all the
   packages to create your design system or create your developments faster.
 - [💅 `@design-blocks/colors`](https://github.com/wootsbot/design-blocks/tree/main/packages/%40blocks-colors) - A set of
   open-source color systems to design your apps beautiful and accessible.
+  [Tailwindcss Colors](https://tailwindcss.com/docs/customizing-colors), [Radix Colors](https://www.radix-ui.com/colors) -->
+
+- [💥 `@design-blocks/native`](https://github.com/openkitrun/design-blocks/tree/main/packages/native) - Core of Design Blocks. Features ThemeProvider, block, and createBlocks for token configuration, essential for UI customization and consistency.
+- [🏄‍♀️ `@design-blocks/primitives`](https://github.com/openkitrun/design-blocks/tree/main/packages/%40blocks-primitives) -
+  Provides basic components and functions for custom UI creation. Includes elements like Box, Stack, and Text, essential for UI construction.
+- [🏄‍♀️ `@design-blocks/unstyled`](https://github.com/openkitrun/design-blocks/tree/main/packages/%40blocks-unstyled) -
+  Accessible, style-agnostic components, ideal for integration in any Design Blocks project. Maximizes accessibility and design flexibility.
+- [💅 `@design-blocks/colors`](https://github.com/openkitrun/design-blocks/tree/main/packages/%40blocks-colors) - A set of
+  open-source color systems to design your apps beautiful and accessible.
   [Tailwindcss Colors](https://tailwindcss.com/docs/customizing-colors), [Radix Colors](https://www.radix-ui.com/colors)
+
+<br/>
 
 ## Documentation
 
-For full documentation, visit [designblocks.dev](https://designblocks.dev).(WIP)
+For detailed information and usage instructions, visit our [official documentation](https://designblocks.dev). (Work in Progress)
 
-## Install
+## Installation
+
+To integrate Design Blocks into your project, you can install the package using your preferred package manager. Choose one of the following commands:
 
 ```sh
 // with pnpm
-pnpm add  @design-blocks/native
+pnpm add @design-blocks/native
 
 // with yarn
 yarn add @design-blocks/native
 
 // with npm
-npm add  @design-blocks/native
+npm add @design-blocks/native
 
 // with bun
-bun bun add @design-blocks/native
+bun add @design-blocks/native
 ```
 
-## Configure Design Blocks
+## Configuring Design Blocks
 
-### Create your config file
+### Creating Your Configuration File
 
-To configure Design Blocks, create a blocks.config.ts file (.js works too) and import the `createBlocks` function.
+To configure Design Blocks, create a blocks.config.ts file (.js works too) and import `createBlocks` and `createTokens` functions from `@design-blocks/native`.
 
 ```ts
 // blocks.config.ts
-import { createBlocks } from '@design-blocks/native';
+import { createTokens, createBlocks } from "@design-blocks/native";
 ```
 
-This function receives a configuration object:
+<!-- This function receives a configuration object:
 
 - theme: Define your design theme, which map to CSS properties.
 - devTools: Create custom utils to improve your developer experience.
@@ -59,117 +75,56 @@ And returns all the available functions above.
 - theme: The object from `theme` is passed to the `ThemeProvider`, enabling the use of accessible tokens in your project, facilitating style management and accessibility in your components.
 - devTools: Create custom utils to improve your developer experience.
 - css: Facilitates string interpolation for writing CSS in a readable and organized manner.
-- makeTheme: The `makeTheme` function creates a theme object for your `@design-blocks`, organizing styling values for use in your components, promoting consistency across your project.
+- makeTheme: The `makeTheme` function creates a theme object for your `@design-blocks`, organizing styling values for use in your components, promoting consistency across your project. -->
+
+La función `createTokens` recibe un objeto de configuración:
+
+- theme: defines los tokens de tu tema, que se mapean a las propiedades CSS y style props.
+- utils: crea utilidades personalizadas para mejorar tu experiencia de desarrollo.
+
+Y devuelve un array con los tokens disponibles y utils.
 
 ```tsx
 // blocks.config.ts
 
-import { createBlocks, createTheme } from '@design-blocks/native';
-import colors from '@design-blocks/colors/tailwind-css';
+import { createBlocks, createTokens } from "@design-blocks/native";
 
-export const themeDefault = {
-  colors: {
-    ...colors,
-  },
-  extend: {
-    spacings: {
-      '7xl': 76,
-      '8xl': 80,
-    },
-    radii: {
-      '6xl': 32,
-      '7xl': 36,
-    },
-    fontSizes: {
-      '10xl': 32,
-    },
-  },
-} as const;
-
-const [themeTokens] = createTheme(themeDefault);
-export const { block, css, theme, utils } = createBlocks(themeTokens);
-```
-
-```tsx
-// App.tsx index root application react-native
-
-import React from 'react';
-
-import RootNavigator from './RootNavigation';
-
-import { ThemeProvider } from '@design-blocks/native';
-
-import { theme } from './blocks.config';
-
-const App = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <RootNavigator />
-    </ThemeProvider>
-  );
-};
-
-export default App;
-```
-
-#### Import and use it
-
-From this point onwards, you'll be importing `block` and other functions from blocks.config.
-
-```tsx
-import { block } from '[path-to]/blocks.config';
-
-const Description = block.Text(({ theme }) => ({
-  color: theme.colors.violet[400],
-  fontSize: 30,
-}));
-```
-
-> Use an alias for `blocks.config` this will help the developer experience
-
-```js
-// tsconfig.json or jsconfig.json
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/blocks": ["./blocks.config.ts"],
-    }
-  }
-}
-```
-
-```js
-// babel.config.js
-module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
-  plugins: [
-    [
-      'module-resolver',
-      {
-        root: ['./src'],
-        extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
-        alias: {
-          '@blocks': './blocks.config.ts',
+const [themeTokens] = createTokens({
+  theme: {
+    tokens: {
+      colors: {
+        text: {
+          primary: "#000",
+          secondary: "#fff",
+        },
+        red: {
+          100: "#FFEEEE",
+          200: "#FACDCD",
           ...
         },
       },
-    ],
-    'react-native-reanimated/plugin',
-  ],
-};
+    },
+    extendTokens: {
+      spacings: {
+        "7xl": 76,
+      },
+      radii: {
+        "6xl": 32,
+      },
+      fontSizes: {
+        "10xl": 80,
+      },
+    },
+  },
+  utils: {
+    toPixels: (value: number) => `${value}px`,
+    ...
+  },
+});
 
-```
-
-And as a result has improved the development experience
-
-```tsx
-import { block } from '@/blocks';
-
-const DescriptionBlock = block.Text(({ theme }) => ({
-  color: theme.colors.violet[400],
-  fontSize: 30,
-}));
+export const { block, css, theme, themes } = createBlocks({
+  theme: themeTokens,
+});
 ```
 
 ## Contributing
