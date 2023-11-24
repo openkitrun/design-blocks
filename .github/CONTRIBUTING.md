@@ -28,18 +28,18 @@ followin structure:
 
 ### Directory Structure
 
-| Package                                           | Description                                                                       |
-| ------------------------------------------------- | --------------------------------------------------------------------------------- |
-| [@blocks-colors](packages/@blocks-colors)         | Contains all color tokens from Tailwindcss Colors, Radix Colors.                  |
-| [@blocks-primitives](packages/@blocks-primitives) | Contains primitive components.                                                    |
-| [@blocks-system](packages/@blocks-system)         | Functions to generate style props, access, and generate tokens.                   |
-| [@blocks-theme](packages/@blocks-theme)           | All tokens for use as style props and providers for token configuration.          |
-| [@blocks-types](packages/@blocks-types)           | Common types used across all packages.                                            |
-| [@blocks-unstyled](packages/@blocks-unstyled)     | Style-agnostic components, independent of token configuration.                    |
-| [@blocks-utils](packages/@blocks-utils)           | Common utilities used in packages, with a few exported specifically for `native`. |
-| [block](packages/block)                           | Function to create styled blocks for React Native.                                |
-| [native-dictionary](packages/native)              | All core exports necessary for the proper functioning of Design Blocks.           |
-| [tsconfig](packages/tsconfig)                     | Contains shared TS                                                                |
+| Package                                              | Description                                                                       |
+| ---------------------------------------------------- | --------------------------------------------------------------------------------- |
+| [@blocks-colors](../packages/@blocks-colors)         | Contains all color tokens from Tailwindcss Colors, Radix Colors.                  |
+| [@blocks-primitives](../packages/@blocks-primitives) | Contains primitive components.                                                    |
+| [@blocks-system](../packages/@blocks-system)         | Functions to generate style props, access, and generate tokens.                   |
+| [@blocks-theme](../packages/@blocks-theme)           | All tokens for use as style props and providers for token configuration.          |
+| [@blocks-types](../packages/@blocks-types)           | Common types used across all packages.                                            |
+| [@blocks-unstyled](../packages/@blocks-unstyled)     | Style-agnostic components, independent of token configuration.                    |
+| [@blocks-utils](../packages/@blocks-utils)           | Common utilities used in packages, with a few exported specifically for `native`. |
+| [block](../packages/block)                           | Function to create styled blocks for React Native.                                |
+| [native-dictionary](../packages/native)              | All core exports necessary for the proper functioning of Design Blocks.           |
+| [tsconfig](../packages/tsconfig)                     | Contains shared TS                                                                |
 
 ### Tooling
 
