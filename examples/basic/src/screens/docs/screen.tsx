@@ -10,7 +10,7 @@ import IconDownload from '../../components/icons/Download';
 import IconArrowRightUp from '../../components/icons/ArrowRightUp';
 import IconArrowDropDown from '../../components/icons/ArrowDropDown';
 
-import { block } from '../../../blocks.config';
+import { block, css } from '../../../blocks.config';
 
 const actions = {
   add: IconAdd,

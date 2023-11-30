@@ -1,5 +1,5 @@
-import { createBlocks, createTokens } from '@design-blocks/native';
-import colors from '@design-blocks/colors/tailwind-css';
+import { createBlocks, createTokens } from "@design-blocks/native";
+import colors from "@design-blocks/colors/tailwind-css";
 
 export const lightTheme = {
   tokens: {
@@ -9,15 +9,15 @@ export const lightTheme = {
   },
   extendTokens: {
     spacings: {
-      '7xl': 76,
-      '8xl': 80,
+      "7xl": 76,
+      "8xl": 80,
     },
     radii: {
-      '6xl': 32,
-      '7xl': 36,
+      "6xl": 32,
+      "7xl": 36,
     },
     fontSizes: {
-      '10xl': 80,
+      "10xl": 80,
     },
   },
 } as const;
@@ -28,21 +28,21 @@ export const darkTheme = {
       ...colors,
       blue: {
         ...colors.blue,
-        950: 'red',
+        950: "red",
       },
     },
   },
   extendTokens: {
     spacings: {
-      '7xl': 76,
-      '8xl': 80,
+      "7xl": 76,
+      "8xl": 80,
     },
     radii: {
-      '6xl': 32,
-      '7xl': 36,
+      "6xl": 32,
+      "7xl": 36,
     },
     fontSizes: {
-      '10xl': 80,
+      "10xl": 80,
     },
   },
 } as const;
@@ -50,4 +50,7 @@ export const darkTheme = {
 const [themeTokens] = createTokens({ theme: lightTheme });
 const [darkThemeTokens] = createTokens({ theme: darkTheme });
 
-export const { block, css, theme, themes } = createBlocks({ theme: themeTokens, themes: { darkThemeTokens } });
+export const { block, css, theme, themes } = createBlocks({
+  theme: themeTokens,
+  themes: { darkThemeTokens },
+});

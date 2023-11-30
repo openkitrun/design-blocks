@@ -77,7 +77,7 @@ And returns all the available functions:
 - utils: Create custom utils to improve your developer experience.
 - css: Facilitates string interpolation for writing CSS in a readable manner.
 
-```tsx
+```ts
 // blocks.config.ts
 
 import { createTokens, createBlocks } from "@design-blocks/native";
