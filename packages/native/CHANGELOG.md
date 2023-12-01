@@ -1,5 +1,14 @@
 # @design-blocks/native
 
+## 1.0.0-beta.32
+
+### Patch Changes
+
+- Updated dependencies [[`bd3b4e5`](https://github.com/openkitrun/design-blocks/commit/bd3b4e554bf28bbd282193dbcdf14466922f3c32)]:
+  - @design-blocks/system@1.0.0-beta.30
+  - @design-blocks/theme@1.0.0-beta.27
+  - @design-blocks/types@1.0.0-beta.29
+
 ## 1.0.0-beta.31
 
 ### Minor Changes
