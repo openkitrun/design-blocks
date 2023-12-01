@@ -1,8 +1,9 @@
-import { fonts, radii, spacings, utils } from './themeTokens';
+import { fonts, radii, sizes, spacings, utils } from './themeTokens';
 
 export const baseTheme = {
   colors: {},
   spacings,
+  sizes,
   fontSizes: fonts.fontSizes,
   fontWeights: fonts.fontWeights,
   radii,

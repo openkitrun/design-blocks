@@ -11,6 +11,7 @@ export function createTokens({ theme, utils: utilsTokens = {} }: TokensOptions) 
     fontSizes: fontSizesOverrides = {},
     fontWeights: fontWeightsOverrides = {},
     radii: radiiOverrides = {},
+    sizes: sizesOverrides = {},
     ...other
   } = theme.tokens;
 
@@ -21,12 +22,18 @@ export function createTokens({ theme, utils: utilsTokens = {} }: TokensOptions) 
     fontSizes: fontSizesExtend = {},
     fontWeights: fontWeightsExtend = {},
     radii: radiiExtend = {},
+    sizes: sizesExtend = {},
   } = theme.extendTokens || {};
 
   const colors = deepMerge(baseTheme.colors, { ...colorsOverrides });
   const spacings = deepMerge(baseTheme.spacings, {
     ...spacingsOverrides,
     ...spacingsExtend,
+  });
+
+  const sizes = deepMerge(baseTheme.sizes, {
+    ...sizesOverrides,
+    ...sizesExtend,
   });
 
   const fontSizes = deepMerge(baseTheme.fontSizes, {
@@ -49,6 +56,7 @@ export function createTokens({ theme, utils: utilsTokens = {} }: TokensOptions) 
   const blocksTheme = {
     colors,
     spacings,
+    sizes,
     fontSizes,
     fontWeights,
     radii,

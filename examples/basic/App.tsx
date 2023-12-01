@@ -1,10 +1,10 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, useColorScheme } from 'react-native';
 
 import { ThemeProvider } from '@design-blocks/native';
 
-import { theme, themes, block } from './blocks.config';
+import { themes, block } from './blocks.config';
 
 import DocsScreen from './src/screens/docs/screen';
 
@@ -16,8 +16,10 @@ const SafeAreaViewBlock = block(SafeAreaView)(({ theme }) => {
 });
 
 export default function App() {
+  const colorScheme = useColorScheme();
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={colorScheme === 'light' ? themes.light : themes.dark}>
       <SafeAreaViewBlock>
         <StatusBar translucent backgroundColor='transparent' style='inverted' />
         <DocsScreen />

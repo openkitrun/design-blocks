@@ -29,6 +29,9 @@ export const styleFunctionProps = (
       let propertyStyleValue = tokensBase[propertyStyle as PropertyStyle<keyof typeof tokensBase>] as string;
       let finalValueStyle = valueStyle;
 
+      /**
+       * If the value is a token, it is assigned to the property
+       */
       const valueToken = getValuesTokens(theme, valueStyle?.toString());
 
       if (!valueToken) {

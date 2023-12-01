@@ -1,6 +1,6 @@
 import { ScrollView, Image } from 'react-native';
 
-import { Text, Box, YStack, XStack } from '@design-blocks/primitives';
+import { Text, Box, XStack, YStack } from '@design-blocks/primitives';
 import { colors } from '@design-blocks/colors/tailwind-css';
 
 import IconAdd from '../../components/icons/Add';
@@ -10,7 +10,7 @@ import IconDownload from '../../components/icons/Download';
 import IconArrowRightUp from '../../components/icons/ArrowRightUp';
 import IconArrowDropDown from '../../components/icons/ArrowDropDown';
 
-import { block, css } from '../../../blocks.config';
+import { block } from '../../../blocks.config';
 
 const actions = {
   add: IconAdd,
@@ -50,8 +50,7 @@ const TransactionItem = ({
     bgColor='zinc.50'
     ph='sm'
     pv='xs'
-    //borderRadius={9999}
-    borderRadius='7xl'
+    borderRadius='full'
     justifyContent='space-between'
     alignItems='center'
     gap='md'
@@ -142,7 +141,7 @@ function DocsScreen() {
                 <Text fontSize='sm'>VISA</Text>
               </Box>
 
-              <Box borderColor='gray.500' borderWidth={0.5} borderRadius={9999} p='xs'>
+              <Box borderColor='gray.500' border borderRadius={9999} p='xs'>
                 <Text fontSize='sm'>****1216, Exp: 05/2030</Text>
               </Box>
             </XStack>
@@ -210,7 +209,7 @@ function DocsScreen() {
               Transactions
             </Text>
 
-            <XStack borderColor='gray.500' borderWidth={0.5} borderRadius={9999} pv='xxs' ph='sm' alignItems='center'>
+            <XStack borderColor='gray.500' border borderRadius={9999} pv='xxs' ph='sm' alignItems='center'>
               <Text color='zinc.50' fontSize='sm'>
                 Last
               </Text>

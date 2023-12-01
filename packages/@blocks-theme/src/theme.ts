@@ -1,4 +1,4 @@
-import type { FontSizes, FontWeights, Radii, Spacings, Utils } from './themeTokens';
+import type { Borders, FontSizes, FontWeights, Radii, Sizes, Spacings, Utils } from './themeTokens';
 
 export interface Colors {
   [key: string]: string | Colors;
@@ -7,11 +7,15 @@ export interface Colors {
 export interface Theme {
   colors: Colors;
   spacings: Spacings;
+  sizes: Sizes;
   fontSizes: FontSizes;
   fontWeights: FontWeights;
   radii: Radii;
+  borders: Borders;
   utils: Utils;
 }
+
+type baseValue = string | number;
 
 export interface TokensOptions {
   theme: {
@@ -20,23 +24,31 @@ export interface TokensOptions {
         [key: string]: string | TokensOptions['theme']['tokens']['colors'];
       };
       spacings?: Partial<Spacings>;
+      sizes?: Partial<Sizes>;
       fontSizes?: Partial<FontSizes>;
       fontWeights?: Partial<FontWeights>;
       radii?: Partial<Radii>;
+      borders?: Partial<Borders>;
     };
 
     extendTokens?: {
       spacings?: {
-        [key: string]: string | number | TokensOptions['theme']['tokens']['spacings'];
+        [key: string]: baseValue | TokensOptions['theme']['tokens']['spacings'];
+      };
+      sizes?: {
+        [key: string]: baseValue | TokensOptions['theme']['tokens']['sizes'];
       };
       fontSizes?: {
-        [key: string]: string | number | TokensOptions['theme']['tokens']['fontSizes'];
+        [key: string]: baseValue | TokensOptions['theme']['tokens']['fontSizes'];
       };
       fontWeights?: {
-        [key: string]: string | number | TokensOptions['theme']['tokens']['fontWeights'];
+        [key: string]: string | TokensOptions['theme']['tokens']['fontWeights'];
       };
       radii?: {
-        [key: string]: string | number | TokensOptions['theme']['tokens']['radii'];
+        [key: string]: baseValue | TokensOptions['theme']['tokens']['radii'];
+      };
+      borders?: {
+        [key: string]: baseValue | TokensOptions['theme']['tokens']['borders'];
       };
     };
   };

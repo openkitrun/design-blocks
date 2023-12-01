@@ -1,9 +1,12 @@
 import type {
+  IBorders,
+  IBordersKeys,
   IColorsKeys,
   IFontSizes,
   IFontWeights,
   IRadii,
   IRadiiKeys,
+  ISizes,
   ISizesKeys,
   ISpacesKeys,
   ISpacings,
@@ -14,40 +17,43 @@ import type { FlexStyle, TextStyle, ViewStyle } from 'react-native';
 /**
  * OmittedTypes
  */
-export type OmittedRadii =
-  | IRadiiKeys
-  | 'borderBottomWidth'
-  | 'borderEndWidth'
-  | 'borderLeftWidth'
-  | 'borderRightWidth'
-  | 'borderStartWidth'
-  | 'borderTopWidth'
-  | 'borderWidth';
+export type OmittedRadii = IRadiiKeys;
+export type OmittedBorders = IBordersKeys;
 export type OmittedSizes = 'width' | 'height' | 'minWidth' | 'maxWidth' | 'minHeight' | 'maxHeight';
 export type SpacingBaseExcluded = 'full' | 'spacing' | 'baseSpacing';
-type OmittedBorder = 'borderEndWidth' | 'borderStartWidth';
+
 export type OmittedSpacing = ISpacesKeys;
-type OmittedTextStyles = 'textDecorationLine' | 'color' | 'fontWeight' | 'fontSize' | OmittedSpacing | OmittedRadii;
+type OmittedTextStyles =
+  | 'textDecorationLine'
+  | 'color'
+  | 'fontWeight'
+  | 'fontSize'
+  | OmittedSpacing
+  | OmittedSizes
+  | OmittedRadii
+  | OmittedBorders;
 export type OmittedColors = IColorsKeys;
 
-type BaseValue = number | string | undefined;
-
-type RadiiValue = LooseAutocomplete<IRadii> | number;
-type RadiiProps = {
-  [Key in IRadiiKeys]?: RadiiValue;
+type RadiiValue = LooseAutocomplete<Exclude<IRadii, 'true'>> | number;
+export type RadiiProps = {
+  [Key in Exclude<IRadiiKeys, 'borderRadius'>]?: RadiiValue;
 } & {
-  borderBottomWidth?: RadiiValue;
-  borderEndWidth?: RadiiValue;
-  borderLeftWidth?: RadiiValue;
-  borderRightWidth?: RadiiValue;
-  borderStartWidth?: RadiiValue;
-  borderTopWidth?: RadiiValue;
-  borderWidth?: RadiiValue;
+  borderRadius?: RadiiValue | true;
+};
+
+type BorderValue = LooseAutocomplete<Exclude<IBorders, 'true'>> | number | true;
+export type BorderProps = {
+  [Key in IBordersKeys]?: BorderValue;
 };
 
 type SpacingValue = Exclude<ISpacings | number | undefined, SpacingBaseExcluded>;
 export type SpacingProps = {
   [Key in ISpacesKeys]?: SpacingValue;
+};
+
+type SizeValue = LooseAutocomplete<ISizes> | number | true | undefined;
+export type SizesProps = {
+  [Key in ISizesKeys]?: SizeValue;
 };
 
 type ColorsProps = {
@@ -56,10 +62,6 @@ type ColorsProps = {
 
 export interface BoxColorsProps extends ColorsProps {}
 
-type SizesProps = {
-  [Key in ISizesKeys]?: BaseValue;
-};
-
 /**
  * Style Props Text
  */
@@ -67,23 +69,29 @@ type TextColors = {
   color?: TextStyle['color'];
 };
 export interface TextColorsProps extends TextColors {}
-export interface TextStyledProps extends Omit<TextStyle, OmittedTextStyles>, SpacingProps, TextColorsProps {
+export interface TextStyledProps
+  extends Omit<TextStyle, OmittedTextStyles>,
+    SpacingProps,
+    BorderProps,
+    TextColorsProps {
   textDecorationLine?: TextStyle['textDecorationLine'] | 'lineThrough' | 'underlineLineThrough';
   fontWeight?: LooseAutocomplete<IFontWeights> | TextStyle['fontWeight'];
   fontSize?: IFontSizes | TextStyle['fontSize'];
 }
 export interface SxStyledText extends TextStyledProps {}
 
+type OmittedFlex = OmittedSpacing | OmittedSizes | OmittedBorders | OmittedRadii | OmittedColors;
 /**
  * Style Props View
  */
 export interface SxStyledFlex
-  extends Omit<FlexStyle, OmittedSpacing | OmittedBorder | OmittedRadii | OmittedColors>,
-    Omit<ViewStyle, OmittedSpacing | OmittedBorder | OmittedRadii | OmittedColors>,
+  extends Omit<FlexStyle, OmittedFlex>,
+    Omit<ViewStyle, OmittedFlex>,
     RadiiProps,
+    BorderProps,
     SpacingProps,
     BoxColorsProps,
-    Omit<SizesProps, OmittedSizes> {}
+    SizesProps {}
 
 /**
  * Type LooseAutocomplete to help Property Prop

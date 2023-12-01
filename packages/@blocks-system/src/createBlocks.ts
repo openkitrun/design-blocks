@@ -3,19 +3,18 @@ import block, { css } from '@design-blocks/block';
 import type { CreateBlock } from '@design-blocks/block';
 import type { Theme } from '@design-blocks/theme';
 
-export function createBlocks<T extends Theme, U extends Record<string, T>>({
-  theme: defaultTheme,
+export function createBlocks<U extends Record<string, Theme>>({
   themes: additionalThemes,
-}: { theme: T; themes?: U }): {
-  theme: T;
-  themes: { defaultTheme: T } & U;
+}: {
+  themes: U;
+}): {
+  themes: U;
   block: CreateBlock;
   css: typeof css;
 } {
-  const themes = { defaultTheme, ...additionalThemes } as { defaultTheme: T } & U;
+  const themes = { ...additionalThemes } as U;
 
   return {
-    theme: defaultTheme,
     themes,
     block,
     css,

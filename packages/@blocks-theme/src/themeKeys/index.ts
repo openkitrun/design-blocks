@@ -4,4 +4,5 @@ export * from './sizes';
 export * from './spacings';
 export * from './fonts';
 export * from './radii';
+export * from './borders';
 export * from './themeKeys';

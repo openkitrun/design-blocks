@@ -1,3 +1,4 @@
+import { bordersKeys } from './borders';
 import { colorsKeys } from './colors';
 import { fontsKeys } from './fonts';
 import { radiiKeys } from './radii';
@@ -10,29 +11,34 @@ export const componentsKeys = {
     ...colorsKeys,
     ...sizesKeys,
     ...radiiKeys,
+    ...bordersKeys,
   },
 
   Text: {
     ...spacingsKeys,
+    ...sizesKeys,
     ...colorsKeys,
     ...fontsKeys,
+    ...bordersKeys,
   },
 };
 
 export const themeKeys = {
-  spacings: spacingsKeys,
-  sizes: sizesKeys,
   colors: colorsKeys,
   fonts: fontsKeys,
   radii: radiiKeys,
+  borders: bordersKeys,
+  sizes: sizesKeys,
+  spacings: spacingsKeys,
 };
 
 export const KeysPropertyValues = {
-  ...sizesKeys,
-  ...spacingsKeys,
   ...colorsKeys,
   ...fontsKeys,
   ...radiiKeys,
+  ...bordersKeys,
+  ...sizesKeys,
+  ...spacingsKeys,
 };
 
 export type IThemeKeys = keyof typeof themeKeys;
