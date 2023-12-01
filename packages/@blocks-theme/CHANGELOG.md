@@ -1,5 +1,11 @@
 # @design-blocks/theme
 
+## 1.0.0-beta.27
+
+### Minor Changes
+
+- [`bd3b4e5`](https://github.com/openkitrun/design-blocks/commit/bd3b4e554bf28bbd282193dbcdf14466922f3c32) Thanks [@wootsbot](https://github.com/wootsbot)! - Added support for sizes and borders and fixed in `createBlocks`
+
 ## 1.0.0-beta.26
 
 ### Minor Changes
