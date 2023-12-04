@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import block from '@design-blocks/block';
 
-import { styleFunctionProps, styleFunctionSx } from '@design-blocks/system';
+import { StyleFunctionMode, styleFunction } from '@design-blocks/system';
 import { __DEV__, camelCase } from '@design-blocks/utils';
 
 import { Box } from '../Box';
@@ -45,8 +45,8 @@ export function createStack<AdditionalProps extends StackProps = StackProps>() {
         alignItems,
         justifyContent,
         flexWrap,
-        ...styleFunctionProps('Box', theme, { ...styleProps }),
-        ...styleFunctionSx('Box', theme, sx),
+        ...styleFunction('Box', theme, { ...styleProps }, StyleFunctionMode.PROPS),
+        ...styleFunction('Box', theme, sx, StyleFunctionMode.SX),
       };
     },
   );

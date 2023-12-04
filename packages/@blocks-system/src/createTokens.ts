@@ -11,6 +11,7 @@ export function createTokens({ theme, utils: utilsTokens = {} }: TokensOptions) 
     fontSizes: fontSizesOverrides = {},
     fontWeights: fontWeightsOverrides = {},
     radii: radiiOverrides = {},
+    borders: bordersOverrides = {},
     sizes: sizesOverrides = {},
     ...other
   } = theme.tokens;
@@ -22,6 +23,7 @@ export function createTokens({ theme, utils: utilsTokens = {} }: TokensOptions) 
     fontSizes: fontSizesExtend = {},
     fontWeights: fontWeightsExtend = {},
     radii: radiiExtend = {},
+    borders: bordersExtend = {},
     sizes: sizesExtend = {},
   } = theme.extendTokens || {};
 
@@ -51,6 +53,11 @@ export function createTokens({ theme, utils: utilsTokens = {} }: TokensOptions) 
     ...radiiExtend,
   });
 
+  const borders = deepMerge(baseTheme.borders, {
+    ...bordersOverrides,
+    ...bordersExtend,
+  });
+
   const utils = deepMerge(baseTheme.utils, { ...utilsOverrides });
 
   const blocksTheme = {
@@ -60,6 +67,7 @@ export function createTokens({ theme, utils: utilsTokens = {} }: TokensOptions) 
     fontSizes,
     fontWeights,
     radii,
+    borders,
     utils,
     ...other,
   };

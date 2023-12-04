@@ -2,7 +2,7 @@ import { themeKeys } from '@design-blocks/theme';
 
 import { getValuesTokens } from './getValuesTokens';
 
-import type { IColorsKeys, IRadiiKeys, ISizesKeys, ISpacesKeys, Theme } from '@design-blocks/theme';
+import type { IBordersKeys, IColorsKeys, IRadiiKeys, ISizesKeys, ISpacesKeys, Theme } from '@design-blocks/theme';
 
 export default function validateProperties(
   valueStyle: string | number,
@@ -40,6 +40,17 @@ export default function validateProperties(
    */
   if (themeKeys.radii[propertyStyle as IRadiiKeys]) {
     const valueStyleMerge = getValuesTokens(theme, `radii.${_valueStyle}`);
+
+    if (valueStyleMerge) {
+      _valueStyle = valueStyleMerge;
+    }
+  }
+
+  /**
+   * Validate border properties
+   */
+  if (themeKeys.borders[propertyStyle as IBordersKeys]) {
+    const valueStyleMerge = getValuesTokens(theme, `borders.${_valueStyle}`);
 
     if (valueStyleMerge) {
       _valueStyle = valueStyleMerge;

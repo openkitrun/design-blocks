@@ -12,7 +12,7 @@ import type {
   ISpacings,
 } from '@design-blocks/theme';
 
-import type { FlexStyle, TextStyle, ViewStyle } from 'react-native';
+import type { ColorValue, FlexStyle, TextStyle, ViewStyle } from 'react-native';
 
 /**
  * OmittedTypes
@@ -23,25 +23,26 @@ export type OmittedSizes = 'width' | 'height' | 'minWidth' | 'maxWidth' | 'minHe
 export type SpacingBaseExcluded = 'full' | 'spacing' | 'baseSpacing';
 
 export type OmittedSpacing = ISpacesKeys;
+export type OmittedColors = IColorsKeys;
+
 type OmittedTextStyles =
   | 'textDecorationLine'
-  | 'color'
   | 'fontWeight'
   | 'fontSize'
   | OmittedSpacing
   | OmittedSizes
   | OmittedRadii
-  | OmittedBorders;
-export type OmittedColors = IColorsKeys;
+  | OmittedBorders
+  | OmittedColors;
 
-type RadiiValue = LooseAutocomplete<Exclude<IRadii, 'true'>> | number;
+type RadiiValue = LooseAutocomplete<Exclude<IRadii, 'true'>> | number | undefined;
 export type RadiiProps = {
   [Key in Exclude<IRadiiKeys, 'borderRadius'>]?: RadiiValue;
 } & {
   borderRadius?: RadiiValue | true;
 };
 
-type BorderValue = LooseAutocomplete<Exclude<IBorders, 'true'>> | number | true;
+type BorderValue = LooseAutocomplete<Exclude<IBorders, 'true'>> | number | true | undefined;
 export type BorderProps = {
   [Key in IBordersKeys]?: BorderValue;
 };
@@ -51,27 +52,32 @@ export type SpacingProps = {
   [Key in ISpacesKeys]?: SpacingValue;
 };
 
-type SizeValue = LooseAutocomplete<ISizes> | number | true | undefined;
+type SizeValue = LooseAutocomplete<Exclude<ISizes, 'true'>> | number | true | undefined;
 export type SizesProps = {
   [Key in ISizesKeys]?: SizeValue;
 };
 
-type ColorsProps = {
-  [Key in IColorsKeys]?: TextStyle['color'];
+type TextColorsProperties = {
+  [Key in Exclude<IColorsKeys, 'overlayColor' | 'tintColor'>]?: ColorValue | undefined;
 };
 
-export interface BoxColorsProps extends ColorsProps {}
+type BoxColorsProperties = {
+  [Key in Exclude<IColorsKeys, 'color' | 'textShadowColor' | 'textDecorationColor' | 'overlayColor' | 'tintColor'>]?:
+    | ColorValue
+    | undefined;
+};
+
+export interface BoxColorsProps extends BoxColorsProperties {}
 
 /**
  * Style Props Text
  */
-type TextColors = {
-  color?: TextStyle['color'];
-};
-export interface TextColorsProps extends TextColors {}
+export interface TextColorsProps extends TextColorsProperties {}
+
 export interface TextStyledProps
   extends Omit<TextStyle, OmittedTextStyles>,
     SpacingProps,
+    SizesProps,
     BorderProps,
     TextColorsProps {
   textDecorationLine?: TextStyle['textDecorationLine'] | 'lineThrough' | 'underlineLineThrough';

@@ -8,30 +8,24 @@ import type { StylesObjectProps } from '@design-blocks/types';
 
 type PropertyStyle<TokensProperty> = TokensProperty;
 
-// interface PStyle {
-//   [key: string]: string;
-// }
+export enum StyleFunctionMode {
+  PROPS = 'props',
+  SX = 'sx',
+}
 
-// interface VStyle {
-//   [key: string]: string | number;
-// }
-
-export const styleFunctionProps = (
+export const styleFunction = (
   nameTokenComp: IComponentsKeysProps,
   theme: Theme,
-  stylesObjectProps: StylesObjectProps,
+  stylesObject: StylesObjectProps = {},
+  mode: StyleFunctionMode = StyleFunctionMode.PROPS,
 ) => {
   const tokensBase = componentsKeys[nameTokenComp];
 
-  const styles = Object.entries(stylesObjectProps ?? {}).reduce(
-    //(objStyles: Record<string, unknown>, [propertyStyle, valueStyle]: [PStyle[keyof PStyle], VStyle[keyof VStyle]]) => {
+  const objStylesValues = Object.entries(stylesObject).reduce(
     (objStyles: Record<string, unknown>, [propertyStyle, valueStyle]) => {
-      let propertyStyleValue = tokensBase[propertyStyle as PropertyStyle<keyof typeof tokensBase>] as string;
+      const propertyStyleValue = tokensBase[propertyStyle as PropertyStyle<keyof typeof tokensBase>];
       let finalValueStyle = valueStyle;
 
-      /**
-       * If the value is a token, it is assigned to the property
-       */
       const valueToken = getValuesTokens(theme, valueStyle?.toString());
 
       if (!valueToken) {
@@ -39,17 +33,21 @@ export const styleFunctionProps = (
       }
 
       if (propertyStyle === 'fontWeight') {
-        propertyStyleValue = propertyStyle as PropertyStyle<keyof typeof tokensBase>;
         finalValueStyle = theme.fontWeights[valueStyle as keyof Theme['fontWeights']] ?? valueStyle;
       }
 
       if (propertyStyle === 'fontSize') {
-        propertyStyleValue = propertyStyle as PropertyStyle<keyof typeof tokensBase>;
         finalValueStyle = theme.fontSizes[valueStyle as keyof Theme['fontSizes']] ?? valueStyle;
       }
 
-      if (propertyStyleValue) {
-        objStyles[propertyStyleValue] = valueToken ?? finalValueStyle;
+      if (mode === StyleFunctionMode.PROPS) {
+        if (propertyStyleValue) {
+          objStyles[propertyStyleValue] = valueToken ?? finalValueStyle;
+        }
+      }
+
+      if (mode === StyleFunctionMode.SX) {
+        objStyles[propertyStyleValue || propertyStyle] = valueToken ?? finalValueStyle;
       }
 
       return objStyles;
@@ -57,5 +55,5 @@ export const styleFunctionProps = (
     {},
   );
 
-  return styles;
+  return objStylesValues;
 };

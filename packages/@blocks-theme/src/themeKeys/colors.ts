@@ -1,6 +1,4 @@
 export const colorsKeys = {
-  background: 'background',
-  bg: 'background',
   backgroundColor: 'backgroundColor',
   bgColor: 'backgroundColor',
   color: 'color',
@@ -16,9 +14,9 @@ export const colorsKeys = {
   borderBlockStartColor: 'borderBlockStartColor',
   textDecorationColor: 'textDecorationColor',
   textShadowColor: 'textShadowColor',
-  fill: 'fill',
-  stroke: 'stroke',
   shadowColor: 'shadowColor',
+  overlayColor: 'overlayColor',
+  tintColor: 'tintColor',
 } as const;
 
 export type IColorsKeys = keyof typeof colorsKeys;

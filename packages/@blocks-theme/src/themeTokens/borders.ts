@@ -1,7 +1,7 @@
 export const borders = {
   none: 0,
+  true: 1,
   sm: 2,
-  true: 4,
   md: 6,
   lg: 8,
   xl: 12,

@@ -2,17 +2,17 @@ export const bordersKeys = {
   borderWidth: 'borderWidth',
   border: 'borderWidth',
   borderBottomWidth: 'borderBottomWidth',
-  borderB: 'borderBottomWidth',
+  borderBottom: 'borderBottomWidth',
   borderEndWidth: 'borderEndWidth',
-  borderE: 'borderEndWidth',
+  borderEnd: 'borderEndWidth',
   borderLeftWidth: 'borderLeftWidth',
-  borderL: 'borderLeftWidth',
+  borderLeft: 'borderLeftWidth',
   borderRightWidth: 'borderRightWidth',
-  borderR: 'borderRightWidth',
+  borderRight: 'borderRightWidth',
   borderStartWidth: 'borderStartWidth',
-  borderS: 'borderStartWidth',
+  borderStart: 'borderStartWidth',
   borderTopWidth: 'borderTopWidth',
-  borderT: 'borderTopWidth',
+  borderTop: 'borderTopWidth',
 } as const;
 
 export type IBordersKeys = keyof typeof bordersKeys;

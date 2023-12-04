@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as RN from 'react-native';
 
 import block from '@design-blocks/block';
-import { styleFunctionProps, styleFunctionSx } from '@design-blocks/system';
+import { StyleFunctionMode, styleFunction } from '@design-blocks/system';
 import { __DEV__ } from '@design-blocks/utils';
 
 import type { TextProps } from './Text.types';
@@ -12,8 +12,8 @@ export function createText<AdditionalProps extends TextProps = TextProps>() {
     shouldForwardProp: (prop) => prop !== 'theme' && prop !== 'sx' && prop !== 'as',
   })<AdditionalProps>(({ theme, sx, ...styleProps }) => {
     return {
-      ...styleFunctionProps('Text', theme, { ...styleProps }),
-      ...styleFunctionSx('Text', theme, sx),
+      ...styleFunction('Text', theme, { ...styleProps }, StyleFunctionMode.PROPS),
+      ...styleFunction('Text', theme, sx, StyleFunctionMode.SX),
     };
   });
 
