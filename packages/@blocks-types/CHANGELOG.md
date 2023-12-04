@@ -1,5 +1,16 @@
 # @design-blocks/types
 
+## 1.0.0-beta.30
+
+### Minor Changes
+
+- [`1e52cdc`](https://github.com/openkitrun/design-blocks/commit/1e52cdc7b490c23c8b817091539d317158af7957) Thanks [@wootsbot](https://github.com/wootsbot)! - Added support for colors in text components and solving some bugs
+
+### Patch Changes
+
+- Updated dependencies [[`1e52cdc`](https://github.com/openkitrun/design-blocks/commit/1e52cdc7b490c23c8b817091539d317158af7957)]:
+  - @design-blocks/theme@1.0.0-beta.28
+
 ## 1.0.0-beta.29
 
 ### Minor Changes

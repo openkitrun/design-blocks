@@ -1,5 +1,12 @@
 # @design-blocks/colors
 
+## 1.0.0-beta.29
+
+### Patch Changes
+
+- Updated dependencies [[`1e52cdc`](https://github.com/openkitrun/design-blocks/commit/1e52cdc7b490c23c8b817091539d317158af7957)]:
+  - @design-blocks/types@1.0.0-beta.30
+
 ## 1.0.0-beta.28
 
 ### Patch Changes
