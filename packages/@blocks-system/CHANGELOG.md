@@ -1,5 +1,17 @@
 # @design-blocks/system
 
+## 1.0.0-beta.33
+
+### Patch Changes
+
+- [`61d3588`](https://github.com/openkitrun/design-blocks/commit/61d358837a3812d464751fe44d5058d844753329) Thanks [@wootsbot](https://github.com/wootsbot)! - Fixed stacks
+
+- Updated dependencies [[`61d3588`](https://github.com/openkitrun/design-blocks/commit/61d358837a3812d464751fe44d5058d844753329)]:
+  - @design-blocks/theme@1.0.0-beta.30
+  - @design-blocks/types@1.0.0-beta.32
+  - @design-blocks/utils@1.0.0-beta.25
+  - @design-blocks/block@1.0.0-beta.37
+
 ## 1.0.0-beta.32
 
 ### Patch Changes
