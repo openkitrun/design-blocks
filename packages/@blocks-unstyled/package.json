@@ -1,7 +1,7 @@
 {
   "name": "@design-blocks/unstyled",
   "description": "A library 'unstyled' UI components and low-level hooks.",
-  "version": "1.0.0-beta.17",
+  "version": "1.0.0-beta.18",
   "main": "build/commonjs/index.js",
   "module": "build/module/index.js",
   "types": "build/typescript/index.d.ts",
