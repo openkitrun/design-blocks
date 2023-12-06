@@ -1,5 +1,11 @@
 # @design-blocks/utils
 
+## 1.0.0-beta.27
+
+### Patch Changes
+
+- [`c8fec69`](https://github.com/openkitrun/design-blocks/commit/c8fec69726248a735f220e1623d4c5cb8004924c) Thanks [@wootsbot](https://github.com/wootsbot)! - Fixed stacks
+
 ## 1.0.0-beta.26
 
 ### Patch Changes
