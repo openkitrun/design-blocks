@@ -1,5 +1,14 @@
 # @design-blocks/colors
 
+## 1.0.0-beta.30
+
+### Patch Changes
+
+- [`9f6d697`](https://github.com/openkitrun/design-blocks/commit/9f6d69716d3f2e75b75b46ba332948facf674b48) Thanks [@wootsbot](https://github.com/wootsbot)! - fixed instance Stack
+
+- Updated dependencies [[`9f6d697`](https://github.com/openkitrun/design-blocks/commit/9f6d69716d3f2e75b75b46ba332948facf674b48)]:
+  - @design-blocks/types@1.0.0-beta.31
+
 ## 1.0.0-beta.29
 
 ### Patch Changes
