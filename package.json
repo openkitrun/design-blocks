@@ -39,7 +39,7 @@
     "cross-env": "7.0.3",
     "husky": "8.0.3",
     "tsconfig": "workspace:*",
-    "turbo": "1.10.16",
+    "turbo": "1.11.0",
     "typescript": "5.0.4"
   },
   "packageManager": "pnpm@8.11.0",

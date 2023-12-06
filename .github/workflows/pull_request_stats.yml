@@ -5,8 +5,8 @@ on:
     types: [opened, synchronize]
 
 env:
-  TURBO_VERSION: 1.10.15
-  PNPM_VERSION: 8.10.5
+  TURBO_VERSION: 1.11.0
+  PNPM_VERSION: 8.11.0
 
 jobs:
   format:
