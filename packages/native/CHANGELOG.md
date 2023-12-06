@@ -1,5 +1,11 @@
 # @design-blocks/native
 
+## 1.0.0-beta.35
+
+### Patch Changes
+
+- [`a4e5fa5`](https://github.com/openkitrun/design-blocks/commit/a4e5fa52bb79dc8b09387ca8cc8fdabf6d59bab1) Thanks [@wootsbot](https://github.com/wootsbot)! - fixed stacks
+
 ## 1.0.0-beta.33
 
 ### Patch Changes
