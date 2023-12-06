@@ -6,8 +6,8 @@ import { createStack } from '../Stack';
 
 import type { StackProps } from '../Stack';
 
+const Stack = createStack();
 function YStack({ ...props }: StackProps) {
-  const Stack = createStack();
   return <Stack direction='column' {...props} />;
 }
 

@@ -5,8 +5,9 @@ import { __DEV__ } from '@design-blocks/utils';
 import type { StackProps } from './Stack.types';
 
 import { createStack } from './createStack';
+
+const StackBlock = createStack();
 function Stack({ ...props }: StackProps) {
-  const StackBlock = createStack();
   return <StackBlock {...props} />;
 }
 if (__DEV__) {
