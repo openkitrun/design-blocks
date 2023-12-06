@@ -80,4 +80,4 @@ if (__DEV__) {
  *
  * @see {@link https://github.com/wootsbot/design-blocks/tree/main/packages/blocks-primitives/src/Stack | Stack Component Documentation}
  */
-export default React.memo(Stack);
+export default Stack;
