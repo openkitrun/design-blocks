@@ -1,5 +1,11 @@
 # @design-blocks/primitives
 
+## 1.0.0-beta.34
+
+### Patch Changes
+
+- [`80410a7`](https://github.com/openkitrun/design-blocks/commit/80410a7f5f147f1a30d64e85887cf9a29c7e978d) Thanks [@wootsbot](https://github.com/wootsbot)! - Fixed instance Stack
+
 ## 1.0.0-beta.33
 
 ### Minor Changes
