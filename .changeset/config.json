@@ -12,7 +12,7 @@
       "@design-blocks/native"
     ]
   ],
-  "access": "restricted",
+  "access": "public",
   "baseBranch": "main",
   "ignore": [
     "@examples/basic",

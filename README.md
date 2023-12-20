@@ -31,23 +31,23 @@ To integrate Design Blocks into your project, you can install the package using 
 
 ```sh
 // with pnpm
-pnpm add @design-blocks/native
+pnpm add @design-blocks/native@beta
 
 // with yarn
-yarn add @design-blocks/native
+yarn add @design-blocks/native@beta
 
 // with npm
-npm add @design-blocks/native
+npm add @design-blocks/native@beta
 
 // with bun
-bun add @design-blocks/native
+bun add @design-blocks/native@beta
 ```
 
 ## Configuring Design Blocks
 
 ### Creating Your Configuration File
 
-To configure Design Blocks, create a blocks.config.ts file (.js works too) and import `createBlocks` and `createTokens` functions from `@design-blocks/native`.
+``To configure Design Blocks, create a blocks.config.ts file (.js works too) and import`createBlocks`and`createTokens`functions from`@design-blocks/native`.
 
 ```ts
 // blocks.config.ts
