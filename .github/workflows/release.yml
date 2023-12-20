@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  TURBO_VERSION: 1.11.0
-  PNPM_VERSION: 8.11.0
+  TURBO_VERSION: 1.11.2
+  PNPM_VERSION: 8.12.1
 
 jobs:
   stats:
@@ -42,6 +42,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: 💩 Tests
+        run: pnpm test:coverage
+
       - name: 💣 build
         run: pnpm turbo run build
 
@@ -50,10 +53,6 @@ jobs:
 
       - name: 💅 lint
         run: pnpm turbo run lint
-
-      # - name: Delete tags reset
-      #   run: |
-      #     git tag | xargs git tag -d
 
       - name: Create Release Pull Request or Publish Design Blocks
         id: changesets
