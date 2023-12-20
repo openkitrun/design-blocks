@@ -161,3 +161,12 @@ Please follow our [contributing guidelines](./.github/CONTRIBUTING.md).
 ## Authors
 
 - Jorge Luis Calleja A. ([@wootsbot](https://twitter.com/wootsbot))
+
+es probable que ya lo hayas usado en una de estas aplicaciones:
+
+## Who is using Design Blocks?
+
+- .<img src="./docs/showcase/lastplay.png" alt="LastPlay" width="50"/>
+  - [LastPlay](https://www.lastplay.app/)
+  - [App Store](https://apps.apple.com/us/app/last-play/id1663594431)
+  - [Google Play](https://play.google.com/store/apps/details?id=com.lastplay)
