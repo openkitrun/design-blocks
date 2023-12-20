@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import { __DEV__ } from '@design-blocks/utils';
 
-import type { StackProps } from './Stack.types';
+import { createStack } from '../create';
 
-import { createStack } from './createStack';
+import type { StackProps } from './Stack.types';
 
 const StackBlock = createStack();
 function Stack({ ...props }: StackProps) {

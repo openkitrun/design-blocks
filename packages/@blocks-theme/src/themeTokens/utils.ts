@@ -12,6 +12,7 @@ export type UtilsMap<T = {}> = {
 export type IUtils = keyof typeof utils & UtilsMap;
 
 export interface Utils extends UtilsMap {
+  [key: string]: (...args: any[]) => any;
   spacing: typeof spacing;
   toPixels: typeof toPixels;
 }

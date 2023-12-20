@@ -4,12 +4,10 @@ import { interleave } from './utils';
 // they're reset on every call to css
 // this is done so we don't create a new
 // handleInterpolation function on every css call
-//@ts-ignore
-let styles;
+let styles: any;
 const generated = {};
 let buffer = '';
-//@ts-ignore
-let lastType;
+let lastType: any;
 
 function handleInterpolation(interpolation: any, i: number, arr: Array<any>) {
   const type = typeof interpolation;

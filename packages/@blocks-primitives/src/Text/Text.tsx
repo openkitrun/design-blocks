@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { __DEV__ } from '@design-blocks/utils';
 
-import { createText } from './createText';
+import { createText } from '../create';
 
 const Text = createText();
 

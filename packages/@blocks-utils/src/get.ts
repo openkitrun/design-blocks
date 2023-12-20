@@ -12,6 +12,10 @@ import { isUndefined } from './isUndefined';
  */
 // biome-ignore lint/style/useDefaultParameterLast: <explanation>
 export function get(obj: any = {}, path: any, defaultValue?: any) {
+  if (obj == null) {
+    return defaultValue;
+  }
+
   const resultFinal = compact(path?.split(/[,[\].]+?/))?.reduce(
     (result, key) => (isNullOrUndefined(result) ? result : result[key]),
     obj,

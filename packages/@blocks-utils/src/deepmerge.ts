@@ -34,8 +34,11 @@ import { isObject } from './isObject';
  * const mergedObj = deepMerge(obj1, obj2);
  * console.log(mergedObj); // Outputs: { a: 2, b: { x: 3, y: 2, z: 4 }, c: 5 }
  */
-export function deepMerge<T extends Record<string, unknown>>(target: T, source: Partial<T>): T {
-  const output: T = { ...target };
+export function deepMerge<T extends Record<string, any>, S extends Partial<Record<keyof T, any>>>(
+  target: T,
+  source: S,
+): T & S {
+  const output: Record<string, any> = { ...target };
 
   if (isObject(target) && isObject(source)) {
     for (const key in source) {
@@ -43,23 +46,16 @@ export function deepMerge<T extends Record<string, unknown>>(target: T, source: 
         const sourceValue = source[key];
         const targetValue = target[key];
 
-        if (isObject(sourceValue)) {
-          if (!(key in target)) {
-            Object.assign(output, { [key]: sourceValue });
-          } else {
-            output[key as keyof T] = deepMerge(
-              targetValue as Record<string, unknown>,
-              sourceValue as Record<string, unknown>,
-            ) as T[keyof T];
-          }
+        if (isObject(sourceValue) && isObject(targetValue)) {
+          output[key] = deepMerge(targetValue, sourceValue);
         } else {
-          Object.assign(output, { [key]: sourceValue });
+          output[key] = sourceValue;
         }
       }
     }
   }
 
-  return output;
+  return output as T & S;
 }
 
 export default deepMerge;

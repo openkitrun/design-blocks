@@ -4,11 +4,7 @@ import { getValuesTokens } from './getValuesTokens';
 
 import type { IBordersKeys, IColorsKeys, IRadiiKeys, ISizesKeys, ISpacesKeys, Theme } from '@design-blocks/theme';
 
-export default function validateProperties(
-  valueStyle: string | number,
-  propertyStyle: string,
-  theme: Theme,
-): string | number {
+export function validateProperties(valueStyle: string | number, propertyStyle: string, theme: Theme): string | number {
   let _valueStyle = valueStyle;
 
   /**

@@ -1,3 +1,5 @@
+// Thank you emotion for this code: https://github.com/emotion-js/emotion/blob/main/packages/react/src/theming.js
+
 // @ts-nocheck
 import * as React from 'react';
 

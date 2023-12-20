@@ -68,10 +68,9 @@ export function createBlock(
         return React.createElement(finalTag, newProps);
       });
 
-      // Need to assign type here because 'Styled' is of type ForwardRefExoticComponent
+      // Need to assign type here because 'block' is of type ForwardRefExoticComponent
       (Block as any).withComponent = (newComponent: React.ElementType) => createStylesBlocks(newComponent)(...styles);
-
-      (Block as any).displayName = `emotion(${getDisplayName(component)})`;
+      (Block as any).displayName = `block(${getDisplayName(component)})`;
 
       return Block;
     };

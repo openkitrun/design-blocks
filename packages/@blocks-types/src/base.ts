@@ -1,5 +1,5 @@
 import type { ISpacings } from '@design-blocks/theme';
-import type { SpacingBaseExcluded, SxStyledFlex } from './StyleFunction';
+import type { SpacingBaseExcluded, SxStyledFlex, SxStyledText } from './StyleFunction';
 
 type GapValues = Exclude<ISpacings | number | undefined, SpacingBaseExcluded>;
 
@@ -58,3 +58,4 @@ export interface FlexGapBlock {
 }
 
 export interface StylesObjectProps extends SxStyledFlex {}
+export interface TextStylesObjectProps extends SxStyledText {}

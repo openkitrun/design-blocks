@@ -1,10 +1,10 @@
 import { componentsKeys } from '@design-blocks/theme';
 
 import { getValuesTokens } from './getValuesTokens';
-import validateProperties from './validateProperties';
+import { validateProperties } from './validateProperties';
 
 import type { IComponentsKeysProps, Theme } from '@design-blocks/theme';
-import type { StylesObjectProps } from '@design-blocks/types';
+import type { StylesObjectProps, TextStylesObjectProps } from '@design-blocks/types';
 
 type PropertyStyle<TokensProperty> = TokensProperty;
 
@@ -16,7 +16,7 @@ export enum StyleFunctionMode {
 export const styleFunction = (
   nameTokenComp: IComponentsKeysProps,
   theme: Theme,
-  stylesObject: StylesObjectProps = {},
+  stylesObject: StylesObjectProps | TextStylesObjectProps = {},
   mode: StyleFunctionMode = StyleFunctionMode.PROPS,
 ) => {
   const tokensBase = componentsKeys[nameTokenComp];

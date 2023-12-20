@@ -56,8 +56,7 @@ export default components.reduce(
       enumerable: true,
       configurable: false,
       get() {
-        // @ts-ignore
-        return block(reactNative[comp]);
+        return block(reactNative[comp as keyof typeof reactNative] as React.ElementType<any>);
       },
     }),
   block,
