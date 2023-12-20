@@ -42,11 +42,11 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 💩 Tests
-        run: pnpm test:coverage
-
       - name: 💣 build
         run: pnpm turbo run build
+
+      - name: 💩 Tests
+        run: pnpm test:coverage
 
       - name: bundlesize
         run: pnpm turbo run bundlesize
