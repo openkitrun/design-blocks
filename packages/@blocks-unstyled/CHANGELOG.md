@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.22
+
+### Minor Changes
+
+- [`285833c`](https://github.com/openkitrun/design-blocks/commit/285833cad523df073e6a99479b74ca9ecd38999b) Thanks [@wootsbot](https://github.com/wootsbot)! - Added test
+
 ## 1.0.0-beta.21
 
 ### Patch Changes

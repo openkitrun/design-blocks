@@ -1,5 +1,16 @@
 # @design-blocks/theme
 
+## 1.0.0-beta.33
+
+### Minor Changes
+
+- [`285833c`](https://github.com/openkitrun/design-blocks/commit/285833cad523df073e6a99479b74ca9ecd38999b) Thanks [@wootsbot](https://github.com/wootsbot)! - Added test
+
+### Patch Changes
+
+- Updated dependencies [[`285833c`](https://github.com/openkitrun/design-blocks/commit/285833cad523df073e6a99479b74ca9ecd38999b)]:
+  - @design-blocks/utils@1.0.0-beta.28
+
 ## 1.0.0-beta.32
 
 ### Patch Changes
