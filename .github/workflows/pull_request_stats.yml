@@ -42,12 +42,12 @@ jobs:
             turbo-${{ github.job }}-${{ github.ref_name }}-${{ steps.get-week.outputs.WEEK }}-
             turbo-${{ github.job }}-canary-${{ steps.get-week.outputs.WEEK }}-
 
-      - name: 🔥 Setup pnpm
+      - name: Setup pnpm 🔥
         run: |
           corepack enable
           corepack prepare pnpm@${PNPM_VERSION} --activate
 
-      - name: 📦 Install Dependencies
+      - name: Install Dependencies 📦
         run: |
           pnpm install --no-frozen-lockfile
         env:
@@ -55,14 +55,14 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 💣 build
+      - name: build 💣
         run: pnpm turbo run build --cache-dir=".turbo"
 
-      - name: 💩 Tests
+      - name: Tests 💩
         run: pnpm test:coverage
 
       - name: bundlesize
         run: pnpm turbo run bundlesize --cache-dir=".turbo"
 
-      - name: 💅 lint
+      - name: lint 💅
         run: pnpm turbo run lint --cache-dir=".turbo"
