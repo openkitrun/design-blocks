@@ -1,5 +1,17 @@
 # @design-blocks/primitives
 
+## 1.0.0-beta.41
+
+### Patch Changes
+
+- [`81c0b15`](https://github.com/openkitrun/design-blocks/commit/81c0b159d9493a03f79d72976663bc2513d7f034) Thanks [@wootsbot](https://github.com/wootsbot)! - Fixed public
+
+- Updated dependencies [[`81c0b15`](https://github.com/openkitrun/design-blocks/commit/81c0b159d9493a03f79d72976663bc2513d7f034)]:
+  - @design-blocks/system@1.0.0-beta.37
+  - @design-blocks/types@1.0.0-beta.36
+  - @design-blocks/utils@1.0.0-beta.29
+  - @design-blocks/block@1.0.0-beta.41
+
 ## 1.0.0-beta.40
 
 ### Minor Changes
