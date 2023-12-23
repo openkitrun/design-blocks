@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.24
+
+### Minor Changes
+
+- [`692cf91`](https://github.com/openkitrun/design-blocks/commit/692cf9141698b29cb3c0e049d5fced29395de6ec) Thanks [@wootsbot](https://github.com/wootsbot)! - added button export and added test
+
 ## 1.0.0-beta.23
 
 ### Patch Changes
