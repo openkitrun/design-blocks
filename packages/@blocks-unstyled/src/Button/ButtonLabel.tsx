@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
   },
 });
 
-ButtonLabel.displayName = 'BlockButton.Label';
+ButtonLabel.displayName = 'Block.ButtonLabel';

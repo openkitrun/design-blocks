@@ -4,4 +4,4 @@ import type { ButtonContextProps } from './Button.types';
 
 export const ButtonContext = createContext<ButtonContextProps>(null as any);
 
-ButtonContext.displayName = 'BlockButton.Context';
+ButtonContext.displayName = 'Block.ButtonContext';
