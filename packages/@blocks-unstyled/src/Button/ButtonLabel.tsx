@@ -6,12 +6,13 @@ import { ButtonContext } from './ButtonContext';
 import type { ButtonLabelProps } from './Button.types';
 
 export function ButtonLabel({ nativeID: nativeIDProp, testID: testIDProp, style, ...others }: ButtonLabelProps) {
-  const { nativeID, testID, hideLabelOnLoading, disabled, accessibilityLanguage } = React.useContext(ButtonContext);
+  const { nativeID, testID, hideLabelOnLoading, loading, disabled, accessibilityLanguage } =
+    React.useContext(ButtonContext);
 
   const finalNativeID = nativeIDProp || (nativeID ? `${nativeID}Indicator` : undefined);
   const finalTestID = testIDProp || (testID ? `${testID}Indicator` : undefined);
 
-  if (hideLabelOnLoading) {
+  if (loading && hideLabelOnLoading) {
     return null;
   }
 
