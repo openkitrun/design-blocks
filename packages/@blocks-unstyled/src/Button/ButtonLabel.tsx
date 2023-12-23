@@ -27,9 +27,10 @@ export function ButtonLabel({ nativeID: nativeIDProp, testID: testIDProp, style,
   );
 }
 
+const FONT_SIZE = 16;
 const styles = StyleSheet.create({
   root: {
-    fontSize: 16,
+    fontSize: FONT_SIZE,
     textAlign: 'center',
     ...Platform.select({
       android: {
