@@ -51,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-ButtonRoot.displayName = 'BlockButton.Root';
+ButtonRoot.displayName = 'Block.Button';

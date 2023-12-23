@@ -3,7 +3,6 @@ module.exports = {
   modulePathIgnorePatterns: [
     "<rootDir>/node_modules",
     "<rootDir>/packages/(.+)/dist/",
-    "<rootDir>/packages/@blocks-unstyled",
   ],
   // collectCoverageFrom: [
   //   "packages/**/*.{js,jsx,ts,tsx}",
@@ -12,5 +11,8 @@ module.exports = {
   globals: {
     __DEV__: true,
   },
-  setupFilesAfterEnv: ["@testing-library/jest-native/extend-expect"],
+  setupFilesAfterEnv: [
+    "@testing-library/jest-native/extend-expect",
+    "@testing-library/react-native/extend-expect",
+  ],
 };
