@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Text } from 'react-native';
 
-import { lightTheme, renderWithWrapper, screen } from '../../.ci/testHelper';
+import { lightTheme, renderWithWrapper, screen } from '../../../.ci/testHelper';
 
-import { Box } from '.';
+import { Box } from '../..';
 
 describe('<Box />', () => {
   it('should render correctly', () => {

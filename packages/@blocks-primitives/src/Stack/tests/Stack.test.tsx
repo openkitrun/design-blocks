@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Text, View } from 'react-native';
 
-import { lightTheme, renderWithWrapper, screen } from '../../.ci/testHelper';
+import { lightTheme, renderWithWrapper, screen } from '../../../.ci/testHelper';
 
-import { YStack } from '.';
+import { Stack } from '../..';
 
 const flexboxStyles = {
   display: 'flex',
@@ -14,16 +14,16 @@ const flexboxStyles = {
   flexWrap: 'nowrap',
 };
 
-describe('<YStack />', () => {
+describe('<Stack />', () => {
   it('should render correctly', () => {
-    renderWithWrapper(<YStack />);
+    renderWithWrapper(<Stack />);
     const result = screen.toJSON();
 
     expect(result.type).toEqual('View');
   });
 
-  it('should render the YStack component as a View with default flexbox styles', () => {
-    renderWithWrapper(<YStack />);
+  it('should render the Stack component as a View with default flexbox styles', () => {
+    renderWithWrapper(<Stack />);
 
     const result = screen.toJSON();
 
@@ -31,17 +31,20 @@ describe('<YStack />', () => {
     expect(result.props.style[1][0]).toMatchObject(flexboxStyles);
   });
 
-  it('should render the YStack component as a View with flexbox styles when flexDirection prop is set to "row"', () => {
-    renderWithWrapper(<YStack flexDirection='row' />);
+  it('should render the Stack component as a View with flexbox styles when flexDirection prop is set to "row"', () => {
+    renderWithWrapper(<Stack flexDirection='row' />);
 
     const result = screen.toJSON();
 
     expect(result.type).toEqual('View');
-    expect(result.props.style[1][0]).toMatchObject({ ...flexboxStyles, flexDirection: 'row' });
+    expect(result.props.style[1][0]).toMatchObject({
+      ...flexboxStyles,
+      flexDirection: 'row',
+    });
   });
 
   it('should render the View component with a background color corresponding to the "red.950" value from the bgColor prop', () => {
-    renderWithWrapper(<YStack bgColor='red.950' />);
+    renderWithWrapper(<Stack bgColor='red.950' />);
 
     const result = screen.toJSON();
 
@@ -52,7 +55,7 @@ describe('<YStack />', () => {
   });
 
   it('should apply styles from sx prop to the rendered View component', () => {
-    renderWithWrapper(<YStack sx={{ backgroundColor: 'red' }} />);
+    renderWithWrapper(<Stack sx={{ backgroundColor: 'red' }} />);
 
     const result = screen.toJSON();
 
@@ -61,7 +64,7 @@ describe('<YStack />', () => {
   });
 
   it('should apply styles from style prop to the rendered View component', () => {
-    renderWithWrapper(<YStack style={{ backgroundColor: 'blue' }} />);
+    renderWithWrapper(<Stack style={{ backgroundColor: 'blue' }} />);
 
     const result = screen.toJSON();
 
@@ -74,15 +77,15 @@ describe('<YStack />', () => {
     const TEXT_2 = 'My Text 2';
 
     renderWithWrapper(
-      <YStack>
-        <YStack>
+      <Stack>
+        <Stack>
           <Text>{TEXT}</Text>
-        </YStack>
+        </Stack>
 
-        <YStack>
+        <Stack>
           <Text>{TEXT_2}</Text>
-        </YStack>
-      </YStack>,
+        </Stack>
+      </Stack>,
     );
 
     const result = screen.toJSON();

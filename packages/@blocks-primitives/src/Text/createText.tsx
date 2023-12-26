@@ -5,7 +5,7 @@ import block from '@design-blocks/block';
 import { StyleFunctionMode, styleFunction } from '@design-blocks/system';
 import { __DEV__ } from '@design-blocks/utils';
 
-import type { TextProps } from '../Text/Text.types';
+import type { TextProps } from './Text.types';
 
 export function createText<AdditionalProps extends TextProps = TextProps>() {
   const TextBlock = block(RN.Text, {

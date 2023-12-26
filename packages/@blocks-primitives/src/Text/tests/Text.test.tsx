@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { lightTheme, renderWithWrapper, screen } from '../../.ci/testHelper';
+import { lightTheme, renderWithWrapper, screen } from '../../../.ci/testHelper';
 
-import { Text } from '.';
+import { Text } from '../..';
 
 describe('<Text />', () => {
   it('should render correctly', () => {

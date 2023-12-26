@@ -6,7 +6,7 @@ import block from '@design-blocks/block';
 import { StyleFunctionMode, styleFunction } from '@design-blocks/system';
 import { __DEV__ } from '@design-blocks/utils';
 
-import type { BoxProps } from '../Box';
+import type { BoxProps } from './Box.types';
 
 export function createBox<AdditionalProps extends BoxProps = BoxProps>() {
   const BoxBlock = block(RN.View, {

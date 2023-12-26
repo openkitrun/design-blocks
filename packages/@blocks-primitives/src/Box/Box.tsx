@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { __DEV__ } from '@design-blocks/utils';
 
-import { createBox } from '../create';
+import { createBox } from './createBox';
 
 const Box = createBox();
 

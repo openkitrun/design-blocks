@@ -6,9 +6,9 @@ import { StyleFunctionMode, styleFunction } from '@design-blocks/system';
 import { __DEV__, camelCase } from '@design-blocks/utils';
 
 import { Box } from '../Box';
-import { variants } from '../Stack/Stack.utils';
+import { variants } from './Stack.utils';
 
-import type { IStackStyleValue, StackProps } from '../Stack/Stack.types';
+import type { IStackStyleValue, StackProps } from './Stack.types';
 
 export function createStack<AdditionalProps extends StackProps = StackProps>() {
   const StackBlock = block(Box, {

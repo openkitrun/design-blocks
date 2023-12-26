@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { __DEV__ } from '@design-blocks/utils';
 
-import { createStack } from '../create';
+import { createStack } from '../Stack';
 
 import type { StackProps } from '../Stack';
 

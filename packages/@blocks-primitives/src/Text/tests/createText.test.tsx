@@ -2,7 +2,7 @@ import React from 'react';
 
 import { lightTheme, renderWithWrapper, screen } from '../../../.ci/testHelper';
 
-import { createText } from '../..';
+import { createText } from '../createText';
 
 describe('createText', () => {
   const Text = createText();

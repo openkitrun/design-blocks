@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 
 import { renderWithWrapper, screen } from '../../../.ci/testHelper';
 
-import { createBox } from '..';
+import { createBox } from '../createBox';
 
 describe('createBox', () => {
   const Box = createBox();

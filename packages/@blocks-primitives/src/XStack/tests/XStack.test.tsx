@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Text, View } from 'react-native';
 
-import { lightTheme, renderWithWrapper, screen } from '../../.ci/testHelper';
+import { lightTheme, renderWithWrapper, screen } from '../../../.ci/testHelper';
 
-import { XStack } from '.';
+import { XStack } from '../..';
 
 const flexboxStyles = {
   display: 'flex',
