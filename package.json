@@ -14,8 +14,6 @@
     "postinstall": "husky install",
     "build": "turbo run build",
     "bundlesize": "turbo run bundlesize",
-    "dev": "turbo dev",
-    "dev:example-basic": "turbo dev --filter=\"{./examples/basic}...\"",
     "clean": "turbo run clean",
     "changeset": "changeset",
     "version": "changeset version",
@@ -52,7 +50,8 @@
   "packageManager": "pnpm@8.12.1",
   "pnpm": {
     "overrides": {
-      "react-native-builder-bob": "0.23.1"
+      "@types/react": "18.2.45",
+      "react-native-builder-bob": "0.23.2"
     }
   }
 }

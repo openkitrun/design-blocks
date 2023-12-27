@@ -6,10 +6,6 @@
       "inputs": ["tsconfig.json", "package.json", "src/**"],
       "outputs": ["dist/**"]
     },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
     "lint": {
       "outputs": [],
       "inputs": ["**/*.{js,ts,tsx}"]
