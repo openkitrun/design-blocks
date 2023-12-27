@@ -1,5 +1,17 @@
 # @design-blocks/native
 
+## 1.0.0-beta.42
+
+### Patch Changes
+
+- [`2b181bc`](https://github.com/openkitrun/design-blocks/commit/2b181bc85c6e69e436ffd9783e5b5796f1627b7b) Thanks [@wootsbot](https://github.com/wootsbot)! - Fixed types
+
+- Updated dependencies [[`2b181bc`](https://github.com/openkitrun/design-blocks/commit/2b181bc85c6e69e436ffd9783e5b5796f1627b7b)]:
+  - @design-blocks/system@1.0.0-beta.38
+  - @design-blocks/theme@1.0.0-beta.35
+  - @design-blocks/types@1.0.0-beta.37
+  - @design-blocks/utils@1.0.0-beta.30
+
 ## 1.0.0-beta.41
 
 ### Patch Changes
