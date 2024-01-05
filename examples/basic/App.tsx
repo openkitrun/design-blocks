@@ -1,6 +1,7 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, useColorScheme } from 'react-native';
+
+import { StatusBar } from 'expo-status-bar';
 
 import { ThemeProvider } from '@design-blocks/native';
 

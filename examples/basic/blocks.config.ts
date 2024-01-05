@@ -5,6 +5,8 @@ export const lightTheme = {
   tokens: {
     colors: {
       ...colors,
+      bgColor: colors.gray[300],
+      tGreenColor: colors.green[300],
     },
   },
   extendTokens: {
@@ -26,10 +28,8 @@ export const darkTheme = {
   tokens: {
     colors: {
       ...colors,
-      blue: {
-        ...colors.blue,
-        950: 'red',
-      },
+      bgColor: colors.green[300],
+      tGreenColor: colors.green[700],
     },
   },
   extendTokens: {
