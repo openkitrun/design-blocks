@@ -32,6 +32,8 @@ export function ButtonRoot({
       <Pressable
         nativeID={nativeID}
         testID={testID}
+        aria-busy={accessible && accessibilityState.busy}
+        aria-disabled={accessible && accessibilityState.disabled}
         accessible={accessible}
         accessibilityRole={accessibilityRole}
         accessibilityState={accessibilityState}

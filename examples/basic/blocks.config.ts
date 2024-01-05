@@ -26,10 +26,6 @@ export const darkTheme = {
   tokens: {
     colors: {
       ...colors,
-      blue: {
-        ...colors.blue,
-        950: 'red',
-      },
     },
   },
   extendTokens: {
