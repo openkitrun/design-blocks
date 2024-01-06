@@ -18,7 +18,9 @@
       "@design-blocks/types": ["./packages/@blocks-types/src"],
       "@design-blocks/types/*": ["./packages/@blocks-types/src/*"],
       "@design-blocks/utils": ["./packages/@blocks-utils/src"],
-      "@design-blocks/utils/*": ["./packages/@blocks-utils/src/*"]
+      "@design-blocks/utils/*": ["./packages/@blocks-utils/src/*"],
+      "@design-blocks/block": ["./packages/block/src"],
+      "@design-blocks/block/*": ["./packages/block/src/*"]
     }
   }
 }

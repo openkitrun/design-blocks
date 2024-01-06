@@ -3,7 +3,7 @@
 // @ts-nocheck
 import * as React from 'react';
 
-import type { Theme } from '.';
+import type { Theme } from './types/theme';
 import { weakMemoize } from './weakMemoize';
 
 export const ThemeContext = React.createContext<Theme>({} as Theme);

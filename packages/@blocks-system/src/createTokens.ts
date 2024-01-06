@@ -1,76 +1,37 @@
-import { baseTheme } from '@design-blocks/theme';
-import { deepMerge } from '@design-blocks/utils';
+import type { CreateTokens, MakeTokens } from './types/createTokens';
 
-import type { Theme, TokensOptions } from '@design-blocks/theme';
-
-export function createTokens<ThemeTokens extends Theme = Theme>({ theme, utils }: TokensOptions): [ThemeTokens];
-export function createTokens({ theme, utils: utilsTokens = {} }: TokensOptions) {
-  const {
-    colors: colorsOverrides = {},
-    spacings: spacingsOverrides = {},
-    fontSizes: fontSizesOverrides = {},
-    fontWeights: fontWeightsOverrides = {},
-    radii: radiiOverrides = {},
-    borders: bordersOverrides = {},
-    sizes: sizesOverrides = {},
-    ...other
-  } = theme.tokens;
-
-  const utilsOverrides = utilsTokens;
-
-  const {
-    spacings: spacingsExtend = {},
-    fontSizes: fontSizesExtend = {},
-    fontWeights: fontWeightsExtend = {},
-    radii: radiiExtend = {},
-    borders: bordersExtend = {},
-    sizes: sizesExtend = {},
-  } = theme.extendTokens || {};
-
-  const colors = deepMerge(baseTheme.colors, { ...colorsOverrides });
-  const spacings = deepMerge(baseTheme.spacings, {
-    ...spacingsOverrides,
-    ...spacingsExtend,
-  });
-
-  const sizes = deepMerge(baseTheme.sizes, {
-    ...sizesOverrides,
-    ...sizesExtend,
-  });
-
-  const fontSizes = deepMerge(baseTheme.fontSizes, {
-    ...fontSizesOverrides,
-    ...fontSizesExtend,
-  });
-
-  const fontWeights = deepMerge(baseTheme.fontWeights, {
-    ...fontWeightsOverrides,
-    ...fontWeightsExtend,
-  });
-
-  const radii = deepMerge(baseTheme.radii, {
-    ...radiiOverrides,
-    ...radiiExtend,
-  });
-
-  const borders = deepMerge(baseTheme.borders, {
-    ...bordersOverrides,
-    ...bordersExtend,
-  });
-
-  const utils = deepMerge(baseTheme.utils, { ...utilsOverrides });
-
-  const blocksTheme = {
-    colors,
-    spacings,
-    sizes,
-    fontSizes,
-    fontWeights,
-    radii,
-    borders,
-    utils,
-    ...other,
+export function createTokens<T extends CreateTokens>(tokens: T): MakeTokens<T> {
+  const blocksTokens = {
+    colors: tokens.colors,
+    spacings: tokens.spacings,
+    fontSizes: tokens.fontSizes,
+    fontWeights: tokens.fontWeights,
+    radii: tokens.radii,
+    borders: tokens.borders,
+    sizes: tokens.sizes,
   };
 
-  return [blocksTheme];
+  return blocksTokens as any;
 }
+
+// const tokens = createTokens({
+//   colors: {
+//     red: {
+//       500: '#ff0000',
+//     },
+//     primary: '#ff0000',
+//   },
+//   sizes: {
+//     xl: 50,
+//   },
+//   spacings: {
+//     xl: 50,
+//     sm: 10,
+//   },
+//   fontSizes: {},
+//   fontWeights: {},
+//   borders: {},
+//   radii: {},
+// } as const);
+
+// tokens.colors.primary

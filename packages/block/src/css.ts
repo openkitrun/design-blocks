@@ -156,18 +156,14 @@ function convertStyles(str: string) {
   if (str.trim() === '') {
     return;
   }
-  //@ts-ignore
-  const stylePairs = [];
+  const stylePairs: any[] = [];
   const parsedString = str.split(';');
-  //@ts-ignore
   parsedString.forEach(convertPropertyValue, stylePairs);
 
   try {
-    //@ts-ignore
     return transform(stylePairs);
-  } catch (error) {
-    //@ts-ignore
-    const msg = error.message;
+  } catch (error: any) {
+    const msg = error?.message;
 
     if (msg.includes('Failed to parse declaration')) {
       const values = msg.replace('Failed to parse declaration ', '').replace(/"/g, '').trim().split(':');

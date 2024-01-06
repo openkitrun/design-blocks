@@ -1,4 +1,9 @@
 {
   "extends": "../../tsconfig",
-  "include": ["src/**/*", "test/**/*"]
+  "include": [
+    "src/**/*",
+    "test/**/*",
+    "../@blocks-system/src/types/createBlocks.ts",
+    "../@blocks-system/src/types/createTokens.ts"
+  ]
 }

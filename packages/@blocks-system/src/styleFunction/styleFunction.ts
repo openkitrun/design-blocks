@@ -32,13 +32,13 @@ export const styleFunction = (
         finalValueStyle = validateProperties(valueStyle, propertyStyle, theme);
       }
 
-      if (propertyStyle === 'fontWeight') {
-        finalValueStyle = theme.fontWeights[valueStyle as keyof Theme['fontWeights']] ?? valueStyle;
-      }
+      // if (propertyStyle === 'fontWeight') {
+      //   finalValueStyle = theme.fontWeights[valueStyle as keyof Theme['fontWeights']] ?? valueStyle;
+      // }
 
-      if (propertyStyle === 'fontSize') {
-        finalValueStyle = theme.fontSizes[valueStyle as keyof Theme['fontSizes']] ?? valueStyle;
-      }
+      // if (propertyStyle === 'fontSize') {
+      //   finalValueStyle = theme.fontSizes[valueStyle as keyof Theme['fontSizes']] ?? valueStyle;
+      // }
 
       if (mode === StyleFunctionMode.PROPS) {
         if (propertyStyleValue) {
