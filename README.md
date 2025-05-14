@@ -47,7 +47,7 @@ bun add @design-blocks/native@beta
 
 ### Creating Your Configuration File
 
-``To configure Design Blocks, create a blocks.config.ts file (.js works too) and import`createBlocks`and`createTokens`functions from`@design-blocks/native`.
+To configure Design Blocks, create a `blocks.config.ts` file (.js works too) and `import createBlocks'` and `createTokens` `functions from '@design-blocks/native'`.
 
 ```ts
 // blocks.config.ts
