@@ -8,6 +8,7 @@
   "linked": [
     [
       "@design-blocks/block",
+      "@design-blocks/core",
       "@design-blocks/primitives",
       "@design-blocks/native"
     ]

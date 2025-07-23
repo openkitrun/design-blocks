@@ -3,14 +3,15 @@
 // @ts-nocheck
 import * as React from 'react';
 
-import type { Theme } from '.';
+//import type { Theme } from '@design-blocks/theme';
+import type { BlocksConfig } from '../types';
 import { weakMemoize } from './weakMemoize';
 
-export const ThemeContext = React.createContext<Theme>({} as Theme);
+export const ThemeContext = React.createContext<BlocksConfig>({} as BlocksConfig);
 export const useTheme = (): Theme => React.useContext(ThemeContext);
 
 export interface ThemeProviderProps {
-  theme: Partial<Theme> | ((outerTheme: Theme) => Theme);
+  theme: Partial<BlocksConfig> | ((outerTheme: BlocksConfig) => BlocksConfig);
   children: React.ReactNode;
 }
 

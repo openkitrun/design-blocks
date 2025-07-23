@@ -1,6 +1,6 @@
 {
-  "name": "@design-blocks/theme",
-  "version": "1.0.0-beta.36",
+  "name": "@design-blocks/styles",
+  "version": "1.0.0-beta.39",
   "main": "dist/commonjs/index.js",
   "module": "dist/module/index.js",
   "types": "dist/typescript/index.d.ts",
@@ -20,7 +20,7 @@
   "repository": {
     "type": "git",
     "repository": "git@github.com:openkitrun/design-blocks.git",
-    "directory": "@blocks-theme"
+    "directory": "@blocks-styles"
   },
   "scripts": {
     "build": "pnpm clean:build && pnpm build:native",
@@ -47,14 +47,24 @@
     }
   ],
   "dependencies": {
+    "@design-blocks/block": "workspace:*",
+    "@design-blocks/theme": "workspace:*",
+    "@design-blocks/types": "workspace:*",
     "@design-blocks/utils": "workspace:*"
   },
   "devDependencies": {
+    "@types/react": "18.2.45",
     "bundlesize": "0.18.1",
+    "react": "^18",
+    "react-native": "0.72",
     "react-native-builder-bob": "0.23.2",
     "rimraf": "4.1.2",
     "tsconfig": "workspace:*",
     "typescript": "5.0.4"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.71"
   },
   "react-native-builder-bob": {
     "source": "src",

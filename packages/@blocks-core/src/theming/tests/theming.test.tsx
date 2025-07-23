@@ -3,10 +3,10 @@ import { Text } from 'react-native';
 
 import { render, screen } from '@testing-library/react-native';
 
-import { ThemeContext, ThemeProvider, useTheme } from '..';
-import type { Theme } from '..';
+import { ThemeContext, ThemeProvider, useTheme } from '@design-blocks/theme/src';
+import type { Theme } from '@design-blocks/theme/src';
 
-import { createBlocks, createTokens } from '../../../@blocks-system';
+import { createBlocks, createTokens } from '../../../../@blocks-system/dist/typescript';
 
 console.error = jest.fn();
 
