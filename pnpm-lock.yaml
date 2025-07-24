@@ -89,8 +89,6 @@ importers:
         specifier: ^5
         version: 5.8.3
 
-  packages/@blocks-unstyled/button: {}
-
   packages/tsconfig: {}
 
 packages:
