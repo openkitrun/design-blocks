@@ -6,6 +6,8 @@
     "tsconfig": "1.0.0-beta.21"
   },
   "changesets": [
+    "chubby-guests-send",
+    "nasty-buckets-send",
     "silver-yaks-mate"
   ]
 }
