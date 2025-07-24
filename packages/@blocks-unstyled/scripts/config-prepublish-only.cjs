@@ -9,7 +9,7 @@ const currentScripts = sharedPkgFormat.scripts;
 
 sharedPkgFormat.scripts = {
 	...currentScripts,
-	prepublishOnly: "node ./scripts/configPostinstall.cjs",
+	prepublishOnly: "node ./scripts/config-postinstall.cjs",
 };
 
 fs.writeFileSync(

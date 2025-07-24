@@ -9,7 +9,7 @@ const currentScripts = sharedPkgFormat.scripts;
 
 sharedPkgFormat.scripts = {
 	...currentScripts,
-	postinstall: "node ./scripts/copyFiles.cjs",
+	postinstall: "node ./scripts/copy-files.cjs",
 };
 
 fs.writeFileSync(
