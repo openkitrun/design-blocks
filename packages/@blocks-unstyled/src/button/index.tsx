@@ -10,7 +10,7 @@ export interface ButtonProps extends PressableProps {
 	accessibilityLanguage?: PressableProps["accessibilityLanguage"];
 }
 
-export type ButtonContextProps = Pick<
+type ButtonContextProps = Pick<
 	ButtonProps,
 	"nativeID" | "testID" | "accessible" | "disabled" | "loading" | "hideLabelOnLoading" | "accessibilityLanguage"
 >;
@@ -81,7 +81,7 @@ const stylesButton = StyleSheet.create({
 /* -------------------------------------------------------------------------------------------------
  * ButtonLabel
  * -----------------------------------------------------------------------------------------------*/
-export function ButtonLabel({ nativeID: nativeIDProp, testID: testIDProp, style, ...others }: ButtonLabelProps) {
+function ButtonLabel({ nativeID: nativeIDProp, testID: testIDProp, style, ...others }: ButtonLabelProps) {
 	const { nativeID, testID, hideLabelOnLoading, loading, disabled, accessibilityLanguage } =
 		React.useContext(ButtonContext);
 
@@ -120,7 +120,7 @@ const stylesLabel = StyleSheet.create({
 /* -------------------------------------------------------------------------------------------------
  * ButtonLoading
  * -----------------------------------------------------------------------------------------------*/
-export function ButtonLoading({ nativeID: nativeIDProp, testID: testIDProp, style, ...others }: ButtonLoadingProps) {
+function ButtonLoading({ nativeID: nativeIDProp, testID: testIDProp, style, ...others }: ButtonLoadingProps) {
 	const { nativeID, testID, loading } = React.useContext(ButtonContext);
 
 	const finalNativeID = nativeIDProp || (nativeID ? `${nativeID}Indicator` : undefined);
