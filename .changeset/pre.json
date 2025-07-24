@@ -6,8 +6,10 @@
     "tsconfig": "1.0.0-beta.21"
   },
   "changesets": [
+    "all-mails-film",
     "chubby-guests-send",
     "crazy-numbers-buy",
+    "huge-onions-hide",
     "nasty-buckets-send",
     "silver-yaks-mate"
   ]
