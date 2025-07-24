@@ -1,6 +1,0 @@
-{
-  "files.exclude": {
-    "packages/@blocks-unstyled/{Button,*.js,*.d.ts}": false,
-    "packages/@blocks-colors/{radix-ui,tailwind-css,*.js,*.d.ts}": false
-  }
-}

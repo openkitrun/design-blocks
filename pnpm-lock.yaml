@@ -89,9 +89,7 @@ importers:
         specifier: ^5
         version: 5.8.3
 
-  packages/@blocks-unstyled/build/module: {}
-
-  packages/@blocks-unstyled/build/typescript: {}
+  packages/@blocks-unstyled/button: {}
 
   packages/tsconfig: {}
 

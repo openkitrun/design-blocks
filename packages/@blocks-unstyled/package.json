@@ -35,7 +35,8 @@
 		"clean:build": "rimraf -rf dist",
 		"lint": "biome check",
 		"lint:fix": "biome check --write",
-		"format": "biome format --write"
+		"format": "biome format --write",
+		"prepublishOnly": "node ./scripts/config-postinstall.cjs"
 	},
 	"devDependencies": {
 		"@types/react": "^19",
