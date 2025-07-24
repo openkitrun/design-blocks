@@ -97,6 +97,7 @@ componentNames.forEach((name) => {
 });
 
 // remove files
+fs.removeSync(path.join(__dirname, "../src"));
 fs.removeSync(path.join(__dirname, "../scripts"));
 fs.removeSync(path.join(__dirname, "../build"));
 fs.removeSync(path.join(__dirname, "../package.json"));
