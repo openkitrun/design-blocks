@@ -1,44 +1,42 @@
-import React from 'react';
-import { Platform, StyleSheet, Text } from 'react-native';
-
-import { ButtonContext } from './ButtonContext';
-
-import type { ButtonLabelProps } from './Button.types';
+import React from "react";
+import { Platform, StyleSheet, Text } from "react-native";
+import type { ButtonLabelProps } from "./Button.types";
+import { ButtonContext } from "./ButtonContext";
 
 export function ButtonLabel({ nativeID: nativeIDProp, testID: testIDProp, style, ...others }: ButtonLabelProps) {
-  const { nativeID, testID, hideLabelOnLoading, loading, disabled, accessibilityLanguage } =
-    React.useContext(ButtonContext);
+	const { nativeID, testID, hideLabelOnLoading, loading, disabled, accessibilityLanguage } =
+		React.useContext(ButtonContext);
 
-  const finalNativeID = nativeIDProp || (nativeID ? `${nativeID}Indicator` : undefined);
-  const finalTestID = testIDProp || (testID ? `${testID}Indicator` : undefined);
+	const finalNativeID = nativeIDProp || (nativeID ? `${nativeID}Indicator` : undefined);
+	const finalTestID = testIDProp || (testID ? `${testID}Indicator` : undefined);
 
-  if (loading && hideLabelOnLoading) {
-    return null;
-  }
+	if (loading && hideLabelOnLoading) {
+		return null;
+	}
 
-  return (
-    <Text
-      nativeID={finalNativeID}
-      testID={finalTestID}
-      accessibilityLanguage={accessibilityLanguage}
-      disabled={disabled}
-      style={StyleSheet.flatten([styles.root, style])}
-      {...others}
-    />
-  );
+	return (
+		<Text
+			nativeID={finalNativeID}
+			testID={finalTestID}
+			accessibilityLanguage={accessibilityLanguage}
+			disabled={disabled}
+			style={StyleSheet.flatten([styles.root, style])}
+			{...others}
+		/>
+	);
 }
 
 const FONT_SIZE = 16;
 const styles = StyleSheet.create({
-  root: {
-    fontSize: FONT_SIZE,
-    textAlign: 'center',
-    ...Platform.select({
-      android: {
-        fontFamily: 'sans-serif-medium',
-      },
-    }),
-  },
+	root: {
+		fontSize: FONT_SIZE,
+		textAlign: "center",
+		...Platform.select({
+			android: {
+				fontFamily: "sans-serif-medium",
+			},
+		}),
+	},
 });
 
-ButtonLabel.displayName = 'Block.ButtonLabel';
+ButtonLabel.displayName = "Block.ButtonLabel";

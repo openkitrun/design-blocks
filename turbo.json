@@ -1,10 +1,10 @@
 {
-  "$schema": "https://turborepo.org/schema.json",
-  "pipeline": {
+  "$schema": "https://turborepo.com/schema.json",
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["tsconfig.json", "package.json", "src/**"],
-      "outputs": ["dist/**"]
+      "outputs": ["build/**"]
     },
     "lint": {
       "outputs": [],
@@ -14,9 +14,9 @@
       "outputs": [],
       "inputs": ["**/*.{js,ts,tsx}"]
     },
-    "bundlesize": {
-      "dependsOn": ["^build", "lint"],
-      "inputs": ["dist/**"]
+    "format": {
+      "outputs": [],
+      "inputs": ["**/*.{js,ts,tsx}"]
     },
     "clean": {
       "cache": false

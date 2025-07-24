@@ -1,8 +1,8 @@
-import { ButtonLabel } from './ButtonLabel';
-import { ButtonLoading } from './ButtonLoading';
-import { ButtonRoot } from './ButtonRoot';
+import { ButtonLabel } from "./ButtonLabel";
+import { ButtonLoading } from "./ButtonLoading";
+import { ButtonRoot } from "./ButtonRoot";
 
-export * from './Button.types';
+export * from "./Button.types";
 
 const Root = ButtonRoot;
 const Label = ButtonLabel;

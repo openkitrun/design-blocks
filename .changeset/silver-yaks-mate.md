@@ -1,5 +1,6 @@
 ---
 "@design-blocks/unstyled": minor
+"tsconfig": minor
 ---
 
-Fixed version
+Bump packages

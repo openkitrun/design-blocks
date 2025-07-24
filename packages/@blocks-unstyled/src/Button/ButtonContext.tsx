@@ -1,7 +1,7 @@
-import { createContext } from 'react';
+import { createContext } from "react";
 
-import type { ButtonContextProps } from './Button.types';
+import type { ButtonContextProps } from "./Button.types";
 
 export const ButtonContext = createContext<ButtonContextProps>({});
 
-ButtonContext.displayName = 'Block.ButtonContext';
+ButtonContext.displayName = "Block.ButtonContext";
