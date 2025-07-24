@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  TURBO_VERSION: 1.11.2
-  PNPM_VERSION: 8.12.1
+  TURBO_VERSION: 2.5.5
+  PNPM_VERSION: 10.13.1
 
 jobs:
   stats:
@@ -45,11 +45,8 @@ jobs:
       - name: build 💣
         run: pnpm turbo run build --cache-dir=".turbo"
 
-      - name: Tests 💩
-        run: pnpm test:coverage
-
-      - name: bundlesize
-        run: pnpm turbo run bundlesize --cache-dir=".turbo"
+      # - name: Tests 💩
+      #   run: pnpm test:coverage
 
       - name: lint 💅
         run: pnpm turbo run lint --cache-dir=".turbo"

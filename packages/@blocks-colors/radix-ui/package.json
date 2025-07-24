@@ -1,9 +1,0 @@
-{
-  "name": "@design-blocks/colors/radix-ui",
-  "version": "1.0.0",
-  "private": true,
-  "sideEffects": false,
-  "module": "../dist/module/radixUi/index.js",
-  "main": "../dist/commonjs/radixUi/index.js",
-  "types": "../dist/typescript/radixUi/index.d.ts"
-}

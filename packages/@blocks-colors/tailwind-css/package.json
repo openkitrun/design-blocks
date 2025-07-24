@@ -1,9 +1,0 @@
-{
-  "name": "@design-blocks/colors/tailwind-css",
-  "version": "1.0.0",
-  "private": true,
-  "sideEffects": false,
-  "module": "../dist/module/tailwindCss/index.js",
-  "main": "../dist/commonjs/tailwindCss/index.js",
-  "types": "../dist/typescript/tailwindCss/index.d.ts"
-}
