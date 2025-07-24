@@ -5,5 +5,7 @@
     "@design-blocks/unstyled": "1.0.0-beta.26",
     "tsconfig": "1.0.0-beta.21"
   },
-  "changesets": []
+  "changesets": [
+    "silver-yaks-mate"
+  ]
 }
