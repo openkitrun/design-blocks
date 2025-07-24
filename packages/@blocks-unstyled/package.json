@@ -1,69 +1,66 @@
 {
-  "name": "@design-blocks/unstyled",
-  "description": "A library 'unstyled' UI components and low-level hooks.",
-  "version": "1.0.0-beta.27",
-  "type": "module",
-  "files": [
-    "src",
-    "build",
-    "scripts"
-  ],
-  "main": "./build/module/index.js",
-  "types": "./build/typescript/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "source": "./src/index.tsx",
-      "types": "./build/typescript/index.d.ts",
-      "default": "./build/module/index.js"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "repository": "git@github.com:openkitrun/design-blocks.git",
-    "directory": "@blocks-unstyled"
-  },
-  "keywords": [
-    "react-native",
-    "react",
-    "react-native-components",
-    "design-blocks",
-    "unstyled",
-    "a11y"
-  ],
-  "scripts": {
-    "build": "pnpm run build:native",
-    "build:native": "bob build",
-    "clean": "pnpm clean:build && rimraf -rf .turbo",
-    "clean:build": "rimraf -rf dist",
-    "lint": "biome check",
-    "lint:fix": "biome check --write",
-    "format": "biome format --write"
-  },
-  "devDependencies": {
-    "@types/react": "^19",
-    "react-native": "0.79.5",
-    "react-native-builder-bob": "0.40.13",
-    "rimraf": "4.1.2",
-    "tsconfig": "workspace:*",
-    "typescript": "^5"
-  },
-  "peerDependencies": {
-    "react": ">=19",
-    "react-native": ">=0.79"
-  },
-  "react-native-builder-bob": {
-    "source": "src",
-    "output": "build",
-    "exclude": "**/*.test.tsx",
-    "targets": [
-      "module",
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
-    ]
-  }
+	"name": "@design-blocks/unstyled",
+	"description": "A library 'unstyled' UI components and low-level hooks.",
+	"version": "1.0.0-beta.27",
+	"type": "module",
+	"files": [
+		"build"
+	],
+	"main": "./build/module/index.js",
+	"types": "./build/typescript/index.d.ts",
+	"exports": {
+		"./package.json": "./package.json",
+		".": {
+			"types": "./build/typescript/index.d.ts",
+			"default": "./build/module/index.js"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"repository": "git@github.com:openkitrun/design-blocks.git",
+		"directory": "@blocks-unstyled"
+	},
+	"keywords": [
+		"react-native",
+		"react",
+		"react-native-components",
+		"design-blocks",
+		"unstyled",
+		"a11y"
+	],
+	"scripts": {
+		"build": "pnpm run build:native",
+		"build:native": "bob build",
+		"clean": "pnpm clean:build && rimraf -rf .turbo",
+		"clean:build": "rimraf -rf dist",
+		"lint": "biome check",
+		"lint:fix": "biome check --write",
+		"format": "biome format --write"
+	},
+	"devDependencies": {
+		"@types/react": "^19",
+		"react-native": "0.79.5",
+		"react-native-builder-bob": "0.40.13",
+		"rimraf": "4.1.2",
+		"tsconfig": "workspace:*",
+		"typescript": "^5"
+	},
+	"peerDependencies": {
+		"react": ">=19",
+		"react-native": ">=0.79"
+	},
+	"react-native-builder-bob": {
+		"source": "src",
+		"output": "build",
+		"exclude": "**/*.test.tsx",
+		"targets": [
+			"module",
+			[
+				"typescript",
+				{
+					"project": "tsconfig.build.json"
+				}
+			]
+		]
+	}
 }
