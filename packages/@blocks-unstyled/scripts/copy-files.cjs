@@ -55,25 +55,25 @@ if (!fs.existsSync(rootDirOutputPath)) {
 // fs.copySync(path.join(__dirname, "../build"), path.join(rootPath));
 // fs.removeSync(path.join(__dirname, "../build"));
 
-function generatePackageJson(componentName) {
-	return JSON.stringify(
-		{
-			name: `@design-blocks/unstyled/${componentName}`,
-			sideEffects: false,
-			main: "./index.js",
-			types: "./index.d.ts",
-			exports: {
-				"./package.json": "./package.json",
-				".": {
-					types: "./index.d.ts",
-					default: "./index.js",
-				},
-			},
-		},
-		null,
-		2,
-	);
-}
+// function generatePackageJson(componentName) {
+// 	return JSON.stringify(
+// 		{
+// 			name: `@design-blocks/unstyled/${componentName}`,
+// 			sideEffects: false,
+// 			main: "./index.js",
+// 			types: "./index.d.ts",
+// 			exports: {
+// 				"./package.json": "./package.json",
+// 				".": {
+// 					types: "./index.d.ts",
+// 					default: "./index.js",
+// 				},
+// 			},
+// 		},
+// 		null,
+// 		2,
+// 	);
+// }
 
 componentNames.forEach((name) => {
 	const outputPath = path.join(rootPath, name);
@@ -89,10 +89,10 @@ componentNames.forEach((name) => {
 		);
 	}
 
-	fs.writeFileSync(
-		path.join(outputPath, "package.json"),
-		generatePackageJson(name),
-	);
+	// fs.writeFileSync(
+	// 	path.join(outputPath, "package.json"),
+	// 	generatePackageJson(name),
+	// );
 });
 
 // remove files

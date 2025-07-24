@@ -30,7 +30,7 @@
 	],
 	"scripts": {
 		"build": "pnpm run build:native",
-		"build:native": "bob build",
+		"build:native": "bob build && node ./scripts/generate-packages.cjs",
 		"clean": "pnpm clean:build && rimraf -rf .turbo",
 		"clean:build": "rimraf -rf dist",
 		"lint": "biome check",
