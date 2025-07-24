@@ -57,12 +57,7 @@
     "output": "build",
     "exclude": "**/*.test.tsx",
     "targets": [
-      [
-        "module",
-        {
-          "esm": true
-        }
-      ],
+      "module",
       [
         "typescript",
         {
