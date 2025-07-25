@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.37
+
+### Patch Changes
+
+- [`fdd3131`](https://github.com/openkitrun/design-blocks/commit/fdd3131945231f320d9d8de0d6c61c07e78dbd9b) Thanks [@wootsbot](https://github.com/wootsbot)! - Add sate to state in button
+
 ## 1.0.0-beta.36
 
 ### Patch Changes
