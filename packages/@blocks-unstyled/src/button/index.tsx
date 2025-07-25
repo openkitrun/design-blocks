@@ -1,39 +1,86 @@
 import React from "react";
-import type { ActivityIndicatorProps, PressableProps, TextProps } from "react-native";
+import type {
+	AccessibilityProps,
+	ActivityIndicatorProps,
+	GestureResponderEvent,
+	PressableProps,
+	StyleProp,
+	TextProps,
+	ViewStyle,
+} from "react-native";
 import { ActivityIndicator, Platform, Pressable, StyleSheet, Text } from "react-native";
 
-interface ButtonProps extends PressableProps {
-	disabled?: boolean | undefined;
-	loading?: boolean | undefined;
-	hideLabelOnLoading?: null | boolean | undefined;
+export type ButtonState = {
+	disabled?: boolean;
+	loading?: boolean;
+};
+
+type NonTextElements = React.ReactElement | Iterable<React.ReactElement | null | undefined | boolean>;
+
+type ButtonProps = Pick<
+	PressableProps,
+	| "disabled"
+	| "onPress"
+	| "testID"
+	| "onLongPress"
+	| "hitSlop"
+	| "onHoverIn"
+	| "onHoverOut"
+	| "onPressIn"
+	| "onPressOut"
+	| "onFocus"
+	| "onBlur"
+> & {
+	nativeID?: string;
+	style?: StyleProp<ViewStyle>;
+	hideLabelOnLoading?: null | boolean;
 	accessible?: boolean;
 	accessibilityLanguage?: PressableProps["accessibilityLanguage"];
-}
+	/**
+	 * For a11y, try to make this descriptive and clear
+	 */
+	accessibilityLabel?: string;
+	PressableComponent?: React.ComponentType<PressableProps>;
+	children: NonTextElements | ((context: ButtonContext) => NonTextElements);
+} & AccessibilityProps &
+	ButtonState;
 
-type ButtonContextProps = Pick<
+type ButtonContext = Pick<
 	ButtonProps,
 	"nativeID" | "testID" | "accessible" | "disabled" | "loading" | "hideLabelOnLoading" | "accessibilityLanguage"
 >;
-interface ButtonLabelProps extends TextProps {}
-interface ButtonLoadingProps extends ActivityIndicatorProps {}
 
-const ButtonContext = React.createContext<ButtonContextProps>({});
+type ButtonLabelProps = TextProps;
+type ButtonLoadingProps = ActivityIndicatorProps & {
+	indicatorComponent?: React.ElementType;
+};
+
+const Context = React.createContext<ButtonContext>({});
 
 /* -------------------------------------------------------------------------------------------------
  * ButtonRoot
  * -----------------------------------------------------------------------------------------------*/
 function ButtonRoot({
 	style,
+	nativeID,
 	loading,
 	disabled,
 	hideLabelOnLoading,
 	accessible = true,
 	accessibilityRole = "button",
 	accessibilityLanguage,
+	accessibilityLabel,
 	testID,
-	nativeID,
-	...others
+	PressableComponent = Pressable,
+	onPressIn: onPressInOuter,
+	onPressOut: onPressOutOuter,
+	children,
+	...rest
 }: ButtonProps) {
+	const [state, setState] = React.useState({
+		pressed: false,
+	});
+
 	const accessibilityState = React.useMemo(
 		() => ({
 			disabled,
@@ -42,31 +89,64 @@ function ButtonRoot({
 		[disabled, loading],
 	);
 
+	const onPressIn = React.useCallback(
+		(e: GestureResponderEvent) => {
+			setState((s) => ({
+				...s,
+				pressed: true,
+			}));
+			onPressInOuter?.(e);
+		},
+		[onPressInOuter],
+	);
+
+	const onPressOut = React.useCallback(
+		(e: GestureResponderEvent) => {
+			setState((s) => ({
+				...s,
+				pressed: false,
+			}));
+			onPressOutOuter?.(e);
+		},
+		[onPressOutOuter],
+	);
+
+	const context = React.useMemo<ButtonContext>(
+		() => ({
+			...state,
+			nativeID,
+			testID,
+			accessible,
+			loading,
+			disabled,
+			hideLabelOnLoading,
+			accessibilityLanguage,
+		}),
+		[state, nativeID, testID, accessible, loading, disabled, hideLabelOnLoading, accessibilityLanguage],
+	);
+
 	return (
-		<ButtonContext.Provider
-			value={{
-				nativeID,
-				testID,
-				accessible,
-				loading,
-				disabled,
-				hideLabelOnLoading,
-				accessibilityLanguage,
-			}}
+		<PressableComponent
+			nativeID={nativeID}
+			testID={testID}
+			onPressIn={onPressIn}
+			onPressOut={onPressOut}
+			aria-label={accessibilityLabel}
+			aria-pressed={state.pressed}
+			aria-busy={accessible && accessibilityState.busy}
+			aria-disabled={accessible && accessibilityState.disabled}
+			accessible={accessible}
+			accessibilityLabel={accessibilityLabel}
+			accessibilityRole={accessibilityRole}
+			accessibilityState={accessibilityState}
+			style={StyleSheet.flatten([stylesButton.root, style])}
+			disabled={disabled || loading}
+			{...rest}
 		>
-			<Pressable
-				nativeID={nativeID}
-				testID={testID}
-				aria-busy={accessible && accessibilityState.busy}
-				aria-disabled={accessible && accessibilityState.disabled}
-				accessible={accessible}
-				accessibilityRole={accessibilityRole}
-				accessibilityState={accessibilityState}
-				style={StyleSheet.flatten([stylesButton.root, style])}
-				disabled={disabled || loading}
-				{...others}
-			/>
-		</ButtonContext.Provider>
+			<Context.Provider value={context}>
+				{typeof children === "function" ? children(context) : children}
+			</Context.Provider>
+		</PressableComponent>
 	);
 }
 
@@ -82,8 +162,7 @@ const stylesButton = StyleSheet.create({
  * ButtonLabel
  * -----------------------------------------------------------------------------------------------*/
 function ButtonLabel({ nativeID: nativeIDProp, testID: testIDProp, style, ...others }: ButtonLabelProps) {
-	const { nativeID, testID, hideLabelOnLoading, loading, disabled, accessibilityLanguage } =
-		React.useContext(ButtonContext);
+	const { nativeID, testID, hideLabelOnLoading, loading, disabled, accessibilityLanguage } = React.useContext(Context);
 
 	const finalNativeID = nativeIDProp || (nativeID ? `${nativeID}Indicator` : undefined);
 	const finalTestID = testIDProp || (testID ? `${testID}Indicator` : undefined);
@@ -120,13 +199,24 @@ const stylesLabel = StyleSheet.create({
 /* -------------------------------------------------------------------------------------------------
  * ButtonLoading
  * -----------------------------------------------------------------------------------------------*/
-function ButtonLoading({ nativeID: nativeIDProp, testID: testIDProp, style, ...others }: ButtonLoadingProps) {
-	const { nativeID, testID, loading } = React.useContext(ButtonContext);
+function ButtonLoading({
+	nativeID: nativeIDProp,
+	testID: testIDProp,
+	style,
+	indicatorComponent,
+	...others
+}: ButtonLoadingProps) {
+	const { nativeID, testID, loading } = React.useContext(Context);
 
 	const finalNativeID = nativeIDProp || (nativeID ? `${nativeID}Indicator` : undefined);
 	const finalTestID = testIDProp || (testID ? `${testID}Indicator` : undefined);
 
 	if (loading) {
+		if (indicatorComponent) {
+			const IndicatorComponent = indicatorComponent;
+			return <IndicatorComponent />;
+		}
+
 		return (
 			<ActivityIndicator
 				nativeID={finalNativeID}
