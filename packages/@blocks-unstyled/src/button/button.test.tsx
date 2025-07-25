@@ -1,6 +1,4 @@
-/** biome-ignore-all lint/correctness/noUnusedImports: <> */
 import { fireEvent, render, screen } from "@testing-library/react-native";
-import React from "react";
 import { Text } from "react-native";
 
 import { Button } from "..";

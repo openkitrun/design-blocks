@@ -7,7 +7,7 @@
     "verbatimModuleSyntax": true,
     "forceConsistentCasingInFileNames": true,
     "noUncheckedIndexedAccess": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": ["esnext"],
     "module": "esnext",
     "moduleResolution": "bundler",
