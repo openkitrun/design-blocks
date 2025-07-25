@@ -41,7 +41,7 @@ type ButtonProps = Pick<
 	 */
 	accessibilityLabel?: string;
 	PressableComponent?: React.ComponentType<PressableProps>;
-	children: NonTextElements | ((context: ButtonContext) => NonTextElements);
+	children: NonTextElements;
 } & AccessibilityProps &
 	ButtonState;
 
@@ -143,9 +143,7 @@ function ButtonRoot({
 			disabled={disabled || loading}
 			{...rest}
 		>
-			<Context.Provider value={context}>
-				{typeof children === "function" ? children(context) : children}
-			</Context.Provider>
+			<Context.Provider value={context}>{children}</Context.Provider>
 		</PressableComponent>
 	);
 }

@@ -58,8 +58,8 @@ jobs:
       - name: build 💣
         run: pnpm turbo run build --cache-dir=".turbo"
 
-      # - name: Tests 💩
-      #   run: pnpm test:coverage
+      - name: Tests 💩
+        run: pnpm test
 
       - name: lint 💅
         run: pnpm turbo run lint --cache-dir=".turbo"

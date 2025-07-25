@@ -32,13 +32,14 @@
     "@changesets/types": "6.1.0",
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
-    "@testing-library/react": "16.3.0",
+    "@react-native/babel-preset": "0.80.2",
     "@testing-library/react-native": "13.2.0",
     "@types/jest": "30.0.0",
     "@types/node": "24.1.0",
     "cross-env": "7.0.3",
     "husky": "9.1.6",
     "jest": "30.0.5",
+    "react-test-renderer": "19.1.0",
     "tsconfig": "workspace:*",
     "turbo": "2.5.5",
     "typescript": "^5"
@@ -47,6 +48,8 @@
   "pnpm": {
     "overrides": {
       "@types/react": "^19",
+      "react": "^19",
+      "react-native": "0.79.5",
       "react-native-builder-bob": "0.40.13"
     }
   }
