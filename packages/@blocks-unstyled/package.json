@@ -4,9 +4,7 @@
 	"version": "1.0.0-beta.35",
 	"type": "module",
 	"files": [
-		"src",
-		"build",
-		"scripts"
+		"build"
 	],
 	"main": "./build/module/index.js",
 	"types": "./build/typescript/index.d.ts",
@@ -37,8 +35,7 @@
 		"clean:build": "rimraf -rf dist",
 		"lint": "biome check",
 		"lint:fix": "biome check --write",
-		"format": "biome format --write",
-		"prepublishOnly": "node ./scripts/config-postinstall.cjs"
+		"format": "biome format --write"
 	},
 	"devDependencies": {
 		"@types/react": "^19",

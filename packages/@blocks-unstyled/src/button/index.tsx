@@ -2,7 +2,7 @@ import React from "react";
 import type { ActivityIndicatorProps, PressableProps, TextProps } from "react-native";
 import { ActivityIndicator, Platform, Pressable, StyleSheet, Text } from "react-native";
 
-export interface ButtonProps extends PressableProps {
+interface ButtonProps extends PressableProps {
 	disabled?: boolean | undefined;
 	loading?: boolean | undefined;
 	hideLabelOnLoading?: null | boolean | undefined;
@@ -14,8 +14,8 @@ type ButtonContextProps = Pick<
 	ButtonProps,
 	"nativeID" | "testID" | "accessible" | "disabled" | "loading" | "hideLabelOnLoading" | "accessibilityLanguage"
 >;
-export interface ButtonLabelProps extends TextProps {}
-export interface ButtonLoadingProps extends ActivityIndicatorProps {}
+interface ButtonLabelProps extends TextProps {}
+interface ButtonLoadingProps extends ActivityIndicatorProps {}
 
 const ButtonContext = React.createContext<ButtonContextProps>({});
 
@@ -147,3 +147,5 @@ export const Button = {
 	Label: ButtonLabel,
 	Loading: ButtonLoading,
 };
+
+export type { ButtonProps, ButtonLabelProps, ButtonLoadingProps };
