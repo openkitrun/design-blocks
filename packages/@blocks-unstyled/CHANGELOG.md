@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.40
+
+### Patch Changes
+
+- [`672480b`](https://github.com/openkitrun/design-blocks/commit/672480b195b8defebf1f3e029cdec3b59de1ec0f) Thanks [@wootsbot](https://github.com/wootsbot)! - Fixed export flder `lib`
+
 ## 1.0.0-beta.39
 
 ### Minor Changes
