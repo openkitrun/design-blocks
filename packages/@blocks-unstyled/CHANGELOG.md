@@ -1,5 +1,13 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.39
+
+### Minor Changes
+
+- [`8084aa7`](https://github.com/openkitrun/design-blocks/commit/8084aa7e08fcb7d06cb8f859f668197c63f108bc) Thanks [@wootsbot](https://github.com/wootsbot)! - Add new component `radio-group`
+
+- [`4f6a0f8`](https://github.com/openkitrun/design-blocks/commit/4f6a0f8d989e4e6b323d8a240aad00a861d6d032) Thanks [@wootsbot](https://github.com/wootsbot)! - Add new component `radio-group` 🔥
+
 ## 1.0.0-beta.38
 
 ### Patch Changes

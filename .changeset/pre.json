@@ -3,11 +3,13 @@
   "tag": "beta",
   "initialVersions": {
     "@design-blocks/unstyled": "1.0.0-beta.26",
-    "tsconfig": "1.0.0-beta.21"
+    "tsconfig": "1.0.0-beta.21",
+    "playground": "1.0.0"
   },
   "changesets": [
     "all-mails-film",
     "chubby-guests-send",
+    "cool-ducks-read",
     "crazy-numbers-buy",
     "dark-hairs-learn",
     "few-chicken-eat",
@@ -19,6 +21,7 @@
     "quick-bats-allow",
     "shaggy-steaks-smoke",
     "silver-yaks-mate",
-    "wise-numbers-add"
+    "wise-numbers-add",
+    "yellow-lights-rest"
   ]
 }
