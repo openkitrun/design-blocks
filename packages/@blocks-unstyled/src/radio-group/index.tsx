@@ -297,6 +297,7 @@ function RadioIndicator({
 		const IndicatorComponent = indicatorComponent;
 		return (
 			<IndicatorComponent
+				style={StyleSheet.flatten([style])}
 				accessibilityLabel={accessibilityLabel || "Selected"}
 				accessibilityHint={accessibilityHint}
 				accessibilityState={{

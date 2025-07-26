@@ -15,9 +15,8 @@ describe("<RadioGroup />", () => {
 			<RadioGroup.Root onValueChange={() => {}}>
 				{OPTIONS.map(({ label, value }) => (
 					<RadioGroup.Radio key={value} value={value}>
-						<RadioGroup.Input>
-							<RadioGroup.Label>{label}</RadioGroup.Label>
-						</RadioGroup.Input>
+						<RadioGroup.Input />
+						<RadioGroup.Label>{label}</RadioGroup.Label>
 					</RadioGroup.Radio>
 				))}
 			</RadioGroup.Root>,
@@ -33,9 +32,8 @@ describe("<RadioGroup />", () => {
 		render(
 			<RadioGroup.Root onValueChange={onValueChange}>
 				<RadioGroup.Radio value="a">
-					<RadioGroup.Input>
-						<RadioGroup.Label>Option A</RadioGroup.Label>
-					</RadioGroup.Input>
+					<RadioGroup.Input />
+					<RadioGroup.Label>Option A</RadioGroup.Label>
 				</RadioGroup.Radio>
 			</RadioGroup.Root>,
 		);
@@ -52,9 +50,9 @@ describe("<RadioGroup />", () => {
 				{OPTIONS.map(({ label, value }) => (
 					<RadioGroup.Radio key={value} value={value}>
 						<RadioGroup.Input>
-							<RadioGroup.Label>{label}</RadioGroup.Label>
 							<RadioGroup.Indicator testID={`indicator-${value}`} />
 						</RadioGroup.Input>
+						<RadioGroup.Label>{label}</RadioGroup.Label>
 					</RadioGroup.Radio>
 				))}
 			</RadioGroup.Root>,
@@ -67,8 +65,8 @@ describe("<RadioGroup />", () => {
 			<RadioGroup.Root onValueChange={() => {}} value="b">
 				{OPTIONS.map(({ label, value }) => (
 					<RadioGroup.Radio key={value} value={value}>
+						<RadioGroup.Label>{label}</RadioGroup.Label>
 						<RadioGroup.Input>
-							<RadioGroup.Label>{label}</RadioGroup.Label>
 							<RadioGroup.Indicator testID={`indicator-${value}`} />
 						</RadioGroup.Input>
 					</RadioGroup.Radio>
@@ -86,9 +84,8 @@ describe("<RadioGroup />", () => {
 		render(
 			<RadioGroup.Root onValueChange={onValueChange} disabled>
 				<RadioGroup.Radio value="a">
-					<RadioGroup.Input>
-						<RadioGroup.Label>Option A</RadioGroup.Label>
-					</RadioGroup.Input>
+					<RadioGroup.Input />
+					<RadioGroup.Label>Option A</RadioGroup.Label>
 				</RadioGroup.Radio>
 			</RadioGroup.Root>,
 		);
@@ -105,8 +102,8 @@ describe("<RadioGroup />", () => {
 		render(
 			<RadioGroup.Root value="a" onValueChange={() => {}}>
 				<RadioGroup.Radio value="a">
+					<RadioGroup.Label>Option A</RadioGroup.Label>
 					<RadioGroup.Input>
-						<RadioGroup.Label>Option A</RadioGroup.Label>
 						<RadioGroup.Indicator indicatorComponent={CustomIndicator} />
 					</RadioGroup.Input>
 				</RadioGroup.Radio>
@@ -124,8 +121,8 @@ describe("<RadioGroup />", () => {
 		render(
 			<RadioGroup.Root value="a" onValueChange={() => {}}>
 				<RadioGroup.Radio value="a">
+					<RadioGroup.Label>Option A</RadioGroup.Label>
 					<RadioGroup.Input>
-						<RadioGroup.Label>Option A</RadioGroup.Label>
 						<RadioGroup.Indicator
 							indicatorComponent={CustomIndicator}
 							accessibilityLabel="Selected label"
@@ -145,11 +142,10 @@ describe("<RadioGroup />", () => {
 		render(
 			<RadioGroup.Root value="a" onValueChange={() => {}}>
 				<RadioGroup.Radio value="a">
-					<RadioGroup.Input>
-						<RadioGroup.Label disabledCheck testID="disabled-label">
-							Only Text
-						</RadioGroup.Label>
-					</RadioGroup.Input>
+					<RadioGroup.Label disabledCheck testID="disabled-label">
+						Only Text
+					</RadioGroup.Label>
+					<RadioGroup.Input />
 				</RadioGroup.Radio>
 			</RadioGroup.Root>,
 		);
@@ -166,9 +162,8 @@ describe("<RadioGroup />", () => {
 		render(
 			<RadioGroup.Root onValueChange={onValueChange}>
 				<RadioGroup.Radio value="a">
-					<RadioGroup.Input>
-						<RadioGroup.Label testID="label-a">Select A</RadioGroup.Label>
-					</RadioGroup.Input>
+					<RadioGroup.Label testID="label-a">Select A</RadioGroup.Label>
+					<RadioGroup.Input />
 				</RadioGroup.Radio>
 			</RadioGroup.Root>,
 		);

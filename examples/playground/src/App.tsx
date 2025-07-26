@@ -2,7 +2,13 @@ import { Button, RadioGroup } from "@design-blocks/unstyled";
 
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
+
+const CustomCheck = () => (
+  <View>
+    <Text>✓</Text>
+  </View>
+);
 
 export default function App() {
 	const [selectedPayment, setSelectedPayment] = useState<string>();
@@ -43,12 +49,11 @@ export default function App() {
 
 				<RadioGroup.Radio
 					value="paypal"
-					disabled
 					accessibilityLabel="PayPal no disponible"
 					style={{ flexDirection: "row", alignItems: "center", gap: 12 }}
 				>
 					<RadioGroup.Input style={[styles.checkboxBase]}>
-						<RadioGroup.Indicator style={styles.circle} />
+            <RadioGroup.Indicator indicatorComponent={CustomCheck} />
 					</RadioGroup.Input>
 					<RadioGroup.Label
 						style={{
