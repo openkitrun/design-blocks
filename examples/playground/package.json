@@ -17,9 +17,9 @@
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
- 	"peerDependencies": {
-		"react": ">=19",
-		"react-native": ">=0.79"
-	},
+  "peerDependencies": {
+    "react": ">=19",
+    "react-native": ">=0.79"
+  },
   "private": true
 }
