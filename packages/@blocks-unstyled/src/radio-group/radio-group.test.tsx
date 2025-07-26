@@ -138,7 +138,7 @@ describe("<RadioGroup />", () => {
 
 		const indicator = screen.getByTestId("custom-indicator");
 		expect(indicator).toBeTruthy();
-		expect(indicator.props.children).toEqual("Selected label-Selected hint-✓");
+		expect(indicator.props.children).toEqual('"Selected label-Selected hint-✓"');
 	});
 
 	it("should render Text when disabledCheck is true", () => {
