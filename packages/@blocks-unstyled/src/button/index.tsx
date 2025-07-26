@@ -10,13 +10,25 @@ import type {
 } from "react-native";
 import { ActivityIndicator, Platform, Pressable, StyleSheet, Text } from "react-native";
 
+/* -------------------------------------------------------------------------------------------------
+ * Context
+ * -----------------------------------------------------------------------------------------------*/
+
+type ButtonContext = Pick<
+	ButtonProps,
+	"nativeID" | "testID" | "accessible" | "disabled" | "loading" | "hideLabelOnLoading" | "accessibilityLanguage"
+>;
+const Context = React.createContext<ButtonContext>({});
+
+/* -------------------------------------------------------------------------------------------------
+ * ButtonRoot
+ * -----------------------------------------------------------------------------------------------*/
+
 export type ButtonState = {
 	disabled?: boolean;
 	loading?: boolean;
 };
-
 type NonTextElements = React.ReactElement | Iterable<React.ReactElement | null | undefined | boolean>;
-
 type ButtonProps = Pick<
 	PressableProps,
 	| "disabled"
@@ -46,21 +58,6 @@ type ButtonProps = Pick<
 } & AccessibilityProps &
 	ButtonState;
 
-type ButtonContext = Pick<
-	ButtonProps,
-	"nativeID" | "testID" | "accessible" | "disabled" | "loading" | "hideLabelOnLoading" | "accessibilityLanguage"
->;
-
-type ButtonLabelProps = TextProps;
-type ButtonLoadingProps = ActivityIndicatorProps & {
-	indicatorComponent?: React.ElementType;
-};
-
-const Context = React.createContext<ButtonContext>({});
-
-/* -------------------------------------------------------------------------------------------------
- * ButtonRoot
- * -----------------------------------------------------------------------------------------------*/
 function ButtonRoot({
 	style,
 	pressedStyle,
@@ -161,6 +158,9 @@ const stylesButton = StyleSheet.create({
 /* -------------------------------------------------------------------------------------------------
  * ButtonLabel
  * -----------------------------------------------------------------------------------------------*/
+
+type ButtonLabelProps = TextProps;
+
 function ButtonLabel({ nativeID: nativeIDProp, testID: testIDProp, style, ...others }: ButtonLabelProps) {
 	const { nativeID, testID, hideLabelOnLoading, loading, disabled, accessibilityLanguage } = React.useContext(Context);
 
@@ -199,6 +199,11 @@ const stylesLabel = StyleSheet.create({
 /* -------------------------------------------------------------------------------------------------
  * ButtonLoading
  * -----------------------------------------------------------------------------------------------*/
+
+type ButtonLoadingProps = ActivityIndicatorProps & {
+	indicatorComponent?: React.ElementType;
+};
+
 function ButtonLoading({
 	nativeID: nativeIDProp,
 	testID: testIDProp,
