@@ -4,15 +4,15 @@
 	"version": "1.0.0-beta.39",
 	"type": "module",
 	"files": [
-		"build"
+		"lib"
 	],
-	"main": "./build/module/index.js",
-	"types": "./build/typescript/index.d.ts",
+	"main": "./lib/module/index.js",
+	"types": "./lib/typescript/index.d.ts",
 	"exports": {
 		"./package.json": "./package.json",
 		".": {
-			"types": "./build/typescript/index.d.ts",
-			"default": "./build/module/index.js"
+			"types": "./lib/typescript/index.d.ts",
+			"default": "./lib/module/index.js"
 		}
 	},
 	"repository": {
@@ -31,8 +31,6 @@
 	"scripts": {
 		"build": "pnpm run build:native",
 		"build:native": "bob build",
-		"clean": "pnpm clean:build && rimraf -rf .turbo",
-		"clean:build": "rimraf -rf dist",
 		"lint": "biome check",
 		"lint:fix": "biome check --write",
 		"format": "biome format --write"
@@ -42,7 +40,6 @@
 		"react": "^19",
 		"react-native": "0.79.5",
 		"react-native-builder-bob": "0.40.13",
-		"rimraf": "6.0.1",
 		"tsconfig": "workspace:*",
 		"typescript": "^5"
 	},
@@ -52,7 +49,7 @@
 	},
 	"react-native-builder-bob": {
 		"source": "src",
-		"output": "build",
+		"output": "lib",
 		"exclude": "**/*.test.tsx",
 		"targets": [
 			"module",

@@ -4,9 +4,11 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["tsconfig.json", "package.json", "src/**"],
-      "outputs": ["build/**"]
+      "outputs": ["lib/**"]
     },
     "run:playground": {
+      "cache": false,
+      "persistent": true,
       "dependsOn": [],
       "inputs": ["**/*.{js,ts,tsx}"],
       "outputs": [".expo"]

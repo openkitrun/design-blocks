@@ -8,6 +8,7 @@ node_modules
 build
 build-temp
 dist
+lib
 *.log
 .turbo
 

@@ -23,7 +23,8 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "format": "turbo run format",
-    "run:playground": "turbo run run:playground --filter=playground"
+    "playground": "pnpm --filter playground ios",
+    "playground:android": "pnpm --filter playground android"
   },
   "devDependencies": {
     "@biomejs/biome": "2.1.2",

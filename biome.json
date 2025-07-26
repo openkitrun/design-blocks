@@ -10,7 +10,7 @@
 		"includes": ["./src/**"],
 		"experimentalScannerIgnores": [
 			".expo",
-			"./assets",
+			".turbo",
 			"**/node_modules",
 			"**/pnpm-lock.yaml",
 			"**/package.json",
@@ -26,12 +26,12 @@
 		"lineWidth": 120,
 		"attributePosition": "auto",
 		"bracketSpacing": true,
-		"includes": ["./src/**", "next.config.ts"],
+		"includes": ["./src/**"],
 		"bracketSameLine": true
 	},
 	"linter": {
 		"enabled": true,
-		"includes": ["./src/**", "next.config.ts"],
+		"includes": ["./src/**"],
 		"rules": {
 			"recommended": true,
 			"style": {
