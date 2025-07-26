@@ -1,0 +1,25 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "run:playground": "pnpm ios",
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "expo": "~53.0.20",
+    "expo-status-bar": "~2.2.3",
+    "@design-blocks/unstyled": "workspace:*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
+ 	"peerDependencies": {
+		"react": ">=19",
+		"react-native": ">=0.79"
+	},
+  "private": true
+}

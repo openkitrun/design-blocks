@@ -6,6 +6,11 @@
       "inputs": ["tsconfig.json", "package.json", "src/**"],
       "outputs": ["build/**"]
     },
+    "run:playground": {
+      "dependsOn": [],
+      "inputs": ["**/*.{js,ts,tsx}"],
+      "outputs": [".expo"]
+    },
     "lint": {
       "outputs": [],
       "inputs": ["**/*.{js,ts,tsx}"]

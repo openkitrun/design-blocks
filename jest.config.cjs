@@ -26,4 +26,12 @@ module.exports = {
     '^react$': path.join(__dirname, 'node_modules/react'),
     '^react-test-renderer$': path.join(__dirname, 'node_modules/react-test-renderer'),
   },
+  coverageThreshold: {
+    global: {
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: 90,
+    },
+  },
 };

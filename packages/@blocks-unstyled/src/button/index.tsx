@@ -33,6 +33,7 @@ type ButtonProps = Pick<
 > & {
 	nativeID?: string;
 	style?: StyleProp<ViewStyle>;
+	pressedStyle?: StyleProp<ViewStyle>;
 	hideLabelOnLoading?: null | boolean;
 	accessible?: boolean;
 	accessibilityLanguage?: PressableProps["accessibilityLanguage"];
@@ -62,6 +63,7 @@ const Context = React.createContext<ButtonContext>({});
  * -----------------------------------------------------------------------------------------------*/
 function ButtonRoot({
 	style,
+	pressedStyle,
 	nativeID,
 	loading,
 	disabled,
@@ -139,7 +141,7 @@ function ButtonRoot({
 			accessibilityLabel={accessibilityLabel}
 			accessibilityRole={accessibilityRole}
 			accessibilityState={accessibilityState}
-			style={StyleSheet.flatten([stylesButton.root, style])}
+			style={StyleSheet.flatten([stylesButton.root, style, state.pressed ? pressedStyle : {}])}
 			disabled={disabled || loading}
 			{...rest}
 		>

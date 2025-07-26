@@ -1,6 +1,8 @@
 packages:
-  - 'examples/**'
-  - 'packages/**'
+  - examples/**
+  - packages/**
+
+nodeLinker: hoisted
 
 onlyBuiltDependencies:
-  - 'unrs-resolver'
+  - unrs-resolver
