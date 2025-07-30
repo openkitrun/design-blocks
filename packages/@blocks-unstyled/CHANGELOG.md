@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.43
+
+### Minor Changes
+
+- [`9ab36cc`](https://github.com/openkitrun/design-blocks/commit/9ab36cce6fb8a24961b481b423d2052bfe0e0191) Thanks [@wootsbot](https://github.com/wootsbot)! - Add new component `switch` 🔥
+
 ## 1.0.0-beta.42
 
 ### Patch Changes
