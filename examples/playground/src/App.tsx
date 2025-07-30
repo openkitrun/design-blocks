@@ -1,4 +1,4 @@
-import { Button, RadioGroup } from "@design-blocks/unstyled";
+import { Button, RadioGroup, Switch } from "@design-blocks/unstyled";
 
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
@@ -12,6 +12,7 @@ const CustomCheck = () => (
 
 export default function App() {
 	const [selectedPayment, setSelectedPayment] = useState<string>();
+	const [settings, setSettings] = useState(false);
 
 	return (
 		<View style={styles.container}>
@@ -65,6 +66,15 @@ export default function App() {
 				</RadioGroup.Radio>
 			</RadioGroup.Root>
 
+			<Switch.Root
+			   defaultChecked={false}
+          checked={settings}
+          onCheckedChange={(value) => setSettings(value)}
+          style={[styles.switch, settings === true && styles.switchEnabled]}
+        >
+          <Switch.Thumb style={[styles.thumb, settings && styles.thumbEnabled]} />
+        </Switch.Root>
+
 			<StatusBar style="auto" />
 		</View>
 	);
@@ -96,4 +106,108 @@ const styles = StyleSheet.create({
 		width: 20,
 		height: 20,
 	},
+
+
+  darkContainer: {
+    backgroundColor: '#1a1a1a',
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#333',
+  },
+  label: {
+    fontSize: 16,
+    color: '#333',
+    marginBottom: 8,
+  },
+  darkText: {
+    color: '#fff',
+  },
+  settingRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 12,
+  },
+  settingLabel: {
+    fontSize: 16,
+    color: '#333',
+    flex: 1,
+  },
+  disabledLabel: {
+    color: '#999',
+  },
+
+  // Switch styles
+  switch: {
+    width: 50,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: '#E5E5EA',
+    padding: 2,
+    justifyContent: 'center',
+  },
+  switchEnabled: {
+    backgroundColor: '#34C759',
+  },
+  switchDisabled: {
+    backgroundColor: '#F2F2F7',
+    opacity: 0.6,
+  },
+
+  // Thumb styles
+  thumb: {
+    width: 26,
+    height: 26,
+    borderRadius: 13,
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 4,
+    transform: [{ translateX: 0 }],
+  },
+  thumbEnabled: {
+    transform: [{ translateX: 20 }],
+  },
+  thumbDisabled: {
+    backgroundColor: '#F8F8F8',
+  },
+
+  // Custom switch styles
+  customSwitch: {
+    width: 60,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: '#87CEEB',
+    padding: 2,
+    justifyContent: 'center',
+  },
+  customSwitchDark: {
+    backgroundColor: '#2C2C2E',
+  },
+  customThumb: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    backgroundColor: '#FFF',
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 4,
+    transform: [{ translateX: 0 }],
+  },
+  customThumbDark: {
+    backgroundColor: '#1C1C1E',
+    transform: [{ translateX: 28 }],
+  },
+  thumbIcon: {
+    fontSize: 14,
+  },
 });

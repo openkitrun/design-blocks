@@ -53,7 +53,7 @@ type ButtonProps = Pick<
 	 * For a11y, try to make this descriptive and clear
 	 */
 	accessibilityLabel?: string;
-	PressableComponent?: React.ComponentType<PressableProps>;
+	pressableComponent?: React.ComponentType<PressableProps>;
 	children: NonTextElements;
 } & AccessibilityProps &
 	ButtonState;
@@ -70,7 +70,7 @@ function ButtonRoot({
 	accessibilityLanguage,
 	accessibilityLabel,
 	testID,
-	PressableComponent = Pressable,
+	pressableComponent: PressableComponent = Pressable,
 	onPressIn: onPressInOuter,
 	onPressOut: onPressOutOuter,
 	children,
