@@ -1,4 +1,4 @@
-import { Button, RadioGroup, Switch } from "@design-blocks/unstyled";
+import { Button, RadioGroup, Switch, Checkbox } from "@design-blocks/unstyled";
 
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
@@ -13,6 +13,8 @@ const CustomCheck = () => (
 export default function App() {
 	const [selectedPayment, setSelectedPayment] = useState<string>();
 	const [settings, setSettings] = useState(false);
+ const [accepted, setAccepted] = useState(false);
+
 
 	return (
 		<View style={styles.container}>
@@ -75,7 +77,36 @@ export default function App() {
           <Switch.Thumb style={[styles.thumb, settings && styles.thumbEnabled]} />
         </Switch.Root>
 
+
+            <View style={styles.checkboxRow}>
+              <Checkbox.Root
+                checked={accepted}
+                onCheckedChange={setAccepted}
+                style={[
+                  styles.checkbox,
+                  accepted && styles.checkboxChecked
+                ]}
+                accessibilityLabel="Accept terms and conditions"
+                accessibilityHint="Check to accept the terms and conditions"
+              >
+                <Checkbox.Indicator
+                  style={[
+                    styles.checkmark,
+                    accepted && styles.checkmarkVisible
+                  ]}
+                />
+              </Checkbox.Root>
+
+              <Text style={styles.checkboxLabel}>
+                Accept terms and conditions
+              </Text>
+            </View>
+
+
+
 			<StatusBar style="auto" />
+
+
 		</View>
 	);
 }
@@ -210,4 +241,137 @@ const styles = StyleSheet.create({
   thumbIcon: {
     fontSize: 14,
   },
+
+  checkboxContainer: {
+      padding: 20,
+      gap: 16,
+    },
+
+    checkboxRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 12,
+      paddingVertical: 8,
+    },
+
+    // Basic checkbox styles
+    checkbox: {
+      width: 20,
+      height: 20,
+      borderRadius: 4,
+      borderWidth: 2,
+      borderColor: '#D1D5DB',
+      backgroundColor: 'white',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    checkboxChecked: {
+      backgroundColor: '#3B82F6',
+      borderColor: '#3B82F6',
+    },
+    checkboxDisabled: {
+      backgroundColor: '#F3F4F6',
+      borderColor: '#D1D5DB',
+      opacity: 0.6,
+    },
+    checkboxRequired: {
+      borderColor: '#EF4444',
+    },
+
+    // Checkmark styles
+    checkmark: {
+      width: 12,
+      height: 12,
+      backgroundColor: 'white',
+      borderRadius: 2,
+    },
+    checkmarkVisible: {
+      backgroundColor: 'white',
+    },
+
+    // Label styles
+    checkboxLabel: {
+      fontSize: 16,
+      color: '#374151',
+      flex: 1,
+    },
+    labelDisabled: {
+      color: '#9CA3AF',
+    },
+
+    // Status
+    status: {
+      fontSize: 14,
+      color: '#6B7280',
+      fontStyle: 'italic',
+      marginTop: 8,
+    },
+
+    // Custom checkbox styles
+    customCheckbox: {
+      width: 24,
+      height: 24,
+      borderRadius: 6,
+      borderWidth: 2,
+      borderColor: '#E5E7EB',
+      backgroundColor: 'white',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    customCheckboxChecked: {
+      backgroundColor: '#10B981',
+      borderColor: '#10B981',
+    },
+    customIcon: {
+      fontSize: 16,
+      color: 'white',
+      fontWeight: 'bold',
+    },
+
+    // Form styles
+    formFooter: {
+      marginTop: 20,
+      alignItems: 'center',
+    },
+    submitButton: {
+      paddingHorizontal: 24,
+      paddingVertical: 12,
+      borderRadius: 8,
+      alignItems: 'center',
+      minWidth: 120,
+    },
+    submitButtonText: {
+      fontSize: 16,
+      fontWeight: '600',
+    },
+
+    // Select all styles
+    selectAllRow: {
+      borderBottomWidth: 1,
+      borderBottomColor: '#E5E7EB',
+      paddingBottom: 12,
+    },
+    selectAllLabel: {
+      fontWeight: '600',
+    },
+    selectAllIndicator: {
+      width: 12,
+      height: 12,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    selectAllIcon: {
+      fontSize: 10,
+      color: 'white',
+      fontWeight: 'bold',
+    },
+    checkboxIndeterminate: {
+      backgroundColor: '#6B7280',
+      borderColor: '#6B7280',
+    },
+    divider: {
+      height: 1,
+      backgroundColor: '#E5E7EB',
+      marginVertical: 8,
+    },
 });

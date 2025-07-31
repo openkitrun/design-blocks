@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import React from "react";
-import type { AccessibilityProps, AccessibilityState, StyleProp, TextStyle, ViewStyle } from "react-native";
+import type { AccessibilityProps, AccessibilityState, StyleProp, TextProps, ViewStyle } from "react-native";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 /* -------------------------------------------------------------------------------------------------
@@ -108,24 +108,21 @@ type RadioGroupRadioProps = {
 	value: string;
 	accessibilityLabel?: string;
 	accessibilityHint?: string;
-};
+} & Omit<AccessibilityProps, "accessibilityLabel" | "accessibilityHint">;
 
-type ContextRadioGroupRadioProps = Pick<
-	RadioGroupRadioProps,
-	"required" | "disabled" | "value" | "accessibilityLabel" | "accessibilityHint"
-> & {
+type ContextRadioGroupRadioProps = Pick<RadioGroupRadioProps, "required" | "disabled"> & {
 	checked?: boolean;
 };
 
 const ContextRadioGroupRadio = React.createContext<ContextRadioGroupRadioProps>({
 	checked: false,
 	disabled: false,
-	value: "",
 });
 
 function RadioGroupRadio({
 	accessibilityLabel,
 	accessibilityHint,
+	accessibilityRole = "radio",
 	value: valueProp,
 	style,
 	children,
@@ -144,27 +141,34 @@ function RadioGroupRadio({
 		[disabled, checked],
 	);
 
+	const handleValueChange = React.useCallback(() => {
+		context.setValue(valueProp);
+	}, [context.setValue, valueProp]);
+
 	const contextInput = React.useMemo<ContextRadioGroupRadioProps>(
 		() => ({
 			disabled: isDisabled,
-			value: valueProp,
 			checked,
-			accessibilityLabel,
-			accessibilityHint,
 		}),
-		[isDisabled, valueProp, checked, accessibilityLabel, accessibilityHint],
+		[isDisabled, checked],
 	);
 
 	return (
-		<View
+		<Pressable
+			disabled={isDisabled}
 			style={StyleSheet.flatten([style])}
+			onPress={handleValueChange}
 			accessible={context?.accessible}
 			aria-disabled={context?.accessible && accessibilityState.disabled}
+			aria-checked={accessibilityState.checked}
+			accessibilityRole={accessibilityRole}
+			accessibilityLabel={accessibilityLabel}
+			accessibilityHint={accessibilityHint}
 			accessibilityState={accessibilityState}
 			{...rest}
 		>
 			<ContextRadioGroupRadio.Provider value={contextInput}>{children}</ContextRadioGroupRadio.Provider>
-		</View>
+		</Pressable>
 	);
 }
 
@@ -176,99 +180,32 @@ type RadioGroupInputProps = {
 	testID?: string;
 	style?: StyleProp<ViewStyle>;
 	children?: ReactNode;
-} & Omit<AccessibilityProps, "accessibilityLabel" | "accessibilityHint">;
+};
 
-function RadioGroupInput({ style, children, accessibilityRole = "radio", ...rest }: RadioGroupInputProps) {
-	const contextRoot = React.useContext(Context);
-	const contextRadio = React.useContext(ContextRadioGroupRadio);
-
-	const accessibilityState = React.useMemo<AccessibilityState>(
-		() => ({
-			disabled: contextRadio.disabled,
-			checked: contextRadio.checked,
-		}),
-		[contextRadio.disabled, contextRadio.checked],
-	);
-
-	const handleValueChange = React.useCallback(() => {
-		contextRoot.setValue(contextRadio.value);
-	}, [contextRoot.setValue, contextRadio.value]);
-
-	return (
-		<Pressable
-			disabled={contextRadio.disabled}
-			style={StyleSheet.flatten([style])}
-			onPress={handleValueChange}
-			accessible={contextRoot?.accessible}
-			aria-disabled={contextRoot?.accessible && accessibilityState.disabled}
-			aria-checked={contextRadio.checked}
-			accessibilityRole={accessibilityRole}
-			accessibilityLabel={contextRadio.accessibilityLabel}
-			accessibilityHint={contextRadio.accessibilityHint}
-			accessibilityState={accessibilityState}
-			{...rest}
-		>
-			{children}
-		</Pressable>
-	);
+function RadioGroupInput({ style, ...rest }: RadioGroupInputProps) {
+	return <View style={StyleSheet.flatten([style])} {...rest} />;
 }
 
 /* -------------------------------------------------------------------------------------------------
  * RadioLabel
  * -----------------------------------------------------------------------------------------------*/
 
-type RadioLabelProps = {
-	testID?: string;
-	style?: StyleProp<TextStyle>;
-	children?: ReactNode;
-	disabledCheck?: boolean;
-	accessibilityLabel?: string;
-	accessibilityHint?: string;
-};
+type RadioLabelProps = TextProps & {};
 
-function RadioLabel({
-	style,
-	children,
-	disabledCheck = false,
-	accessibilityLabel,
-	accessibilityHint,
-	...rest
-}: RadioLabelProps) {
+function RadioLabel({ style, accessibilityLabel, accessibilityHint, ...rest }: RadioLabelProps) {
 	const context = React.useContext(Context);
 	const contextRadio = React.useContext(ContextRadioGroupRadio);
 
-	const handleValueChange = React.useCallback(() => {
-		context.setValue(contextRadio.value);
-	}, [context.setValue, contextRadio.value]);
-
-	if (disabledCheck) {
-		return (
-			<Text
-				style={StyleSheet.flatten([style])}
-				disabled={contextRadio.disabled}
-				accessible={context?.accessible}
-				accessibilityLabel={accessibilityLabel}
-				accessibilityHint={accessibilityHint}
-				{...rest}
-			>
-				{children}
-			</Text>
-		);
-	}
-
 	return (
-		<Pressable
+		<Text
+			style={StyleSheet.flatten([style])}
 			disabled={contextRadio.disabled}
-			onPress={handleValueChange}
 			accessible={context?.accessible}
 			accessibilityRole="text"
 			accessibilityLabel={accessibilityLabel}
 			accessibilityHint={accessibilityHint}
-		>
-			<Text style={StyleSheet.flatten([style])} {...rest}>
-				{children}
-			</Text>
-		</Pressable>
+			{...rest}
+		/>
 	);
 }
 
@@ -291,9 +228,9 @@ function RadioIndicator({
 	accessibilityHint,
 	...rest
 }: RadioIndicatorProps) {
-	const contextInput = React.useContext(ContextRadioGroupRadio);
+	const contextRadio = React.useContext(ContextRadioGroupRadio);
 
-	if (contextInput.checked && indicatorComponent) {
+	if (contextRadio.checked && indicatorComponent) {
 		const IndicatorComponent = indicatorComponent;
 		return (
 			<IndicatorComponent
@@ -301,21 +238,21 @@ function RadioIndicator({
 				accessibilityLabel={accessibilityLabel || "Selected"}
 				accessibilityHint={accessibilityHint}
 				accessibilityState={{
-					selected: true,
+					selected: contextRadio.checked,
 				}}
 				{...rest}
 			/>
 		);
 	}
 
-	if (contextInput.checked) {
+	if (contextRadio.checked) {
 		return (
 			<View
 				style={StyleSheet.flatten([style])}
 				accessibilityLabel={accessibilityLabel || "Selected"}
 				accessibilityHint={accessibilityHint}
 				accessibilityState={{
-					selected: true,
+					selected: contextRadio.checked,
 				}}
 				{...rest}
 			/>
