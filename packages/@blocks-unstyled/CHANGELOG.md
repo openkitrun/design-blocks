@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.44
+
+### Minor Changes
+
+- [`9aadd59`](https://github.com/openkitrun/design-blocks/commit/9aadd596131127732cbfdc22d1aaea1a73e4f5f9) Thanks [@wootsbot](https://github.com/wootsbot)! - Add new component `checkbox` 🔥 🚀
+
 ## 1.0.0-beta.43
 
 ### Minor Changes
