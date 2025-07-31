@@ -1,7 +1,7 @@
 {
 	"name": "@design-blocks/unstyled",
 	"description": "A library 'unstyled' UI components and low-level hooks.",
-	"version": "1.0.0-beta.43",
+	"version": "1.0.0-beta.44",
 	"type": "module",
 	"files": [
 		"lib"
