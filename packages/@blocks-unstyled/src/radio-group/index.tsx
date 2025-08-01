@@ -8,22 +8,22 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
  * -----------------------------------------------------------------------------------------------*/
 
 type RadioGroupContextValue = {
-	required?: boolean;
-	disabled?: boolean;
-	value?: string | null;
-	defaultValue?: string;
-	setValue: (v: string) => void;
-	accessible?: boolean;
-	accessibilityLabel?: string;
-	accessibilityHint?: string;
+  required?: boolean;
+  disabled?: boolean;
+  value?: string | null;
+  defaultValue?: string;
+  setValue: (v: string) => void;
+  accessible?: boolean;
+  accessibilityLabel?: string;
+  accessibilityHint?: string;
 };
 
 const Context = React.createContext<RadioGroupContextValue>({
-	required: false,
-	disabled: false,
-	value: null,
-	setValue: () => {},
-	accessible: true,
+  required: false,
+  disabled: false,
+  value: null,
+  setValue: () => {},
+  accessible: true,
 });
 
 /* -------------------------------------------------------------------------------------------------
@@ -31,68 +31,68 @@ const Context = React.createContext<RadioGroupContextValue>({
  * -----------------------------------------------------------------------------------------------*/
 
 type RadioGroupProps = Omit<RadioGroupContextValue, "setValue"> & {
-	testID?: string;
-	style?: StyleProp<ViewStyle>;
-	children?: ReactNode;
-	onValueChange(value: string): void;
+  testID?: string;
+  style?: StyleProp<ViewStyle>;
+  children?: ReactNode;
+  onValueChange(value: string): void;
 } & Pick<AccessibilityProps, "accessibilityRole">;
 
 function RadioGroupRoot({
-	accessibilityLabel,
-	accessibilityHint,
-	accessibilityRole = "radiogroup",
-	style,
-	children,
-	required = false,
-	disabled,
-	value: valueProp,
-	defaultValue,
-	onValueChange,
-	accessible = true,
-	...rest
+  accessibilityLabel,
+  accessibilityHint,
+  accessibilityRole = "radiogroup",
+  style,
+  children,
+  required = false,
+  disabled,
+  value: valueProp,
+  defaultValue,
+  onValueChange,
+  accessible = true,
+  ...rest
 }: RadioGroupProps) {
-	const isControlled = valueProp !== undefined;
-	const [value, setValue] = React.useState<string | null>(defaultValue ?? null);
+  const isControlled = valueProp !== undefined;
+  const [value, setValue] = React.useState<string | null>(defaultValue ?? null);
 
-	const currentValue = isControlled ? valueProp : value;
+  const currentValue = isControlled ? valueProp : value;
 
-	const handleSetValue = React.useCallback(
-		(next: string) => {
-			if (!isControlled) setValue(next);
-			onValueChange?.(next);
-		},
-		[isControlled, onValueChange],
-	);
+  const handleSetValue = React.useCallback(
+    (next: string) => {
+      if (!isControlled) setValue(next);
+      onValueChange?.(next);
+    },
+    [isControlled, onValueChange],
+  );
 
-	const context = React.useMemo<RadioGroupContextValue>(
-		() => ({
-			required,
-			disabled,
-			value: currentValue,
-			setValue: handleSetValue,
-			accessible,
-			defaultValue,
-			accessibilityLabel,
-			accessibilityHint,
-		}),
-		[required, disabled, currentValue, handleSetValue, accessible, defaultValue, accessibilityLabel, accessibilityHint],
-	);
+  const context = React.useMemo<RadioGroupContextValue>(
+    () => ({
+      required,
+      disabled,
+      value: currentValue,
+      setValue: handleSetValue,
+      accessible,
+      defaultValue,
+      accessibilityLabel,
+      accessibilityHint,
+    }),
+    [required, disabled, currentValue, handleSetValue, accessible, defaultValue, accessibilityLabel, accessibilityHint],
+  );
 
-	return (
-		<View
-			style={StyleSheet.flatten([style])}
-			accessible={accessible}
-			accessibilityRole={accessibilityRole}
-			accessibilityLabel={accessibilityLabel}
-			accessibilityHint={accessibilityHint}
-			accessibilityState={{
-				disabled,
-			}}
-			{...rest}
-		>
-			<Context.Provider value={context}>{children}</Context.Provider>
-		</View>
-	);
+  return (
+    <View
+      style={StyleSheet.flatten([style])}
+      accessible={accessible}
+      accessibilityRole={accessibilityRole}
+      accessibilityLabel={accessibilityLabel}
+      accessibilityHint={accessibilityHint}
+      accessibilityState={{
+        disabled,
+      }}
+      {...rest}
+    >
+      <Context.Provider value={context}>{children}</Context.Provider>
+    </View>
+  );
 }
 
 /* -------------------------------------------------------------------------------------------------
@@ -100,76 +100,76 @@ function RadioGroupRoot({
  * -----------------------------------------------------------------------------------------------*/
 
 type RadioGroupRadioProps = {
-	testID?: string;
-	style?: StyleProp<ViewStyle>;
-	children?: ReactNode;
-	required?: boolean;
-	disabled?: boolean;
-	value: string;
-	accessibilityLabel?: string;
-	accessibilityHint?: string;
+  testID?: string;
+  style?: StyleProp<ViewStyle>;
+  children?: ReactNode;
+  required?: boolean;
+  disabled?: boolean;
+  value: string;
+  accessibilityLabel?: string;
+  accessibilityHint?: string;
 } & Omit<AccessibilityProps, "accessibilityLabel" | "accessibilityHint">;
 
 type ContextRadioGroupRadioProps = Pick<RadioGroupRadioProps, "required" | "disabled"> & {
-	checked?: boolean;
+  checked?: boolean;
 };
 
 const ContextRadioGroupRadio = React.createContext<ContextRadioGroupRadioProps>({
-	checked: false,
-	disabled: false,
+  checked: false,
+  disabled: false,
 });
 
 function RadioGroupRadio({
-	accessibilityLabel,
-	accessibilityHint,
-	accessibilityRole = "radio",
-	value: valueProp,
-	style,
-	children,
-	disabled,
-	...rest
+  accessibilityLabel,
+  accessibilityHint,
+  accessibilityRole = "radio",
+  value: valueProp,
+  style,
+  children,
+  disabled,
+  ...rest
 }: RadioGroupRadioProps) {
-	const context = React.useContext(Context);
-	const isDisabled = context.disabled || disabled;
-	const checked = context.value === valueProp;
+  const context = React.useContext(Context);
+  const isDisabled = context.disabled || disabled;
+  const checked = context.value === valueProp;
 
-	const accessibilityState = React.useMemo<AccessibilityState>(
-		() => ({
-			disabled,
-			checked,
-		}),
-		[disabled, checked],
-	);
+  const accessibilityState = React.useMemo<AccessibilityState>(
+    () => ({
+      disabled,
+      checked,
+    }),
+    [disabled, checked],
+  );
 
-	const handleValueChange = React.useCallback(() => {
-		context.setValue(valueProp);
-	}, [context.setValue, valueProp]);
+  const handleValueChange = React.useCallback(() => {
+    context.setValue(valueProp);
+  }, [context.setValue, valueProp]);
 
-	const contextInput = React.useMemo<ContextRadioGroupRadioProps>(
-		() => ({
-			disabled: isDisabled,
-			checked,
-		}),
-		[isDisabled, checked],
-	);
+  const contextInput = React.useMemo<ContextRadioGroupRadioProps>(
+    () => ({
+      disabled: isDisabled,
+      checked,
+    }),
+    [isDisabled, checked],
+  );
 
-	return (
-		<Pressable
-			disabled={isDisabled}
-			style={StyleSheet.flatten([style])}
-			onPress={handleValueChange}
-			accessible={context?.accessible}
-			aria-disabled={context?.accessible && accessibilityState.disabled}
-			aria-checked={accessibilityState.checked}
-			accessibilityRole={accessibilityRole}
-			accessibilityLabel={accessibilityLabel}
-			accessibilityHint={accessibilityHint}
-			accessibilityState={accessibilityState}
-			{...rest}
-		>
-			<ContextRadioGroupRadio.Provider value={contextInput}>{children}</ContextRadioGroupRadio.Provider>
-		</Pressable>
-	);
+  return (
+    <Pressable
+      disabled={isDisabled}
+      style={StyleSheet.flatten([style])}
+      onPress={handleValueChange}
+      accessible={context?.accessible}
+      aria-disabled={context?.accessible && accessibilityState.disabled}
+      aria-checked={accessibilityState.checked}
+      accessibilityRole={accessibilityRole}
+      accessibilityLabel={accessibilityLabel}
+      accessibilityHint={accessibilityHint}
+      accessibilityState={accessibilityState}
+      {...rest}
+    >
+      <ContextRadioGroupRadio.Provider value={contextInput}>{children}</ContextRadioGroupRadio.Provider>
+    </Pressable>
+  );
 }
 
 /* -------------------------------------------------------------------------------------------------
@@ -177,13 +177,13 @@ function RadioGroupRadio({
  * -----------------------------------------------------------------------------------------------*/
 
 type RadioGroupInputProps = {
-	testID?: string;
-	style?: StyleProp<ViewStyle>;
-	children?: ReactNode;
+  testID?: string;
+  style?: StyleProp<ViewStyle>;
+  children?: ReactNode;
 };
 
 function RadioGroupInput({ style, ...rest }: RadioGroupInputProps) {
-	return <View style={StyleSheet.flatten([style])} {...rest} />;
+  return <View style={StyleSheet.flatten([style])} {...rest} />;
 }
 
 /* -------------------------------------------------------------------------------------------------
@@ -193,20 +193,20 @@ function RadioGroupInput({ style, ...rest }: RadioGroupInputProps) {
 type RadioLabelProps = TextProps & {};
 
 function RadioLabel({ style, accessibilityLabel, accessibilityHint, ...rest }: RadioLabelProps) {
-	const context = React.useContext(Context);
-	const contextRadio = React.useContext(ContextRadioGroupRadio);
+  const context = React.useContext(Context);
+  const contextRadio = React.useContext(ContextRadioGroupRadio);
 
-	return (
-		<Text
-			style={StyleSheet.flatten([style])}
-			disabled={contextRadio.disabled}
-			accessible={context?.accessible}
-			accessibilityRole="text"
-			accessibilityLabel={accessibilityLabel}
-			accessibilityHint={accessibilityHint}
-			{...rest}
-		/>
-	);
+  return (
+    <Text
+      style={StyleSheet.flatten([style])}
+      disabled={contextRadio.disabled}
+      accessible={context?.accessible}
+      accessibilityRole="text"
+      accessibilityLabel={accessibilityLabel}
+      accessibilityHint={accessibilityHint}
+      {...rest}
+    />
+  );
 }
 
 /* -------------------------------------------------------------------------------------------------
@@ -214,62 +214,62 @@ function RadioLabel({ style, accessibilityLabel, accessibilityHint, ...rest }: R
  * -----------------------------------------------------------------------------------------------*/
 
 type RadioIndicatorProps = {
-	testID?: string;
-	style?: StyleProp<ViewStyle>;
-	indicatorComponent?: React.ElementType;
-	accessibilityLabel?: string;
-	accessibilityHint?: string;
+  testID?: string;
+  style?: StyleProp<ViewStyle>;
+  indicatorComponent?: React.ElementType;
+  accessibilityLabel?: string;
+  accessibilityHint?: string;
 };
 
 function RadioIndicator({
-	style,
-	indicatorComponent,
-	accessibilityLabel,
-	accessibilityHint,
-	...rest
+  style,
+  indicatorComponent,
+  accessibilityLabel,
+  accessibilityHint,
+  ...rest
 }: RadioIndicatorProps) {
-	const contextRadio = React.useContext(ContextRadioGroupRadio);
+  const contextRadio = React.useContext(ContextRadioGroupRadio);
 
-	if (contextRadio.checked && indicatorComponent) {
-		const IndicatorComponent = indicatorComponent;
-		return (
-			<IndicatorComponent
-				style={StyleSheet.flatten([style])}
-				accessibilityLabel={accessibilityLabel || "Selected"}
-				accessibilityHint={accessibilityHint}
-				accessibilityState={{
-					selected: contextRadio.checked,
-				}}
-				{...rest}
-			/>
-		);
-	}
+  if (contextRadio.checked && indicatorComponent) {
+    const IndicatorComponent = indicatorComponent;
+    return (
+      <IndicatorComponent
+        style={StyleSheet.flatten([style])}
+        accessibilityLabel={accessibilityLabel || "Selected"}
+        accessibilityHint={accessibilityHint}
+        accessibilityState={{
+          selected: contextRadio.checked,
+        }}
+        {...rest}
+      />
+    );
+  }
 
-	if (contextRadio.checked) {
-		return (
-			<View
-				style={StyleSheet.flatten([style])}
-				accessibilityLabel={accessibilityLabel || "Selected"}
-				accessibilityHint={accessibilityHint}
-				accessibilityState={{
-					selected: contextRadio.checked,
-				}}
-				{...rest}
-			/>
-		);
-	}
+  if (contextRadio.checked) {
+    return (
+      <View
+        style={StyleSheet.flatten([style])}
+        accessibilityLabel={accessibilityLabel || "Selected"}
+        accessibilityHint={accessibilityHint}
+        accessibilityState={{
+          selected: contextRadio.checked,
+        }}
+        {...rest}
+      />
+    );
+  }
 
-	return null;
+  return null;
 }
 
 RadioGroupRoot.displayName = "Block.RadioGroup";
 
 export const RadioGroup = {
-	Root: RadioGroupRoot,
-	Radio: RadioGroupRadio,
-	Input: RadioGroupInput,
-	Label: RadioLabel,
-	Indicator: RadioIndicator,
+  Root: RadioGroupRoot,
+  Radio: RadioGroupRadio,
+  Input: RadioGroupInput,
+  Label: RadioLabel,
+  Indicator: RadioIndicator,
 };
 
 export type { RadioGroupProps, RadioGroupRadioProps, RadioGroupInputProps, RadioLabelProps, RadioIndicatorProps };
