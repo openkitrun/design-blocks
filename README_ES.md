@@ -8,7 +8,7 @@ Una biblioteca open source con herramientas para crear interfaces de usuario din
 
 Puedes usar estos componentes como la capa base de tu sistema de diseño o adoptarlos incrementalmente.
 
-<h2 align="center">patrocinador: BrianCurliss</h2>
+<h2 align="center">patrocinador: Brian Curliss</h2>
 
 <div align="center">
   <a href="https://github.com/BrianCurliss">

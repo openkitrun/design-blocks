@@ -8,7 +8,7 @@ An open source library with tools for creating dynamic user interfaces for appli
 
 You can use these components as the base layer of your design system or adopt them incrementally.
 
-<h2 align="center">sponsor: BrianCurliss</h2>
+<h2 align="center">sponsor: Brian Curliss</h2>
 
 <div align="center">
   <a href="https://github.com/BrianCurliss">
