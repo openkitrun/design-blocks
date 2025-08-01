@@ -8,6 +8,18 @@ An open source library with tools for creating dynamic user interfaces for appli
 
 You can use these components as the base layer of your design system or adopt them incrementally.
 
+<h2 align="center">sponsor: BrianCurliss</h2>
+
+<div align="center">
+  <a href="https://github.com/BrianCurliss">
+  <picture width="10%" >
+        <source media="(prefers-color-scheme: dark)" srcset="https://avatars.githubusercontent.com/u/1222949?v=4">
+        <img alt="jazz logo" src="https://avatars.githubusercontent.com/u/1222949?v=4" width="10%">
+      </picture>
+
+  </a>
+</div>
+
 ### Packages
 
 - [🏄‍♀️ `@design-blocks/unstyled`](https://github.com/openkitrun/design-blocks/tree/main/packages/%40blocks-unstyled) -

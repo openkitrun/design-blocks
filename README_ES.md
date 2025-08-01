@@ -8,6 +8,18 @@ Una biblioteca open source con herramientas para crear interfaces de usuario din
 
 Puedes usar estos componentes como la capa base de tu sistema de diseño o adoptarlos incrementalmente.
 
+<h2 align="center">patrocinador: BrianCurliss</h2>
+
+<div align="center">
+  <a href="https://github.com/BrianCurliss">
+  <picture width="10%" >
+        <source media="(prefers-color-scheme: dark)" srcset="https://avatars.githubusercontent.com/u/1222949?v=4">
+        <img alt="jazz logo" src="https://avatars.githubusercontent.com/u/1222949?v=4" width="10%">
+      </picture>
+
+  </a>
+</div>
+
 ### Paquetes
 
 - [🏄‍♀️ `@design-blocks/unstyled`](https://github.com/openkitrun/design-blocks/tree/main/packages/%40blocks-unstyled) -
