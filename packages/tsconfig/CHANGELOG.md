@@ -1,5 +1,11 @@
 # tsconfig
 
+## 1.0.0-beta.28
+
+### Patch Changes
+
+- [`565d98d`](https://github.com/openkitrun/design-blocks/commit/565d98d40c3341c2e740bf222a39e2a551c79301) Thanks [@wootsbot](https://github.com/wootsbot)! - Fix docs
+
 ## 1.0.0-beta.27
 
 ### Patch Changes
