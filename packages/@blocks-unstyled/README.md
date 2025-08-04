@@ -34,15 +34,15 @@ A React Native unstyled component library designed to provide fundamental buildi
 ## Installation
 
 ```bash
-npm install @design-blocks/unstyled
+npm install @design-blocks/unstyled@beta
 ```
 
 ```bash
-yarn add @design-blocks/unstyled
+yarn add @design-blocks/unstyled@beta
 ```
 
 ```bash
-pnpm add @design-blocks/unstyled
+pnpm add @design-blocks/unstyled@beta
 ```
 
 ### Dependencies
