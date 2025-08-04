@@ -54,7 +54,7 @@ import { Button, Checkbox, RadioGroup, Switch } from '@design-blocks/unstyled';
 ### 🚀 Quick Start
 
 ```bash
-npm install @design-blocks/unstyled
+npm install @design-blocks/unstyled@beta
 ```
 
 ```tsx
