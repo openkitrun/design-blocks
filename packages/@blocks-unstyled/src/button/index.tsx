@@ -28,7 +28,7 @@ export type ButtonState = {
   disabled?: boolean;
   loading?: boolean;
 };
-type NonTextElements = React.ReactElement | Iterable<React.ReactElement | null | undefined | boolean>;
+
 type ButtonProps = Pick<
   PressableProps,
   | "disabled"
@@ -54,7 +54,7 @@ type ButtonProps = Pick<
    */
   accessibilityLabel?: string;
   pressableComponent?: React.ComponentType<PressableProps>;
-  children: NonTextElements;
+  children: React.ReactElement;
 } & AccessibilityProps &
   ButtonState;
 
