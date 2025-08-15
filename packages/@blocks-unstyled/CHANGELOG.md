@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.50
+
+### Patch Changes
+
+- [`2f4cf91`](https://github.com/openkitrun/design-blocks/commit/2f4cf915a6f427e3f306ad94cc9f40a180dff018) Thanks [@wootsbot](https://github.com/wootsbot)! - Fixed props.children in button
+
 ## 1.0.0-beta.49
 
 ### Patch Changes
