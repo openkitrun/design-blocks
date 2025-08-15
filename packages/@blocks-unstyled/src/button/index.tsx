@@ -54,7 +54,7 @@ type ButtonProps = Pick<
    */
   accessibilityLabel?: string;
   pressableComponent?: React.ComponentType<PressableProps>;
-  children: React.ReactElement;
+  children: React.ReactNode;
 } & AccessibilityProps &
   ButtonState;
 
