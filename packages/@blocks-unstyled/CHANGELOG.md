@@ -1,5 +1,11 @@
 # @design-blocks/unstyled
 
+## 1.0.0-beta.51
+
+### Patch Changes
+
+- [`d37efa1`](https://github.com/openkitrun/design-blocks/commit/d37efa14bbdda77379e8c606e7cb4543af145dc7) Thanks [@wootsbot](https://github.com/wootsbot)! - Fix Button `props.children: React.ReactNode`
+
 ## 1.0.0-beta.50
 
 ### Patch Changes
